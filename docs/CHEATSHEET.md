@@ -236,9 +236,6 @@ match pair {
 }
 ```
 
-Here's the continuation of the guide, starting from `References, Ownership, and Borrowing`.
-
-```markdown
 ## References, Ownership, and Borrowing :link: :gift: :bank:
 
 ### Ownership :gift:
