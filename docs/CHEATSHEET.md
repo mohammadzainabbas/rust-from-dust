@@ -69,8 +69,8 @@ struct User {
 }
 
 // Instantiation
-let user1 = User {
-  username: String::from("bogdan"),
+let user = User {
+  username: String::from("Mohammad Zain Abbas"),
   active: true,
 };
 
