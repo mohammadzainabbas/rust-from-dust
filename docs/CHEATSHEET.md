@@ -175,5 +175,47 @@ let result = loop {
 
   if counter ==
 
+ 10 {
+    break counter * 2;
+  }
+};
+```
 
+### while :hourglass_flowing_sand:
+```rust
+let mut counter = 0;
 
+while counter != 10 {
+  counter += 1;
+}
+```
+
+### for :loop:
+```rust
+for number in (1..4).rev() {
+  println!("{}!", number);
+}
+```
+
+### match :recycle:
+```rust
+let msg = Command::Move { x: 1, y: 1 };
+
+match msg {
+  Command::Quit => println!("Quit"),
+  Command::Move { x, y } => println!("Move to {}, {}", x, y),
+  Command::Speak(txt) => println!("Speak: {}", txt),
+  Command::ChangeBGColor(r, g, b) => println!("Change BG Color to {}, {}, {}", r, g, b),
+}
+```
+
+### match with if :recycle: :question:
+```rust
+let pair = (2, -2);
+
+match pair {
+  (x, y) if x == y => println!("These are twins"),
+  (x, y) if x + y == 0 => println!("These are opposites"),
+  _ => (),
+}
+```
