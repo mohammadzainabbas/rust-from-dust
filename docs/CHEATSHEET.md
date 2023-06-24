@@ -235,3 +235,104 @@ match pair {
   _ => (),
 }
 ```
+
+Here's the continuation of the guide, starting from `References, Ownership, and Borrowing`.
+
+```markdown
+## References, Ownership, and Borrowing :link: :gift: :bank:
+
+### Ownership :gift:
+```rust
+// s1 owns the memory for "hello"
+let s1 = String::from("hello");
+
+// ownership of the memory is moved to s2
+let s2 = s1;
+
+// This line would throw an error because s1 no longer has ownership
+// println!("{}, world!", s1);
+```
+
+### Borrowing :bank:
+```rust
+// s1 owns the memory for "hello"
+let s1 = String::from("hello");
+
+// s2 borrows a reference to the memory
+let s2 = &s1;
+
+// Both s1 and s2 are valid here
+println!("{}, world!", s1);
+println!("{}, world!", s2);
+```
+
+### Mutable borrowing :bank: :wrench:
+```rust
+// s1 owns the memory for "hello"
+let mut s1 = String::from("hello");
+
+// s2 borrows a mutable reference to the memory
+let s2 = &mut s1;
+
+// s2 can mutate the memory
+s2.push_str(", world!");
+
+// println!("{}, world!", s1); would throw an error because s1 is not allowed to be used while it is mutably borrowed
+println!("{}", s2);
+```
+
+### References in Structs :link: :house:
+```rust
+struct User<'a> {
+    name: &'a str,
+    age: u8,
+}
+
+let user = User {
+    name: "Alice",
+    age: 30,
+};
+```
+
+## Functions :gear:
+
+### Definition :construction_worker:
+```rust
+fn add_two(x: i32) -> i32 {
+    x + 2
+}
+```
+
+### Parameters :point_left:
+```rust
+fn add(x: i32, y: i32) -> i32 {
+    x + y
+}
+```
+
+### Return Values :point_right:
+```rust
+fn five() -> i32 {
+    5
+}
+```
+
+### Functions in Structs :gear: :house:
+```rust
+struct Rectangle {
+    width: u32,
+    height: u32,
+}
+
+impl Rectangle {
+    fn area(&self) -> u32 {
+        self.width * self.height
+    }
+}
+```
+
+(continued...)
+```
+
+Remember to replace `(continued...)` with the remaining content. Due to the character limit, I had to cut the text. I've done my best to capture all the sections you mentioned in your request, though.
+
