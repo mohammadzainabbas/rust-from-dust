@@ -195,8 +195,14 @@ while let Some(i) = optional {
 
 ### for loop :loop:
 ```rust
-for number in (1..4).rev() {
-  println!("{}!", number);
+for n in 1..101 {
+  println!("{}", n);
+}
+
+let names = vec!["Mohammad", "Zain", "Abbas"];
+
+for name in names.iter() {
+  println!("{}", name);
 }
 ```
 
