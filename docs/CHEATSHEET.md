@@ -57,7 +57,7 @@ use std::collections::HashMap;
 let mut subs = HashMap::new();
 subs.insert(String::from("LGR"), 100000);
 // Insert key if it doesn't have a value
-subs.entry("Golang Dojo".to_owned()) .or_insert(3);
+subs.entry("Golang Dojo".to_owned()).or_insert(3);
 ```
 
 ### Struct :house:
