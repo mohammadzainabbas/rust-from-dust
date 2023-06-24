@@ -1,5 +1,7 @@
 # Rust - Cheatsheet :books:
 
+~~double tildes around the words~~
+
 ## Table of Contents
 
 1. [Basic Types & Variables :pencil2:](#basic-types--variables-pencil2)
