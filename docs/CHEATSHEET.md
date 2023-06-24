@@ -236,7 +236,7 @@ match pair {
 }
 ```
 
-## References, Ownership, and Borrowing :link: :gift: :bank:
+## References, Ownership, and Borrowing :link:
 
 ### Ownership :gift:
 ```rust
