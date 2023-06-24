@@ -180,7 +180,7 @@ let result = loop {
 };
 ```
 
-### while :hourglass_flowing_sand:
+### while and while let :hourglass_flowing_sand:
 ```rust
 let mut counter = 0;
 
