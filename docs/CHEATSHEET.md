@@ -31,3 +31,146 @@ In Rust, data types are explicitly declared. This table provides an overview of 
 | Unicode scalar value | `char` |
 | String slice | `&str` |
 | Owned string | `String` |
+
+### Tuple :two_men_holding_hands:
+```rust
+let coordinates = (82, 64);
+let score = ("Team A", 12);
+```
+
+### Array & Slice :pizza:
+```rust
+// Arrays must have a known length and all elements must be initialized
+let array = [1, 2, 3, 4, 5];
+let array2 = [0; 3]; // [0, 0, 0]
+
+// Unlike arrays the length of a slice is determined at runtime
+let slice = &array[1 .. 3];
+```
+
+### HashMap :file_folder:
+```rust
+use std::collections::HashMap;
+
+let mut subs = HashMap::new();
+subs.insert(String::from("LGR"), 100000);
+// Insert key if it doesn't have a value
+subs.entry("Golang Dojo".to_owned()) .or_insert(3);
+```
+
+### Struct :house:
+```rust
+// Definition
+struct User {
+  username: String,
+  active: bool,
+}
+
+// Instantiation
+let user1 = User {
+  username: String::from("bogdan"),
+  active: true,
+};
+
+// Tuple struct
+struct Color(i32, i32, i32);
+let black = Color(0, 0, 0);
+```
+
+### Enum :flags:
+```rust
+// Definition
+enum Command {
+  Quit,
+  Move { x: i32, y: i32 },
+  Speak(String),
+  ChangeBGColor(i32, i32, i32),
+}
+
+// Instantiation
+let msg1 = Command::Quit;
+let msg2 = Command::Move{ x: 1, y: 2 };
+let msg3 = Command::Speak("Hi".to_owned());
+let msg4 = Command::ChangeBGColor(0, 0, 0);
+```
+
+### Constant :lock:
+```rust
+const MAX_POINTS: u32 = 100_000;
+```
+
+### Static variable :globe_with_meridians:
+```rust
+// Unlike constants static variables are
+// stored in a dedicated memory location
+// and can be mutated.
+static MAJOR_VERSION: u32 = 1;
+static mut COUNTER: u32 = 0;
+```
+
+### Mutability :wrench:
+```rust
+let mut x = 5;
+x = 6;
+```
+
+### Shadowing :last_quarter_moon:
+```rust
+let x = 5;
+let x = x * 2;
+```
+
+### Type alias :label:
+```rust
+// `NanoSecond` is a new name for `u64`.
+type NanoSecond = u64;
+```
+
+## Control Flow :recycle:
+
+### if and if let :question:
+```rust
+let num = Some(22);
+
+if num.is_some() {
+  println!("number is: {}", num.unwrap());
+}
+
+
+// match pattern and assign variable
+if let Some(i) = num {
+  println!("number is: {}", i);
+}
+```
+
+### loop :arrows_counterclockwise:
+```rust
+let mut count = 0;
+loop {
+  count += 1;
+  if count == 5 {
+    break; // Exit loop
+  }
+}
+```
+
+### Nested loops & labels :arrows_clockwise:
+```rust
+'outer: loop {
+  'inner: loop {
+    // This breaks the inner loop
+    break;
+    // This breaks the outer loop
+    break 'outer;
+  }
+}
+```
+
+### Returning from loops :fast_forward:
+```rust
+let mut counter = 0;
+
+let result = loop {
+  counter += 1;
+
+  if counter ==
