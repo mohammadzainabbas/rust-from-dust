@@ -331,8 +331,3 @@ impl Rectangle {
 }
 ```
 
-(continued...)
-```
-
-Remember to replace `(continued...)` with the remaining content. Due to the character limit, I had to cut the text. I've done my best to capture all the sections you mentioned in your request, though.
-
