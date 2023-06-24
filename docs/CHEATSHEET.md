@@ -334,10 +334,6 @@ impl Rectangle {
 }
 ```
 
-
-Sure, here is the markdown for the content you've provided. I've added some emojis and descriptions:
-
-```markdown
 ## 📚 References, Ownership, and Borrowing
 
 📝 **Ownership rules**
