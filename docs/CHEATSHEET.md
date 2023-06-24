@@ -1,4 +1,4 @@
-# version 1.0.7
+# Rust Cheatsheet
 
 ## Table of Contents
 1. [Basic Types & Variables](#basic-types-&-variables)
