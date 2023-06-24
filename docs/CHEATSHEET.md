@@ -126,7 +126,7 @@ let x = x * 2;
 type NanoSecond = u64;
 ```
 
-## Control Flow :recycle:
+## Control Flow :arrows_clockwise:
 
 ### if and if let :question:
 ```rust
