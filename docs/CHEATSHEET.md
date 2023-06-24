@@ -17,6 +17,8 @@
    - [Smart pointers :brain:](#smart-pointers-brain)
 10. [Packages, Crates, and Modules :package:](#packages-crates-and-modules-package)
 
+#
+
 ## Basic Types & Variables :pencil2:
 
 In Rust, data types are explicitly declared. This table provides an overview of basic types and variables:
