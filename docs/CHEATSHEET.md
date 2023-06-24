@@ -182,14 +182,18 @@ let result = loop {
 
 ### while and while let :hourglass_flowing_sand:
 ```rust
-let mut counter = 0;
+while n < 101 {
+  n += 1;
+}
 
-while counter != 10 {
-  counter += 1;
+let mut optional = Some(0);
+
+while let Some(i) = optional {
+  print!("{}", i);
 }
 ```
 
-### for :loop:
+### for loop :loop:
 ```rust
 for number in (1..4).rev() {
   println!("{}!", number);
