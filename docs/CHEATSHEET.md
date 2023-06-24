@@ -208,6 +208,13 @@ for name in names.iter() {
 
 ### match :recycle:
 ```rust
+let optional = Some(0);
+
+match optional {
+  Some(i) => println!("{}", i),
+  None => println!("No value.")
+}
+
 let msg = Command::Move { x: 1, y: 1 };
 
 match msg {
