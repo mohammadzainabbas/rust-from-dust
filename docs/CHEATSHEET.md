@@ -1,10 +1,6 @@
 # Rust - Cheatsheet :books:
 
-~~
-```rust
-let x = double tildes around the words
-```
-~~
+~~let x = double tildes around the words~~
 
 ## Table of Contents
 
