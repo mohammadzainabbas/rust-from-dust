@@ -1,5 +1,8 @@
 # Rust - Cheatsheet :books:
 
+```rust
+<del>let x = dojo;</del>
+```
 ~~let x = double tildes around the words~~
 
 ## Table of Contents
