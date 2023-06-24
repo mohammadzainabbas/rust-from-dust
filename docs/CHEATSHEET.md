@@ -138,7 +138,6 @@ if num.is_some() {
   println!("number is: {}", num.unwrap());
 }
 
-
 // match pattern and assign variable
 if let Some(i) = num {
   println!("number is: {}", i);
