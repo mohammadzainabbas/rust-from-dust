@@ -28,9 +28,14 @@ A tutorial for <kbd> <br> Hello World! <br> </kbd> based program built via
 cargo new hello-world
 ```
 
+or 
+
+```bash
+cargo new hello-world --bin
+```
+
 > [!NOTE]
-> By default, `cargo new` creates a binary (application) template.
-> It's same as `cargo new hello-world --bin`.
+> By default, `cargo new` creates a binary (application) template. You can use `--bin` flag to explicitly specify it.
 
 2. Build & run the project using `cargo run`:
 
