@@ -34,7 +34,8 @@ In Rust, data types are explicitly declared. This table provides an overview of 
 | String slice | `&str` |
 | Owned string | `String` |
 
-> Note: `usize` and `isize` are pointer-sized integers (i.e: they have the same number of bits as the platform's pointer type). For e.g: on 64-bit systems, they are 64-bit wide and On 32-bit systems, they are 32-bit wide.
+> [!NOTE]
+> `usize` and `isize` are pointer-sized integers (i.e: they have the same number of bits as the platform's pointer type). For e.g: on 64-bit systems, they are 64-bit wide and On 32-bit systems, they are 32-bit wide.
 
 ### Tuple :two_men_holding_hands:
 ```rust
