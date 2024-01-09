@@ -11,7 +11,7 @@ A tutorial for <kbd> <br> Hello World! <br> </kbd> based program built via
 
 ## Key Concepts
 
-- [x] AMI ID (Look up the latest AWS Deep Learning AMI GPU CUDA)
+- [x] Create new binary project using `cargo new hello-world`
 - [x] Create new VPC, Subnets (Public and Private), RouteTables and Security Group
 - [x] Define Launch Configuration with User Data
 - [x] Create Autoscaling Group with Launch Template and Spot Fleet
