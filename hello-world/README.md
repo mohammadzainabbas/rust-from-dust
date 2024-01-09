@@ -28,45 +28,11 @@ A tutorial for <kbd> <br> Hello World! <br> </kbd> based program built via
 cargo new hello-world
 ```
 
-2. Clone the repo:
+2. Build & run the project using `cargo run`:
 
 ```bash
-git clone https://github.com/mohammadzainabbas/pulumi-labs.git
-```
-
-or if GitHub CLI is installed:
-
-```bash
-gh repo clone mohammadzainabbas/pulumi-labs
-```
-
-3. Change directory:
-
-```bash
-cd aws-fleet-python
-```
-
-4. Create a new Python virtualenv, activate it, and install dependencies:
-
-```bash
-python3 -m venv venv
-source venv/bin/activate
-pip3 install -r requirements.txt
-```
-
-5. Create a new Pulumi stack, which is an isolated deployment target for this example:
-
-```bash
-pulumi stack init
-```
-
-6. Update your environment:
-
-Now, update your environment (that you'd already setup in step 1) in `Pulumi.dev.yaml` like the following:
-
-```yaml
-environment:
-  - aws-jarvis
+cd hello-world
+cargo run
 ```
 
 > [!NOTE]
