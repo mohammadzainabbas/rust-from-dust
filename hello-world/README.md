@@ -4,7 +4,7 @@
 
 ## Overview
 
-A Pulumi IaC program written in Python to deploy AWS Autoscaling Group with Launch Template to request Spot Instances for multi-type instances.
+A tutorial-style `Hello World!` based Pulumi program with sample progressive web application (PWA) **the Pulumipus Boba Tea Shop**; built with `MongoDB`, `ExpressJS`, `ReactJS`, and `NodeJS` (the *MERN* stack). 
 
 ## Key Concepts
 
