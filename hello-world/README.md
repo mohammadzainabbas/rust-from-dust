@@ -56,7 +56,7 @@ Hello, world!
 ```
 
 > [!IMPORTANT] 
-> If you don't specify anything, everything will be deployed in `eu-west-3` region.
+> `cargo run` command builds the project if it's not already built.
 
 8. Run `pulumi up` to preview and deploy changes:
 
