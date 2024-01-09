@@ -4,7 +4,7 @@
 
 ## Overview
 
-A tutorial-style `Hello World!` based Pulumi program with sample progressive web application (PWA) **the Pulumipus Boba Tea Shop**; built with `MongoDB`, `ExpressJS`, `ReactJS`, and `NodeJS` (the *MERN* stack). 
+A tutorial-style <kbd> <br> Hello World! <br> </kbd> based Pulumi program with sample progressive web application (PWA) **the Pulumipus Boba Tea Shop**; built with `MongoDB`, `ExpressJS`, `ReactJS`, and `NodeJS` (the *MERN* stack). 
 
 ## Key Concepts
 
