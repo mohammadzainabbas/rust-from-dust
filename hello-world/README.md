@@ -56,4 +56,4 @@ Hello, world!
 ```
 
 > [!IMPORTANT] 
-> `cargo run` command compile/build the code and then run the resultant executable all in one command.
+> `cargo run` compiles/builds the code and then run the resultant executable all in one command.
