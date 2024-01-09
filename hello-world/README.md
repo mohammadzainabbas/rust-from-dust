@@ -44,7 +44,7 @@ cd hello-world
 cargo run
 ```
 
-> [!IMPORTANT]
+> [!TIP]
 > Run `cargo run --help` or `cargo help run` to see detailed options of `cargo run` command.
 
 You should see the following output:
@@ -53,14 +53,6 @@ You should see the following output:
     Finished dev [unoptimized + debuginfo] target(s) in 0.04s
      Running `target/debug/hello-world`
 Hello, world!
-```
-
-7. Set the AWS region (optional):
-
-To deploy to a region other than the default one configured for your AWS CLI profile, run `pulumi config set aws:region <region>`
-
-```bash
-pulumi config set aws:region us-east-1
 ```
 
 > [!IMPORTANT] 
