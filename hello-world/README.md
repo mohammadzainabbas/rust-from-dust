@@ -29,7 +29,8 @@ cargo new hello-world
 ```
 
 > [!NOTE]
-> By default, `cargo new` creates 
+> By default, `cargo new` creates a binary (application) template.
+> It's same as `cargo new hello-world --bin`.
 
 2. Build & run the project using `cargo run`:
 
