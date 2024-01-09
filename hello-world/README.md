@@ -44,8 +44,8 @@ cd hello-world
 cargo run
 ```
 
-> [!NOTE]
-> Here, `aws-jarvis` is the name of the environment that I've created in step 1.
+> [!IMPORTANT]
+> Run `cargo run --help` or `cargo help run` to see detailed options of `cargo run` command.
 
 7. Set the AWS region (optional):
 
