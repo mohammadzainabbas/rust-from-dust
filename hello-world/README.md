@@ -16,10 +16,7 @@ A tutorial for <kbd> <br> Hello World! <br> </kbd> based program built via
 
 ## Prerequisites
 
-* `Rust 3.9+`
-* `Pulumi`
-* `AWS CLI v2` _(with valid credentials configured)_
-* `AWS Native CLI`
+* `Rust` _(stable, with cargo installed)_
 
 ## Quick Start
 
