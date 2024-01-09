@@ -4,7 +4,7 @@
 
 ## Overview
 
-A tutorial for <kbd> <br> Hello World! <br> </kbd> based Rust program built via `Cargo`; with sample progressive web application (PWA) **the Pulumipus Boba Tea Shop**; built with `MongoDB`, `ExpressJS`, `ReactJS`, and `NodeJS` (the *MERN* stack). 
+A tutorial for <kbd> <br> Hello World! <br> </kbd> based program built via `Cargo`: _a Rust’s build system and package manager_. 
 
 ## Key Concepts
 
