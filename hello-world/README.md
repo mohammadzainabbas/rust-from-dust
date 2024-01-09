@@ -12,13 +12,11 @@ A tutorial for <kbd> <br> Hello World! <br> </kbd> based program built via
 ## Key Concepts
 
 - [x] Create new binary project using `cargo new hello-world`
-- [x] Create new VPC, Subnets (Public and Private), RouteTables and Security Group
-- [x] Define Launch Configuration with User Data
-- [x] Create Autoscaling Group with Launch Template and Spot Fleet
+- [x] Build & run the project using `cargo run`
 
 ## Prerequisites
 
-* `Python 3.9+`
+* `Rust 3.9+`
 * `Pulumi`
 * `AWS CLI v2` _(with valid credentials configured)_
 * `AWS Native CLI`
