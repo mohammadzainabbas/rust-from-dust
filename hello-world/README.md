@@ -6,7 +6,7 @@
 
 A tutorial for <kbd> <br> Hello World! <br> </kbd> based program built via `Cargo`: _a Rust’s build system and package manager_.
 
-> [!NOTE]
+> [!TIP]
 > This tutorial is based on [Rust Book](https://doc.rust-lang.org/book/ch01-03-hello-cargo.html) and [Rust By Example](https://doc.rust-lang.org/rust-by-example/hello.html).
 
 ## Key Concepts
