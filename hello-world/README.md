@@ -47,6 +47,14 @@ cargo run
 > [!IMPORTANT]
 > Run `cargo run --help` or `cargo help run` to see detailed options of `cargo run` command.
 
+You should see the following output:
+
+```console
+    Finished dev [unoptimized + debuginfo] target(s) in 0.04s
+     Running `target/debug/hello-world`
+Hello, world!
+```
+
 7. Set the AWS region (optional):
 
 To deploy to a region other than the default one configured for your AWS CLI profile, run `pulumi config set aws:region <region>`
