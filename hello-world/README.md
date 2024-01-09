@@ -57,25 +57,3 @@ Hello, world!
 
 > [!IMPORTANT] 
 > `cargo run` command builds the project if it's not already built.
-
-8. Run `pulumi up` to preview and deploy changes:
-
-```bash
-pulumi up
-```
-
-> [!NOTE] 
-> You can use `--yes` flag to skip the confirmation prompt.
-
-and voila! You've deployed Auto scaling group using spot fleet along with your custom launch config to AWS.
-
-### Cleanup
-
-To destroy the Pulumi stack and all of its resources:
-
-```bash
-pulumi destroy
-```
-
-> [!NOTE] 
-> You can use `--yes` flag to skip the confirmation prompt.
