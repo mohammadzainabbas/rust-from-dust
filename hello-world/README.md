@@ -28,6 +28,9 @@ A tutorial for <kbd> <br> Hello World! <br> </kbd> based program built via
 cargo new hello-world
 ```
 
+> [!NOTE]
+> By default, `cargo new` creates 
+
 2. Build & run the project using `cargo run`:
 
 ```bash
