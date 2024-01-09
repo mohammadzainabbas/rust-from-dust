@@ -22,9 +22,11 @@ A tutorial for <kbd> <br> Hello World! <br> </kbd> based program built via
 
 ### Setup
 
-1. Configuring OpenID Connect for AWS:
+1. Create a new binary project using `cargo new hello-world`:
 
-Follow the guideline [here](https://www.pulumi.com/docs/pulumi-cloud/oidc/aws/) to configure `Pulumi` to use OpenID Connect to authenticate with AWS.
+```bash
+cargo new hello-world
+```
 
 2. Clone the repo:
 
