@@ -5,6 +5,6 @@ A repository with Rust projects built from scratch
     <h3 style="color:rgb(47, 129, 247);" > 👨🏻‍💻 Rust from Dust 🔬 </h3>
     <h6> A collection of projects built from scratch using Rust 🚀 </h6>
     <picture>
-        <img style="width:20%;visibility:visible;" alt="Deploy via Pulumi" src="https://get.pulumi.com/new/button.svg" width="100">
+        <img style="width:20%;visibility:visible;" alt="Rust Lang" src="https://www.rust-lang.org/static/images/rust-logo-blk.svg" width="100">
     </picture>
 </div>
