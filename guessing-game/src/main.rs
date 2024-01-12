@@ -1,7 +1,6 @@
 use std::io;
 use rand::Rng;
 use dialoguer::{theme::ColorfulTheme, Input};
-
 fn main() {
     println!("Guess the number!");
     println!("Please input your guess:");
