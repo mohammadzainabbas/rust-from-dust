@@ -5,7 +5,7 @@ fn main() {
     println!("Guess the number!");
 
     let name = Input::with_theme(&ColorfulTheme::default())
-    .with_prompt("Enter your name: ").interact()?;
+    .with_prompt("Enter your name: ").interact_text().unwrap();
 
 
     println!("Please input your guess:");
