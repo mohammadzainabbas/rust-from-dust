@@ -1,6 +1,6 @@
 # Guessing Game
 
-[![Rust Badge](https://img.shields.io/badge/Rust-000000?style=flat&logo=rust&logoColor=white)](https://play.rust-lang.org/) [![Rust Report Card](https://rust-reportcard.xuri.me/badge/github.com/mohammadzainabbas/rust-from-dust)](https://github.com/mohammadzainabbas/rust-from-dust/tree/main/hello-world) [![MIT License](https://badgen.net/github/license/mohammadzainabbas/rust-from-dust?icon=github)](https://github.com/mohammadzainabbas/rust-from-dust?tab=MIT-1-ov-file)
+[![Rust Badge](https://img.shields.io/badge/Rust-000000?style=flat&logo=rust&logoColor=white)](https://play.rust-lang.org/) [![Rust Report Card](https://rust-reportcard.xuri.me/badge/github.com/mohammadzainabbas/rust-from-dust)](https://github.com/mohammadzainabbas/rust-from-dust/tree/main/guessing-game) [![MIT License](https://badgen.net/github/license/mohammadzainabbas/rust-from-dust?icon=github)](https://github.com/mohammadzainabbas/rust-from-dust?tab=MIT-1-ov-file)
 
 ## Overview
 
