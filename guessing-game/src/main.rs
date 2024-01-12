@@ -1,4 +1,4 @@
-use std::io;
+// use std::io;
 use rand::Rng;
 use dialoguer::{theme::ColorfulTheme, Input};
 fn main() {
@@ -6,7 +6,6 @@ fn main() {
 
     let name: String = Input::with_theme(&ColorfulTheme::default()).with_prompt("Enter your name: ").interact_text().unwrap();
     let guess: String = Input::with_theme(&ColorfulTheme::default()).with_prompt("Guess a number: ").interact_text().unwrap();
-
 
     println!("Your name is {}", name);
 
