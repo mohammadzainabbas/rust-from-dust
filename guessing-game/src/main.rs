@@ -8,7 +8,6 @@ fn main() {
     println!("Your secret number is {}", secret_number);
 
     let mut guess = String::new();
-
     io::stdin().read_line(&mut guess).expect("Unable to read line from stdin");
 
     println!("Your guessed value is: {}", guess);
