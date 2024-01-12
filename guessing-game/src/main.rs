@@ -1,7 +1,7 @@
-#[allow(unused_imports)]
-
 use std::io;
 
 fn main() {
-    eprintln!("Guess the number!");
+    println!("Guess the number!");
+
+    println!("Please input your guess.");
 }
