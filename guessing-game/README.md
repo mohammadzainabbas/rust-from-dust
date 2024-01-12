@@ -22,16 +22,16 @@ A tutorial for <kbd> <br> Hello World! <br> </kbd> based program built via
 
 ### Setup
 
-1. Create a new binary project using `cargo new hello-world`:
+1. Create a new binary project using `cargo new guessing-game`:
 
 ```bash
-cargo new hello-world
+cargo new guessing-game
 ```
 
 or 
 
 ```bash
-cargo new hello-world --bin
+cargo new guessing-game --bin
 ```
 
 > [!NOTE]
@@ -40,7 +40,7 @@ cargo new hello-world --bin
 2. Build & run the project using `cargo run`:
 
 ```bash
-cd hello-world
+cd guessing-game
 cargo run
 ```
 
@@ -51,7 +51,7 @@ You should see the following output:
 
 ```console
     Finished dev [unoptimized + debuginfo] target(s) in 0.04s
-     Running `target/debug/hello-world`
+     Running `target/debug/guessing-game`
 Hello, world!
 ```
 
