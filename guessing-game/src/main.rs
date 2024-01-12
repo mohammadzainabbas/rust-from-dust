@@ -4,7 +4,7 @@ use dialoguer::{theme::{ColorfulTheme, self}, Input};
 fn main() {
     println!("Guess the number!");
 
-    let name = Input::with_theme(&ColorfulTheme::default());
+    let name = Input::with_theme(&ColorfulTheme::default()).
 
 
     println!("Please input your guess:");
