@@ -2,7 +2,7 @@ use std::io;
 use rand::Rng;
 use dialoguer::{theme::ColorfulTheme, Input};
 fn main() {
-    println!("Guess the number!");
+    println!("Let's play 'Guess the number!' game");
 
     let name: String = Input::with_theme(&ColorfulTheme::default()).with_prompt("Enter your name: ").interact_text().unwrap();
     let guess: String = Input::with_theme(&ColorfulTheme::default()).with_prompt("Guess a number: ").interact_text().unwrap();
