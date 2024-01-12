@@ -1,10 +1,14 @@
 use std::io;
 use rand::Rng;
-use dialoguer::{theme::ColorfulTheme, Input};
+use dialoguer::{theme::{ColorfulTheme, self}, Input};
 fn main() {
     println!("Guess the number!");
+
+    let name = dialoguer::Input::with_theme(&dyn theme::ColorfulTheme::default());
+
+
     println!("Please input your guess:");
-    
+
     let secret_number = rand::thread_rng().gen_range(1..101);
     
     let mut guess = String::new();
