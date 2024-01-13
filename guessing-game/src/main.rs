@@ -46,8 +46,8 @@ fn no_answer() {
 }
 
 fn main() {
-
-    println!("\n{}\n", "Let's play some guessing games".bright_blue().on_black());
+    
+    utils::colored_print("Let's play some guessing games".bright_blue().on_black());
     
     let theme = ColorfulTheme::default();
 
