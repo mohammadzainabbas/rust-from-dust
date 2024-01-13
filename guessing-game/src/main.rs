@@ -36,5 +36,5 @@ fn main() {
     // io::stdin().read_line(&mut guess).expect("Unable to read line from stdin");
     
 
-    println!("Your guessed value is: {}", guess);
+    // println!("Your guessed value is: {}", guess);
 }
