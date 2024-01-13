@@ -90,17 +90,12 @@ pub fn guess_the_word(theme: &ColorfulTheme, term: &Term) {
         }
     }
 
-    utils::colored_println(format!("Vec: {:?}", words).cyan());
-    utils::colored_println(format!("Vec Len: {:?}", words.len()).red());
-
     // Choose a word randomly
     let random_index = rand::thread_rng().gen_range(0..words.len());
     let target_word = &words[random_index];
     
     const ASK_FOR_STOP_AFTER: u32 = 5; // ask if user wants to stop after 5 incorrect guesses
     let mut guess_tries: u32 = 0;
-
-    println!("Target: {}", target_word);
 
     loop {
         // Ask the user to select a word
