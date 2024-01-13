@@ -4,7 +4,7 @@
 
 ## Overview
 
-A **Rust** program to play two _guessing_ games: <kbd> <br> Guess the number <br> </kbd> and <kbd> <br> Guess the word <br> </kbd> based program built via `Cargo`: _a Rust’s build system and package manager_.
+A **Rust** program to play two _guessing_ games: <kbd> <br> Guess the number <br> </kbd> and <kbd> <br> Guess the word <br> </kbd> - built via `Cargo`: _a Rust’s build system and package manager_.
 
 > [!TIP]
 > This tutorial is based on [Rust Book](https://doc.rust-lang.org/book/ch01-03-hello-cargo.html) and [Rust By Example](https://doc.rust-lang.org/rust-by-example/hello.html).
