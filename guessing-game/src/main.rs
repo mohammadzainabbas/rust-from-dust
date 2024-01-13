@@ -33,7 +33,7 @@ fn quit() {
 }
 
 fn no_answer() {
-    println!("\n{}\n", "User did not answer 🥺".red());
+    colored_print("User did not answer 🥺".red())
 }
 
 fn main() {
