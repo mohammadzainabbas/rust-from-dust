@@ -45,7 +45,7 @@ pub fn guess_the_number(theme: &ColorfulTheme, term: &Term) {
                     let key = term.read_key();
                     match key.unwrap() {
                         Key::Alt => {
-                            
+                            let far: i32 = guess as i32 - secret_number as i32;
                             utils::colored_println(format!("Your last guess {} is {} digits far from the actual answer!", guess.to_string().cyan().bold(), guess.to_string().cyan().bold()).bright_yellow().italic());
                         },
                         _ => continue,
