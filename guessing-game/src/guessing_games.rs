@@ -2,11 +2,11 @@ use std::cmp::Ordering;
 use rand::Rng;
 use dialoguer::{theme::ColorfulTheme, Input};
 
-mod validator;
+mod utils;
 
 pub fn guess_the_number() {
 
-    let guess = validtor::valid_int::<u32>("Guess a number");
+    let guess = utils::valid_int::<u32>("Guess a number");
 
     println!("Let's play 'Guess the number!' game");
 
