@@ -1,10 +1,9 @@
 use colored::{Colorize, ColoredString};
 use dialoguer::{theme::ColorfulTheme, Confirm, FuzzySelect};
 
+mod utils;
 mod validate;
 mod guessing_games;
-
-
 
 fn play_games(theme: &ColorfulTheme) {
     
@@ -25,11 +24,11 @@ fn play_games(theme: &ColorfulTheme) {
 }
 
 fn quit() {
-    colored_print("Nevermind then 🥺".bright_yellow())
+    utils::colored_print("Nevermind then 🥺".bright_yellow())
 }
 
 fn no_answer() {
-    colored_print("User did not answer 🥺".red())
+    utils::colored_print("User did not answer 🥺".red())
 }
 
 fn main() {
