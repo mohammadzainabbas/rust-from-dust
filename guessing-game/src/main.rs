@@ -14,7 +14,6 @@ fn play_games(theme: &ColorfulTheme) {
     ];
 
     let term = Term::stdout();
-    let title = term.
     
     loop {
         let selection = FuzzySelect::with_theme(theme)
