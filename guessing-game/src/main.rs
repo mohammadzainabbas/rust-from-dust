@@ -9,7 +9,7 @@ fn main() {
 
     println!("{}", "Let's play some guessing games".bright_blue().on_black());
 
-    let items = &[
+    let games = &[
         "Ice Cream",
         "Vanilla Cupcake",
         "Chocolate Muffin",
