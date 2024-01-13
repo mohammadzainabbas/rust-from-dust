@@ -11,7 +11,7 @@ fn main() {
         let guess: String = Input::with_theme(&ColorfulTheme::default())
             .with_prompt("Guess a number: ")
             .validate_with(|input: &String| -> Result<(), &str> {
-                let _num: u32 = input.trim().parse() match  {
+                let _num: u32 = input.trim().parse() match {
                     
                 } {
                     Ok(())
