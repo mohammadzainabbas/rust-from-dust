@@ -26,7 +26,7 @@ pub fn guess_the_number(theme: &ColorfulTheme) {
     }
 
     let secret_number: u32 = rand::thread_rng().gen_range(min..=max);
-    const HINT_AFTER: u32 = 5;
+    const HINT_AFTER: u32 = 5; // show hint after 5 incorrect guesses
 
     loop {
         let guess: u32 = validate::valid_int(theme, format!("Guess a number b/w {} & {}: ", min.to_string().cyan().bold(), max.to_string().cyan().bold()));
