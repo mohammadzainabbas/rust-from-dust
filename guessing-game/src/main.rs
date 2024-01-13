@@ -17,19 +17,19 @@ fn play_games(theme: &ColorfulTheme) {
     utils::colored_print("Press any key. Esc to exit".bright_yellow());
     
     loop {
-        let key = term.read_key();
         let selection = FuzzySelect::with_theme(theme)
-            .with_prompt(format!("{} {}:", "Pick a game".bright_yellow(), "(use fuzzy search)".cyan()))
-            .default(0)
-            .items(&games.iter().map(|(name, _)| *name).collect::<Vec<_>>())
-            .interact()
-            .unwrap();
-        
-        let (game_name, game_fn) = games[selection];
-        
-        utils::colored_print(format!("{}{}", "You have picked: ".bright_cyan(), game_name.green().bold()).italic());
-
-        game_fn(theme);
+        .with_prompt(format!("{} {}:", "Pick a game".bright_yellow(), "(use fuzzy search)".cyan()))
+        .default(0)
+        .items(&games.iter().map(|(name, _)| *name).collect::<Vec<_>>())
+        .interact()
+        .unwrap();
+    
+    let (game_name, game_fn) = games[selection];
+    
+    utils::colored_print(format!("{}{}", "You have picked: ".bright_cyan(), game_name.green().bold()).italic());
+    
+    game_fn(theme);
+    let key = term.read_key();
         match key.unwrap() {
             Key::Escape => break,
             _ => continue,
