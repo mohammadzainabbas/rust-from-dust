@@ -1,7 +1,7 @@
 use dialoguer::{theme::ColorfulTheme, Input};
 use std::fmt::Debug;
 
-pub fn valid_int<T>(prompt: &str) -> T
+pub fn valid_int<T>(prompt: &String) -> T
 where
     T: std::str::FromStr,
     <T as std::str::FromStr>::Err: Debug,
