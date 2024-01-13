@@ -1,4 +1,3 @@
-#[allow(unused_imports)]
 
 use colored::Colorize;
 use dialoguer::{theme::ColorfulTheme, Confirm, Input, MultiSelect, Select, Sort};
@@ -8,20 +7,18 @@ mod validate;
 mod guessing_games;
 
 fn play_games(theme: &ColorfulTheme) {
-
+    
     let games = &[
         "Guess the number",
         "Guess the word",
-    ];
-
+        ];
+        
     Select::with_theme(theme)
-        .with_prompt("Pick an item")
-        .items(games)
-        .interact()
-        .unwrap();
-
-
-
+    .with_prompt("Pick an item")
+    .items(games)
+    .interact()
+    .unwrap();
+    
 }
 
 fn quit() {
