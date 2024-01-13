@@ -5,14 +5,14 @@ use dialoguer::console::Term;
 mod validate;
 mod guessing_games;
 
-fn start_games() {
+fn start_games(theme: ColorfulTheme) {
 
     let games = &[
         "Guess the number",
         "Guess the word",
     ];
 
-    
+
 
 
 }
