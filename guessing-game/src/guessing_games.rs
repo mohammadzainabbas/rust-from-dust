@@ -6,6 +6,8 @@ mod validtor;
 
 pub fn guess_the_number() {
 
+    let guess = validtor::valid_int::<u32>("Guess a number");
+
     println!("Let's play 'Guess the number!' game");
 
     let _name: String = Input::with_theme(&ColorfulTheme::default()).with_prompt("Enter your name: ").interact_text().unwrap();
