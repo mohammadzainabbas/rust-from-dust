@@ -110,6 +110,7 @@ pub fn guess_the_word(theme: &ColorfulTheme, term: &Term) {
             .unwrap();
 
         let selected_word = &words[selected_index];
+        guess_tries += 1;
 
         // Check if the selected word is correct
         match selected_word.cmp(target_word) {
