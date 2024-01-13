@@ -41,7 +41,12 @@ cargo new guessing-game --bin
 > [!NOTE]
 > By default, `cargo new` creates a binary (application) template. You can use `--bin` flag to explicitly specify it.
 
-2. Build & run the project using `cargo run`:
+2. Create new files `src/main.rs` and `src/lib.rs`:
+
+```bash
+cd guessing-game
+touch src/main.rs src/lib.rs
+```
 
 ```bash
 cd guessing-game
