@@ -1,5 +1,5 @@
 use colored::Colorize;
-use dialoguer::{theme::ColorfulTheme, Confirm, FuzzySelect};
+use dialoguer::{theme::{ColorfulTheme, self}, Confirm, FuzzySelect};
 
 mod utils;
 mod validate;
@@ -7,7 +7,7 @@ mod guessing_games;
 
 fn play_games(theme: &ColorfulTheme) {
 
-    let games = &[
+    let games: &[(&str, fn(&ColorfulTheme))] = &[
         ("Guess the number", guessing_games::guess_the_number(theme)),
         ("Guess the word", guessing_games::guess_the_word(theme)),
     ];
