@@ -42,15 +42,9 @@ gh repo clone mohammadzainabbas/rust-from-dust
 cd rust-from-dust/guessing-game
 ```
 
-2. Create new files `src/main.rs` and `src/lib.rs`:
+2. Run the project using `cargo run`:
 
 ```bash
-cd guessing-game
-touch src/main.rs src/lib.rs
-```
-
-```bash
-cd guessing-game
 cargo run
 ```
 
