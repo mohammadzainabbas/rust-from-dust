@@ -28,8 +28,7 @@ fn play_games(theme: &ColorfulTheme) {
 }
 
 fn quit() {
-    let a = "Nevermind then 🥺".bright_yellow();
-    println!("\n{}\n", "Nevermind then 🥺".bright_yellow());
+    colored_print("Nevermind then 🥺".bright_yellow())
 }
 
 fn no_answer() {
