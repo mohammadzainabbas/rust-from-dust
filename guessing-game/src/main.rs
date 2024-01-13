@@ -5,6 +5,7 @@ fn main() {
     println!("Let's play 'Guess the number!' game");
 
     let name: String = Input::with_theme(&ColorfulTheme::default()).with_prompt("Enter your name: ").interact_text().unwrap();
+    let secret_number: u32 = rand::thread_rng().gen_range(1..101);
     let guess: String = Input::with_theme(&ColorfulTheme::default()).with_prompt("Guess a number: ").interact_text().unwrap();
     let guess: u32 = guess.trim().parse().expect("Please enter a valid number");
 
@@ -12,7 +13,6 @@ fn main() {
 
     // println!("Please input your guess:");
 
-    let secret_number = rand::thread_rng().gen_range(1..101);
     
     // let mut guess = String::new();
     // io::stdin().read_line(&mut guess).expect("Unable to read line from stdin");
