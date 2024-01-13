@@ -11,7 +11,7 @@ fn play_games(theme: &ColorfulTheme) {
     //     ("Guess the number", guessing_games::guess_the_number(theme)),
     //     ("Guess the word", guessing_games::guess_the_word(theme)),
     // ];
-    let games: &[(&str, fn())] = &[
+    let games: &[(&str, fn(&ColorfulTheme))] = &[
         ("Guess the number", guessing_games::guess_the_number),
         ("Guess the word", guessing_games::guess_the_word),
     ];
@@ -27,7 +27,7 @@ fn play_games(theme: &ColorfulTheme) {
 
     utils::colored_print(format!("{}{}", "You have picked: ".bright_cyan(), game_name.green().bold()).italic());
 
-    game_fn();    
+    game_fn(theme);    
     
 }
 
