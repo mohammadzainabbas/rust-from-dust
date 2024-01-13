@@ -2,6 +2,8 @@ use std::cmp::Ordering;
 use rand::Rng;
 use dialoguer::{theme::ColorfulTheme, Input};
 
+mod validtor;
+
 pub fn guess_the_number() {
 
     println!("Let's play 'Guess the number!' game");
