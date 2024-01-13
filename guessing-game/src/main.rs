@@ -25,7 +25,7 @@ fn play_games(theme: &ColorfulTheme) {
     
     let (game_name, game_fn) = games[selection];
     
-    utils::colored_print(format!("{}{}", "You have picked: ".bright_cyan(), game_name.green().bold()).italic());
+    utils::colored_println(format!("{}{}", "You have picked: ".bright_cyan(), game_name.green().bold()).italic());
     
     game_fn(theme);
     utils::colored_print(format!("Press any key to continue. {} to exit!", "Esc".blue().bold()).bright_yellow().italic());
@@ -38,16 +38,16 @@ fn play_games(theme: &ColorfulTheme) {
 }
 
 fn quit() {
-    utils::colored_print("Nevermind then 🥺".bright_yellow())
+    utils::colored_println("Nevermind then 🥺".bright_yellow())
 }
 
 fn no_answer() {
-    utils::colored_print("User did not answer 🥺".red())
+    utils::colored_println("User did not answer 🥺".red())
 }
 
 fn main() {
     
-    utils::colored_print("Let's play some guessing games".bright_blue().on_black());
+    utils::colored_println("Let's play some guessing games".bright_blue().on_black());
     
     let theme = ColorfulTheme::default();
 
