@@ -1,5 +1,5 @@
 use colored::Colorize;
-use dialoguer::{theme::{ColorfulTheme}, Confirm, FuzzySelect};
+use dialoguer::{theme::ColorfulTheme, Confirm, FuzzySelect};
 
 mod utils;
 mod validate;
