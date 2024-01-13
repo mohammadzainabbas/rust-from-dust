@@ -21,10 +21,8 @@ pub fn guess_the_number(theme: &ColorfulTheme) {
             }
         }
     }
-    // utils::colored_println(format!("{} should be less than {}.", "min".cyan().bold(), "max".cyan().bold()).bright_yellow().italic());
-
-    println!("Let's continue 'Guess the number!' game");
-
+    println!("min: {}", min);
+    
     let guess: u32 = validate::valid_int("Guess a number");
     let guess: u32 = validate::valid_int(format!("Guess a number b/w {} & {}: ", min.to_string().cyan().bold(), "min".cyan().bold()));
 
