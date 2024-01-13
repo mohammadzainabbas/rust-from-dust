@@ -7,6 +7,14 @@ mod guessing_games;
 
 fn start_games() {
 
+    let games = &[
+        "Guess the number",
+        "Guess the word",
+    ];
+
+    
+
+
 }
 
 fn main() {
@@ -28,10 +36,6 @@ fn main() {
 
 
 
-    let items = &[
-        "Guess the number",
-        "Guess the word",
-    ];
 
     let term = Term::buffered_stderr();
 
