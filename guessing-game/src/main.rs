@@ -1,4 +1,4 @@
-use colored::{Colorize, ColoredString};
+use colored::Colorize;
 use dialoguer::{theme::ColorfulTheme, Confirm, FuzzySelect};
 
 mod utils;
