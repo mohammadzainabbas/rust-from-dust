@@ -5,7 +5,7 @@ mod guessing_games;
 
 fn main() {
 
-    println!("Let's play some {}", style("guessing games").red());
+    println!("Let's play some guessing games");
 
 
 }
