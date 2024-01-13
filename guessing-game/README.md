@@ -62,5 +62,4 @@ Let's play some guessing games
 ? Do you want to continue? (y/n) › yes
 ```
 
-> [!IMPORTANT] 
-> `cargo run` compiles/builds the code and then run the resultant executable all in one command.
+And you are good to go! 🎉 Enjoy the games.
