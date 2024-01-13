@@ -1,4 +1,5 @@
 use std::cmp::Ordering;
+use dialoguer::Input;
 use rand::Rng;
 use colored::Colorize;
 use dialoguer::theme::ColorfulTheme;
@@ -70,7 +71,7 @@ pub fn guess_the_word(theme: &ColorfulTheme, term: &Term) {
 
     loop {
         // Prompt the user for a word
-        let word: String = Input::with_theme(&theme)
+        let word: String = Input::with_theme(theme)
             .with_prompt("Enter a word (empty input to finish):")
             .interact_text()
             .unwrap();
@@ -83,5 +84,7 @@ pub fn guess_the_word(theme: &ColorfulTheme, term: &Term) {
         // Add the word to the vector
         words.push(word);
     }
+
+    
 
 }
