@@ -23,7 +23,7 @@ fn play_games(theme: &ColorfulTheme) {
 }
 
 fn quit() {
-    
+    println!("\n{}\n", "Let's play some guessing games".bright_blue().on_black());
 }
 
 fn main() {
