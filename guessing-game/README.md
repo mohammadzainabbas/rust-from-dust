@@ -14,6 +14,8 @@ A **Rust** program to play two _guessing_ games: <kbd> <br> Guess the number
 
 - [x] Create new binary project using `cargo new guessing-game`
 - [x] Use of external libraries `rand`, `colored` and `dialoguer`.
+- [x] Check program without running `cargo check`
+- [x] Fix issues with program without running `cargo fix`
 - [x] Build & run the project using `cargo run`
 
 ## Prerequisites
