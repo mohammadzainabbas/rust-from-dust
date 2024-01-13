@@ -74,7 +74,6 @@ pub fn guess_the_word(theme: &ColorfulTheme, term: &Term) {
         let word: String = Input::with_theme(theme)
             .with_prompt("Enter a word (empty input to finish):")
             .interact_text_on(term)
-            
             .unwrap();
 
         // Check if the input is empty, and exit the loop if it is
