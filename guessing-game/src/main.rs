@@ -11,7 +11,11 @@ fn main() {
         let guess: String = Input::with_theme(&ColorfulTheme::default())
             .with_prompt("Guess a number: ")
             .validate_with(|input: &String| -> Result<(), &str> {
-                
+                if input.trim().parse::<u32>().is_ok() {
+                    Ok(())
+                } else {
+                    Err("Please enter a valid number")
+                }
 
 
                 // let _num: u32 = input.trim().parse().expect("Please enter a valid number");
