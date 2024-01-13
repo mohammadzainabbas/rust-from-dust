@@ -35,7 +35,6 @@ pub fn guess_the_number(theme: &ColorfulTheme, term: &Term) {
         match guess.cmp(&secret_number) {
             Ordering::Equal => {
                 utils::colored_println(format!("🎉 Correct guess! You took {} tries to guess the secret number!", guess_tries.to_string().cyan().bold()).bright_yellow().italic());
-                
                 break;
             },
             _ => {
@@ -48,7 +47,6 @@ pub fn guess_the_number(theme: &ColorfulTheme, term: &Term) {
                         Key::Alt => {
                             let far: i32 = (guess as i32 - secret_number as i32).abs();
                             utils::colored_println(format!("Your last guess {} is {} digits far from the actual answer!", guess.to_string().cyan().bold(), far.to_string().cyan().bold()).bright_yellow().italic());
-                            continue;
                         },
                         _ => continue,
                     }
