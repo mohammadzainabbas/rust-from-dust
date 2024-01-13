@@ -7,7 +7,6 @@ mod guessing_games;
 
 fn main() {
 
-
     println!("Let's play 'Guess the number!' game");
 
     let _name: String = Input::with_theme(&ColorfulTheme::default()).with_prompt("Enter your name: ").interact_text().unwrap();
