@@ -72,8 +72,8 @@ pub fn guess_the_word(theme: &ColorfulTheme, term: &Term) {
     loop {
         // Prompt the user for a word
         let word: String = Input::with_theme(theme)
-            .with_prompt("Enter a word (empty Esc to finish):")
-            .interact_text_on(term)
+            .with_prompt("Enter a word (empty Esc to finish):")        
+            .interact()
             .unwrap();
 
         let key = term.read_key();
