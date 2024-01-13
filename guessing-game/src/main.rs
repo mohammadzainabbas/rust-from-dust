@@ -5,6 +5,10 @@ use dialoguer::console::Term;
 mod validate;
 mod guessing_games;
 
+fn start_games() {
+    
+}
+
 fn main() {
 
     println!("\n{}\n", "Let's play some guessing games".bright_blue().on_black());
