@@ -7,7 +7,7 @@ fn main() {
 
     println!("{}", "Let's play some guessing games".bright_blue().on_black());
 
-    println!("Hello");
+    
 
 
 }
