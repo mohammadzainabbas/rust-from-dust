@@ -90,7 +90,9 @@ pub fn guess_the_word(theme: &ColorfulTheme, term: &Term) {
         }
     }
 
-    
+        // Choose a word randomly
+        let random_index = rand::thread_rng().gen_range(0..words.len());
+        let target_word = words[random_index];
 
     utils::colored_println(format!("Vec: {:?}", words).cyan());
     utils::colored_println(format!("Vec Len: {:?}", words.len()).red());
