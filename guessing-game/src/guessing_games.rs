@@ -91,7 +91,7 @@ pub fn guess_the_word(theme: &ColorfulTheme, term: &Term) {
     }
 
     if words.is_empty() {
-        utils::colored_print("No word entered! Leaving the game...".bright_red().italic())
+        utils::colored_print("No word entered! Leaving the game...".bright_red().italic());
         return;
     }
 
