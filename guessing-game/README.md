@@ -22,9 +22,7 @@ A **Rust** program to play two _guessing_ games: <kbd> <br> Guess the number
 
 * `Rust` _(stable, with cargo installed)_
 
-## Quick Start
-
-### Setup
+### Quick Start
 
 1. Create a new binary project using `cargo new guessing-game`:
 
