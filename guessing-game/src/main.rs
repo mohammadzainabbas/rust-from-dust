@@ -13,10 +13,10 @@ fn main() {
         "Guess the number",
         "Guess the word",
     ];
+
     let term = Term::buffered_stderr();
     let theme = ColorfulTheme::default();
 
-    println!("All the following controls are run in a buffered terminal");
     Confirm::with_theme(&theme)
         .with_prompt("Do you want to continue?")
         .interact_on(&term)
