@@ -5,7 +5,7 @@ use dialoguer::console::Term;
 mod validate;
 mod guessing_games;
 
-fn start_games(theme: &ColorfulTheme) {
+fn play_games(theme: &ColorfulTheme) {
 
     let games = &[
         "Guess the number",
@@ -34,7 +34,7 @@ fn main() {
         .interact_opt()
         .unwrap() 
     {
-        Some(true) => start_games(&theme),
+        Some(true) => play_games(&theme),
         Some(false) => println!("Hello q"),
         None => println!("Hello"),
     }
