@@ -76,16 +76,16 @@ pub fn guess_the_word(theme: &ColorfulTheme, term: &Term) {
             .interact()
             .unwrap();
 
-        let key = term.read_key();
-        match key.unwrap() {
-            Key::Escape => break,
-            _ => continue,
-        }
+        // let key = term.read_key();
+        // match key.unwrap() {
+        //     Key::Escape => break,
+        //     _ => continue,
+        // }
 
-        // Check if the input is empty, and exit the loop if it is
-        if word.is_empty() {
-            break;
-        }
+        // // Check if the input is empty, and exit the loop if it is
+        // if word.is_empty() {
+        //     break;
+        // }
         // Check if the input is empty, and exit the loop if it is
         if word.is_empty() {
             break;
