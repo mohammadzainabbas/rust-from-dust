@@ -1,6 +1,5 @@
 use dialoguer::{theme::ColorfulTheme, Input};
 use std::fmt::Debug;
-use colored::Colorize;
 
 pub fn valid_int<T>(prompt: &str) -> T
 where
@@ -13,7 +12,7 @@ where
             if input.trim().parse::<T>().is_ok() {
                 Ok(())
             } else {
-                Err(format!("Please enter a valid number").yellow().trim().to_string().as_str())
+                Err("Please enter a valid number")
             }
         })
         .interact_text()
