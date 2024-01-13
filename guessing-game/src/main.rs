@@ -16,7 +16,6 @@ fn play_games(theme: &ColorfulTheme) {
     let term = Term::stdout();
     term.write_line("Press any key. Esc to exit")?;
     
-
     loop {
         
         let selection = FuzzySelect::with_theme(theme)
