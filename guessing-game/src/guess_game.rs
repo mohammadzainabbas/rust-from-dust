@@ -1,3 +1,3 @@
-fn guess_game() {
+pub fn guess_game() {
     println!("Hello");
 }
