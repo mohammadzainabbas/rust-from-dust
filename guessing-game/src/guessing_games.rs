@@ -7,9 +7,8 @@ use crate::{validate, utils};
 
 #[allow(unused)]
 pub fn guess_the_number(theme: &ColorfulTheme) {
+    utils::colored_println("🚀 Let's play 'Guess the number!' game".bright_yellow());
 
-    println!("Let's play 'Guess the number!' game");
-    utils::colored_println("Let's play 'Guess the number!' game".bright_yellow())
     loop {
         let min: u32 = validate::valid_int(format!("Pick {} threshold: ", "min".cyan().bold()));
         let max: u32 = validate::valid_int(format!("Pick {} threshold: ", "max".cyan().bold()));
