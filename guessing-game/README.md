@@ -31,17 +31,15 @@ A **Rust** program to play two _guessing_ games: <kbd> <br> Guess the number
 1. Clone the repository:
 
 ```bash
-git clone 
-
-```bash
-cargo new guessing-game
+git clone https://github.com/mohammadzainabbas/rust-from-dust.git
 ```
 
 or 
 
 ```bash
-cargo new guessing-game --bin
+gh repo clone mohammadzainabbas/rust-from-dust
 ```
+
 
 > [!NOTE]
 > By default, `cargo new` creates a binary (application) template. You can use `--bin` flag to explicitly specify it.
