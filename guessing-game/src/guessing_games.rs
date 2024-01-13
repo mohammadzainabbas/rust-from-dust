@@ -26,9 +26,12 @@ pub fn guess_the_number(theme: &ColorfulTheme) {
     }
 
     let secret_number: u32 = rand::thread_rng().gen_range(min..=max);
+
+    loop {
+        let guess: u32 = validate::valid_int(theme, format!("Guess a number b/w {} & {}: ", min.to_string().cyan().bold(), max.to_string().cyan().bold()));
+        
+    }
     
-    
-    let guess: u32 = validate::valid_int(theme, format!("Guess a number b/w {} & {}: ", min.to_string().cyan().bold(), max.to_string().cyan().bold()));
     // let guess: u32 = validate::valid_int("Guess a number");
 
 
