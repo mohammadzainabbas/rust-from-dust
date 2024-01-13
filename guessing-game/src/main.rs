@@ -31,8 +31,6 @@ fn main() {
         }
     }
 
-    println!("Your name is {}", name);
-
     // println!("Please input your guess:");
 
     
