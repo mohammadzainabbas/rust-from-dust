@@ -7,6 +7,7 @@ fn main() {
 
     let name: String = Input::with_theme(&ColorfulTheme::default()).with_prompt("Enter your name: ").interact_text().unwrap();
     let secret_number: u32 = rand::thread_rng().gen_range(1..101);
+    println!("Your secret number is {}", secret_number);
 
     loop {
         let guess: u32 = Input::with_theme(&ColorfulTheme::default())
@@ -30,13 +31,10 @@ fn main() {
             Ordering::Equal => println!("Eq"),
         }
     }
-
-    // println!("Please input your guess:");
-
     
     // let mut guess = String::new();
     // io::stdin().read_line(&mut guess).expect("Unable to read line from stdin");
     
-    println!("Your secret number is {}", secret_number);
+
     println!("Your guessed value is: {}", guess);
 }
