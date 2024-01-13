@@ -4,9 +4,7 @@ use dialoguer::{theme::ColorfulTheme, Confirm, FuzzySelect};
 mod validate;
 mod guessing_games;
 
-fn colored_print(text: ColoredString) {
-    println!("\n{}\n", text);
-}
+
 
 fn play_games(theme: &ColorfulTheme) {
     
