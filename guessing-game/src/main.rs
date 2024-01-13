@@ -12,6 +12,11 @@ fn start_games(theme: &ColorfulTheme) {
         "Guess the word",
     ];
 
+    Select::with_theme(&theme)
+        .with_prompt("Pick an item")
+        .items(games)
+        .interact()
+        .unwrap();
 
 
 
