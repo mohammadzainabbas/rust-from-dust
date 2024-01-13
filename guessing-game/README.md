@@ -42,9 +42,6 @@ gh repo clone mohammadzainabbas/rust-from-dust
 cd rust-from-dust/guessing-game
 ```
 
-> [!NOTE]
-> By default, `cargo new` creates a binary (application) template. You can use `--bin` flag to explicitly specify it.
-
 2. Create new files `src/main.rs` and `src/lib.rs`:
 
 ```bash
