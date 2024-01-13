@@ -31,15 +31,16 @@ fn play_games(theme: &ColorfulTheme) {
         utils::colored_println(format!("{}{}", "You have picked: ".bright_cyan(), game_name.green().bold()).italic());
         game_fn(theme);
         utils::colored_print(format!("\nPress any key to continue. {} to exit!", "Esc".blue().bold()).bright_yellow().italic());
+        
         let key = term.read_key();
         match key.unwrap() {
             Key::Escape => break,
             _ => {
-                        term.set_title(TERMINAL_TITLE);
-                        // term.clear_screen().expect("Unable to clear screen");
-                        continue;
-                    },
-                }
+                term.set_title(TERMINAL_TITLE);
+                // term.clear_screen().expect("Unable to clear screen");
+                continue;
+            },
+        }
     }
 }
 
