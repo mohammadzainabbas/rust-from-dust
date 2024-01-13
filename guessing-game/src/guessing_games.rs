@@ -6,7 +6,7 @@ use guessing_game::utils;
 
 pub fn guess_the_number() {
 
-    let guess: u32 = utils::valid_int("Guess a number");
+    let _guess: u32 = utils::valid_int("Guess a number");
 
     println!("Let's play 'Guess the number!' game");
 
