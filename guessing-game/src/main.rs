@@ -7,7 +7,7 @@ mod guessing_games;
 
 fn main() {
 
-    println!("{}", "Let's play some guessing games".bright_blue().on_black());
+    println!("\n{}\n", "Let's play some guessing games".bright_blue().on_black());
 
     let items = &[
         "Guess the number",
@@ -18,7 +18,7 @@ fn main() {
     let theme = ColorfulTheme::default();
 
     Confirm::with_theme(&theme)
-        .with_prompt(format!("{}", "Do you want to continue?".red()))
+        .with_prompt(format!("{}", "Do you want to continue?".yellow()))
         .interact_on(&term)
         .unwrap();
 
