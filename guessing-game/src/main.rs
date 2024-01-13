@@ -11,10 +11,12 @@ fn main() {
     
     let theme = ColorfulTheme::default();
 
-    match Confirm::with_theme(&theme)
+    if Confirm::with_theme(&theme)
         .with_prompt(format!("{}", "Do you want to continue?".bright_yellow()))
         .interact()
-        .unwrap() 
+        .unwrap() {
+            
+        }
 
 
 
