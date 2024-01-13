@@ -50,7 +50,7 @@ pub fn guess_the_word() {
 
     let _guess: u32 = validate::valid_int("Guess a number");
 
-    println!("Let's play 'Guess the number!' game");
+    println!("Let's play 'Guess the word!' game");
 
     let _name: String = Input::with_theme(&ColorfulTheme::default()).with_prompt("Enter your name: ").interact_text().unwrap();
     let secret_number: u32 = rand::thread_rng().gen_range(1..101);
