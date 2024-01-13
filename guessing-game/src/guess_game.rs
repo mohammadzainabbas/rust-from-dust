@@ -1,9 +1,9 @@
-// use std::io;
-use rand::Rng;
 use std::cmp::Ordering;
+use rand::Rng;
 use dialoguer::{theme::ColorfulTheme, Input};
 
 fn game() {
+
     println!("Let's play 'Guess the number!' game");
 
     let _name: String = Input::with_theme(&ColorfulTheme::default()).with_prompt("Enter your name: ").interact_text().unwrap();
