@@ -38,11 +38,11 @@ pub fn guess_the_number(theme: &ColorfulTheme) {
                 break;
             },
             _ => {
+                println!("Incorrect guess")
                 guess_tries += 1;
-                if (guess_tries % HINT_AFTER) == 0 {
+                if guess_tries % HINT_AFTER == 0 {
                     
                 }
-                println!("Incorrect guess")
             }
         }
     }
