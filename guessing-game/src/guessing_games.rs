@@ -2,7 +2,7 @@ use std::cmp::Ordering;
 use rand::Rng;
 use dialoguer::{theme::ColorfulTheme, Input};
 
-use crate::utils;
+use guessing_game::utils;
 
 pub fn guess_the_number() {
 
