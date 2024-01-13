@@ -12,6 +12,11 @@ fn play_games(theme: &ColorfulTheme) {
         "Guess the word",
     ];
 
+    let all_games = &[
+        ("Guess the number", guessing_games::guess_the_number()),
+        ("Guess the word", guessing_games::guess_the_word()),
+    ];
+
     let selection = FuzzySelect::with_theme(theme)
         .with_prompt(format!("{} {}:", "Pick a game".bright_yellow(), "(use fuzzy search)".cyan()))
         .default(0)
