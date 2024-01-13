@@ -13,7 +13,7 @@ fn main() {
 
     if Confirm::with_theme(&theme)
         .with_prompt(format!("{}", "Do you want to continue?".bright_yellow()))
-        .interact_on(&term)
+        .interact()
         .unwrap()
 
 
