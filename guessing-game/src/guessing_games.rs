@@ -13,8 +13,8 @@ pub fn guess_the_number(theme: &ColorfulTheme) {
     let mut max: u32;
 
     loop {
-        min = validate::valid_int(format!("Pick {} threshold: ", "min".cyan().bold()));
-        max = validate::valid_int(format!("Pick {} threshold: ", "max".cyan().bold()));
+        min = validate::valid_int(theme, format!("Pick {} threshold: ", "min".cyan().bold()));
+        max = validate::valid_int(theme, format!("Pick {} threshold: ", "max".cyan().bold()));
 
         match min.cmp(&max) {
             Ordering::Less => break,

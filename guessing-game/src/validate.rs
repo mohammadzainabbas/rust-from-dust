@@ -6,7 +6,7 @@ where
     T: std::str::FromStr,
     <T as std::str::FromStr>::Err: Debug,
 {
-    Input::with_theme(&ColorfulTheme::default())
+    Input::with_theme(theme)
         .with_prompt(prompt)
         .validate_with(|input: &String| -> Result<(), &str> {
             if input.trim().parse::<T>().is_ok() {
