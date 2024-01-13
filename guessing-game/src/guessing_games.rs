@@ -119,12 +119,5 @@ pub fn guess_the_word(theme: &ColorfulTheme, term: &Term) {
                 println!("Wrong word. Try again!");                
             }
         }
-        // if selected_word == target_word {
-        //     break;
-        // } else {
-        // }
     }
-
-
-
 }
