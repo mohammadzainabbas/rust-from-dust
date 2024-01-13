@@ -32,11 +32,7 @@ fn play_games(theme: &ColorfulTheme) {
         let key = term.read_key();
         match key.unwrap() {
             Key::Escape => break,
-            _ => {
-                term.set_title(TERMINAL_TITLE);
-                // term.clear_screen().expect("Unable to clear screen");
-                continue;
-            },
+            _ => continue,
         }
     }
 }
