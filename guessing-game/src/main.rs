@@ -23,7 +23,7 @@ fn play_games(theme: &ColorfulTheme) {
 }
 
 fn quit() {
-    println!("\n{}\n", "Let's play some guessing games".bright_blue().on_black());
+    println!("\n{}\n", "nevermind then :(".bright_blue().on_black());
 }
 
 fn main() {
@@ -39,7 +39,7 @@ fn main() {
         .unwrap() 
     {
         Some(true) => play_games(&theme),
-        Some(false) => println!("Hello q"),
+        Some(false) => quit(),
         None => println!("Hello"),
     }
 
