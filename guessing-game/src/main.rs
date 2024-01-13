@@ -8,15 +8,12 @@ mod guessing_games;
 
 fn play_games(theme: &ColorfulTheme) {
 
-    const TERMINAL_TITLE: &str = "Menu Guessing Games";
-
     let games: &[(&str, fn(&ColorfulTheme))] = &[
         ("Guess the number", guessing_games::guess_the_number),
         ("Guess the word", guessing_games::guess_the_word),
     ];
 
     let term = Term::stdout();
-    term.set_title(TERMINAL_TITLE);
     
     loop {
         let selection = FuzzySelect::with_theme(theme)
