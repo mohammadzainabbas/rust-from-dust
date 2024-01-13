@@ -14,5 +14,5 @@ pub fn valid_int(prompt: String) -> T {
             .unwrap()
             .trim()
             .parse()
-            .expect("Failed to parse to T")
+            .expect("Failed to parse from string to integer")
 }
