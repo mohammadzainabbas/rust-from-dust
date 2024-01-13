@@ -1,5 +1,5 @@
 use std::cmp::Ordering;
-use dialoguer::Input;
+use dialoguer::{Input, Select};
 use rand::Rng;
 use colored::Colorize;
 use dialoguer::theme::ColorfulTheme;
@@ -99,7 +99,7 @@ pub fn guess_the_word(theme: &ColorfulTheme, term: &Term) {
 
     loop {
         // Ask the user to select a word
-        let selected_index = Select::with_theme(&ColorfulTheme::default())
+        let selected_index = Select::with_theme(theme)
             .items(&words)
             .default(random_index) // Highlight the word randomly chosen
             .interact()
