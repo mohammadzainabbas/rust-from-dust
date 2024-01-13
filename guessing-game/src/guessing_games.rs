@@ -85,6 +85,8 @@ pub fn guess_the_word(theme: &ColorfulTheme, term: &Term) {
         words.push(word);
     }
 
+    utils::colored_println(format!("Vec: {words}").red())
+
     
 
 }
