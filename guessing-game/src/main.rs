@@ -23,11 +23,11 @@ fn play_games(theme: &ColorfulTheme) {
 }
 
 fn quit() {
-    println!("\n{}\n", "Nevermind then 🥺".bright_red());
+    println!("\n{}\n", "Nevermind then 🥺".bright_yellow());
 }
 
-fn quit() {
-    println!("\n{}\n", "Nevermind then 🥺".bright_red());
+fn no_answer() {
+    println!("\n{}\n", "User did not answer 🥺".red());
 }
 
 fn main() {
