@@ -3,11 +3,12 @@ use rand::Rng;
 use std::cmp::Ordering;
 use dialoguer::{theme::ColorfulTheme, Input};
 
+mod validate;
 mod guessing_games;
 
 fn main() {
 
-    println!("Let's play 'Guess the number!' game");
+    println!("Let's play some guessing games");
 
     let _name: String = Input::with_theme(&ColorfulTheme::default()).with_prompt("Enter your name: ").interact_text().unwrap();
     let secret_number: u32 = rand::thread_rng().gen_range(1..101);
