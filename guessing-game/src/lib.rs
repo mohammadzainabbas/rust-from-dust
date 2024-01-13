@@ -1,2 +1,2 @@
-pub mod utils;
+pub mod validate;
 pub mod guessing_games;
