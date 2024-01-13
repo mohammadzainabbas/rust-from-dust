@@ -14,21 +14,20 @@ fn play_games(theme: &ColorfulTheme) {
     ];
 
     loop {
+        
         let selection = FuzzySelect::with_theme(theme)
             .with_prompt(format!("{} {}:", "Pick a game".bright_yellow(), "(use fuzzy search)".cyan()))
             .default(0)
             .items(&games.iter().map(|(name, _)| *name).collect::<Vec<_>>())
             .interact()
             .unwrap();
-    
+        
         let (game_name, game_fn) = games[selection];
         
         utils::colored_print(format!("{}{}", "You have picked: ".bright_cyan(), game_name.green().bold()).italic());
 
         game_fn(theme);      
     }
-    
-    
 }
 
 fn quit() {
