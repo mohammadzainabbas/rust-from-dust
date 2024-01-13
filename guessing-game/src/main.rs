@@ -34,9 +34,9 @@ fn main() {
         .interact_opt()
         .unwrap() 
     {
-        Some(true) => start_games(),
-        Some(false) => start_games(),
-        None => start_games(),
+        Some(true) => start_games(theme),
+        Some(false) => start_games(theme),
+        None => println!("Hello"),
     }
 
 
