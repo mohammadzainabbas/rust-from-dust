@@ -26,9 +26,12 @@ A **Rust** program to play two _guessing_ games: <kbd> <br> Guess the number
 ### Quick Start
 
 > [!NOTE]
-> Make sure you have `Rust` _(stable, with cargo)_ installed on your system. If not, follow the instructions [here](https://www.rust-lang.org/tools/install).
+> Follow below mentioned steps to run the project on your local machine.
 
-1. Create a new binary project using `cargo new guessing-game`:
+1. Clone the repository:
+
+```bash
+git clone 
 
 ```bash
 cargo new guessing-game
