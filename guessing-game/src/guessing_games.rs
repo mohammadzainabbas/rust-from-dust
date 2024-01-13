@@ -69,6 +69,7 @@ pub fn guess_the_word(theme: &ColorfulTheme, term: &Term) {
     // Initialize an empty vector to store the words
     let mut words: Vec<String> = Vec::new();
     const END_WORD: &str = ":q";
+    let prompt = format!("Enter a word ").bold() + format!("Hello") 
     
     loop {
         // Prompt the user for a word
