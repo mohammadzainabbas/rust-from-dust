@@ -1,3 +1,5 @@
+use dialoguer::{theme::ColorfulTheme, Input};
+
 pub fn valid_u32() {
     let guess: u32 = Input::with_theme(&ColorfulTheme::default())
             .with_prompt("Guess a number: ")
