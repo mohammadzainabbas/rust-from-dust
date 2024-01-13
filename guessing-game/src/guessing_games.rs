@@ -5,7 +5,6 @@ use dialoguer::theme::ColorfulTheme;
 use dialoguer::console::{Key, Term};
 use crate::{validate, utils};
 
-#[allow(unused)]
 pub fn guess_the_number(theme: &ColorfulTheme, term: &Term) {
     utils::colored_println(format!("🚀 Let's play '{}' game.", "Guess the number!".cyan().bold()).bright_yellow().italic());
 
