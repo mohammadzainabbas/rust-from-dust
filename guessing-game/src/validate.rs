@@ -1,5 +1,6 @@
 use dialoguer::{theme::ColorfulTheme, Input};
 use std::fmt::Debug;
+use colored::Colorize;
 
 pub fn valid_int<T>(prompt: &str) -> T
 where
