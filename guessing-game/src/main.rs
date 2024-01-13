@@ -32,7 +32,10 @@ fn play_games(theme: &ColorfulTheme) {
     let key = term.read_key();
         match key.unwrap() {
             Key::Escape => break,
-            _ => continue,
+            _ => {
+                term.clear_screen();
+                continue;
+            },
         }
     }
 }
