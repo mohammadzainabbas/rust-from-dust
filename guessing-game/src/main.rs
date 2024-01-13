@@ -18,8 +18,11 @@ fn main() {
                 }
             })
             .interact_text()
-            .unwrap();
-        let guess: u32 = guess.trim().parse().expect("Please enter a valid number");
+            .unwrap()
+            .trim()
+            .parse()
+            .expect("Failed to parse to u32");
+
 
     }
 
