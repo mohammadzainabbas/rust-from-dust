@@ -97,6 +97,8 @@ pub fn guess_the_word(theme: &ColorfulTheme, term: &Term) {
     let random_index = rand::thread_rng().gen_range(0..words.len());
     let target_word = &words[random_index];
 
+    println!("Target: {}", target_word);
+
     loop {
         // Ask the user to select a word
         let selected_index = Select::with_theme(theme)
