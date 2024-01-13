@@ -117,8 +117,8 @@ pub fn guess_the_word(theme: &ColorfulTheme, term: &Term) {
         match selected_word.cmp(target_word) {
             Ordering::Equal => {
                 let tries_str = if guess_tries == 1 { "try" } else { "tries" };
-                utils::colored_print(format!("\n🎉 Correct guess! You took {} {tries_str} to guess the secret number!", guess_tries.to_string().cyan().bold()).bright_yellow().italic());
-                
+                utils::colored_print(format!("\n🎉 Correct guess! You took {} {tries_str} to guess the secret word!", guess_tries.to_string().cyan().bold()).bright_yellow().italic());
+
                 println!("You guessed it! The word was: {}", target_word);
                 break;
             },
