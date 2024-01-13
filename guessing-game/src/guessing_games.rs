@@ -42,10 +42,10 @@ pub fn guess_the_number(theme: &ColorfulTheme, term: &Term) {
             _ => {
                 utils::colored_print("Incorrect guess".bright_red().italic());
                 if guess_tries % HINT_AFTER == 0 {
-                    utils::colored_print(format!("\nHaving trouble guessing? Press {} for a hint! Press any other key to continue.", "Alt".blue().bold()).bright_yellow().italic());
+                    utils::colored_print(format!("\nHaving trouble guessing? Press {} for a hint! Press any other key to continue.", "Tab".blue().bold()).bright_yellow().italic());
                     let key = term.read_key();
                     match key.unwrap() {
-                        Key::Alt => {
+                        Key::Tab => {
                             let far: i32 = (guess as i32 - secret_number as i32).abs();
                             utils::colored_println(format!("Your last guess {} is {} digits far from the actual answer!", guess.to_string().cyan().bold(), far.to_string().cyan().bold()).bright_yellow().italic());
                             continue;
