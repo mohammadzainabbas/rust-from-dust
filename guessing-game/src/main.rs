@@ -26,6 +26,10 @@ fn quit() {
     println!("\n{}\n", "Nevermind then 🥺".bright_red());
 }
 
+fn quit() {
+    println!("\n{}\n", "Nevermind then 🥺".bright_red());
+}
+
 fn main() {
 
     println!("\n{}\n", "Let's play some guessing games".bright_blue().on_black());
@@ -42,7 +46,7 @@ fn main() {
     {
         Some(true) => play_games(&theme),
         Some(false) => quit(),
-        None => println!("Hello"),
+        None => println!("User did not answer"),
     }
 
 
