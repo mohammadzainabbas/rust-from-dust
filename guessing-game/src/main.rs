@@ -18,7 +18,7 @@ fn main() {
     let theme = ColorfulTheme::default();
 
     Confirm::with_theme(&theme)
-        .with_prompt("Do you want to continue?".red())
+        .with_prompt(format!("{}", "Do you want to continue?".red()))
         .interact_on(&term)
         .unwrap();
 
