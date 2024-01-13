@@ -9,9 +9,12 @@ use crate::{validate, utils};
 pub fn guess_the_number(theme: &ColorfulTheme) {
     utils::colored_println(format!("🚀 Let's play '{}' game.", "Guess the number!".cyan().bold()).bright_yellow().italic());
 
+    let min: u32;
+    let max: u32;
+
     loop {
-        let min: u32 = validate::valid_int(format!("Pick {} threshold: ", "min".cyan().bold()));
-        let max: u32 = validate::valid_int(format!("Pick {} threshold: ", "max".cyan().bold()));
+        min = validate::valid_int(format!("Pick {} threshold: ", "min".cyan().bold()));
+        max = validate::valid_int(format!("Pick {} threshold: ", "max".cyan().bold()));
 
         match min.cmp(&max) {
             Ordering::Less => break,
