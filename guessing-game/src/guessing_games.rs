@@ -78,7 +78,7 @@ pub fn guess_the_word(theme: &ColorfulTheme, term: &Term) {
             .unwrap();
 
         // Check if the input is empty, and exit the loop if it is
-        if word.is_empty() {
+        if word == END_WORD {
             break;
         }
 
@@ -87,5 +87,6 @@ pub fn guess_the_word(theme: &ColorfulTheme, term: &Term) {
     }
 
     utils::colored_println(format!("Vec: {:?}", words).red());
+    utils::colored_println(format!("Vec Len: {:?}", words.len()).red());
 
 }
