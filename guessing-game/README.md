@@ -28,18 +28,19 @@ A **Rust** program to play two _guessing_ games: <kbd> <br> Guess the number
 > [!NOTE]
 > Follow below mentioned steps to run the project on your local machine.
 
-1. Clone the repository:
+1. Clone the repository and navigate to `guessing-game` directory:
 
 ```bash
 git clone https://github.com/mohammadzainabbas/rust-from-dust.git
+cd rust-from-dust/guessing-game
 ```
 
 or
 
 ```bash
 gh repo clone mohammadzainabbas/rust-from-dust
+cd rust-from-dust/guessing-game
 ```
-
 
 > [!NOTE]
 > By default, `cargo new` creates a binary (application) template. You can use `--bin` flag to explicitly specify it.
