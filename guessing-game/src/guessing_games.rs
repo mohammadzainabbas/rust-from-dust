@@ -49,3 +49,8 @@ pub fn guess_the_number() {
 pub fn guess_the_word() {
     println!("Let's play 'Guess the word!' game");
 }
+
+#[allow(unused)]
+pub fn guess_the_number() {
+    println!("Let's play 'Guess the number!' game");
+}
