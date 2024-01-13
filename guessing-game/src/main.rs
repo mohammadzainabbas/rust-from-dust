@@ -20,21 +20,22 @@ fn play_games(theme: &ColorfulTheme) {
     
     loop {
         let selection = FuzzySelect::with_theme(theme)
-            .with_prompt(format!("{} {}:", "Pick a game".bright_yellow(), "(use fuzzy search)".cyan()))
-            .default(0)
-            .items(&games.iter().map(|(name, _)| *name).collect::<Vec<_>>())
-            .interact()
-            .unwrap();
+        .with_prompt(format!("{} {}:", "Pick a game".bright_yellow(), "(use fuzzy search)".cyan()))
+        .default(0)
+        .items(&games.iter().map(|(name, _)| *name).collect::<Vec<_>>())
+        .interact()
+        .unwrap();
     
-        let (game_name, game_fn) = games[selection];
-        
-        utils::colored_println(format!("{}{}", "You have picked: ".bright_cyan(), game_name.green().bold()).italic());
-        game_fn(theme);
-        utils::colored_print(format!("\nPress any key to continue. {} to exit!", "Esc".blue().bold()).bright_yellow().italic());
-        let key = term.read_key();
-            match key.unwrap() {
-                Key::Escape => break,
-                _ => {
+    let (game_name, game_fn) = games[selection];
+    
+    utils::colored_println(format!("{}{}", "You have picked: ".bright_cyan(), game_name.green().bold()).italic());
+    game_fn(theme);
+    utils::colored_print(format!("\nPress any key to continue. {} to exit!", "Esc".blue().bold()).bright_yellow().italic());
+    let key = term.read_key();
+    match key.unwrap() {
+        Key::Escape => break,
+        _ => {
+                    term.set_title(TERMINAL_TITLE);
                     // term.clear_screen().expect("Unable to clear screen");
                     continue;
                 },
