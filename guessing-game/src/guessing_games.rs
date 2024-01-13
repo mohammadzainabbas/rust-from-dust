@@ -64,4 +64,8 @@ pub fn guess_the_number(theme: &ColorfulTheme, term: &Term) {
 #[allow(unused)]
 pub fn guess_the_word(theme: &ColorfulTheme, term: &Term) {
     utils::colored_println(format!("🚀 Let's play '{}' game.", "Guess the word!".cyan().bold()).bright_yellow().italic());
+
+    // Initialize an empty vector to store the words
+    let mut words: Vec<String> = Vec::new();
+
 }
