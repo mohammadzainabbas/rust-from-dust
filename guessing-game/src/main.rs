@@ -46,7 +46,7 @@ fn main() {
     {
         Some(true) => play_games(&theme),
         Some(false) => quit(),
-        None => println!("User did not answer"),
+        None => no_answer(),
     }
 
 
