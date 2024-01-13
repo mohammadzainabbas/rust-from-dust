@@ -17,6 +17,7 @@ fn main() {
 
     match Confirm::with_theme(&theme)
         .with_prompt(format!("{}", "Do you want to continue?".bright_yellow()))
+        .default(true)
         .interact()
         .unwrap() 
     {
