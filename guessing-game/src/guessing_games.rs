@@ -35,6 +35,7 @@ pub fn guess_the_number(theme: &ColorfulTheme, term: &Term) {
         
         match guess.cmp(&secret_number) {
             Ordering::Equal => {
+                let tries_str = if guess_tries == 1 { "try" } else { "tries" };
                 utils::colored_println(format!("🎉 Correct guess! You took {} tries to guess the secret number!", guess_tries.to_string().cyan().bold()).bright_yellow().italic());
                 break;
             },
