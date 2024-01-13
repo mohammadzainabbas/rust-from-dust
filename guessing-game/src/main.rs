@@ -3,10 +3,10 @@ use rand::Rng;
 use std::cmp::Ordering;
 use dialoguer::{theme::ColorfulTheme, Input};
 
-mod guess_game;
+mod guessing_games;
 
 fn main() {
-    guess_game::say_hello();
+    guessing_games::say_hello();
 
     println!("Let's play 'Guess the number!' game");
 
