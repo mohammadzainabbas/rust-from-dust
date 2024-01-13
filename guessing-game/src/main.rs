@@ -14,7 +14,7 @@ fn play_games(theme: &ColorfulTheme) {
 
     let selection = FuzzySelect::with_theme(theme)
         // .with_prompt("Pick a game: (use fuzzy search) ")
-        .with_prompt(format!("{}: {}", "Pick a game".green(), "(use fuzzy search)".cyan()))
+        .with_prompt(format!("{} {}:", "Pick a game".bright_yellow(), "(use fuzzy search)".cyan()))
         .default(0)
         .items(&games[..])
         .interact()
