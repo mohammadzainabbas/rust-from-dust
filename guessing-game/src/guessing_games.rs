@@ -6,7 +6,7 @@ use crate::utils;
 
 pub fn guess_the_number() {
 
-    let guess = utils::valid_int::<u32>("Guess a number");
+    let guess: u32 = utils::valid_int("Guess a number");
 
     println!("Let's play 'Guess the number!' game");
 
