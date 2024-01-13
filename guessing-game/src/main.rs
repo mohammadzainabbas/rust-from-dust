@@ -27,7 +27,7 @@ fn play_games(theme: &ColorfulTheme) {
             .unwrap();
     
         let (game_name, game_fn) = games[selection];
-        
+        term.set_title(game_name);
         utils::colored_println(format!("{}{}", "You have picked: ".bright_cyan(), game_name.green().bold()).italic());
         game_fn(theme);
         utils::colored_print(format!("\nPress any key to continue. {} to exit!", "Esc".blue().bold()).bright_yellow().italic());
