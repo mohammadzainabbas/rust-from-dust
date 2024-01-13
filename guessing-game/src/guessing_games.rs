@@ -5,7 +5,7 @@ use dialoguer::{theme::ColorfulTheme, Input};
 use crate::validate;
 
 #[allow(unused)]
-pub fn guess_the_number() {
+pub fn guess_the_number1() {
 
     let _guess: u32 = validate::valid_int("Guess a number");
 
@@ -46,11 +46,11 @@ pub fn guess_the_number() {
 }
 
 #[allow(unused)]
-pub fn guess_the_word() {
-    println!("Let's play 'Guess the word!' game");
+pub fn guess_the_number() {
+    println!("Let's play 'Guess the number!' game");
 }
 
 #[allow(unused)]
-pub fn guess_the_number() {
-    println!("Let's play 'Guess the number!' game");
+pub fn guess_the_word() {
+    println!("Let's play 'Guess the word!' game");
 }
