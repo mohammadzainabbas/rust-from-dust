@@ -96,7 +96,8 @@ pub fn guess_the_word(theme: &ColorfulTheme, term: &Term) {
     // Choose a word randomly
     let random_index = rand::thread_rng().gen_range(0..words.len());
     let target_word = &words[random_index];
-
+    
+    const STOP_AFTER: u32 = 5; // show hint after 5 incorrect guesses
     let mut guess_tries: u32 = 0;
 
     println!("Target: {}", target_word);
