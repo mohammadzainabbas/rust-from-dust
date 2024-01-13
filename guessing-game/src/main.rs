@@ -17,10 +17,12 @@ fn play_games(theme: &ColorfulTheme) {
     utils::colored_print("Press any key. Esc to exit".bright_yellow());
     
     loop {
-        let key = term.read_key()?;
-        if key == Key::Escape {
-            break;
+        let key = term.read_key();
+        match key.unwrap() {
+            Key::Escape => break,
+            _ => continue,
         }
+
         let selection = FuzzySelect::with_theme(theme)
             .with_prompt(format!("{} {}:", "Pick a game".bright_yellow(), "(use fuzzy search)".cyan()))
             .default(0)
