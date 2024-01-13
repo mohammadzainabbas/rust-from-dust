@@ -1,8 +1,8 @@
 use dialoguer::{theme::ColorfulTheme, Input};
 
-pub fn valid_u32() {
+pub fn valid_u32(prompt: String) {
     let guess: u32 = Input::with_theme(&ColorfulTheme::default())
-            .with_prompt("Guess a number: ")
+            .with_prompt(prompt)
             .validate_with(|input: &String| -> Result<(), &str> {
                 if input.trim().parse::<u32>().is_ok() {
                     Ok(())
