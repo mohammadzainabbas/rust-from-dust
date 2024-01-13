@@ -97,6 +97,8 @@ pub fn guess_the_word(theme: &ColorfulTheme, term: &Term) {
     let random_index = rand::thread_rng().gen_range(0..words.len());
     let target_word = &words[random_index];
 
+    let mut guess_tries: u32 = 0;
+
     println!("Target: {}", target_word);
 
     loop {
