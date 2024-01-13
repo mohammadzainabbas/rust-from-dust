@@ -1,6 +1,6 @@
 use dialoguer::{theme::ColorfulTheme, Input};
 
-pub fn valid_u32(prompt: String) -> u32 {
+pub fn valid_int(prompt: String) -> u32 {
     Input::with_theme(&ColorfulTheme::default())
             .with_prompt(prompt)
             .validate_with(|input: &String| -> Result<(), &str> {
