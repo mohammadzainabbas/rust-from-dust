@@ -8,7 +8,7 @@ use crate::validate;
 #[allow(unused)]
 pub fn guess_the_number(theme: &ColorfulTheme) {
 
-    let min: u32 = validate::valid_int(format!("{} {}:", "Pick a game".bright_yellow(), "(use fuzzy search)".cyan()));
+    let min: u32 = validate::valid_int(format!("Pick {} threshold: ", "Pick 'min".bright_yellow(), "(use fuzzy search)".cyan()));
     let _guess: u32 = validate::valid_int("Guess a number");
 
     println!("Let's play 'Guess the number!' game");
