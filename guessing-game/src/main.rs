@@ -16,14 +16,6 @@ fn main() {
                 } else {
                     Err("Please enter a valid number")
                 }
-
-
-                // let _num: u32 = input.trim().parse().expect("Please enter a valid number");
-                // if input.trim().parse() {
-                //     Ok(())
-                // } else {
-                //     Err("This is not a mail address")
-                // }
             })
             .interact_text()
             .unwrap();
