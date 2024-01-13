@@ -90,6 +90,8 @@ pub fn guess_the_word(theme: &ColorfulTheme, term: &Term) {
         }
     }
 
+    words.sort_by(|a, b| a.to_lowercase().cmp(&b.to_lowercase())); // sort
+
     // Choose a word randomly
     let random_index = rand::thread_rng().gen_range(0..words.len());
     let target_word = &words[random_index];
