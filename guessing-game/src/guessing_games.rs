@@ -34,8 +34,7 @@ pub fn guess_the_number(theme: &ColorfulTheme, term: &Term) {
         
         match guess.cmp(&secret_number) {
             Ordering::Equal => {
-                utils::colored_println("Correct guess".bright_green().italic());
-                utils::colored_println(format!("🎉 Correct guess! You took {} tries to guess the secret number!", guess.to_string().cyan().bold(), far.to_string().cyan().bold()).bright_yellow().italic());
+                utils::colored_println(format!("🎉 Correct guess! You took {} tries to guess the secret number!", guess_tries.to_string().cyan().bold()).bright_yellow().italic());
                 
                 break;
             },
