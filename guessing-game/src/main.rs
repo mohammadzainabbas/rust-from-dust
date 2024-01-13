@@ -13,7 +13,8 @@ fn play_games(theme: &ColorfulTheme) {
     ];
 
     let selection = FuzzySelect::with_theme(theme)
-        .with_prompt("Pick a game: ")
+        .with_prompt("Pick a game: (use fuzzy search) ")
+        .with_prompt(format!("{}", "Do you want to continue?".bright_yellow()))
         .default(0)
         .items(&games[..])
         .interact()
