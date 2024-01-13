@@ -1,10 +1,10 @@
 use dialoguer::{theme::ColorfulTheme, Input};
 
-pub fn valid_int(prompt: String) -> u32 {
+pub fn valid_int(prompt: String) -> T {
     Input::with_theme(&ColorfulTheme::default())
             .with_prompt(prompt)
             .validate_with(|input: &String| -> Result<(), &str> {
-                if input.trim().parse::<u32>().is_ok() {
+                if input.trim().parse::<T>().is_ok() {
                     Ok(())
                 } else {
                     Err("Please enter a valid number")
@@ -14,5 +14,5 @@ pub fn valid_int(prompt: String) -> u32 {
             .unwrap()
             .trim()
             .parse()
-            .expect("Failed to parse to u32")
+            .expect("Failed to parse to T")
 }
