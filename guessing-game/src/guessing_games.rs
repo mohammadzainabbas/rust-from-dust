@@ -102,8 +102,7 @@ pub fn guess_the_word(theme: &ColorfulTheme, term: &Term) {
     loop {
         // Ask the user to select a word
         let selected_index = FuzzySelect::with_theme(theme)
-        .with_prompt(format!("{} {}:", "Pick a game".bright_yellow(), "(use fuzzy search)".cyan()))
-
+            .with_prompt(format!("{} {}:", "Guess a word".bright_yellow(), "(use fuzzy search)".cyan()))
             .items(&words)
             // .default(random_index) // Highlight the word randomly chosen
             .interact()
