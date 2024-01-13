@@ -1,5 +1,3 @@
-#[allow(unused_imports)]
-
 use std::cmp::Ordering;
 use rand::Rng;
 use colored::Colorize;
