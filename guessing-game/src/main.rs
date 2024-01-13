@@ -19,12 +19,8 @@ fn play_games(theme: &ColorfulTheme) {
         .items(&games[..])
         .interact()
         .unwrap();
-        
-    Select::with_theme(theme)
-    .with_prompt("Pick an item")
-    .items(games)
-    .interact()
-    .unwrap();
+    
+    println!("You have picked: {}", games[selection]);
     
 }
 
