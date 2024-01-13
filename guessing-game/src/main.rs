@@ -8,7 +8,7 @@ mod guessing_games;
 
 fn play_games(theme: &ColorfulTheme) {
 
-    let games: &[(&str, fn(&ColorfulTheme))] = &[
+    let games: &[(&str, fn(&ColorfulTheme, &Term))] = &[
         ("Guess the number", guessing_games::guess_the_number),
         ("Guess the word", guessing_games::guess_the_word),
     ];
@@ -26,7 +26,7 @@ fn play_games(theme: &ColorfulTheme) {
         let (game_name, game_fn) = games[selection];
         term.set_title(game_name);
         utils::colored_println(format!("{}{}", "You have picked: ".bright_cyan(), game_name.green().bold()).italic());
-        game_fn(theme);
+        game_fn(theme, &term);
         utils::colored_print(format!("\nPress any key to continue. {} to exit!", "Esc".blue().bold()).bright_yellow().italic());
         
         let key = term.read_key();

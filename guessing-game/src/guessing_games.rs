@@ -6,7 +6,7 @@ use dialoguer::{theme::ColorfulTheme, Input};
 use crate::{validate, utils};
 
 #[allow(unused)]
-pub fn guess_the_number(theme: &ColorfulTheme) {
+pub fn guess_the_number(theme: &ColorfulTheme, term: &Term) {
     utils::colored_println(format!("🚀 Let's play '{}' game.", "Guess the number!".cyan().bold()).bright_yellow().italic());
 
     let mut min: u32;
@@ -41,7 +41,7 @@ pub fn guess_the_number(theme: &ColorfulTheme) {
                 println!("Incorrect guess")
                 guess_tries += 1;
                 if guess_tries % HINT_AFTER == 0 {
-                    
+
                 }
             }
         }
