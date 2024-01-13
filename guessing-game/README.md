@@ -12,6 +12,8 @@ A **Rust** program to play two _guessing_ games: <kbd> <br> Guess the number
 
 ## Key Concepts
 
+- [x] Create new binary project using `cargo new guessing-game`
+- [x] Create new binary project using `cargo new hello-world`
 - [x] Create new binary project using `cargo new hello-world`
 - [x] Build & run the project using `cargo run`
 
