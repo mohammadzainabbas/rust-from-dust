@@ -4,7 +4,7 @@ use std::fmt::Debug;
 pub fn valid_int<T>(prompt: &str) -> T
 where
     T: std::str::FromStr,
-    <T: 
+    <T as std::str::FromStr>::Err: Debug,
 {
     Input::with_theme(&ColorfulTheme::default())
         .with_prompt(prompt)
