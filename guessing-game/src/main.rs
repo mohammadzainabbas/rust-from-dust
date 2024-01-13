@@ -22,7 +22,8 @@ fn main() {
         .unwrap() 
     {
         Some(true) => start_games(),
-        Err() => start_games(),
+        Some(false) => start_games(),
+        None() => start_games(),
     }
 
 
