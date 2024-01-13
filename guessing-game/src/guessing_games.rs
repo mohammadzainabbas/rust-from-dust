@@ -45,7 +45,8 @@ pub fn guess_the_number(theme: &ColorfulTheme, term: &Term) {
                     let key = term.read_key();
                     match key.unwrap() {
                         Key::Escape => {
-                            utils::colored_print(format!("\n🎉 Correct guess! You took {} to guess the secret number!", guess_tries.to_string().cyan().bold()).bright_yellow().italic());
+                            utils::colored_print(format!("\n🥺 You gave up after {} tries!", guess_tries.to_string().cyan().bold()).bright_yellow().italic());
+                            break;
                         },
                         Key::Tab => {
                             let far: i32 = (guess as i32 - secret_number as i32).abs();
