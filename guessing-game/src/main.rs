@@ -24,6 +24,10 @@ fn main() {
             .parse()
             .expect("Failed to parse to u32");
 
+        guess.cmp(&secret_number) {
+            
+        }
+
 
 
 
