@@ -105,10 +105,10 @@ pub fn guess_the_word(theme: &ColorfulTheme, term: &Term) {
             .interact()
             .unwrap();
 
-        let selected_word = words[selected_index];
+        let selected_word = &words[selected_index];
 
         // Check if the selected word is correct
-        if &selected_word == target_word {
+        if selected_word == target_word {
             println!("You guessed it! The word was: {}", target_word);
             break;
         } else {
