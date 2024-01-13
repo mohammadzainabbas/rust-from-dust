@@ -1,5 +1,5 @@
 use std::cmp::Ordering;
-use dialoguer::{Input, Select, FuzzySelect};
+use dialoguer::{Input, FuzzySelect};
 use rand::Rng;
 use colored::Colorize;
 use dialoguer::theme::ColorfulTheme;
