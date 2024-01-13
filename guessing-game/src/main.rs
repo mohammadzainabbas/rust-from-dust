@@ -31,6 +31,8 @@ fn play_games(theme: &ColorfulTheme) {
         .interact()
         .unwrap();
 
+    let (game_name, game_fn) = games[selection];
+
     utils::colored_print(format!("You have picked: {}", (games[selection].0).green()).bold())
 
     (games[selection].1)();
