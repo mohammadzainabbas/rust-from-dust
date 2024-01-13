@@ -21,12 +21,12 @@ pub fn guess_the_number(theme: &ColorfulTheme) {
             }
         }
     }
+    // utils::colored_println(format!("{} should be less than {}.", "min".cyan().bold(), "max".cyan().bold()).bright_yellow().italic());
 
-
+    println!("Let's continue 'Guess the number!' game");
 
     let _guess: u32 = validate::valid_int("Guess a number");
 
-    println!("Let's play 'Guess the number!' game");
 
     let _name: String = Input::with_theme(&ColorfulTheme::default()).with_prompt("Enter your name: ").interact_text().unwrap();
     let secret_number: u32 = rand::thread_rng().gen_range(1..101);
