@@ -1,5 +1,6 @@
 // use std::io;
 use rand::Rng;
+use std::cmp::Ordering;
 use dialoguer::{theme::ColorfulTheme, Input};
 fn main() {
     println!("Let's play 'Guess the number!' game");
@@ -23,7 +24,7 @@ fn main() {
             .parse()
             .expect("Failed to parse to u32");
 
-        
+
 
 
     }
