@@ -32,11 +32,13 @@ fn main() {
     
     let theme = ColorfulTheme::default();
 
-    match Confirm::with_theme(&theme)
+    let confirmation = Confirm::with_theme(&theme)
         .with_prompt(format!("{}", "Do you want to continue?".bright_yellow()))
         .default(true)
         .interact_opt()
-        .unwrap() 
+        .unwrap();
+
+    match confirmation
     {
         Some(true) => play_games(&theme),
         Some(false) => quit(),
