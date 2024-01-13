@@ -11,7 +11,7 @@ fn main() {
     
     let theme = ColorfulTheme::default();
 
-    
+    if Confirm::with_theme(&theme)
 
 
 
