@@ -110,12 +110,19 @@ pub fn guess_the_word(theme: &ColorfulTheme, term: &Term) {
         let selected_word = &words[selected_index];
 
         // Check if the selected word is correct
-        if selected_word == target_word {
-            println!("You guessed it! The word was: {}", target_word);
-            break;
-        } else {
-            println!("Wrong word. Try again!");
+        match selected_word.cmp(target_word) {
+            Ordering::Equal => {
+                println!("You guessed it! The word was: {}", target_word);
+                break;
+            },
+            _ => {
+                println!("Wrong word. Try again!");                
+            }
         }
+        // if selected_word == target_word {
+        //     break;
+        // } else {
+        // }
     }
 
 
