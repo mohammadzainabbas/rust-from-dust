@@ -11,11 +11,12 @@ fn main() {
         let guess: String = Input::with_theme(&ColorfulTheme::default())
             .with_prompt("Guess a number: ")
             .validate_with(|input: &String| -> Result<(), &str> {
-                if input.trim().parse() {
-                    Ok(())
-                } else {
-                    Err("This is not a mail address")
-                }
+                input.trim().parse().expect("Please enter a valid number")
+                // if input.trim().parse() {
+                //     Ok(())
+                // } else {
+                //     Err("This is not a mail address")
+                // }
             })
             .interact_text()
             .unwrap();
