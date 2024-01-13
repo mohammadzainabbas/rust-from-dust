@@ -96,6 +96,6 @@ pub fn guess_the_number(theme: &ColorfulTheme, term: &Term) {
 }
 
 #[allow(unused)]
-pub fn guess_the_word(theme: &ColorfulTheme) {
+pub fn guess_the_word(theme: &ColorfulTheme, term: &Term) {
     println!("Let's play 'Guess the word!' game");
 }
