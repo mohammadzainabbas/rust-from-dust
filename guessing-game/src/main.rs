@@ -7,15 +7,22 @@ mod guessing_games;
 
 fn play_games(theme: &ColorfulTheme) {
     
-    let games = &[
-        "Guess the number",
-        "Guess the word",
-    ];
+    // let games = &[
+    //     "Guess the number",
+    //     "Guess the word",
+    // ];
 
-    let all_games = &[
-        ("Guess the number", guessing_games::guess_the_number()),
-        ("Guess the word", guessing_games::guess_the_word()),
+    let games: &[(&str, fn())] = &[
+        ("Guess the number", guessing_games::guess_the_number),
+        ("Guess the word", guessing_games::guess_the_word),
     ];
+    
+    let selection = FuzzySelect::with_theme(theme)
+        .with_prompt(format!("{} {}:", "Pick a game".bright_yellow(), "(use fuzzy search)".cyan()))
+        .default(0)
+        .items(&games.iter().map(|(name, _)| *name).collect::<Vec<_>>())
+        .interact()
+        .unwrap();
 
     let selection = FuzzySelect::with_theme(theme)
         .with_prompt(format!("{} {}:", "Pick a game".bright_yellow(), "(use fuzzy search)".cyan()))
