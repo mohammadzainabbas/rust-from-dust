@@ -6,18 +6,6 @@ mod validate;
 mod guessing_games;
 
 fn play_games(theme: &ColorfulTheme) {
-    
-    // let games = &[
-    //     "Guess the number",
-    //     "Guess the word",
-    // ];
-
-    // let selection = FuzzySelect::with_theme(theme)
-    //     .with_prompt(format!("{} {}:", "Pick a game".bright_yellow(), "(use fuzzy search)".cyan()))
-    //     .default(0)
-    //     .items(&games[..])
-    //     .interact()
-    //     .unwrap();
 
     let games: &[(&str, fn())] = &[
         ("Guess the number", guessing_games::guess_the_number),
