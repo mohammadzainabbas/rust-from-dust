@@ -26,14 +26,14 @@ fn play_games(theme: &ColorfulTheme) {
     let (game_name, game_fn) = games[selection];
     
     utils::colored_println(format!("{}{}", "You have picked: ".bright_cyan(), game_name.green().bold()).italic());
-    
+    term.set_title(game_name);
     game_fn(theme);
     utils::colored_print(format!("\nPress any key to continue. {} to exit!", "Esc".blue().bold()).bright_yellow().italic());
     let key = term.read_key();
         match key.unwrap() {
             Key::Escape => break,
             _ => {
-                term.clear_screen().expect("Unable to clear screen");
+                // term.clear_screen().expect("Unable to clear screen");
                 continue;
             },
         }
