@@ -44,7 +44,9 @@ pub fn guess_the_number(theme: &ColorfulTheme, term: &Term) {
                     utils::colored_print(format!("\nHaving trouble guessing? Press {} for a hint! Press any other key to continue.", "Alt".blue().bold()).bright_yellow().italic());
                     let key = term.read_key();
                     match key.unwrap() {
-                        Key::Escape => break,
+                        Key::Alt => {
+                            
+                        },
                         _ => continue,
                     }
                 }
