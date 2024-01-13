@@ -4,6 +4,7 @@ use dialoguer::{theme::ColorfulTheme, Input};
 
 use crate::validate;
 
+#[allow(unused)]
 pub fn guess_the_number() {
 
     let _guess: u32 = validate::valid_int("Guess a number");
