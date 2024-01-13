@@ -12,19 +12,22 @@ fn play_games(theme: &ColorfulTheme) {
         ("Guess the number", guessing_games::guess_the_number),
         ("Guess the word", guessing_games::guess_the_word),
     ];
+
+    loop {
+        let selection = FuzzySelect::with_theme(theme)
+            .with_prompt(format!("{} {}:", "Pick a game".bright_yellow(), "(use fuzzy search)".cyan()))
+            .default(0)
+            .items(&games.iter().map(|(name, _)| *name).collect::<Vec<_>>())
+            .interact()
+            .unwrap();
     
-    let selection = FuzzySelect::with_theme(theme)
-        .with_prompt(format!("{} {}:", "Pick a game".bright_yellow(), "(use fuzzy search)".cyan()))
-        .default(0)
-        .items(&games.iter().map(|(name, _)| *name).collect::<Vec<_>>())
-        .interact()
-        .unwrap();
+        let (game_name, game_fn) = games[selection];
+        
+        utils::colored_print(format!("{}{}", "You have picked: ".bright_cyan(), game_name.green().bold()).italic());
 
-    let (game_name, game_fn) = games[selection];
-
-    utils::colored_print(format!("{}{}", "You have picked: ".bright_cyan(), game_name.green().bold()).italic());
-
-    game_fn(theme);    
+        game_fn(theme);      
+    }
+    
     
 }
 
