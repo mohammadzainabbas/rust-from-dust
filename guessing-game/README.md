@@ -34,7 +34,7 @@ A **Rust** program to play two _guessing_ games: <kbd> <br> Guess the number
 git clone https://github.com/mohammadzainabbas/rust-from-dust.git
 ```
 
-or 
+or
 
 ```bash
 gh repo clone mohammadzainabbas/rust-from-dust
