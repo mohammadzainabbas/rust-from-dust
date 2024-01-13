@@ -8,7 +8,7 @@ fn main() {
     let secret_number: u32 = rand::thread_rng().gen_range(1..101);
 
     loop {
-        let guess: String = Input::with_theme(&ColorfulTheme::default())
+        let guess: u32 = Input::with_theme(&ColorfulTheme::default())
             .with_prompt("Guess a number: ")
             .validate_with(|input: &String| -> Result<(), &str> {
                 if input.trim().parse::<u32>().is_ok() {
