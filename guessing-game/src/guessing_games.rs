@@ -38,7 +38,7 @@ pub fn guess_the_number(theme: &ColorfulTheme, term: &Term) {
                 break;
             },
             _ => {
-                println!("Incorrect guess")
+                println!("Incorrect guess");
                 guess_tries += 1;
                 if guess_tries % HINT_AFTER == 0 {
                     utils::colored_print(format!("\nHaving trouble guessing? Press {} for a hint! Press any other key to continue.", "Alt".blue().bold()).bright_yellow().italic());
