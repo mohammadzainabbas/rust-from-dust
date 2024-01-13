@@ -5,7 +5,7 @@ use dialoguer::{theme::ColorfulTheme, Input};
 fn main() {
     println!("Let's play 'Guess the number!' game");
 
-    let name: String = Input::with_theme(&ColorfulTheme::default()).with_prompt("Enter your name: ").interact_text().unwrap();
+    let _name: String = Input::with_theme(&ColorfulTheme::default()).with_prompt("Enter your name: ").interact_text().unwrap();
     let secret_number: u32 = rand::thread_rng().gen_range(1..101);
     println!("Your secret number is {}", secret_number);
 
