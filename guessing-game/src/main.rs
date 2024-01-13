@@ -19,7 +19,7 @@ fn play_games(theme: &ColorfulTheme) {
         .interact()
         .unwrap();
     
-    utils::colored_print(format!("You have picked: {}", games[selection].green()))
+    utils::colored_print(format!("You have picked: {}", games[selection].green()).bold())
     
 }
 
