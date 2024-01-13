@@ -7,7 +7,7 @@ mod guessing_games;
 
 fn play_games(theme: &ColorfulTheme) {
 
-    let games: &[(&str, fn())] = &[
+    let games = &[
         ("Guess the number", guessing_games::guess_the_number(theme)),
         ("Guess the word", guessing_games::guess_the_word(theme)),
     ];
