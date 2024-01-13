@@ -23,7 +23,7 @@ fn play_games(theme: &ColorfulTheme) {
             .interact()
             .unwrap();
     
-        term.set_title(game_name);
+        term.set_title("Game Menu");
         let (game_name, game_fn) = games[selection];
         
         utils::colored_println(format!("{}{}", "You have picked: ".bright_cyan(), game_name.green().bold()).italic());
