@@ -16,6 +16,7 @@ pub fn guess_the_number(theme: &ColorfulTheme) {
             Ordering::Less => break,
             _ => {
                 utils::colored_print(format!("\nPress any key to continue. {} to exit!", "Esc".blue().bold()).bright_yellow().italic());
+                continue;
             }
         }
 
