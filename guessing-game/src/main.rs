@@ -16,7 +16,7 @@ fn play_games(theme: &ColorfulTheme) {
     let selection = FuzzySelect::with_theme(&ColorfulTheme::default())
         .with_prompt("Pick a game: ")
         .default(0)
-        .items(&selections[..])
+        .items(&games[..])
         .interact()
         .unwrap();
         
