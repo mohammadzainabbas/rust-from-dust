@@ -15,7 +15,7 @@ pub fn guess_the_number(theme: &ColorfulTheme) {
         match min.cmp(&max) {
             Ordering::Less => break,
             _ => {
-                utils::colored_println(format!("{} should be less than {}.", "Esc".blue().bold()).bright_yellow().italic());
+                utils::colored_println(format!("{} should be less than {}.", "min".cyan().bold(), "max".cyan().bold()).bright_yellow().italic());
                 continue;
             }
         }
