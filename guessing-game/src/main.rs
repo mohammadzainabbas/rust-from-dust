@@ -1,4 +1,4 @@
-use colored::*;
+use colored::Colorize;
 
 mod validate;
 mod guessing_games;
