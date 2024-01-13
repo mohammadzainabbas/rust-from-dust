@@ -3,7 +3,7 @@
 use std::cmp::Ordering;
 use rand::Rng;
 use colored::Colorize;
-use dialoguer::{theme::ColorfulTheme, Input};
+use dialoguer::{theme::ColorfulTheme};
 use dialoguer::console::{Key, Term};
 use crate::{validate, utils};
 
