@@ -1,5 +1,6 @@
 use std::cmp::Ordering;
 use rand::Rng;
+use colored::Colorize;
 use dialoguer::{theme::ColorfulTheme, Input};
 
 use crate::validate;
