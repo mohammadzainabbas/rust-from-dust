@@ -1,4 +1,3 @@
-
 use colored::{Colorize, ColoredString};
 use dialoguer::{theme::ColorfulTheme, Confirm, FuzzySelect};
 
