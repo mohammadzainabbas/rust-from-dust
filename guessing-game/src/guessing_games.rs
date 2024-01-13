@@ -41,7 +41,7 @@ pub fn guess_the_number(theme: &ColorfulTheme, term: &Term) {
                 println!("Incorrect guess")
                 guess_tries += 1;
                 if guess_tries % HINT_AFTER == 0 {
-
+                    
                 }
             }
         }
