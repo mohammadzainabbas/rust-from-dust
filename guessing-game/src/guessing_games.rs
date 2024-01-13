@@ -41,7 +41,7 @@ pub fn guess_the_number(theme: &ColorfulTheme, term: &Term) {
                 println!("Incorrect guess")
                 guess_tries += 1;
                 if guess_tries % HINT_AFTER == 0 {
-                    utils::colored_print(format!("\nSeem harder to guess. {} to exit!", "Esc".blue().bold()).bright_yellow().italic());
+                    utils::colored_print(format!("\nHard to guess. Huh? {} to exit!", "Esc".blue().bold()).bright_yellow().italic());
                     let key = term.read_key();
                     match key.unwrap() {
                         Key::Escape => break,
