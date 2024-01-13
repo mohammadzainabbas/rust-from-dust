@@ -18,11 +18,6 @@ fn play_games(theme: &ColorfulTheme) {
     
     loop {
         let key = term.read_key();
-        match key.unwrap() {
-            Key::Escape => break,
-            _ => continue,
-        }
-
         let selection = FuzzySelect::with_theme(theme)
             .with_prompt(format!("{} {}:", "Pick a game".bright_yellow(), "(use fuzzy search)".cyan()))
             .default(0)
@@ -34,7 +29,11 @@ fn play_games(theme: &ColorfulTheme) {
         
         utils::colored_print(format!("{}{}", "You have picked: ".bright_cyan(), game_name.green().bold()).italic());
 
-        game_fn(theme);      
+        game_fn(theme);
+        match key.unwrap() {
+            Key::Escape => break,
+            _ => continue,
+        }
     }
 }
 
