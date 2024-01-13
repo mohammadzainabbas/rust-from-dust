@@ -18,10 +18,10 @@ fn main() {
     match Confirm::with_theme(&theme)
         .with_prompt(format!("{}", "Do you want to continue?".bright_yellow()))
         .default(true)
-        .interact()
+        .interact_opt()
         .unwrap() 
     {
-        Some(true) =>    start_games(),
+        Some(true) => start_games(),
         Err() => start_games(),
     }
 
