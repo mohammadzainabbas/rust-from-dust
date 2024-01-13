@@ -8,6 +8,12 @@ mod guessing_games;
 fn main() {
 
     println!("\n{}\n", "Let's play some guessing games".bright_blue().on_black());
+    
+    let theme = ColorfulTheme::default();
+
+    
+
+
 
     let items = &[
         "Guess the number",
@@ -15,7 +21,6 @@ fn main() {
     ];
 
     let term = Term::buffered_stderr();
-    let theme = ColorfulTheme::default();
 
     Confirm::with_theme(&theme)
         .with_prompt(format!("{}", "Do you want to continue?".bright_yellow()))
