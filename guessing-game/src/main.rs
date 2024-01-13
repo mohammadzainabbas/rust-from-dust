@@ -16,6 +16,7 @@ fn play_games(theme: &ColorfulTheme) {
     ];
 
     let term = Term::stdout();
+    term.set_title(TERMINAL_TITLE);
     
     loop {
         let selection = FuzzySelect::with_theme(theme)
@@ -25,7 +26,6 @@ fn play_games(theme: &ColorfulTheme) {
             .interact()
             .unwrap();
     
-        term.set_title(TERMINAL_TITLE);
         let (game_name, game_fn) = games[selection];
         
         utils::colored_println(format!("{}{}", "You have picked: ".bright_cyan(), game_name.green().bold()).italic());
