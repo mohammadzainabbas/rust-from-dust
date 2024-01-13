@@ -15,9 +15,9 @@ fn main() {
         .with_prompt(format!("{}", "Do you want to continue?".bright_yellow()))
         .interact()
         .unwrap() {
-
+            start_games();
         } else {
-            
+
         }
 
 
