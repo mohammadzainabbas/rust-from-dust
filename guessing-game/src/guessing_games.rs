@@ -92,6 +92,7 @@ pub fn guess_the_word(theme: &ColorfulTheme, term: &Term) {
 
     if words.is_empty() {
         utils::colored_print("No word entered! Leaving the game...".bright_red().italic())
+        return;
     }
 
     words.sort_by(|a, b| a.to_lowercase().cmp(&b.to_lowercase())); // case-insensitive sorting
