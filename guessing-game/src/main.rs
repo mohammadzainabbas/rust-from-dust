@@ -35,7 +35,7 @@ fn main() {
         .unwrap() 
     {
         Some(true) => start_games(&theme),
-        Some(false) => println!("Hello"),
+        Some(false) => println!("Hello q"),
         None => println!("Hello"),
     }
 
