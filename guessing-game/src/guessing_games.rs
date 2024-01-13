@@ -90,13 +90,32 @@ pub fn guess_the_word(theme: &ColorfulTheme, term: &Term) {
         }
     }
 
+    utils::colored_println(format!("Vec: {:?}", words).cyan());
+    utils::colored_println(format!("Vec Len: {:?}", words.len()).red());
+
     // Choose a word randomly
     let random_index = rand::thread_rng().gen_range(0..words.len());
     let target_word = &words[random_index];
 
-    
+    loop {
+        // Ask the user to select a word
+        let selected_index = Select::with_theme(&ColorfulTheme::default())
+            .items(&words)
+            .default(random_index) // Highlight the word randomly chosen
+            .interact()
+            .unwrap();
 
-    utils::colored_println(format!("Vec: {:?}", words).cyan());
-    utils::colored_println(format!("Vec Len: {:?}", words.len()).red());
+        let selected_word = words[selected_index];
+
+        // Check if the selected word is correct
+        if selected_word == target_word {
+            println!("You guessed it! The word was: {}", target_word);
+            break;
+        } else {
+            println!("Wrong word. Try again!");
+        }
+    }
+
+
 
 }
