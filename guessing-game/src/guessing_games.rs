@@ -41,7 +41,7 @@ pub fn guess_the_number(theme: &ColorfulTheme, term: &Term) {
             _ => {
                 utils::colored_print("Incorrect guess".bright_red().italic());
                 if guess_tries % HINT_AFTER == 0 {
-                    utils::colored_print(format!("\nHaving trouble guessing? Press {} for a hint! Press {} to quit this game! Press any other key to continue.", "Tab".blue().bold(), "Esc".blue().bold()).bright_yellow().italic());
+                    utils::colored_print(format!("\nHaving trouble guessing? Press {} for a hint! Press {} to quit this game! Press any other key to continue...", "Tab".blue().bold(), "Esc".blue().bold()).bright_yellow().italic());
                     let key = term.read_key();
                     match key.unwrap() {
                         Key::Escape => {
