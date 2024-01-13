@@ -31,6 +31,7 @@ pub fn guess_the_number(theme: &ColorfulTheme, term: &Term) {
 
     loop {
         let guess: u32 = validate::valid_int(theme, format!("Guess a number b/w {} & {}: ", min.to_string().cyan().bold(), max.to_string().cyan().bold()));
+        guess_tries += 1;
         
         match guess.cmp(&secret_number) {
             Ordering::Equal => {
@@ -39,7 +40,6 @@ pub fn guess_the_number(theme: &ColorfulTheme, term: &Term) {
             },
             _ => {
                 utils::colored_print("Incorrect guess".bright_red().italic());
-                guess_tries += 1;
                 if guess_tries % HINT_AFTER == 0 {
                     utils::colored_print(format!("\nHaving trouble guessing? Press {} for a hint! Press any other key to continue.", "Alt".blue().bold()).bright_yellow().italic());
                     let key = term.read_key();
