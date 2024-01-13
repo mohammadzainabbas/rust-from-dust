@@ -1,3 +1,5 @@
+use dialoguer::console::
+
 mod validate;
 mod guessing_games;
 
