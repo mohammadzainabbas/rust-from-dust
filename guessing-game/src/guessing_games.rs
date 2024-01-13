@@ -84,7 +84,7 @@ pub fn guess_the_word(theme: &ColorfulTheme, term: &Term) {
         }
 
         if (words.contains(&word)) {
-            utils::colored_print(format!("You have entered {} already!", word).bright_red().italic());
+            utils::colored_print(format!("You have entered '{}' already!", word.cyan().bold()).bright_red().italic());
         } else {
             // Add the word to the vector
             words.push(word);
