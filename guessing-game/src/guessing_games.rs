@@ -25,7 +25,8 @@ pub fn guess_the_number(theme: &ColorfulTheme) {
 
     println!("Let's continue 'Guess the number!' game");
 
-    // let _guess: u32 = validate::valid_int("Guess a number");
+    let guess: u32 = validate::valid_int("Guess a number");
+    let guess: u32 = validate::valid_int(format!("Guess a number b/w {} & {}: ", "min".cyan().bold(), "min".cyan().bold()));
 
 
     // let _name: String = Input::with_theme(&ColorfulTheme::default()).with_prompt("Enter your name: ").interact_text().unwrap();
