@@ -121,7 +121,23 @@ pub fn guess_the_word(theme: &ColorfulTheme, term: &Term) {
                 break;
             },
             _ => {
-                println!("Wrong word. Try again!");                
+                utils::colored_print("Wrong word. Try again!".bright_red().italic());
+                if guess_tries % ASK_FOR_STOP_AFTER == 0 {
+                    utils::colored_print(format!("\n{} Press {} for a hint! Press {} to quit this game! Press any other key to continue...", "Having trouble guessing?".magenta().bold(), "Tab".blue().bold(), "Esc".blue().bold()).bright_yellow().italic());
+                    let key = term.read_key();
+                    match key.unwrap() {
+                        Key::Escape => {
+                            utils::colored_print(format!("\n🥺 You gave up after {} tries!", guess_tries.to_string().cyan().bold()).bright_yellow().italic());
+                            break;
+                        },
+                        Key::Tab => {
+                            let far: i32 = (guess as i32 - secret_number as i32).abs();
+                            utils::colored_println(format!("Your last guess {} is {} numbers far from the actual answer!", guess.to_string().cyan().bold(), far.to_string().cyan().bold()).bright_yellow().italic());
+                            continue;
+                        },
+                        _ => continue,
+                    }
+                }
             }
         }
     }
