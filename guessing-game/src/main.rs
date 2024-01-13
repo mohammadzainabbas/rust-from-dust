@@ -23,7 +23,8 @@ fn play_games(theme: &ColorfulTheme) {
 
     utils::colored_print(format!("{}{}", "You have picked: ".bright_cyan(), game_name.green().bold()).italic());
 
-    game_fn();
+    game_fn(theme);
+    game_fn(theme);
     
     
 }
