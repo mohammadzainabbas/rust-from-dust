@@ -131,8 +131,7 @@ pub fn guess_the_word(theme: &ColorfulTheme, term: &Term) {
                             break;
                         },
                         Key::Tab => {
-                            let far: i32 = (guess as i32 - secret_number as i32).abs();
-                            utils::colored_println(format!("Your last guess {} is {} numbers far from the actual answer!", guess.to_string().cyan().bold(), far.to_string().cyan().bold()).bright_yellow().italic());
+                            utils::colored_println(format!("Actual answer is '{}'!", target_word.to_string().cyan().bold()).bright_yellow().italic());
                             continue;
                         },
                         _ => continue,
