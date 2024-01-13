@@ -6,6 +6,7 @@ fn main() {
 
     let name: String = Input::with_theme(&ColorfulTheme::default()).with_prompt("Enter your name: ").interact_text().unwrap();
     let guess: String = Input::with_theme(&ColorfulTheme::default()).with_prompt("Guess a number: ").interact_text().unwrap();
+    let guess = guess.trim().parse().expect("Please enter a valid number");
 
     println!("Your name is {}", name);
 
