@@ -8,7 +8,7 @@ mod guessing_games;
 
 fn play_games(theme: &ColorfulTheme) {
 
-    const TERMINAL_TITLE: &str = "Menu - Guessing Games";
+    const TERMINAL_TITLE: &str = "Menu Guessing Games";
 
     let games: &[(&str, fn(&ColorfulTheme))] = &[
         ("Guess the number", guessing_games::guess_the_number),
