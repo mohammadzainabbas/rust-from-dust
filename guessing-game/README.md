@@ -10,7 +10,7 @@ A **Rust** program to play two _guessing_ games: <kbd> <br> Guess the number
 > Watch [this] video Starting point This tutorial is based on [Rust Book](https://doc.rust-lang.org/book/ch01-03-hello-cargo.html) and [Rust By Example](https://doc.rust-lang.org/rust-by-example/hello.html).
 
 > [!TIP]
-> Watch [![IMAGE ALT TEXT HERE](http://img.youtube.com/vi/YOUTUBE_VIDEO_ID_HERE/0.jpg)](http://www.youtube.com/watch?v=YOUTUBE_VIDEO_ID_HERE) video.
+> Watch [![Programming a Guessing Game in Rust!](http://img.youtube.com/vi/H0xBSbnQYds/0.jpg)](http://www.youtube.com/watch?v=H0xBSbnQYds) video.
 
 ## Key Concepts
 
