@@ -14,7 +14,7 @@ fn play_games(theme: &ColorfulTheme) {
     ];
 
     let term = Term::stdout();
-    term.write_line("Press any key. Esc to exit")?;
+    utils::colored_print("Press any key. Esc to exit".bright_yellow());
     
     loop {
         
