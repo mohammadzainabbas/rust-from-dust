@@ -1,8 +1,10 @@
 use dialoguer::{theme::ColorfulTheme, Input};
+use std::fmt::Debug;
 
 pub fn valid_int<T>(prompt: &str) -> T
 where
     T: std::str::FromStr,
+    <T: 
 {
     Input::with_theme(&ColorfulTheme::default())
         .with_prompt(prompt)
