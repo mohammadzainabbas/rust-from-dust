@@ -1,4 +1,4 @@
-use dialoguer::console::
+use dialoguer::console::style;
 
 mod validate;
 mod guessing_games;
