@@ -24,13 +24,11 @@ fn main() {
             .parse()
             .expect("Failed to parse to u32");
 
-        guess.cmp(&secret_number) {
-            
+        match guess.cmp(&secret_number) {
+            Ordering::Less => println!("Less"),
+            Ordering::Greater => println!("Greater"),
+            Ordering::Equal => println!("Eq"),
         }
-
-
-
-
     }
 
     println!("Your name is {}", name);
