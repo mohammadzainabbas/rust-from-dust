@@ -46,11 +46,6 @@ pub fn guess_the_number(theme: &ColorfulTheme) {
 }
 
 #[allow(unused)]
-pub fn guess_the_number(theme: &ColorfulTheme) {
-    println!("Let's play 'Guess the number!' game");
-}
-
-#[allow(unused)]
 pub fn guess_the_word(theme: &ColorfulTheme) {
     println!("Let's play 'Guess the word!' game");
 }
