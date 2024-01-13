@@ -6,7 +6,7 @@ use dialoguer::{theme::ColorfulTheme, Input};
 mod guessing_games;
 
 fn main() {
-    guessing_games::say_hello();
+
 
     println!("Let's play 'Guess the number!' game");
 
