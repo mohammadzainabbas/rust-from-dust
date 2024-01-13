@@ -28,7 +28,7 @@ fn play_games(theme: &ColorfulTheme) {
     utils::colored_print(format!("{}{}", "You have picked: ".bright_cyan(), game_name.green().bold()).italic());
     
     game_fn(theme);
-    utils::colored_print("Press any key to continue. Esc to exit".bright_yellow());
+    utils::colored_print(format!("Press any key to continue. {} to exit!", "Esc".blue().bold()).bright_yellow().italic());
     let key = term.read_key();
         match key.unwrap() {
             Key::Escape => break,
