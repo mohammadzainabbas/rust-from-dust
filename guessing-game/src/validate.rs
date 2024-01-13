@@ -1,3 +1,4 @@
+use colored::Colorize;
 use dialoguer::{theme::ColorfulTheme, Input};
 use std::fmt::Debug;
 
@@ -12,7 +13,7 @@ where
             if input.trim().parse::<T>().is_ok() {
                 Ok(())
             } else {
-                Err("Please enter a valid number")
+                Err(format!("{}","Please enter a valid number".red()))
             }
         })
         .interact_text()
