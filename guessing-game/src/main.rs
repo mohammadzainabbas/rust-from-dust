@@ -13,6 +13,8 @@ fn play_games(theme: &ColorfulTheme) {
         ("Guess the word", guessing_games::guess_the_word),
     ];
 
+    let term = Term::stdout();
+
     loop {
         
         let selection = FuzzySelect::with_theme(theme)
