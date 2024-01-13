@@ -1,6 +1,6 @@
 
 use colored::Colorize;
-use dialoguer::{theme::ColorfulTheme, Confirm, Input, MultiSelect, Select, Sort};
+use dialoguer::{theme::ColorfulTheme, Confirm, FuzzySelect, Input, MultiSelect, Select, Sort};
 use dialoguer::console::Term;
 
 mod validate;
@@ -12,6 +12,13 @@ fn play_games(theme: &ColorfulTheme) {
         "Guess the number",
         "Guess the word",
     ];
+
+    let selection = FuzzySelect::with_theme(&ColorfulTheme::default())
+        .with_prompt("Pick a game: ")
+        .default(0)
+        .items(&selections[..])
+        .interact()
+        .unwrap();
         
     Select::with_theme(theme)
     .with_prompt("Pick an item")
