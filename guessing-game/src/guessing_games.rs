@@ -38,7 +38,7 @@ pub fn guess_the_number(theme: &ColorfulTheme) {
                 break;
             },
             _ => {
-
+                guess_tries += 1;
                 println!("Incorrect guess")
             }
         }
