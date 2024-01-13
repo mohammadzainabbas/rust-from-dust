@@ -6,8 +6,8 @@ use dialoguer::{theme::ColorfulTheme, Input};
 mod guess_game;
 
 fn main() {
-    guess_game;
-    
+    guess_game::say_hello();
+
     println!("Let's play 'Guess the number!' game");
 
     let _name: String = Input::with_theme(&ColorfulTheme::default()).with_prompt("Enter your name: ").interact_text().unwrap();
