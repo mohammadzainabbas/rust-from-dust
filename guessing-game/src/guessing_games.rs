@@ -83,6 +83,8 @@ pub fn guess_the_word(theme: &ColorfulTheme, term: &Term) {
             break;
         }
 
+        
+
         // Add the word to the vector
         words.push(word);
     }
