@@ -13,7 +13,7 @@ where
             if input.trim().parse::<T>().is_ok() {
                 Ok(())
             } else {
-                Err(format!("Please enter a valid number"))
+                Err(format!("Please enter a valid number").yellow().trim().to_string().as_str())
             }
         })
         .interact_text()
