@@ -74,7 +74,7 @@ pub fn guess_the_word(theme: &ColorfulTheme, term: &Term) {
         // Prompt the user for a word
         let word: String = Input::with_theme(theme)
             // .with_prompt("Enter a word (type :q to finish):")        
-            .with_prompt(format!("{} {}{}{}", "min".cyan().bold()))        
+            .with_prompt(format!("{} {}{}{}", "Enter a word ".cyan().bold()))        
             .interact()
             .unwrap();
 
