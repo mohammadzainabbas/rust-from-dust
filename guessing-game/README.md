@@ -13,8 +13,7 @@ A **Rust** program to play two _guessing_ games: <kbd> <br> Guess the number
 ## Key Concepts
 
 - [x] Create new binary project using `cargo new guessing-game`
-- [x] How to use external libraries `rand`, `colored` and `clap`
-- [x] Create new binary project using `cargo new hello-world`
+- [x] Use of external libraries `rand`, `colored` and `dialoguer`.
 - [x] Build & run the project using `cargo run`
 
 ## Prerequisites
