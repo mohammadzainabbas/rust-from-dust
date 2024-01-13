@@ -10,10 +10,8 @@ fn main() {
     println!("{}", "Let's play some guessing games".bright_blue().on_black());
 
     let games = &[
-        "Ice Cream",
-        "Vanilla Cupcake",
-        "Chocolate Muffin",
-        "A Pile of sweet, sweet mustard",
+        "Guess the number",
+        "Guess the word",
     ];
     let term = Term::buffered_stderr();
     let theme = ColorfulTheme::default();
