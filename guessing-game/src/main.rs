@@ -1,4 +1,4 @@
-use colored::
+use colored::*;
 
 mod validate;
 mod guessing_games;
