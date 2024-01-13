@@ -54,9 +54,12 @@ cargo run
 You should see the following output:
 
 ```console
-    Finished dev [unoptimized + debuginfo] target(s) in 0.04s
+    Finished dev [unoptimized + debuginfo] target(s) in 0.08s
      Running `target/debug/guessing-game`
-Hello, world!
+
+Let's play some guessing games
+
+? Do you want to continue? (y/n) › yes
 ```
 
 > [!IMPORTANT] 
