@@ -23,7 +23,7 @@ fn main() {
     {
         Some(true) => start_games(),
         Some(false) => start_games(),
-        None() => start_games(),
+        None => start_games(),
     }
 
 
