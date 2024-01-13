@@ -8,9 +8,13 @@ mod guessing_games;
 fn play_games(theme: &ColorfulTheme) {
 
     let games: &[(&str, fn())] = &[
-        ("Guess the number", guessing_games::guess_the_number),
-        ("Guess the word", guessing_games::guess_the_word),
+        ("Guess the number", guessing_games::guess_the_number(theme)),
+        ("Guess the word", guessing_games::guess_the_word(theme)),
     ];
+    // let games: &[(&str, fn())] = &[
+    //     ("Guess the number", guessing_games::guess_the_number),
+    //     ("Guess the word", guessing_games::guess_the_word),
+    // ];
     
     let selection = FuzzySelect::with_theme(theme)
         .with_prompt(format!("{} {}:", "Pick a game".bright_yellow(), "(use fuzzy search)".cyan()))
