@@ -32,7 +32,7 @@ fn main() {
     
     let theme = ColorfulTheme::default();
 
-    let confirmation = 
+    // let confirmation = 2;
 
     match Confirm::with_theme(&theme)
         .with_prompt(format!("{}", "Do you want to continue?".bright_yellow()))
