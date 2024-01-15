@@ -27,18 +27,37 @@ jobs:
             components: clippy, rustfmt
     
         - name: Build and test Rust Projects on ${{ matrix.os }} (${{ matrix.architecture }})
+          if: ${{ matrix.os != 'windows-latest' }}
           run: |
             for dir in $(ls -d */); do
                 # Skip the 'docs' directory
                 if [ "$dir" != "docs/" ]; then
                     cd $dir
-                    echo "Build, test and audit $dir ..."
+                    echo "Build, test and audit '$dir' ..."
                     cargo build
                     cargo test
                     cargo clippy -- -D warnings
                     cargo install cargo-audit
                     cargo audit
-                    echo "Done! Everything seems good with $dir ..."
+                    echo "Done! Everything seems good with '$dir' ..."
                     cd -
                 fi
             done
+
+        - name: Build and test Rust Projects on ${{ matrix.os }} (${{ matrix.architecture }})
+          if: ${{ matrix.os == 'windows-latest' }}
+          run: |
+            foreach ($dir in Get-ChildItem -Directory) {
+                # Skip the 'docs' directory
+                if ($dir.Name -ne 'docs') {
+                    Set-Location $dir.FullName
+                    Write-Host "Build, test and audit $($dir.Name) ..."
+                    cargo build
+                    cargo test
+                    cargo clippy -- -D warnings
+                    cargo install cargo-audit
+                    cargo audit
+                    Write-Host "Done! Everything seems good with $($dir.Name) ..."
+                    Set-Location ..
+                }
+            }
