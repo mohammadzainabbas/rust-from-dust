@@ -7,31 +7,14 @@ on:
 #     branches: [ main ]
   workflow_dispatch:
 
-env:
-    PYTHON_VERSIONS: '["3.8", "3.9", "3.10", "3.11", "3.12"]'
-
 jobs:
-
-    discover-projects:
-        runs-on: ubuntu-latest
-        outputs:
-            projects: ${{ steps.discover-all-projects.outputs.projects }}
-        steps:
-            - name: Checkout current repo
-              uses: actions/checkout@v4                
-            - name: Discover all projects
-              id: discover-all-projects
-              run: echo "projects=$(find . -maxdepth 1 -type d ! -name .git ! -name .github ! -name docs ! -name . | sed 's|^\./||')" >> $GITHUB_OUTPUT
-
     build:
         name: Build on ${{ matrix.os }}
         runs-on: ${{ matrix.os }}
-        needs: [discover-projects]
         strategy:
           fail-fast: false
           matrix:
             os: [ubuntu-latest, windows-latest, macos-latest]
-            project: ${{ needs.discover-projects.outputs.projects }}
             architecture: ['x64']
         steps:
         - name: Checkout current repo
@@ -45,12 +28,16 @@ jobs:
     
         - name: Build and test Rust Projects on ${{ matrix.os }} (${{ matrix.architecture }})
           run: |
-            for dir in ${{ matrix.project }}; do
-                echo "Building and testing $dir..."
-                cd $dir
-                cargo build
-                cargo test
-                cargo clippy -- -D warnings
-                cargo audit
-                cd -
-            end
+            for dir in $(ls -d */); do
+                # Skip the 'docs' directory
+                if [ "$dir" != "docs/" ]; then
+                    cd $dir
+                    echo "Build, test and audit $dir ..."
+                    cargo build
+                    cargo test
+                    cargo clippy -- -D warnings
+                    cargo audit
+                    echo "Done! Everything seems good with $dir ..."
+                    cd -
+                fi
+            done
