@@ -423,4 +423,3 @@ fn takes_and_gives_back(some_string: String) -> String {
   some_string
 }
 ```
-
