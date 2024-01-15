@@ -24,7 +24,7 @@ jobs:
           uses: actions-rs/toolchain@v1
           with:
             toolchain: stable
-            components: clippy, rustfmt, cargo-audit
+            components: clippy, rustfmt
     
         - name: Build and test Rust Projects on ${{ matrix.os }} (${{ matrix.architecture }})
           run: |
@@ -36,6 +36,7 @@ jobs:
                     cargo build
                     cargo test
                     cargo clippy -- -D warnings
+                    cargo install cargo-audit
                     cargo audit
                     echo "Done! Everything seems good with $dir ..."
                     cd -
