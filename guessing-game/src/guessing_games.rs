@@ -36,7 +36,7 @@ pub fn guess_the_number(theme: &ColorfulTheme, term: &Term) {
                     .italic(),
                 );
                 continue;
-            }
+            },
         }
     }
 
@@ -67,7 +67,7 @@ pub fn guess_the_number(theme: &ColorfulTheme, term: &Term) {
                     .italic(),
                 );
                 break;
-            }
+            },
             _ => {
                 utils::colored_print("Incorrect guess".bright_red().italic());
                 if guess_tries % HINT_AFTER == 0 {
@@ -84,7 +84,7 @@ pub fn guess_the_number(theme: &ColorfulTheme, term: &Term) {
                                 .italic(),
                             );
                             break;
-                        }
+                        },
                         Key::Tab => {
                             let far: i32 = (guess as i32 - secret_number as i32).abs();
                             utils::colored_println(
@@ -97,11 +97,11 @@ pub fn guess_the_number(theme: &ColorfulTheme, term: &Term) {
                                 .italic(),
                             );
                             continue;
-                        }
+                        },
                         _ => continue,
                     }
                 }
-            }
+            },
         }
     }
 }
@@ -190,7 +190,7 @@ pub fn guess_the_word(theme: &ColorfulTheme, term: &Term) {
                     .italic(),
                 );
                 break;
-            }
+            },
             _ => {
                 utils::colored_print("Wrong word. Try again!".bright_red().italic());
                 if guess_tries % ASK_FOR_STOP_AFTER == 0 {
@@ -207,7 +207,7 @@ pub fn guess_the_word(theme: &ColorfulTheme, term: &Term) {
                                 .italic(),
                             );
                             break;
-                        }
+                        },
                         Key::Tab => {
                             utils::colored_println(
                                 format!(
@@ -218,11 +218,11 @@ pub fn guess_the_word(theme: &ColorfulTheme, term: &Term) {
                                 .italic(),
                             );
                             continue;
-                        }
+                        },
                         _ => continue,
                     }
                 }
-            }
+            },
         }
     }
 }
