@@ -6,7 +6,7 @@ description = "A Rust backend project based on Axum web framework."
 authors = ["Mohammad Zain Abbas <mohammadzainabbas@gmail.com>"]
 homepage = "https://github.com/mohammadzainabbas/rust-from-dust/tree/main/rust-axum-intro"
 repository = "https://github.com/mohammadzainabbas/rust-from-dust/tree/main/rust-axum-intro"
-keywords = ["git", "git-commit", "auto-commit", "automate", "automation"]
+keywords = ["rust", "rust-axum", "backend", "axum", "web-application"]
 categories = ["command-line-utilities"]
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
