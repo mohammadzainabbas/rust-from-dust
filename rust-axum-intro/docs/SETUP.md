@@ -10,7 +10,7 @@
 
 ### Setup
 
-1. Create an empty directory and change directory:
+1. Create an empty Rust project:
 
 ```bash
 mkdir hack-lab-aws-python
