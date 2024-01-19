@@ -63,3 +63,10 @@ Let's play some guessing games
 ```
 
 And you are good to go! 🎉 Enjoy the games.
+
+## Additional resources
+
+> [!TIP]
+> Below mentioned resources can be used to learn more about the project.
+
+
