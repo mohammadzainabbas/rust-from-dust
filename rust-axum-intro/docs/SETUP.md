@@ -40,12 +40,60 @@ cargo add anyhow httpc-test --dev
 > [!IMPORTANT]
 > Use `--dev` to add dev-dependencies.
 
-```console
-pulumi>=3.0.0,<4.0.0
-pulumi-aws>=6.0.0,<7.0.0
-pulumi-awsx>=2.0.0,<3.0.0
-pulumi-random>=3.0.0,<5.0.0
-pulumi-command>=0.5.0,<1.0.0
+4. Add additional properties in `Cargo.toml` file, see below the entire `Cargo.toml` file:
+
+```toml
+[package]
+name = "rust-axum-intro"
+version = "0.1.0"
+edition = "2021"
+description = "A Rust backend project based on Axum web framework."
+authors = ["Mohammad Zain Abbas <mohammadzainabbas@gmail.com>"]
+homepage = "https://github.com/mohammadzainabbas/rust-from-dust/tree/main/rust-axum-intro"
+repository = "https://github.com/mohammadzainabbas/rust-from-dust/tree/main/rust-axum-intro"
+keywords = ["rust", "rust-axum", "backend", "axum", "web-application"]
+categories = ["command-line-utilities"]
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+# Tokio runtime
+tokio = { version = "1.35.1", features = ["full"] }
+
+# CLI
+clap = { version = "4.4.18", features = ["derive"] }
+
+# Type erasure for async trait methods
+async-trait = "0.1.77"
+
+# A generic serialization/deserialization framework
+serde = { version = "1.0.195", features = ["derive"] }
+serde_json = "1.0.111"
+serde_with = "3.4.0"
+
+# Web framework that focuses on ergonomics and modularity
+axum = "0.7.4"
+
+# Tower middleware and utilities for HTTP clients and servers
+tower-http = { version = "0.5.1", features = ["fs"] }
+
+# Cookie manager middleware for tower.
+tower-cookies = "0.10.0"
+
+# lazy static regular expressions checked at compile time
+lazy-regex = "3.1.0"
+
+# Helpful macros for working with enums and strings
+strum_macros = "0.25.3"
+
+# A library to generate and parse UUIDs.
+uuid = { version = "1.7.0", features = ["v4", "fast-rng"] }
+
+[dev-dependencies]
+# Flexible concrete Error type built on std::error::Error
+anyhow = "1.0.79"
+
+# Minimalistic HTTP Client Test Utilities
+httpc-test = "0.1.8"
 ```
 
 4. Add configuration variables:
