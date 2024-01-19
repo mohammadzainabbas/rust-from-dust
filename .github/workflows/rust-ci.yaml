@@ -9,6 +9,8 @@ on:
   workflow_dispatch:
 
 jobs:
+  discover-projects:
+    
   ci:
     name: CI @ ${{ matrix.project }}
     runs-on: ubuntu-latest
