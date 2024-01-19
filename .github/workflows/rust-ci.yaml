@@ -41,8 +41,8 @@ jobs:
         with:
           command: test
           args: --manifest-path ${{ matrix.project }}/Cargo.toml
-        - run: rustup component add rustfmt
-        - name: cargo fmt ${{ matrix.project }}
+      - run: rustup component add rustfmt
+      - name: cargo fmt ${{ matrix.project }}
         uses: actions-rs/cargo@v1
         id: cargo-fmt
         if: ${{ success() }}
