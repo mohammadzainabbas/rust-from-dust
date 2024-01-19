@@ -13,8 +13,8 @@
 1. Create an empty Rust project:
 
 ```bash
-mkdir hack-lab-aws-python
-cd hack-lab-aws-python
+cargo new rust-axum-intro
+cd rust-axum-intro
 ```
 
 2. Setup a pulumi project:
