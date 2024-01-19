@@ -11,6 +11,8 @@ on:
       project:
         type: choice
         description: Pick a project
+        required: true
+        default: 'hello-world'
         
 
 jobs:
