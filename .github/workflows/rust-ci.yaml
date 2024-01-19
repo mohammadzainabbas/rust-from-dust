@@ -8,7 +8,8 @@ on:
   #   paths: ['*/src/**', '*/Cargo.lock', '*/Cargo.toml']
   workflow_dispatch:
     inputs:
-      
+      project:
+        
 
 jobs:
   check:
