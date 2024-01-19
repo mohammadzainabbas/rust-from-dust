@@ -29,7 +29,7 @@ cargo add uuid -F v4,fast-rng # or cargo add uuid -F uuid/v4,fast-rng
 ```
 
 > [!IMPORTANT]
-> Use `-F` or `--` <kbd> <br> Enter <br> </kbd> and it'll be skipped.
+> Use `-F` or `--features` to add  <kbd> <br> Enter <br> </kbd> and it'll be skipped.
 
 3. Install dev-dependencies:
 
