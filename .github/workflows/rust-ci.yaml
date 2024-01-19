@@ -33,6 +33,7 @@ jobs:
         id: cargo-check
         with:
           command: check
+          args:
 
   test:
     name: Cargo test
