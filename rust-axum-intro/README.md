@@ -69,7 +69,7 @@ And you are good to go! 🎉 Enjoy the games.
 > [!TIP]
 > Below mentioned resources can be used to learn more about the project.
 
-| Component | Description |
+| Video | Title |
 | ---- | --- |
 | [**torch**](https://pytorch.org/docs/stable/torch.html) | A Tensor library like NumPy, with strong GPU support |
 | [**torch.autograd**](https://pytorch.org/docs/stable/autograd.html) | A tape-based automatic differentiation library that supports all differentiable Tensor operations in torch |
