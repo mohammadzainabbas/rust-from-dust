@@ -12,7 +12,7 @@
 > [!TIP]
 > Below mentioned playlists can be used to learn more about Rust.
 
-| Video | Title |
+| Playlist | Playlist title |
 | :----: | :---: |
 | <a href="https://www.youtube.com/watch?v=OX9HJsJUDxA&list=PLai5B987bZ9CoVR-QEIN9foz4QCJ0H2Y8&index=2"><img alt="The Rust Lang Book" src="https://img.youtube.com/vi/OX9HJsJUDxA/0.jpg" width="50%" ></a> | **The Rust Lang Book** |
 
