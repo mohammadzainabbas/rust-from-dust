@@ -10,5 +10,4 @@ async fn main() {
     let listener = tokio::net::TcpListener::bind("0.0.0.0:3000").await.unwrap();
     println!("Listening on {:#?}", listener);
     axum::serve(listener, router).await.unwrap();
-    // axum::Serve::bind(&address).serve(routes_hello)
 }
