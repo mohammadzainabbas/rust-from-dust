@@ -46,8 +46,8 @@ jobs:
         id: cargo-fmt
         if: ${{ success() }}
         with:
-          command: test
-          args: --manifest-path ${{ matrix.project }}/Cargo.toml
+          command: fmt
+          args: --manifest-path ${{ matrix.project }}/Cargo.toml --all -- --check
 
   fmt:
     name: Rustfmt
