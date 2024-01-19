@@ -13,7 +13,8 @@ on:
         description: Pick a project
         required: true
         default: 'hello-world'
-        
+        options:
+          - 
 
 jobs:
   check:
