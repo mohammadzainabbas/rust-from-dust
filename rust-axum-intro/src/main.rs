@@ -6,7 +6,7 @@ use axum::{Router, routing::get, response::Html};
 async fn main() {
     let routes_hello = Router::new().route("/hello", get(
         || async {
-            Html()
+            Html("Hello World")
         }
     ))
 }
