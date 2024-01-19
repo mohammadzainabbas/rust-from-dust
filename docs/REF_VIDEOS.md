@@ -14,7 +14,7 @@
 
 | Video | Title |
 | :----: | :---: |
-| <a href="https://www.youtube.com/watch?v=OX9HJsJUDxA&list=PLai5B987bZ9CoVR-QEIN9foz4QCJ0H2Y8&index=2"><img alt="Rust Axum Full Course - Web Development (GitHub repo updated to Axum 0.7)" src="https://img.youtube.com/vi/OX9HJsJUDxA/0.jpg" width="50%" ></a> | **Rust Axum Full Course - Web Development (GitHub repo updated to Axum 0.7)** |
+| <a href="https://www.youtube.com/watch?v=OX9HJsJUDxA&list=PLai5B987bZ9CoVR-QEIN9foz4QCJ0H2Y8&index=2"><img alt="The Rust Lang Book" src="https://img.youtube.com/vi/OX9HJsJUDxA/0.jpg" width="50%" ></a> | **The Rust Lang Book** |
 
 
 ## Backend Dev :computer:
