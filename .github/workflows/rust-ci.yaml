@@ -37,6 +37,7 @@ jobs:
       - name: cargo test ${{ matrix.project }}
         uses: actions-rs/cargo@v1
         id: cargo-test
+        if: ${{ success() }}
         with:
           command: test
           args: --manifest-path ${{ matrix.project }}/Cargo.toml
