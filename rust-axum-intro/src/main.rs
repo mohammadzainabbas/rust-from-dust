@@ -12,5 +12,5 @@ async fn main() {
     let address = SocketAddr::new(IpAddr::V4(Ipv4Addr::new(127, 0, 0, 1)), 8080);
     println!("Listening on {}", address);
 
-    axum::Server::bind()
+    axum::serve(tcp_listener, routes_hello).await.unwrap();
 }
