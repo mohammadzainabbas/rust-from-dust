@@ -5,9 +5,7 @@ run-name: 🚀 ${{ github.workflow }}(${{ github.run_number }}) workflow deploye
 on:
   pull_request:
     branches: [ main ]
-    paths: ['*/Cargo.toml', '*/src/**']
-      - '*/Cargo.toml'
-      - '*/Cargo.lock'
+    paths: ['*/Cargo.toml', '*/Cargo.lock', '*/src/**']
   workflow_dispatch:
 
 jobs:
