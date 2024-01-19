@@ -16,6 +16,8 @@ tokio = { version = "1.35.1", features = ["full"] }
 
 # CLI
 clap = { version = "4.4.18", features = ["derive"] }
+
+# Type erasure for async trait methods
 async-trait = "0.1.77"
 
 [dev-dependencies]
