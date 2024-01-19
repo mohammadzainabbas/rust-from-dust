@@ -27,10 +27,17 @@ serde_with = "3.4.0"
 
 # Web framework that focuses on ergonomics and modularity
 axum = "0.7.4"
+
+# Tower middleware and utilities for HTTP clients and servers
 tower-http = { version = "0.5.1", features = ["fs"] }
+
+# Cookie manager middleware for tower.
 tower-cookies = "0.10.0"
+
 lazy-regex = "3.1.0"
+
 strum_macros = "0.25.3"
+
 uuid = { version = "1.7.0", features = ["v4", "fast-rng"] }
 
 [dev-dependencies]
