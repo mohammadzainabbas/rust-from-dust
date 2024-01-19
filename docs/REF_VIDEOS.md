@@ -1,13 +1,13 @@
-# Rust - Reference Videos :tv:
+## Rust - Reference Videos :tv:
 
-## Table of Contents
+### Table of Contents
 
 1. [Rust Playlists :clapper:](#rust-playlists-clapper)
 1. [Backend Dev :computer:](#backend-dev-computer)
 
 #
 
-## Rust Playlists :clapper:
+### Rust Playlists :clapper:
 
 > [!TIP]
 > Below mentioned playlists can be used to learn more about Rust.
@@ -17,7 +17,7 @@
 | <a href="https://www.youtube.com/watch?v=OX9HJsJUDxA&list=PLai5B987bZ9CoVR-QEIN9foz4QCJ0H2Y8"><img alt="The Rust Lang Book" src="https://img.youtube.com/vi/OX9HJsJUDxA/0.jpg" width="50%" ></a> | **The Rust Lang Book** |
 
 
-## Backend Dev :computer:
+### Backend Dev :computer:
 
 > [!TIP]
 > Below mentioned resources can be used to learn more about backend development in Rust.
