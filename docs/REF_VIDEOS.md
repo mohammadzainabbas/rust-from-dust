@@ -1,8 +1,8 @@
-# Rust - Reference Videos :books:
+# Rust - Reference Videos :tv:
 
 ## Table of Contents
 
-1. [Rust Playlists :pencil2:](#rust-playlists-pencil2)
+1. [Rust Playlists :clapper:](#rust-playlists-clapper)
 1. [Basic Types & Variables :pencil2:](#basic-types--variables-pencil2)
 2. [Control Flow :arrows_clockwise:](#control-flow-arrows_clockwise)
 3. [References, Ownership, and Borrowing :link:](#references-ownership-and-borrowing-link)
