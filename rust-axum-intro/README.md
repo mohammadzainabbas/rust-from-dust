@@ -67,4 +67,4 @@ And you are good to go! 🎉 Enjoy the games.
 ## Additional resources
 
 > [!TIP]
-> Check additional _video based resources_ [here](https://github.com/mohammadzainabbas/rust-from-dust/blob/dev/docs/REF_VIDEOS.md#backend-dev-computer).
+> Check additional _video based resources_ [here](https://github.com/mohammadzainabbas/rust-from-dust/blob/main/docs/REF_VIDEOS.md#backend-dev-computer).
