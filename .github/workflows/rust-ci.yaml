@@ -6,17 +6,6 @@ on:
   pull_request:
     branches: [main]
     paths: ['*/src/**', '*/Cargo.lock', '*/Cargo.toml']
-  workflow_dispatch:
-    inputs:
-      project:
-        type: choice
-        description: Pick a project
-        required: true
-        default: 'hello-world'
-        options:
-          - 'hello-world'
-          - 'guessing-game'
-          - 'rust-axum-intro'
 
 jobs:
   check:
