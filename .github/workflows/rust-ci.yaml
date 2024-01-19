@@ -7,6 +7,8 @@ on:
   #   branches: [main]
   #   paths: ['*/src/**', '*/Cargo.lock', '*/Cargo.toml']
   workflow_dispatch:
+    inputs:
+      
 
 jobs:
   check:
