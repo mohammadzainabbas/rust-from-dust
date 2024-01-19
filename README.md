@@ -9,6 +9,6 @@
 #
 
 > [!TIP]
-> Check [<kbd> <br> Rust cheatsheet <br> </kbd>](https://github.com/mohammadzainabbas/rust-from-dust/blob/main/docs/CHEATSHEET.md) or [<kbd> <br> video based resources <br> </kbd>](https://github.com/mohammadzainabbas/rust-from-dust/blob/main/docs/REF_VIDEOS.md) for more _learning_.
+> Check [<kbd> <br> Rust cheatsheet <br> </kbd>](https://github.com/mohammadzainabbas/rust-from-dust/blob/main/docs/CHEATSHEET.md) or [<kbd> <br>video based resources<br> </kbd>](https://github.com/mohammadzainabbas/rust-from-dust/blob/main/docs/REF_VIDEOS.md) for more _learning_.
 
 #
