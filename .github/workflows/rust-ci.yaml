@@ -21,7 +21,7 @@ jobs:
         shell: bash
         run: |
           sudo apt install jq -y
-          echo "projects=$(find . -maxdepth 1 -type d ! -name .git ! -name .github ! -name docs ! -name . | sed 's|^\./||' | tr '\n' ',' | sed 's/,$//' | sed 's/^/[/; s/$/]/')" >> $GITHUB_OUTPUT
+          echo "projects=$(find . -maxdepth 1 -type d ! -name .git ! -name .github ! -name docs ! -name . | sed 's|^\./||' | jq -R -s -c 'split("\n")[:-1]')" >> $GITHUB_OUTPUT
 
   ci:
     name: CI @ ${{ matrix.project }}
