@@ -4,5 +4,5 @@ use axum::Router;
 
 #[tokio::main(worker_threads = 2)]
 async fn main() {
-    let routes_hello = Router::
+    let routes_hello = Router::new().route("/hello", method_router)
 }
