@@ -37,8 +37,8 @@ cargo add uuid -F v4,fast-rng # or cargo add uuid -F uuid/v4,fast-rng
 cargo add anyhow httpc-test --dev
 ```
 
-> [!CAUTION]
-> Manually, add `pulumi-aws`, `pulumi-awsx`, `pulumi-random` and `pulumi-command` (see below) in `requirements.txt` file, if you want to use `pip install -r requirements.txt` command later.
+> [!IMPORTANT]
+> Use `--dev` to add dev-dependencies.
 
 ```console
 pulumi>=3.0.0,<4.0.0
