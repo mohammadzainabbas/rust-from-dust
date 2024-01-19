@@ -2,7 +2,12 @@
 name = "rust-axum-intro"
 version = "0.1.0"
 edition = "2021"
-
+description = "Automates the process of adding, committing, and pushing changes to a GitHub repository."
+authors = ["Mohammad Zain Abbas <mohammadzainabbas@gmail.com>"]
+homepage = "https://github.com/mohammadzainabbas/gitzap"
+repository = "https://github.com/mohammadzainabbas/gitzap"
+keywords = ["git", "git-commit", "auto-commit", "automate", "automation"]
+categories = ["command-line-utilities"]
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
