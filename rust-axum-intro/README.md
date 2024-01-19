@@ -71,6 +71,6 @@ And you are good to go! 🎉 Enjoy the games.
 
 | Video | Title |
 | ---- | --- |
-| [![Rust Axum Full Course - Web Development (GitHub repo updated to Axum 0.7)](http://img.youtube.com/vi/XZtlD_m59sM/0.jpg | width=40)](http://www.youtube.com/watch?v=XZtlD_m59sM) | **Rust Axum Full Course - Web Development (GitHub repo updated to Axum 0.7)** |
-| [![Rust Programming: TypeState Builder Pattern Explained](http://img.youtube.com/vi/pwmIQzLuYl0/0.jpg | width=40)](http://www.youtube.com/watch?v=pwmIQzLuYl0) | **Rust Programming: TypeState Builder Pattern Explained** |
+| [![Rust Axum Full Course - Web Development (GitHub repo updated to Axum 0.7)](http://img.youtube.com/vi/XZtlD_m59sM/0.jpg \| width=40)](http://www.youtube.com/watch?v=XZtlD_m59sM) | **Rust Axum Full Course - Web Development (GitHub repo updated to Axum 0.7)** |
+| [![Rust Programming: TypeState Builder Pattern Explained](http://img.youtube.com/vi/pwmIQzLuYl0/0.jpg \| width=40)](http://www.youtube.com/watch?v=pwmIQzLuYl0) | **Rust Programming: TypeState Builder Pattern Explained** |
 
