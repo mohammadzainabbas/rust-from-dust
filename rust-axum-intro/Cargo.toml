@@ -2,7 +2,7 @@
 name = "rust-axum-intro"
 version = "0.1.0"
 edition = "2021"
-description = "."
+description = "A Rust backend project based on Axum web framework."
 authors = ["Mohammad Zain Abbas <mohammadzainabbas@gmail.com>"]
 homepage = "https://github.com/mohammadzainabbas/gitzap"
 repository = "https://github.com/mohammadzainabbas/gitzap"
