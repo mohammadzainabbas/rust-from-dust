@@ -6,9 +6,10 @@ on:
   pull_request:
     branches: [main]
     paths: ['*/src/**', '*/Cargo.lock', '*/Cargo.toml']
+  workflow_dispatch:
 
 jobs:
-  check:
+  ci:
     name: Cargo check
     runs-on: ubuntu-latest
     strategy:
