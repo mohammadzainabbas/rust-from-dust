@@ -20,8 +20,10 @@ jobs:
           - 'guessing-game'
           - 'rust-axum-intro'
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions-rs/toolchain@v1
+      - name: Checkout repo
+        uses: actions/checkout@v4
+      - name: 
+        uses: actions-rs/toolchain@v1
         with:
           profile: minimal
           toolchain: stable
