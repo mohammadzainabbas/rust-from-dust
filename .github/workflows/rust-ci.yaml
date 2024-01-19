@@ -24,7 +24,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working_
+        working-directory: ${{ inputs.project }}
     steps:
       - uses: actions/checkout@v2
       - uses: actions-rs/toolchain@v1
