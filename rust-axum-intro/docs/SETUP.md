@@ -96,7 +96,7 @@ anyhow = "1.0.79"
 httpc-test = "0.1.8"
 ```
 
-4. Add configuration variables:
+5. Add configuration variables:
 
 ```bash
 pulumi config set aws:region eu-west-3
