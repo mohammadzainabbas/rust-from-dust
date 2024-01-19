@@ -20,7 +20,7 @@ cd rust-axum-intro
 2. Install dependencies and dev-dependencies:
 
 ```bash
-cargo add serde serde_json -F serde/derive
+cargo add serde serde_json serde_with -F serde/derive
 cargo add tower-http -F fs
 cargo add tower-cookies lazy-regex strum_macros
 cargo add uuid -F uuid/v4,fast-rng
