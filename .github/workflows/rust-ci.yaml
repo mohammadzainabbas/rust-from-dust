@@ -3,9 +3,9 @@ name: Rust CI
 run-name: 🚀 ${{ github.workflow }}(${{ github.run_number }}) workflow deployed by @${{ github.actor }} on ${{ github.ref_name }} with event ${{ github.event_name }}
 
 on:
-  # pull_request:
-  #   branches: [main]
-  #   paths: ['*/src/**', '*/Cargo.lock', '*/Cargo.toml']
+  pull_request:
+    branches: [main]
+    paths: ['*/src/**', '*/Cargo.lock', '*/Cargo.toml']
   workflow_dispatch:
     inputs:
       project:
