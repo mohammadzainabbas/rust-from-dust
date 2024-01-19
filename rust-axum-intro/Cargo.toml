@@ -37,7 +37,9 @@ tower-cookies = "0.10.0"
 # lazy static regular expressions checked at compile time
 lazy-regex = "3.1.0"
 
+# Helpful macros for working with enums and strings
 strum_macros = "0.25.3"
+
 
 uuid = { version = "1.7.0", features = ["v4", "fast-rng"] }
 
