@@ -11,8 +11,10 @@ on:
 jobs:
   discover-projects:
     runs-on: ubuntu-latest
-    steps:
+    outputs:
       
+    steps:
+
   ci:
     name: CI @ ${{ matrix.project }}
     runs-on: ubuntu-latest
