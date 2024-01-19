@@ -21,6 +21,7 @@ cd rust-axum-intro
 
 ```bash
 cargo add tokio -F full
+cargo add clap -F derive
 cargo add serde serde_json serde_with -F serde/derive
 cargo add tower-http -F fs
 cargo add async-trait axum tower-cookies lazy-regex strum_macros
