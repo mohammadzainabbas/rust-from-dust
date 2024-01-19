@@ -14,7 +14,7 @@ In Rust
 ## Backend Dev :computer:
 
 > [!TIP]
-> Below mentioned resources can be used to learn more about the project.
+> Below mentioned resources can be used to learn more about backend development in Rust.
 
 | Video | Title |
 | :----: | :---: |
