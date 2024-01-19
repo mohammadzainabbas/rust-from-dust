@@ -14,7 +14,9 @@ on:
         required: true
         default: 'hello-world'
         options:
-          - 
+          - 'hello-world'
+          - 'guessing-game'
+          - 'rust-axum-intro'
 
 jobs:
   check:
