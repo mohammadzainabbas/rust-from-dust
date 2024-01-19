@@ -10,7 +10,7 @@ on:
 
 jobs:
   ci:
-    name: Cargo check
+    name: CI @ ${{ matrix.project }}
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
