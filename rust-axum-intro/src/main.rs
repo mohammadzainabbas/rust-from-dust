@@ -10,4 +10,6 @@ async fn main() {
         Router::new().route("/hello", get(|| async { Html("<h3> Hello World </h3>") }));
 
     let socket = SocketAddr::new(IpAddr::V4(Ipv4Addr::new(127, 0, 0, 1)), 8080);
+
+    routes_hello.to_owned();
 }
