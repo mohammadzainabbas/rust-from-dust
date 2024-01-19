@@ -1,4 +1,4 @@
-// #![allow(unused)] // for dev
+#![allow(unused)] // for dev
 
 use axum::{response::Html, routing::get, Router};
 
