@@ -40,7 +40,7 @@ jobs:
         id: cargo-check
         with:
           command: check
-          args: --manifest-path ${{ matrix.project }}/Cargo.toml
+          args: --manifest-path ${{ matrix.project || inputs.project }}/Cargo.toml
 
   test:
     name: Cargo test
@@ -63,7 +63,7 @@ jobs:
       - uses: actions-rs/cargo@v1
         with:
           command: test
-          args: --manifest-path ${{ matrix.project }}/Cargo.toml
+          args: --manifest-path ${{ matrix.project || inputs.project }}/Cargo.toml
 
   fmt:
     name: Rustfmt
@@ -87,7 +87,7 @@ jobs:
       - uses: actions-rs/cargo@v1
         with:
           command: fmt
-          args: --manifest-path ${{ matrix.project }}/Cargo.toml --all -- --check
+          args: --manifest-path ${{ matrix.project || inputs.project }}/Cargo.toml --all -- --check
 
   clippy:
     name: Clippy
@@ -111,4 +111,4 @@ jobs:
       - uses: actions-rs/cargo@v1
         with:
           command: clippy
-          args: --manifest-path ${{ matrix.project }}/Cargo.toml -- -D warnings
+          args: --manifest-path ${{ matrix.project || inputs.project }}/Cargo.toml -- -D warnings
