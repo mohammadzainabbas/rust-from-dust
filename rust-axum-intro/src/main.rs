@@ -1,6 +1,6 @@
 // #![allow(unused)] // for dev
 
 #[tokio::main(worker_threads = 2)]
-fn main() {
+async fn main() {
     println!("Hello, world!");
 }
