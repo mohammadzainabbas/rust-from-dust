@@ -32,42 +32,40 @@ jobs:
       matrix:
         project: ${{ fromJson(needs.discover-projects.outputs.projects) }}
     steps:
-      - name: Running ${{ matrix.project }}
-        run: echo "${{ matrix.project }}"
-      # - name: Checkout repo
-      #   uses: actions/checkout@v4
-      # - name: Install Rust
-      #   uses: actions-rs/toolchain@v1
-      #   with:
-      #     profile: minimal
-      #     toolchain: stable
-      #     override: true
-      # - name: cargo check ${{ matrix.project }}
-      #   uses: actions-rs/cargo@v1
-      #   id: cargo-check
-      #   with:
-      #     command: check
-      #     args: --manifest-path ${{ matrix.project }}/Cargo.toml
-      # - name: cargo test ${{ matrix.project }}
-      #   uses: actions-rs/cargo@v1
-      #   id: cargo-test
-      #   if: ${{ success() }}
-      #   with:
-      #     command: test
-      #     args: --manifest-path ${{ matrix.project }}/Cargo.toml
-      # - run: rustup component add rustfmt
-      # - name: cargo fmt ${{ matrix.project }}
-      #   uses: actions-rs/cargo@v1
-      #   id: cargo-fmt
-      #   if: ${{ success() }}
-      #   with:
-      #     command: fmt
-      #     args: --manifest-path ${{ matrix.project }}/Cargo.toml --all -- --check
-      # - run: rustup component add clippy
-      # - name: cargo clippy ${{ matrix.project }}
-      #   uses: actions-rs/cargo@v1
-      #   id: cargo-clippy
-      #   if: ${{ success() }}
-      #   with:
-      #     command: clippy
-      #     args: --manifest-path ${{ matrix.project }}/Cargo.toml -- -D warnings
+      - name: Checkout repo
+        uses: actions/checkout@v4
+      - name: Install Rust
+        uses: actions-rs/toolchain@v1
+        with:
+          profile: minimal
+          toolchain: stable
+          override: true
+      - name: cargo check ${{ matrix.project }}
+        uses: actions-rs/cargo@v1
+        id: cargo-check
+        with:
+          command: check
+          args: --manifest-path ${{ matrix.project }}/Cargo.toml
+      - name: cargo test ${{ matrix.project }}
+        uses: actions-rs/cargo@v1
+        id: cargo-test
+        if: ${{ success() }}
+        with:
+          command: test
+          args: --manifest-path ${{ matrix.project }}/Cargo.toml
+      - run: rustup component add rustfmt
+      - name: cargo fmt ${{ matrix.project }}
+        uses: actions-rs/cargo@v1
+        id: cargo-fmt
+        if: ${{ success() }}
+        with:
+          command: fmt
+          args: --manifest-path ${{ matrix.project }}/Cargo.toml --all -- --check
+      - run: rustup component add clippy
+      - name: cargo clippy ${{ matrix.project }}
+        uses: actions-rs/cargo@v1
+        id: cargo-clippy
+        if: ${{ success() }}
+        with:
+          command: clippy
+          args: --manifest-path ${{ matrix.project }}/Cargo.toml -- -D warnings
