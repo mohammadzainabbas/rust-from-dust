@@ -12,5 +12,10 @@ async fn main() {
     let address = SocketAddr::new(IpAddr::V4(Ipv4Addr::new(127, 0, 0, 1)), 8080);
     println!("Listening on {}", address);
 
+    let router = Router::new().route("/", get(|| async { "Hello, World!" }));
+
+    let listener = tokio::net::TcpListener::bind("0.0.0.0:3000").await.unwrap();
+    axum::serve(listener, router).await.unwrap();
+
     // axum::Serve::bind(&address).serve(routes_hello)
 }
