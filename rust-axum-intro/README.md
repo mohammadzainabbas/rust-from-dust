@@ -8,7 +8,7 @@ A **Rust** program to play two _guessing_ games: <kbd> <br> Guess the number
 
 > [!NOTE]
 > Below mentioned video on _YouTube_ was used as a starting point for this project. 
-> [![Programming a Guessing Game in Rust!](http://img.youtube.com/vi/XZtlD_m59sM/0.jpg)](http://www.youtube.com/watch?v=XZtlD_m59sM)
+> [![Rust Axum Full Course - Web Development (GitHub repo updated to Axum 0.7)](http://img.youtube.com/vi/XZtlD_m59sM/0.jpg)](http://www.youtube.com/watch?v=XZtlD_m59sM)
 
 ## Key Concepts
 
