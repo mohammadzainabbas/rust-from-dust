@@ -3,62 +3,92 @@ name: Rust CI
 run-name: 🚀 ${{ github.workflow }}(${{ github.run_number }}) workflow deployed by @${{ github.actor }} on ${{ github.ref_name }} with event ${{ github.event_name }}
 
 on:
+  push:
+    branches: [main]
+    paths: ['Cargo.lock', 'Cargo.toml']
   pull_request:
-    branches: [ main ]
-    paths: ['*/Cargo.toml', '*/Cargo.lock', '*/src/**']
-  workflow_dispatch:
+    branches: [main]
+    paths: ['src/**', 'Cargo.lock', 'Cargo.toml']
 
 jobs:
-    build:
-        name: Build on ${{ matrix.os }}
-        runs-on: ${{ matrix.os }}
-        strategy:
-          fail-fast: false
-          matrix:
-            os: [ubuntu-latest, windows-latest, macos-latest]
-            architecture: ['x64']
-        steps:
-        - name: Checkout current repo
-          uses: actions/checkout@v4
-        
-        - name: Install Rust
-          uses: actions-rs/toolchain@v1
-          with:
-            toolchain: stable
-            components: clippy, rustfmt
-    
-        - name: Build and test Rust Projects on ${{ matrix.os }} (${{ matrix.architecture }})
-          if: ${{ matrix.os != 'windows-latest' }}
-          run: |
-            for dir in $(ls -d */); do
-                # Skip the 'docs' directory
-                if [ "$dir" != "docs/" ]; then
-                    cd $dir
-                    echo "Build, test and audit '$dir' ..."
-                    cargo build
-                    cargo test
-                    cargo clippy -- -D warnings
-                    cargo install cargo-audit
-                    cargo audit
-                    echo "Done! Everything seems good with '$dir' ..."
-                    cd -
-                fi
-            done
+  check:
+    name: Cargo check
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions-rs/toolchain@v1
+        with:
+          profile: minimal
+          toolchain: stable
+          override: true
+      - uses: actions-rs/cargo@v1
+        id: cargo-check
+        with:
+          command: check
+      # - uses: RubbaBoy/BYOB@v1
+      #   if: ${{ success() }}
+      #   with:
+      #     name: check
+      #     icon: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iNDhweCIgdmlld0JveD0iMCAwIDI0IDI0IiB3aWR0aD0iNDhweCIgZmlsbD0iI0ZGRkZGRiI+PHBhdGggY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMCAwaDI0djI0SDB6IiBmaWxsPSJub25lIi8+PHBhdGggZD0iTTIyLjcgMTlsLTkuMS05LjFjLjktMi4zLjQtNS0xLjUtNi45LTItMi01LTIuNC03LjQtMS4zTDkgNiA2IDkgMS42IDQuN0MuNCA3LjEuOSAxMC4xIDIuOSAxMi4xYzEuOSAxLjkgNC42IDIuNCA2LjkgMS41bDkuMSA5LjFjLjQuNCAxIC40IDEuNCAwbDIuMy0yLjNjLjUtLjQuNS0xLjEuMS0xLjR6Ii8+PC9zdmc+'
+      #     label: Cargo Check 
+      #     status: Pass
+      #     color: green
+      #     github_token: ${{ secrets.GITHUB_TOKEN }}
+      # - uses: RubbaBoy/BYOB@v1
+      #   if: ${{ failure() && steps.cargo-check.conclusion == 'failure' }}
+      #   with:
+      #     name: check
+      #     icon: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iNDhweCIgdmlld0JveD0iMCAwIDI0IDI0IiB3aWR0aD0iNDhweCIgZmlsbD0iI0ZGRkZGRiI+PHBhdGggY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMCAwaDI0djI0SDB6IiBmaWxsPSJub25lIi8+PHBhdGggZD0iTTIyLjcgMTlsLTkuMS05LjFjLjktMi4zLjQtNS0xLjUtNi45LTItMi01LTIuNC03LjQtMS4zTDkgNiA2IDkgMS42IDQuN0MuNCA3LjEuOSAxMC4xIDIuOSAxMi4xYzEuOSAxLjkgNC42IDIuNCA2LjkgMS41bDkuMSA5LjFjLjQuNCAxIC40IDEuNCAwbDIuMy0yLjNjLjUtLjQuNS0xLjEuMS0xLjR6Ii8+PC9zdmc+'
+      #     label: Cargo Check 
+      #     status: Fail
+      #     color: red
+      #     github_token: ${{ secrets.GITHUB_TOKEN }}
 
-        - name: Build and test Rust Projects on ${{ matrix.os }} (${{ matrix.architecture }})
-          if: ${{ matrix.os == 'windows-latest' }}
-          run: |
-            foreach ($dir in Get-ChildItem -Directory) {
-                # Skip the 'docs' directory
-                if ($dir.Name -ne 'docs') {
-                    Set-Location $dir.FullName
-                    Write-Host "Build, test and audit $($dir.Name) ..."
-                    cargo build
-                    cargo test
-                    cargo clippy -- -D warnings
-                    cargo install cargo-audit
-                    cargo audit
-                    Write-Host "Done! Everything seems good with $($dir.Name) ..."
-                    Set-Location ..
-                }
-            }
+  test:
+    name: Cargo test
+    needs: [check]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions-rs/toolchain@v1
+        with:
+          profile: minimal
+          toolchain: stable
+          override: true
+      - uses: actions-rs/cargo@v1
+        with:
+          command: test
+
+  fmt:
+    name: Rustfmt
+    needs: [check, test]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions-rs/toolchain@v1
+        with:
+          profile: minimal
+          toolchain: stable
+          override: true
+      - run: rustup component add rustfmt
+      - uses: actions-rs/cargo@v1
+        with:
+          command: fmt
+          args: --all -- --check
+
+  clippy:
+    name: Clippy
+    needs: [check, test]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions-rs/toolchain@v1
+        with:
+          profile: minimal
+          toolchain: stable
+          override: true
+      - run: rustup component add clippy
+      - uses: actions-rs/cargo@v1
+        with:
+          command: clippy
+          args: -- -D warnings
