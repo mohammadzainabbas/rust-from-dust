@@ -20,10 +20,7 @@ jobs:
         id: discover-all-projects
         shell: bash
         run: |
-          projects=$(find . -maxdepth 1 -type d ! -name .git ! -name .github ! -name docs ! -name . | sed 's|^\./||' | tr '\n' ' ' | sed 's/ /,/g; s/^/[/; s/$/]/')
-          projects=${projects%,}
-          echo "$projects" >> $GITHUB_OUTPUT
-          # echo "projects=$(find . -maxdepth 1 -type d ! -name .git ! -name .github ! -name docs ! -name . | sed 's|^\./||' | tr '\n' ' ' | sed 's/ /,/g; s/^/[/; s/$/]/')" >> $GITHUB_OUTPUT
+          echo "projects=$(find . -maxdepth 1 -type d ! -name .git ! -name .github ! -name docs ! -name . | sed 's|^\./||' | tr '\n' ',' | sed 's/,$//' | sed 's/^/[/; s/$/]/')" >> $GITHUB_OUTPUT
 
   ci:
     name: CI @ ${{ matrix.project }}
