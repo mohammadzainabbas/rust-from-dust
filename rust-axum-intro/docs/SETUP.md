@@ -29,7 +29,7 @@ cargo add uuid -F v4,fast-rng # or cargo add uuid -F uuid/v4,fast-rng
 ```
 
 > [!IMPORTANT]
-> Use `-F` or `--features` to add additional features.
+> Use `-F` or `--features` to add additional features. For example, `cargo add uuid -F v4,fast-rng` will add `uuid` crate with `v4` and `fast-rng` features.
 
 3. Install dev-dependencies:
 
