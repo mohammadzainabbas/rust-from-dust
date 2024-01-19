@@ -2,7 +2,7 @@
 name = "guessing-game"
 version = "0.1.0"
 edition = "2021"
-description = "A Rust backend project based on Axum web framework."
+description = "A guessing game project written in Rust."
 authors = ["Mohammad Zain Abbas <mohammadzainabbas@gmail.com>"]
 homepage = "https://github.com/mohammadzainabbas/rust-from-dust/tree/main/rust-axum-intro"
 repository = "https://github.com/mohammadzainabbas/rust-from-dust/tree/main/rust-axum-intro"
