@@ -55,7 +55,7 @@ jobs:
         if: ${{ success() }}
         with:
           command: clippy
-          args: --manifest-path ${{ matrix.project }}/Cargo.toml --all -- --check
+          args: --manifest-path ${{ matrix.project }}/Cargo.toml -- -D warnings
 
   fmt:
     name: Rustfmt
