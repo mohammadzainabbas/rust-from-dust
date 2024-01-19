@@ -57,33 +57,4 @@ categories = ["command-line-utilities"]
 > [!TIP]
 > See more [_keys_ and their _definitions_](https://doc.rust-lang.org/cargo/reference/manifest.html).
 
-5. Add configuration variables:
-
-```bash
-pulumi config set aws:region eu-west-3
-pulumi config set keypair jarvis
-pulumi config set vpcNetworkCidr 192.168.110.0/24
-```
-
-> [!IMPORTANT]
-> Also, add the following in `Pulumi.dev.yaml` file:
-
-```yaml
-environment:
-  - aws-jarvis
-```
-
-5. Run the following command to run the program:
-
-```bash
-pulumi up
-```
-
-6. Run the following command in remote server to setup desktop gui:
-
-```bash
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/mohammadzainabbas/pulumi-labs/main/hack-lab-aws-python/scripts/setup_desktop.sh)"
-```
-
-> [!NOTE]
-> This will take some time, so be patient.
+<!-- 5.  -->
