@@ -30,7 +30,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        project: ${{ needs.discover-projects.outputs.projects }}
+        project: ${{ fromJson(needs.discover-projects.outputs.projects) }}
           # - 'hello-world'
           # - 'guessing-game'
           # - 'rust-axum-intro'
