@@ -41,6 +41,9 @@ jobs:
     name: Cargo test
     needs: [check]
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ${{ inputs.project }}
     steps:
       - uses: actions/checkout@v2
       - uses: actions-rs/toolchain@v1
@@ -56,6 +59,9 @@ jobs:
     name: Rustfmt
     needs: [check, test]
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ${{ inputs.project }}
     steps:
       - uses: actions/checkout@v2
       - uses: actions-rs/toolchain@v1
@@ -73,6 +79,9 @@ jobs:
     name: Clippy
     needs: [check, test]
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ${{ inputs.project }}
     steps:
       - uses: actions/checkout@v2
       - uses: actions-rs/toolchain@v1
