@@ -6,7 +6,7 @@ description = "A hello world project written in Rust!"
 authors = ["Mohammad Zain Abbas <mohammadzainabbas@gmail.com>"]
 homepage = "https://github.com/mohammadzainabbas/rust-from-dust/tree/main/hello-world"
 repository = "https://github.com/mohammadzainabbas/rust-from-dust/tree/main/hello-world"
-keywords = ["rust", "rust-axum", "backend", "axum", "web-application"]
+keywords = ["rust", "hello-world"]
 categories = ["command-line-utilities"]
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
