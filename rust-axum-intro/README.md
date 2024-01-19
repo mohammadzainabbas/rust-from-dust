@@ -71,10 +71,6 @@ And you are good to go! 🎉 Enjoy the games.
 
 | Video | Title |
 | ---- | --- |
-| [**torch**](https://pytorch.org/docs/stable/torch.html) | A Tensor library like NumPy, with strong GPU support |
-| [**torch.autograd**](https://pytorch.org/docs/stable/autograd.html) | A tape-based automatic differentiation library that supports all differentiable Tensor operations in torch |
-| [**torch.jit**](https://pytorch.org/docs/stable/jit.html) | A compilation stack (TorchScript) to create serializable and optimizable models from PyTorch code  |
-| [**torch.nn**](https://pytorch.org/docs/stable/nn.html) | A neural networks library deeply integrated with autograd designed for maximum flexibility |
-| [**torch.multiprocessing**](https://pytorch.org/docs/stable/multiprocessing.html) | Python multiprocessing, but with magical memory sharing of torch Tensors across processes. Useful for data loading and Hogwild training |
-| [**torch.utils**](https://pytorch.org/docs/stable/data.html) | DataLoader and other utility functions for convenience |
+| [![Rust Axum Full Course - Web Development (GitHub repo updated to Axum 0.7)](http://img.youtube.com/vi/XZtlD_m59sM/0.jpg)](http://www.youtube.com/watch?v=XZtlD_m59sM) | Rust Axum Full Course - Web Development (GitHub repo updated to Axum 0.7) |
+| [![Rust Axum Full Course - Web Development (GitHub repo updated to Axum 0.7)](http://img.youtube.com/vi/XZtlD_m59sM/0.jpg)](http://www.youtube.com/watch?v=XZtlD_m59sM) | Rust Axum Full Course - Web Development (GitHub repo updated to Axum 0.7) |
 
