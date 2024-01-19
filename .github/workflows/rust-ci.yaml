@@ -49,12 +49,12 @@ jobs:
         with:
           command: fmt
           args: --manifest-path ${{ matrix.project }}/Cargo.toml --all -- --check
-      - name: cargo fmt ${{ matrix.project }}
+      - name: cargo clippy ${{ matrix.project }}
         uses: actions-rs/cargo@v1
-        id: cargo-fmt
+        id: cargo-clippy
         if: ${{ success() }}
         with:
-          command: fmt
+          command: clippy
           args: --manifest-path ${{ matrix.project }}/Cargo.toml --all -- --check
 
   fmt:
