@@ -17,7 +17,7 @@ cargo new rust-axum-intro
 cd rust-axum-intro
 ```
 
-2. Install dependencies and dev-dependencies:
+2. Install dependencies:
 
 ```bash
 cargo add tokio -F full
@@ -31,11 +31,10 @@ cargo add uuid -F v4,fast-rng # or cargo add uuid -F uuid/v4,fast-rng
 > [!IMPORTANT]
 > Change anything if you need to, if you want to keep the default values, just press <kbd> <br> Enter <br> </kbd> and it'll be skipped.
 
-3. Activate the virtual environment and install new dependencies:
+3. Install dev-dependencies:
 
 ```bash
-source venv/bin/activate
-pip install pulumi-aws pulumi-awsx pulumi-random pulumi-command
+cargo add anyhow httpc-test --dev
 ```
 
 > [!CAUTION]
