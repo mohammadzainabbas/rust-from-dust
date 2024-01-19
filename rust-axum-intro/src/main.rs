@@ -1,4 +1,4 @@
-#![allow(unused)] // for dev
+// #![allow(unused)] // for dev
 
 fn main() {
     println!("Hello, world!");
