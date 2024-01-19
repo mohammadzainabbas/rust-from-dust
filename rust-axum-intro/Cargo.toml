@@ -23,5 +23,6 @@ async-trait = "0.1.77"
 [dev-dependencies]
 # Flexible concrete Error type built on std::error::Error
 anyhow = "1.0.79"
-httpc-test = "0.1.8"
 
+# Minimalistic HTTP Client Test Utilities
+httpc-test = "0.1.8"
