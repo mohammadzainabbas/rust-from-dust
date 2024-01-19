@@ -29,10 +29,10 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        project:
-          - 'hello-world'
-          - 'guessing-game'
-          - 'rust-axum-intro'
+        project: ${{ needs.discover-projects.outputs.projects }}
+          # - 'hello-world'
+          # - 'guessing-game'
+          # - 'rust-axum-intro'
     steps:
       - name: Running ${{ matrix.project }}
         run: echo "${{ matrix.project }}"
