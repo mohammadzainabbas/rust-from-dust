@@ -4,7 +4,7 @@
 
 ## Overview
 
-A **Rust** program to build a backend application via [**Axum**]() web framework: <kbd> <br> Guess the number <br> </kbd> and <kbd> <br> Guess the word <br> </kbd> - built via `Cargo`: _a Rust’s build system and package manager_.
+A **Rust** program to build a backend application via [**Axum**](https://crates.io/crates/axum) web framework: <kbd> <br> Guess the number <br> </kbd> and <kbd> <br> Guess the word <br> </kbd> - built via `Cargo`: _a Rust’s build system and package manager_.
 
 > [!NOTE]
 > Below mentioned video on _YouTube_ was used as a starting point for this project. 
