@@ -55,7 +55,7 @@ keywords = ["rust", "rust-axum", "backend", "axum", "web-application"]
 categories = ["command-line-utilities"]
 ```
 > [!TIP]
-> See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+> See more [_keys_ and their _definitions_](https://doc.rust-lang.org/cargo/reference/manifest.html).
 
 5. Add configuration variables:
 
