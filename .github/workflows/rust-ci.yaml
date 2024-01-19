@@ -22,7 +22,7 @@ jobs:
         run: |
           projects=$(find . -maxdepth 1 -type d ! -name .git ! -name .github ! -name docs ! -name . | sed 's|^\./||' | tr '\n' ' ' | sed 's/ /,/g; s/^/[/; s/$/]/')
           projects=${projects%,}
-          echo "projects=$()" >> $GITHUB_OUTPUT
+          echo "$projects" >> $GITHUB_OUTPUT
           # echo "projects=$(find . -maxdepth 1 -type d ! -name .git ! -name .github ! -name docs ! -name . | sed 's|^\./||' | tr '\n' ' ' | sed 's/ /,/g; s/^/[/; s/$/]/')" >> $GITHUB_OUTPUT
 
   ci:
