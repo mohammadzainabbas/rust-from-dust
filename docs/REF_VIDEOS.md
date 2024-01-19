@@ -3,7 +3,7 @@
 ## Table of Contents
 
 1. [Rust Playlists :clapper:](#rust-playlists-clapper)
-1. [Web Dev :clapper:](#rust-playlists-clapper)
+1. [Web Dev :computer:](#web-dev-computer)
 
 #
 
