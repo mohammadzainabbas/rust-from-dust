@@ -6,7 +6,7 @@ description = "A guessing game project written in Rust."
 authors = ["Mohammad Zain Abbas <mohammadzainabbas@gmail.com>"]
 homepage = "https://github.com/mohammadzainabbas/rust-from-dust/tree/main/guessing-game"
 repository = "https://github.com/mohammadzainabbas/rust-from-dust/tree/main/guessing-game"
-keywords = ["rust", "rust-axum", "backend", "axum", "web-application"]
+keywords = ["rust", "dialoguer", "colored", "guessing-game", "cli"]
 categories = ["command-line-utilities"]
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
