@@ -9,7 +9,13 @@
 
 ## Rust Playlists :clapper:
 
-In Rust
+> [!TIP]
+> Below mentioned playlists can be used to learn more about Rust.
+
+| Video | Title |
+| :----: | :---: |
+| <a href="https://www.youtube.com/watch?v=XZtlD_m59sM"><img alt="Rust Axum Full Course - Web Development (GitHub repo updated to Axum 0.7)" src="https://img.youtube.com/vi/XZtlD_m59sM/0.jpg" width="50%" ></a> | **Rust Axum Full Course - Web Development (GitHub repo updated to Axum 0.7)** |
+
 
 ## Backend Dev :computer:
 
