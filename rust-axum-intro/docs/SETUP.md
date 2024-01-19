@@ -20,7 +20,8 @@ cd rust-axum-intro
 2. Install dependencies and dev-dependencies:
 
 ```bash
-cargo add 
+
+cargo add uuid -F uuid/v4,fast-rng
 ```
 
 > [!IMPORTANT]
