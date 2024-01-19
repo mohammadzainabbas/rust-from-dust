@@ -5,7 +5,7 @@
 
 ## Key Concepts
 
-- [x] AMI ID (Look up the latest AWS Deep Learning AMI GPU CUDA)
+- [x] Add dependencies and dev-dependencies in `Cargo.toml` file
 - [x] Create new VPC, Subnets (Public and Private), RouteTables and Security Group
 - [x] Define Launch Configuration with User Data
 - [x] Create Autoscaling Group with Launch Template and Spot Fleet
