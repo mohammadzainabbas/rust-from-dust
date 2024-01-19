@@ -46,6 +46,13 @@ jobs:
     name: Cargo test
     needs: [check]
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        project:
+          - 'hello-world'
+          - 'guessing-game'
+          - 'rust-axum-intro'
     steps:
       - uses: actions/checkout@v2
       - uses: actions-rs/toolchain@v1
@@ -62,6 +69,13 @@ jobs:
     name: Rustfmt
     needs: [check, test]
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        project:
+          - 'hello-world'
+          - 'guessing-game'
+          - 'rust-axum-intro'
     steps:
       - uses: actions/checkout@v2
       - uses: actions-rs/toolchain@v1
@@ -79,6 +93,13 @@ jobs:
     name: Clippy
     needs: [check, test]
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        project:
+          - 'hello-world'
+          - 'guessing-game'
+          - 'rust-axum-intro'
     steps:
       - uses: actions/checkout@v2
       - uses: actions-rs/toolchain@v1
