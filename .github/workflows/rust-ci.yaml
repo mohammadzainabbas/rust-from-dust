@@ -17,7 +17,9 @@ jobs:
       - name: Checkout Repo
         uses: actions/checkout@v4
       - name: Discover all projects
-        id: 
+        id: discover-all-projects
+        run: |
+          
 
   ci:
     name: CI @ ${{ matrix.project }}
