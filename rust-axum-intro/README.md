@@ -68,10 +68,3 @@ And you are good to go! 🎉 Enjoy the games.
 
 > [!TIP]
 > Check additional _video based resources_ [here](https://github.com/mohammadzainabbas/rust-from-dust/blob/main/docs/REF_VIDEOS.md#backend-dev-computer).
-
-
-on:
-  pull_request:
-    branches: [ main ]
-    paths: ['*/Cargo.toml', '*/Cargo.lock', '*/src/**']
-  workflow_dispatch:
