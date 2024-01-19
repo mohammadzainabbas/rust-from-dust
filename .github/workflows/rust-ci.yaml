@@ -34,7 +34,8 @@ jobs:
           - 'guessing-game'
           - 'rust-axum-intro'
     steps:
-      - run: echo "${{ matrix.project }}"
+      - name: Running ${{ matrix.project }}
+        run: echo "${{ matrix.project }}"
       # - name: Checkout repo
       #   uses: actions/checkout@v4
       # - name: Install Rust
