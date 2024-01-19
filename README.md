@@ -9,6 +9,6 @@
 #
 
 > [!TIP]
-> Check [`**Rust** _cheatsheet_`](https://github.com/mohammadzainabbas/rust-from-dust/blob/main/docs/CHEATSHEET.md) or [`_video_ based _resources_`](https://github.com/mohammadzainabbas/rust-from-dust/blob/main/docs/REF_VIDEOS.md).
+> Check [`**Rust** _cheatsheet_`](https://github.com/mohammadzainabbas/rust-from-dust/blob/main/docs/CHEATSHEET.md) or [`_video_ based _resources_`](https://github.com/mohammadzainabbas/rust-from-dust/blob/main/docs/REF_VIDEOS.md) for more _learning_.
 
 #
