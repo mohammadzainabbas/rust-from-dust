@@ -21,6 +21,8 @@ cd rust-axum-intro
 
 ```bash
 
+cargo add tower-http -F fs
+cargo add tower-cookies lazy-regex strum_macros
 cargo add uuid -F uuid/v4,fast-rng
 ```
 
