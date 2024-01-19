@@ -17,10 +17,10 @@ cargo new rust-axum-intro
 cd rust-axum-intro
 ```
 
-2. Setup a pulumi project:
+2. Install dependencies and dev-dependencies:
 
 ```bash
-pulumi new python
+cargo add 
 ```
 
 > [!IMPORTANT]
