@@ -2,10 +2,10 @@
 name = "hello-world"
 version = "0.1.0"
 edition = "2021"
-description = "A Rust hello world project!"
+description = "A hello world project written in Rust!"
 authors = ["Mohammad Zain Abbas <mohammadzainabbas@gmail.com>"]
-homepage = "https://github.com/mohammadzainabbas/rust-from-dust/tree/main/rust-axum-intro"
-repository = "https://github.com/mohammadzainabbas/rust-from-dust/tree/main/rust-axum-intro"
+homepage = "https://github.com/mohammadzainabbas/rust-from-dust/tree/main/hello-world"
+repository = "https://github.com/mohammadzainabbas/rust-from-dust/tree/main/hello-world"
 keywords = ["rust", "rust-axum", "backend", "axum", "web-application"]
 categories = ["command-line-utilities"]
 
