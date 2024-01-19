@@ -20,6 +20,7 @@ jobs:
         id: discover-all-projects
         shell: bash
         run: |
+          sudo apt install jq -y
           echo "projects=$(find . -maxdepth 1 -type d ! -name .git ! -name .github ! -name docs ! -name . | sed 's|^\./||' | tr '\n' ',' | sed 's/,$//' | sed 's/^/[/; s/$/]/')" >> $GITHUB_OUTPUT
 
   ci:
