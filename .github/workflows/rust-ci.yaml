@@ -41,29 +41,6 @@ jobs:
           command: test
           args: --manifest-path ${{ matrix.project }}/Cargo.toml
 
-  test:
-    name: Cargo test
-    needs: [check]
-    runs-on: ubuntu-latest
-    strategy:
-      fail-fast: false
-      matrix:
-        project:
-          - 'hello-world'
-          - 'guessing-game'
-          - 'rust-axum-intro'
-    steps:
-      - uses: actions/checkout@v2
-      - uses: actions-rs/toolchain@v1
-        with:
-          profile: minimal
-          toolchain: stable
-          override: true
-      - uses: actions-rs/cargo@v1
-        with:
-          command: test
-          args: --manifest-path ${{ matrix.project || inputs.project }}/Cargo.toml
-
   fmt:
     name: Rustfmt
     needs: [check, test]
