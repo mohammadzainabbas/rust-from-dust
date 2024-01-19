@@ -10,10 +10,6 @@
 
 > [!TIP]
 > Check **Rust** _cheatsheet_ [here](https://github.com/mohammadzainabbas/rust-from-dust/blob/main/docs/CHEATSHEET.md).
-
-#
-
-> [!TIP]
 > Check _video_ based _resources_ [here](https://github.com/mohammadzainabbas/rust-from-dust/blob/main/docs/REF_VIDEOS.md).
 
 #
