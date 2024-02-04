@@ -10,7 +10,7 @@ use axum::{
 };
 use clap::builder::Str;
 use serde::Deserialize;
-use tracing::{debug, error, info, span, trace, warn, Level};
+use tracing::{debug, error, info, span, trace, warn, Level, Value};
 use tracing_appender::rolling;
 use tracing_subscriber::fmt::writer::MakeWriterExt;
 
@@ -62,3 +62,5 @@ async fn say_path(Path(path): Path<String>) -> impl IntoResponse {
 struct HelloParams {
     pub name: Option<String>,
 }
+
+impl Value for HelloParams {}
