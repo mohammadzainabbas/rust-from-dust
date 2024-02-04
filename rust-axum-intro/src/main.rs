@@ -11,6 +11,8 @@ use axum::{
 use clap::builder::Str;
 use serde::Deserialize;
 
+use alloc::tracing_subscriber;
+
 #[tokio::main(worker_threads = 2)]
 async fn main() {
     tracing_subscriber::fmt::init();
