@@ -15,7 +15,7 @@ use serde::Deserialize;
 async fn main() {
     let router = Router::new()
         .route("/", get(groot))
-        .route("/hello", get(say_hello));
+        .route("/hello", get(say_hello))
         .route("/hello/:path", get(say_path));
     let listener = tokio::net::TcpListener::bind("0.0.0.0:3000").await.unwrap();
     println!("Listening on {:#?}", listener.local_addr().unwrap());
