@@ -45,7 +45,7 @@ pub async fn say_path(Path(path): Path<String>) -> impl IntoResponse {
     Html(format!("<h3> Hello {}! </h3>", path.as_str())).into_response()
 }
 
-pub async fn basic_router() -> Box<dyn Router> {
+pub async fn basic_router() -> Box<Router> {
     Router::new()
         .route("/", get(groot))
         .route("/hello", get(say_hello))
