@@ -43,8 +43,6 @@ async fn setup_tracing() {
 async fn main() {
     setup_tracing().await;
 
-    let db = DB::default();
-
     let basic_router = hello::basic_router().await;
     let todo_routers = todos::todo_router().await;
 

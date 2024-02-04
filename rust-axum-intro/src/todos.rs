@@ -115,6 +115,8 @@ pub async fn delete_todo(Path(id): Path<String>, State(db): State<DB>) -> impl I
 }
 
 pub async fn todo_router() -> Router {
+    let db = DB::default();
+
     Router::new()
         .route("/todo", get(read_todos).post(create_todo))
         .route("/todo/:id", patch(update_todo).delete(delete_todo))
