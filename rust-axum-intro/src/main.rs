@@ -43,6 +43,7 @@ async fn main() {
     setup_tracing().await;
 
     let db = DB::default();
+    let helloRouter = hello::HelloRouter::new();
 
     let basic_router = Router::new()
         .route("/", get(hello::groot))
