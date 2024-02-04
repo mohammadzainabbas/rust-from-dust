@@ -20,7 +20,7 @@ use tracing_appender::rolling;
 use tracing_subscriber::fmt::writer::MakeWriterExt;
 use uuid::Uuid;
 
-async fn groot() -> Html<&'static str> {
+pub async fn groot() -> Html<&'static str> {
     trace!("inside groot()");
     Html("Hello, I'm groot!")
 }
@@ -31,7 +31,7 @@ struct HelloParams {
 }
 
 #[tracing::instrument]
-async fn say_hello(Query(param): Query<HelloParams>) -> Response {
+pub async fn say_hello(Query(param): Query<HelloParams>) -> Response {
     trace!("inside say_hello()");
     let name = param.name.as_deref().unwrap_or("World");
     debug!(target: "say", name);
@@ -39,7 +39,7 @@ async fn say_hello(Query(param): Query<HelloParams>) -> Response {
 }
 
 #[tracing::instrument]
-async fn say_path(Path(path): Path<String>) -> impl IntoResponse {
+pub async fn say_path(Path(path): Path<String>) -> impl IntoResponse {
     trace!("inside say_path()");
 
     Html(format!("<h3> Hello {}! </h3>", path.as_str())).into_response()
