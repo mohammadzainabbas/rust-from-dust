@@ -65,6 +65,6 @@ struct HelloParams {
 
 impl Value for HelloParams {
     fn record(&self, key: &tracing::field::Field, visitor: &mut dyn tracing::field::Visit) {
-        visitor.record_str(field, value)
+        visitor.record_str(field, self.name.to_owned())
     }
 }
