@@ -2,7 +2,11 @@
 
 use std::net::{IpAddr, Ipv4Addr, SocketAddr};
 
-use axum::{response::Html, routing::get, Router};
+use axum::{
+    response::{Html, Response},
+    routing::get,
+    Router,
+};
 
 #[tokio::main(worker_threads = 2)]
 async fn main() {
@@ -10,4 +14,8 @@ async fn main() {
     let listener = tokio::net::TcpListener::bind("0.0.0.0:3000").await.unwrap();
     println!("Listening on {:#?}", listener.local_addr().unwrap());
     axum::serve(listener, router).await.unwrap();
+}
+
+async fn hello_world() -> Response {
+    Html()
 }
