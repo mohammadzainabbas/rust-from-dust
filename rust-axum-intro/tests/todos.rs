@@ -9,6 +9,7 @@ async fn test_todos() -> Result<()> {
     // ZOMBIES (checklist when writing tests)
     // Link: https://youtu.be/0_UttFDnV3k?t=3539
     //
+    // Anything that takes a sequence (vector, array etc)
     // Z - zero
     // O - one
     // M - many
