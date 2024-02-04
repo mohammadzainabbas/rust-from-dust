@@ -118,7 +118,7 @@ async fn update_todo(
     State(db): State<DB>,
     Json(input): Json<UpdateTodo>,
 ) -> Response {
-    let mut db = db.read().unwrap();
+    let mut db = db.write().unwrap();
 
     let Some(todo) = db.get_mut(&id) {
         if let Some(text) = input.text {
