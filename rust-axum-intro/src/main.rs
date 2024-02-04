@@ -11,11 +11,10 @@ use axum::{
 use clap::builder::Str;
 use serde::Deserialize;
 
-use tracing_subscriber;
-
 #[tokio::main(worker_threads = 2)]
 async fn main() {
-    tracing_subscriber::fmt::init();
+    l
+
     let router = Router::new()
         .route("/", get(groot))
         .route("/hello", get(say_hello))
