@@ -47,5 +47,7 @@ pub struct Pagination {
 }
 
 async fn todos_create(State(db): State<Db>, Json(input): Json<CreateTodo>) -> impl IntoResponse {
-    let todo = Todo
+    let todo = Todo {
+        id: 
+    }
 }
