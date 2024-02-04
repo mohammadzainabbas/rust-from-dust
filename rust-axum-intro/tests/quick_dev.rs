@@ -1,5 +1,6 @@
 #[allow(unused)]
 use anyhow::{Error, Result};
+use serde_json::json;
 
 #[tokio::test]
 async fn quick_dev() -> Result<()> {
@@ -11,6 +12,9 @@ async fn quick_dev() -> Result<()> {
     // hc.do_get("/hello?name=Mohammad").await?.print().await?;
 
     hc.do_get("/todo").await?.print().await?;
-    hc.do_post("/todo", Json({text: "Complete this project"})).await?.print().await?;
+    hc.do_post("/todo", Json(json!({"text": "Complete this project"})))
+        .await?
+        .print()
+        .await?;
     Ok(())
 }
