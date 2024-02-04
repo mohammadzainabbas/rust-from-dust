@@ -146,4 +146,6 @@ async fn read_todos(
     let todos = db.read().unwrap();
 
     let Query(pagination) = pagination.unwrap_or_default();
+
+    let todos = todos.values().
 }
