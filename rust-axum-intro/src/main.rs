@@ -30,7 +30,6 @@ async fn setup_tracing() {
 #[tokio::main(worker_threads = 2)]
 async fn main() {
     setup_tracing().await;
-
     trace!("setup_tracing() done!");
 
     let router = Router::new()
