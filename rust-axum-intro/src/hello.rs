@@ -26,7 +26,7 @@ pub async fn groot() -> Html<&'static str> {
 }
 
 #[derive(Debug, Deserialize)]
-struct HelloParams {
+pub struct HelloParams {
     pub name: Option<String>,
 }
 

@@ -55,7 +55,7 @@ async fn main() {
 
     let router = Router::new()
         .merge(basic_router)
-        .merge(todo_routers)
+        // .merge(todo_routers)
         .with_state(db);
 
     // let router = Router::new()
