@@ -1,4 +1,4 @@
-#![allow(unused)] // for dev
+// #![allow(unused)] // for dev
 
 use std::{
     collections::HashMap,
@@ -45,10 +45,9 @@ async fn main() {
 
     let basic_router = hello::basic_router().await;
     let todo_routers = todos::todo_router().await;
-
-    let router = Router::new().merge(basic_router).merge(todo_routers);
+    let routers = Router::new().merge(basic_router).merge(todo_routers);
 
     let listener = tokio::net::TcpListener::bind("0.0.0.0:3000").await.unwrap();
     info!("server listening on {:#?}", listener.local_addr().unwrap());
-    axum::serve(listener, router).await.unwrap();
+    axum::serve(listener, routers).await.unwrap();
 }
