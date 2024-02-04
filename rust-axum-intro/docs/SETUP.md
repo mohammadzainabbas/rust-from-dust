@@ -26,7 +26,7 @@ cargo add serde serde_json serde_with -F serde/derive
 cargo add tower-http -F fs
 cargo add async-trait axum tower-cookies lazy-regex strum_macros
 cargo add uuid -F v4,fast-rng # or cargo add uuid -F uuid/v4,fast-rng
-cargo add tracing
+cargo add tracing tracing-appender
 cargo add tracing-subscriber -F env-filter,json
 cargo add validator -F derive
 ```
