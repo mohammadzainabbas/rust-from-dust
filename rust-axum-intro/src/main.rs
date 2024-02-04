@@ -127,8 +127,8 @@ async fn update_todo(
         if let Some(completed) = input.completed {
             todo.completed = completed;
         }
-        (StatusCode::OK, Json(todo.clone()))
+        (StatusCode::OK, Json(todo.clone())).into_response()
     } else {
-        (StatusCode::NOT_FOUND, Json("Todo not found"))
+        StatusCode::NOT_FOUND.into_response()
     }
 }
