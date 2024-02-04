@@ -83,5 +83,7 @@ struct CreateTodo {
 }
 
 async fn create_todos(State(db): State<_>, Json(input): Json<CreateTodo>) -> impl IntoResponse {
-    let todo = 
+    let todo = Todo {
+        id: Uuid::new_v4()
+    }
 }
