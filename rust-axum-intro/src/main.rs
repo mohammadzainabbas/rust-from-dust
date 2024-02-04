@@ -3,7 +3,10 @@
 use std::net::{IpAddr, Ipv4Addr, SocketAddr};
 
 use axum::{
-    extract::{Path, Query, State}, response::{Html, IntoResponse, Response}, routing::get, Json, Router
+    extract::{Path, Query, State},
+    response::{Html, IntoResponse, Response},
+    routing::get,
+    Json, Router,
 };
 use clap::builder::Str;
 use serde::{Deserialize, Serialize};
@@ -84,6 +87,8 @@ struct CreateTodo {
 
 async fn create_todos(State(db): State<_>, Json(input): Json<CreateTodo>) -> impl IntoResponse {
     let todo = Todo {
-        id: Uuid::new_v4()
-    }
+        id: Uuid::new_v4().to_string().to_owned(),
+        text: input.text,
+        completed: false,
+    };
 }
