@@ -16,9 +16,7 @@ use tracing_appender::rolling;
 async fn main() {
     let log_dir = "./logs";
     let debug_file = rolling::daily(log_dir, "debug");
-    let warning_file = rolling::daily(log_
-        dir, "warning");
-    
+    let warning_file = rolling::daily(log_dir, "warning");
 
     let router = Router::new()
         .route("/", get(groot))
