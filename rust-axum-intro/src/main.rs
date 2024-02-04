@@ -154,5 +154,11 @@ async fn read_todos(
         .cloned()
         .collect::<Vec<_>>();
 
-    (StatusCode::OK, Json(todos))
+    let status = if todos.is_empty() {
+        StatusCode::NO_CONTENT
+    } else {
+        StatusCode::OK
+    };
+
+    (status, Json(todos))
 }
