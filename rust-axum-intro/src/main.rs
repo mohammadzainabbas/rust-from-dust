@@ -132,5 +132,5 @@ async fn update_todo(
         todo.completed = completed;
     }
 
-    Ok(Json(todo), StatusCode::OK)
+    Ok(Json(todo))
 }
