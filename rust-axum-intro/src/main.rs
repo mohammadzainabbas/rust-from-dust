@@ -132,5 +132,7 @@ async fn update_todo(
         todo.completed = completed;
     }
 
+    db.write().unwrap().get(k)
+
     Ok(Json(todo))
 }
