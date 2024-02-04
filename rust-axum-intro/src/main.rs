@@ -8,6 +8,7 @@ use std::{
 
 use axum::{
     extract::{Path, Query, State},
+    http::StatusCode,
     response::{Html, IntoResponse, Response},
     routing::get,
     Json, Router,
@@ -101,4 +102,6 @@ async fn create_todos(State(db): State<DB>, Json(input): Json<CreateTodo>) -> im
     db.write()
         .unwrap()
         .insert(todo.id.to_string(), todo.clone());
+
+    (StatusCode::CREATED, Json(todo))
 }
