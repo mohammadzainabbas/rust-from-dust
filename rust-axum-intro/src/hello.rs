@@ -45,17 +45,6 @@ pub async fn say_path(Path(path): Path<String>) -> impl IntoResponse {
     Html(format!("<h3> Hello {}! </h3>", path.as_str())).into_response()
 }
 
-pub struct HelloRouter;
-
-impl HelloRouter {
-    pub async fn new() -> Router {
-        Router::new()
-            .route("/", get(groot))
-            .route("/hello", get(say_hello))
-            .route("/hello/:path", get(say_path))
-    }
-}
-
 pub async fn basic_router() -> Router {
     Router::new()
         .route("/", get(groot))
