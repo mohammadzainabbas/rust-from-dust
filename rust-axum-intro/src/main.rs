@@ -21,6 +21,7 @@ async fn main() {
     let log_files = debug_file.and(warning_file);
 
     tracing_subscriber::fmt()
+    .with_writer(log_files).
 
     let router = Router::new()
         .route("/", get(groot))
