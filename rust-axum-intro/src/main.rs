@@ -43,7 +43,6 @@ async fn main() {
     setup_tracing().await;
 
     let db = DB::default();
-    let helloRouter = hello::HelloRouter::new();
 
     let basic_router = hello::basic_router().await;
 
@@ -52,7 +51,7 @@ async fn main() {
         .route("/todo/:id", patch(update_todo).delete(delete_todo));
 
     let router = Router::new()
-        // .merge(basic_router)
+        .merge(basic_router)
         // .merge(helloRouter)
         // .merge(hello::basic_router)
         .merge(todo_routers)
