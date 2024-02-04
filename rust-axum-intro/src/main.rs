@@ -49,6 +49,7 @@ async fn main() {
     let todo_routers = Router::new()
         .route("/todo", get(read_todos).post(create_todo))
         .route("/todo/:id", patch(update_todo).delete(delete_todo))
+        .with_state(db);
 
     let router = Router::new()
         .merge(basic_router)
