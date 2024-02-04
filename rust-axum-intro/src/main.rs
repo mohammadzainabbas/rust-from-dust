@@ -9,7 +9,7 @@ use axum::{
     Router,
 };
 use clap::builder::Str;
-use serde::Deserialize;
+use serde::{Deserialize, Serialize};
 use tracing::{debug, error, info, span, trace, warn, Level, Value};
 use tracing_appender::rolling;
 use tracing_subscriber::fmt::writer::MakeWriterExt;
@@ -73,7 +73,7 @@ async fn say_path(Path(path): Path<String>) -> impl IntoResponse {
 // Todo CRUD
 // ------------------------
 
-#[derive(Debug, Clone, Deserialize)]
+#[derive(Debug, Clone, Serialize)]
 struct Todo {
     id: Uuid,
     text: String,
