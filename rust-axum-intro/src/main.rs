@@ -122,17 +122,17 @@ async fn update_todo(
 
     if todo.is_none() {
         return StatusCode::NOT_FOUND.into_response();
+    } else {
+        if let Some(text) = input.text {
+            todo.text = text;
+        }
+
+        if let Some(completed) = input.completed {
+            todo.completed = completed;
+        }
+
+        db.write().unwrap().insert(todo.id, todo.clone());
+
+        (StatusCode::OK, Json(todo)).into_response()
     }
-
-    if let Some(text) = input.text {
-        todo.text = text;
-    }
-
-    if let Some(completed) = input.completed {
-        todo.completed = completed;
-    }
-
-    db.write().unwrap().insert(todo.id, todo.clone());
-
-    (StatusCode::OK, Json(todo)).into_response()
 }
