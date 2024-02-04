@@ -113,3 +113,8 @@ pub async fn delete_todo(Path(id): Path<String>, State(db): State<DB>) -> impl I
         StatusCode::NOT_FOUND
     }
 }
+
+pub async fn todo_router() -> Router {
+    Router::new()
+    .
+}
