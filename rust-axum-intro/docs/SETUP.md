@@ -82,6 +82,10 @@ cargo watch -q -c -w src/ -x run
 ```bash
 cargo watch -q -c -w src/ -w tests/ -x "test -q quick_dev -- --nocapture"
 ```
+or
+```bash
+cargo watch -q -c -w src/ -w tests/ -x "test -- --nocapture"
+```
 
 > [!IMPORTANT]
 > The `-q` flag is used to suppress the output of `cargo watch` command. The `-c` flag is used to clear the terminal before running the command. The `-w` flag is used to watch the changes in the specified directory. The `-x` flag is used to run the command.
