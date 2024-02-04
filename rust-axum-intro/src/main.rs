@@ -53,7 +53,10 @@ async fn main() {
         .route("/todo", get(read_todos).post(create_todo))
         .route("/todo/:id", patch(update_todo).delete(delete_todo));
 
-    let router = Router::new().merge(todo_routers).with_state(db);
+    let router = Router::new()
+        .merge(basic_router)
+        .merge(todo_routers)
+        .with_state(db);
 
     // let router = Router::new()
     //     .route("/", get(groot))
