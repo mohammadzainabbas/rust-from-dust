@@ -120,19 +120,20 @@ async fn update_todo(
 ) -> Response {
     let mut todo = db.read().unwrap().get(&id).cloned();
 
-    if todo.is_none() {
-        return StatusCode::NOT_FOUND.into_response();
-    } else {
-        if let Some(text) = input.text {
-            todo.text = text;
-        }
+    match todo {
+        Some(todo) => {
+            if let Some(text) = input.text {
+                todo.text = text;
+            }
 
-        if let Some(completed) = input.completed {
-            todo.completed = completed;
-        }
+            if let Some(completed) = input.completed {
+                todo.completed = completed;
+            }
 
-        db.write().unwrap().insert(todo.id, todo.clone());
+            db.write().unwrap().insert(todo.id, todo.clone());
 
-        (StatusCode::OK, Json(todo)).into_response()
+            return (StatusCode::OK, Json(todo)).into_response();
+        },
+        None => return StatusCode::NOT_FOUND.into_response(),
     }
 }
