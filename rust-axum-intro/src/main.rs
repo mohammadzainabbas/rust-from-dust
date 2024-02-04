@@ -6,7 +6,7 @@ use tracing::info;
 async fn main() {
     setup_tracing().await;
 
-    let routers = get_routers();
+    let routers = get_routers().await;
 
     let listener = tokio::net::TcpListener::bind("0.0.0.0:3000").await.unwrap();
     info!("server listening on {:#?}", listener.local_addr().unwrap());
