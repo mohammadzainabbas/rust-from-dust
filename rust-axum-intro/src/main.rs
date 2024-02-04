@@ -117,13 +117,13 @@ async fn update_todo(
     Path(id): Path<String>,
     State(db): State<DB>,
     Json(input): Json<UpdateTodo>,
-) -> Response {
+) -> Result<Response> {
     let mut todo = db
         .read()
         .unwrap()
         .get(&id)
         .cloned()
-        .ok_or(StatusCode::NOT_FOUND);
+        .ok_or(StatusCode::NOT_FOUND)?;
 
     if let Some(text) = input.text {
         todo.text = text;
