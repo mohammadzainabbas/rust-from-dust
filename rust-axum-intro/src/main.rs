@@ -50,8 +50,9 @@ async fn main() {
         .route("/", get(groot))
         .route("/hello", get(say_hello))
         .route("/hello/:path", get(say_path))
-        .route("/todo", get(read_todos).post(create_todo))
-        .route("/todo/:id", patch(update_todo).delete(delete_todo))
+        .todo_routers
+        // .route("/todo", get(read_todos).post(create_todo))
+        // .route("/todo/:id", patch(update_todo).delete(delete_todo))
         .with_state(db);
     let listener = tokio::net::TcpListener::bind("0.0.0.0:3000").await.unwrap();
     info!("server listening on {:#?}", listener.local_addr().unwrap());
