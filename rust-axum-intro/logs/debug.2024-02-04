@@ -15,3 +15,21 @@
 {"timestamp":"2024-02-04T07:14:23.667482Z","level":"TRACE","fields":{"message":"say_hello()"},"target":"rust_axum_intro"}
 {"timestamp":"2024-02-04T07:14:23.667510Z","level":"WARN","fields":{"name":"World"},"target":"rust_axum_intro"}
 {"timestamp":"2024-02-04T07:14:23.668111Z","level":"TRACE","fields":{"message":"say_hello()"},"target":"rust_axum_intro"}
+{"timestamp":"2024-02-04T07:14:27.257762Z","level":"TRACE","fields":{"message":"setup_tracing() done!"},"target":"rust_axum_intro"}
+{"timestamp":"2024-02-04T07:14:27.259354Z","level":"INFO","fields":{"message":"server listening on 0.0.0.0:3000"},"target":"rust_axum_intro"}
+{"timestamp":"2024-02-04T07:14:27.781111Z","level":"TRACE","fields":{"message":"inside groot()"},"target":"rust_axum_intro"}
+{"timestamp":"2024-02-04T07:14:27.781535Z","level":"TRACE","fields":{"message":"say_hello()"},"target":"rust_axum_intro"}
+{"timestamp":"2024-02-04T07:14:27.781560Z","level":"WARN","fields":{"name":"World"},"target":"rust_axum_intro"}
+{"timestamp":"2024-02-04T07:14:27.782109Z","level":"TRACE","fields":{"message":"say_hello()"},"target":"rust_axum_intro"}
+{"timestamp":"2024-02-04T07:14:31.240723Z","level":"TRACE","fields":{"message":"setup_tracing() done!"},"target":"rust_axum_intro"}
+{"timestamp":"2024-02-04T07:14:31.241279Z","level":"INFO","fields":{"message":"server listening on 0.0.0.0:3000"},"target":"rust_axum_intro"}
+{"timestamp":"2024-02-04T07:14:31.741082Z","level":"TRACE","fields":{"message":"inside groot()"},"target":"rust_axum_intro"}
+{"timestamp":"2024-02-04T07:14:31.741620Z","level":"TRACE","fields":{"message":"say_hello()"},"target":"rust_axum_intro"}
+{"timestamp":"2024-02-04T07:14:31.741648Z","level":"WARN","fields":{"name":"World"},"target":"rust_axum_intro"}
+{"timestamp":"2024-02-04T07:14:31.742225Z","level":"TRACE","fields":{"message":"say_hello()"},"target":"rust_axum_intro"}
+{"timestamp":"2024-02-04T07:14:34.983915Z","level":"TRACE","fields":{"message":"setup_tracing() done!"},"target":"rust_axum_intro"}
+{"timestamp":"2024-02-04T07:14:34.984412Z","level":"INFO","fields":{"message":"server listening on 0.0.0.0:3000"},"target":"rust_axum_intro"}
+{"timestamp":"2024-02-04T07:14:35.462371Z","level":"TRACE","fields":{"message":"inside groot()"},"target":"rust_axum_intro"}
+{"timestamp":"2024-02-04T07:14:35.462964Z","level":"TRACE","fields":{"message":"say_hello()"},"target":"rust_axum_intro"}
+{"timestamp":"2024-02-04T07:14:35.462995Z","level":"WARN","fields":{"name":"World"},"target":"rust_axum_intro"}
+{"timestamp":"2024-02-04T07:14:35.463670Z","level":"TRACE","fields":{"message":"say_hello()"},"target":"rust_axum_intro"}
