@@ -7,18 +7,18 @@ use axum::{
 use serde::Deserialize;
 use tracing::{debug, trace};
 
-pub async fn groot() -> Html<&'static str> {
+async fn groot() -> Html<&'static str> {
     trace!("inside groot()");
     Html("Hello, I'm groot!")
 }
 
 #[derive(Debug, Deserialize)]
-pub struct HelloParams {
-    pub name: Option<String>,
+struct HelloParams {
+    name: Option<String>,
 }
 
 #[tracing::instrument]
-pub async fn say_hello(Query(param): Query<HelloParams>) -> Response {
+async fn say_hello(Query(param): Query<HelloParams>) -> Response {
     trace!("inside say_hello()");
     let name = param.name.as_deref().unwrap_or("World");
     debug!(target: "say", name);
@@ -26,7 +26,7 @@ pub async fn say_hello(Query(param): Query<HelloParams>) -> Response {
 }
 
 #[tracing::instrument]
-pub async fn say_path(Path(path): Path<String>) -> impl IntoResponse {
+async fn say_path(Path(path): Path<String>) -> impl IntoResponse {
     trace!("inside say_path()");
 
     Html(format!("<h3> Hello {}! </h3>", path.as_str())).into_response()

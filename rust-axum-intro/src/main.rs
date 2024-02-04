@@ -1,7 +1,5 @@
-mod hello;
-mod todos;
-
 use axum::Router;
+use rust_axum_intro::{basic_router, todo_router};
 use tracing::{info, trace, Level};
 use tracing_appender::rolling;
 use tracing_subscriber::fmt::writer::MakeWriterExt;
@@ -26,8 +24,8 @@ async fn setup_tracing() {
 async fn main() {
     setup_tracing().await;
 
-    let basic_router = hello::basic_router().await;
-    let todo_routers = todos::todo_router().await;
+    let basic_router = basic_router().await;
+    let todo_routers = todo_router().await;
     let routers = Router::new().merge(basic_router).merge(todo_routers);
 
     let listener = tokio::net::TcpListener::bind("0.0.0.0:3000").await.unwrap();

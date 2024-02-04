@@ -16,21 +16,21 @@ use uuid::Uuid;
 // Todo CRUD
 // ------------------------
 
-pub type DB = Arc<RwLock<HashMap<String, Todo>>>;
+type DB = Arc<RwLock<HashMap<String, Todo>>>;
 
 #[derive(Debug, Serialize, Clone)]
 pub struct Todo {
-    pub id: String,
-    pub text: String,
-    pub completed: bool,
+    id: String,
+    text: String,
+    completed: bool,
 }
 
 #[derive(Debug, Deserialize)]
 pub struct CreateTodo {
-    pub text: String,
+    text: String,
 }
 
-pub async fn create_todo(State(db): State<DB>, Json(input): Json<CreateTodo>) -> impl IntoResponse {
+async fn create_todo(State(db): State<DB>, Json(input): Json<CreateTodo>) -> impl IntoResponse {
     let todo = Todo {
         id: Uuid::new_v4().to_string().to_owned(),
         text: input.text,
@@ -45,12 +45,12 @@ pub async fn create_todo(State(db): State<DB>, Json(input): Json<CreateTodo>) ->
 }
 
 #[derive(Debug, Deserialize)]
-pub struct UpdateTodo {
-    pub text: Option<String>,
-    pub completed: Option<bool>,
+struct UpdateTodo {
+    text: Option<String>,
+    completed: Option<bool>,
 }
 
-pub async fn update_todo(
+async fn update_todo(
     Path(id): Path<String>,
     State(db): State<DB>,
     Json(input): Json<UpdateTodo>,
@@ -71,12 +71,12 @@ pub async fn update_todo(
 }
 
 #[derive(Debug, Deserialize, Default)]
-pub struct Pagination {
-    pub offset: Option<usize>,
-    pub limit: Option<usize>,
+struct Pagination {
+    offset: Option<usize>,
+    limit: Option<usize>,
 }
 
-pub async fn read_todos(
+async fn read_todos(
     pagination: Option<Query<Pagination>>,
     State(db): State<DB>,
 ) -> impl IntoResponse {
@@ -100,7 +100,7 @@ pub async fn read_todos(
     (status, Json(todos))
 }
 
-pub async fn delete_todo(Path(id): Path<String>, State(db): State<DB>) -> impl IntoResponse {
+async fn delete_todo(Path(id): Path<String>, State(db): State<DB>) -> impl IntoResponse {
     if db.write().unwrap().remove(&id).is_some() {
         StatusCode::NO_CONTENT
     } else {
