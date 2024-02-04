@@ -1,4 +1,4 @@
-// #![allow(unused)] // for dev
+#![allow(unused)] // for dev
 
 use std::{
     collections::HashMap,
@@ -21,6 +21,7 @@ use tracing_subscriber::fmt::writer::MakeWriterExt;
 use uuid::Uuid;
 
 mod hello;
+mod todos;
 
 async fn setup_tracing() {
     let log_dir = "./logs";
