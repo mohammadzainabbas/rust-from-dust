@@ -16,7 +16,7 @@
 | :----: | :---: |
 | <a href="https://www.youtube.com/watch?v=OX9HJsJUDxA&list=PLai5B987bZ9CoVR-QEIN9foz4QCJ0H2Y8"><img alt="The Rust Lang Book" src="https://img.youtube.com/vi/OX9HJsJUDxA/0.jpg" width="50%" ></a> | **The Rust Lang Book** |
 | <a href="https://www.youtube.com/watch?v=rAl-9HwD858&list=PLqbS7AVVErFiWDOAVrPt7aYmnuuOLYvOa"><img alt="Crust of Rust" src="https://img.youtube.com/vi/rAl-9HwD858/0.jpg" width="50%" ></a> | **Crust of Rust** |
-| <a href="https://www.youtube.com/watch?v=BI_bHCGRgMY&list=PLqbS7AVVErFirH9armw8yXlE6dacF-A6z"><img alt="Crust of Rust" src="https://img.youtube.com/vi/BI_bHCGRgMY/0.jpg" width="50%" ></a> | **Crust of Rust** |
+| <a href="https://www.youtube.com/watch?v=BI_bHCGRgMY&list=PLqbS7AVVErFirH9armw8yXlE6dacF-A6z"><img alt="Decrusted" src="https://img.youtube.com/vi/BI_bHCGRgMY/0.jpg" width="50%" ></a> | **Decrusted** |
 
 
 ### Backend Dev :computer:
