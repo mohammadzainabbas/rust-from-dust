@@ -18,6 +18,9 @@ async fn main() {
     let log_dir = "./logs";
     let debug_file = rolling::daily(log_dir, "debug");
     let warning_file = rolling::daily(log_dir, "warning").with_max_level(tracing::Level::WARN);
+    let log_files = debug_file.and(warning_file);
+
+    tracing_subscriber::
 
     let router = Router::new()
         .route("/", get(groot))
