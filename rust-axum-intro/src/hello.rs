@@ -32,7 +32,7 @@ async fn say_path(Path(path): Path<String>) -> impl IntoResponse {
     Html(format!("<h3> Hello {}! </h3>", path.as_str())).into_response()
 }
 
-/// Fn [`Basic Router`](basic_router) creates three basic routes, returns a [`axum::Router`](https://docs.rs/axum/latest/axum/struct.Router.html) object.
+/// Fn [`basic_router`] creates three basic routes, returns a [`axum::Router`](https://docs.rs/axum/latest/axum/struct.Router.html) object.
 ///
 /// - `/` with [`axum::routing::get`](https://docs.rs/axum/latest/axum/routing/method_routing/fn.get.html) method
 /// - `/hello` with [`axum::routing::get`](https://docs.rs/axum/latest/axum/routing/method_routing/fn.get.html) method
