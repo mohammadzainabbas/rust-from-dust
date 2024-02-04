@@ -42,6 +42,8 @@ async fn main() {
 
     let db = DB::default();
 
+    let todo_routers = Router::new().route("/to", move || {})
+
     let router = Router::new()
         .route("/", get(groot))
         .route("/hello", get(say_hello))
