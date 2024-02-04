@@ -123,4 +123,6 @@ async fn update_todo(
         .get(&id)
         .cloned()
         .ok_or(StatusCode::NOT_FOUND)?;
+
+    if let Some(text) = input.text {}
 }
