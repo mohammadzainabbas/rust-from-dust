@@ -1,7 +1,7 @@
 use tracing::{trace, Level};
 use tracing_appender::rolling;
 use tracing_subscriber::fmt::writer::MakeWriterExt;
-/// Fn [`setup_tracing`] creates three basic routes, returns a [`axum::Router`](https://docs.rs/axum/latest/axum/struct.Router.html) object.
+/// Fn [`setup_tracing`] sets up tracing in `./logs` directory using [`axum::Router`](https://docs.rs/axum/latest/axum/struct.Router.html) object.
 ///
 /// - `/` with [`axum::routing::get`](https://docs.rs/axum/latest/axum/routing/method_routing/fn.get.html) method
 /// - `/hello` with [`axum::routing::get`](https://docs.rs/axum/latest/axum/routing/method_routing/fn.get.html) method
