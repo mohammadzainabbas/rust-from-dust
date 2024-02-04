@@ -28,6 +28,8 @@ async fn setup_tracing() {
 
 #[tokio::main(worker_threads = 2)]
 async fn main() {
+    setup_tracing().await?;
+
     let router = Router::new()
         .route("/", get(groot))
         .route("/hello", get(say_hello))
