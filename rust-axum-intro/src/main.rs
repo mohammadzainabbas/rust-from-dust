@@ -48,7 +48,7 @@ async fn groot() -> Html<&'static str> {
 }
 
 async fn say_hello(Query(param): Query<HelloParams>) -> Response {
-    trace!("inside groot()");
+    trace!("say_hello()");
     let name = param.name.as_deref().unwrap_or("World");
     debug!(target: "say_hello", name);
     Html(format!("<h3> Hello {}! </h3>", name)).into_response()
