@@ -141,6 +141,6 @@ pub struct Pagination {
 
 async fn read_todos(
     pagination: Option<Query<Pagination>>,
-    State(db): State<DB>
-
-)
+    State(db): State<DB>,
+) -> impl IntoResponse {
+}
