@@ -70,7 +70,7 @@ cargo install cargo-watch
 
 Open two terminals and run the following commands:
 
-> #1: to watch server-side changes
+> #1: to watch (re-build and run) server-side changes
 ```bash
 cargo watch -q -c -w src/ -x run
 ```
