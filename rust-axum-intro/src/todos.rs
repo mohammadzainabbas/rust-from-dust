@@ -56,7 +56,7 @@ pub struct UpdateTodo {
     pub completed: Option<bool>,
 }
 
-async fn update_todo(
+pub async fn update_todo(
     Path(id): Path<String>,
     State(db): State<DB>,
     Json(input): Json<UpdateTodo>,
@@ -82,7 +82,7 @@ pub struct Pagination {
     pub limit: Option<usize>,
 }
 
-async fn read_todos(
+pub async fn read_todos(
     pagination: Option<Query<Pagination>>,
     State(db): State<DB>,
 ) -> impl IntoResponse {
@@ -106,7 +106,7 @@ async fn read_todos(
     (status, Json(todos))
 }
 
-async fn delete_todo(Path(id): Path<String>, State(db): State<DB>) -> impl IntoResponse {
+pub async fn delete_todo(Path(id): Path<String>, State(db): State<DB>) -> impl IntoResponse {
     if db.write().unwrap().remove(&id).is_some() {
         StatusCode::NO_CONTENT
     } else {
