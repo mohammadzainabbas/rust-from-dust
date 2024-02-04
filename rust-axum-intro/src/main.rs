@@ -50,7 +50,7 @@ async fn main() {
         .route("/", get(groot))
         .route("/hello", get(say_hello))
         .route("/hello/:path", get(say_path))
-        .todo_routers
+        .merge(todo_routers)
         // .route("/todo", get(read_todos).post(create_todo))
         // .route("/todo/:id", patch(update_todo).delete(delete_todo))
         .with_state(db);
