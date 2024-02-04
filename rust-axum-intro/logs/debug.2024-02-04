@@ -57,3 +57,10 @@
 {"timestamp":"2024-02-04T22:49:54.205430Z","level":"TRACE","fields":{"message":"inside groot()"},"target":"rust_axum_intro::hello"}
 {"timestamp":"2024-02-04T23:01:33.466641Z","level":"TRACE","fields":{"message":"setup_tracing() done!"},"target":"rust_axum_intro::trace"}
 {"timestamp":"2024-02-04T23:01:33.468016Z","level":"INFO","fields":{"message":"server listening on 0.0.0.0:3000"},"target":"rust_axum_intro"}
+{"timestamp":"2024-02-04T23:01:40.853393Z","level":"TRACE","fields":{"message":"inside groot()"},"target":"rust_axum_intro::hello"}
+{"timestamp":"2024-02-04T23:01:40.854443Z","level":"TRACE","fields":{"message":"inside say_hello()"},"target":"rust_axum_intro::hello","span":{"param":"HelloParams { name: None }","name":"say_hello"},"spans":[{"param":"HelloParams { name: None }","name":"say_hello"}]}
+{"timestamp":"2024-02-04T23:01:40.854552Z","level":"DEBUG","fields":{"name":"World"},"target":"say","span":{"param":"HelloParams { name: None }","name":"say_hello"},"spans":[{"param":"HelloParams { name: None }","name":"say_hello"}]}
+{"timestamp":"2024-02-04T23:01:40.855080Z","level":"TRACE","fields":{"message":"inside say_path()"},"target":"rust_axum_intro::hello","span":{"path":"\"what\"","name":"say_path"},"spans":[{"path":"\"what\"","name":"say_path"}]}
+{"timestamp":"2024-02-04T23:01:40.855494Z","level":"TRACE","fields":{"message":"inside say_hello()"},"target":"rust_axum_intro::hello","span":{"param":"HelloParams { name: Some(\"Mohammad\") }","name":"say_hello"},"spans":[{"param":"HelloParams { name: Some(\"Mohammad\") }","name":"say_hello"}]}
+{"timestamp":"2024-02-04T23:01:40.855546Z","level":"DEBUG","fields":{"name":"Mohammad"},"target":"say","span":{"param":"HelloParams { name: Some(\"Mohammad\") }","name":"say_hello"},"spans":[{"param":"HelloParams { name: Some(\"Mohammad\") }","name":"say_hello"}]}
+{"timestamp":"2024-02-04T23:01:41.162169Z","level":"TRACE","fields":{"message":"inside groot()"},"target":"rust_axum_intro::hello"}
