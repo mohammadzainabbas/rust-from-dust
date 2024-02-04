@@ -143,4 +143,5 @@ async fn read_todos(
     pagination: Option<Query<Pagination>>,
     State(db): State<DB>,
 ) -> impl IntoResponse {
+    let todos = db.read().unwrap();
 }
