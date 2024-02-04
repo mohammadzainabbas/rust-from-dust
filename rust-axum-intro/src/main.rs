@@ -1,13 +1,6 @@
 // #![allow(unused)] // for dev
 
-use axum::{
-    extract::{Path, Query, State},
-    http::StatusCode,
-    response::{Html, IntoResponse, Response},
-    routing::{get, patch},
-    Error, Json, Router,
-};
-use clap::builder::Str;
+use axum::Router;
 use serde::{Deserialize, Serialize};
 use tracing::{debug, error, info, span, trace, warn, Level, Value};
 use tracing_appender::rolling;
