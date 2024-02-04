@@ -57,4 +57,20 @@ categories = ["command-line-utilities"]
 > [!TIP]
 > See more [_keys_ and their _definitions_](https://doc.rust-lang.org/cargo/reference/manifest.html).
 
-<!-- 5.  -->
+5. Install `Cargo watch`, if not already installed:
+
+```bash
+cargo install cargo-watch
+```
+
+> [!TIP]
+> Use `cargo watch` to automatically run the project on file changes.
+
+6. Watch _server_ and _client_ changes via `cargo watch`:
+
+Open two terminals and run the following commands:
+
+> Terminal 1
+```bash
+cargo watch -x 'run --bin rust-axum-intro'
+```
