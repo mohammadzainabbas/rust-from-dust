@@ -118,26 +118,9 @@ async fn update_todo(
     State(db): State<DB>,
     Json(input): Json<UpdateTodo>,
 ) -> Response {
-    let mut todo = db.read().unwrap().get(&id).cloned();
+    let mut db = db.read().unwrap();
 
-    match todo {
-        Some(i) => {
-            let mut todo = i;
-
-            if let Some(text) = input.text {
-                todo.text = text;
-            }
-
-            if let Some(completed) = input.completed {
-                todo.completed = completed;
-            }
-
-            db.write()
-                .unwrap()
-                .insert(todo.id.to_string(), todo.clone());
-
-            (StatusCode::OK, Json(todo)).into_response()
-        },
-        None => StatusCode::NOT_FOUND.into_response(),
+    let Some(todo) = db.get_mut(&id) {
+        
     }
 }
