@@ -123,7 +123,7 @@ async fn update_todo(
         .unwrap()
         .get(&id)
         .cloned()
-        .ok_or(StatusCode::NOT_FOUND)?;
+        .ok_or(StatusCode::NOT_FOUND);
 
     if let Some(text) = input.text {
         todo.text = text;
@@ -135,5 +135,5 @@ async fn update_todo(
 
     db.write().unwrap().insert(todo.id, todo.clone());
 
-    (StatusCode::OK, Json(todo))
+    (StatusCode::OK, Json(todo)).into_response()
 }
