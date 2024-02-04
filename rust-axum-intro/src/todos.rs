@@ -108,11 +108,12 @@ async fn delete_todo(Path(id): Path<String>, State(db): State<DB>) -> impl IntoR
     }
 }
 
-/// Fn [`basic_router`] creates four CRUD routes for [`Todo`], returns a [`axum::Router`](https://docs.rs/axum/latest/axum/struct.Router.html) object.
+/// Fn [`todo_router`] creates four CRUD routes for [`Todo`], returns a [`axum::Router`](https://docs.rs/axum/latest/axum/struct.Router.html) object.
 ///
-/// - `/` with [`axum::routing::get`](https://docs.rs/axum/latest/axum/routing/method_routing/fn.get.html) method
-/// - `/hello` with [`axum::routing::get`](https://docs.rs/axum/latest/axum/routing/method_routing/fn.get.html) method
-/// - `/hello/:path` with [`axum::routing::get`](https://docs.rs/axum/latest/axum/routing/method_routing/fn.get.html) method
+/// - `/todo` with [`axum::routing::get`](https://docs.rs/axum/latest/axum/routing/method_routing/fn.get.html) method
+/// - `/todo` with [`axum::routing::post`](https://docs.rs/axum/latest/axum/routing/method_routing/fn.post.html) method
+/// - `/todo/:id` with [`axum::routing::patch`](https://docs.rs/axum/latest/axum/routing/method_routing/fn.patch.html) method
+/// - `/todo/:id` with [`axum::routing::delete`](https://docs.rs/axum/latest/axum/routing/method_routing/fn.delete.html) method
 ///
 pub async fn todo_router() -> Router {
     let db = DB::default();
