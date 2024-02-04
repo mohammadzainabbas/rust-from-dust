@@ -1,4 +1,4 @@
-use axum::Router;
+use axum::{routing::get, Router};
 use rust_axum_intro::{get_routers, setup_tracing};
 use tracing::info;
 
@@ -6,9 +6,7 @@ use tracing::info;
 async fn main() {
     setup_tracing().await;
 
-    let basic_router = basic_router().await;
-    let todo_routers = todo_router().await;
-    let routers = Router::new().merge(basic_router).merge(todo_routers);
+    let routers = get_routers();
 
     let listener = tokio::net::TcpListener::bind("0.0.0.0:3000").await.unwrap();
     info!("server listening on {:#?}", listener.local_addr().unwrap());
