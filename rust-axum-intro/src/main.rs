@@ -14,7 +14,11 @@ use tracing_appender::rolling;
 
 #[tokio::main(worker_threads = 2)]
 async fn main() {
-    let debug_file = rolling::daily("./logs", "debug");
+    let log_dir = "./logs";
+    let debug_file = rolling::daily(log_dir, "debug");
+    let warning_file = rolling::daily(log_
+        dir, "warning");
+    
 
     let router = Router::new()
         .route("/", get(groot))
