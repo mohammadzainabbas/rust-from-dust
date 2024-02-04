@@ -63,6 +63,7 @@ struct HelloParams {
     pub name: Option<String>,
 }
 
+impl crate::sealed::Sealed for HelloParams {}
 impl Value for HelloParams {
     fn record(&self, key: &tracing::field::Field, visitor: &mut dyn tracing::field::Visit) {
         visitor.record_str(key, self.name.as_deref().unwrap_or(""))
