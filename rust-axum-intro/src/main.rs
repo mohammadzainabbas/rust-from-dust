@@ -5,6 +5,13 @@
 //! ```bash
 //! cargo run
 //! ```
+//! or
+//! ```bash
+//! cargo watch -q -c -
+//! ```
+//!
+//!
+//!
 
 use rust_axum_intro::{get_routers, setup_tracing};
 use tracing::info;
