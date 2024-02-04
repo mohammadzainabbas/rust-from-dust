@@ -120,6 +120,6 @@ async fn update_todo(
     let mut todo = db.read().unwrap().get(&id).cloned();
 
     if todo.is_none() {
-        (StatusCode::NOT_FOUND)
+        (StatusCode::NOT_FOUND, Json<>)
     }
 }
