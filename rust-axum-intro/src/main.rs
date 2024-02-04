@@ -25,15 +25,13 @@ async fn setup_tracing() {
         .with_writer(log_files)
         .with_ansi(true)
         .init();
+
+    trace!("setup_tracing() done!");
 }
 
 #[tokio::main(worker_threads = 2)]
 async fn main() {
     setup_tracing().await;
-    trace!("setup_tracing() done!");
-
-    warn!("setting up routing");
-    error!("something went wrong!");
 
     let router = Router::new()
         .route("/", get(groot))
