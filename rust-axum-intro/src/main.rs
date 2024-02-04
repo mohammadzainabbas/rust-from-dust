@@ -11,7 +11,7 @@ use axum::{
     extract::{Path, Query, State},
     http::StatusCode,
     response::{Html, IntoResponse, Response},
-    routing::get,
+    routing::{get, patch},
     Error, Json, Router,
 };
 use clap::builder::Str;
@@ -46,7 +46,7 @@ async fn main() {
         .route("/hello", get(say_hello))
         .route("/hello/:path", get(say_path))
         .route("/todo", get(read_todos).post(create_todo))
-        .route("/todo/:id", get(handler))
+        .route("/todo/:id", patch(update_todo).delete(delete_todo));
     let listener = tokio::net::TcpListener::bind("0.0.0.0:3000").await.unwrap();
     info!("server listening on {:#?}", listener.local_addr().unwrap());
     axum::serve(listener, router).await.unwrap();
