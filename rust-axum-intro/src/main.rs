@@ -128,7 +128,7 @@ async fn update_todo(
             todo.completed = completed;
         }
         (StatusCode::OK, Json(todo.clone())).into_response()
-    } else {
+    }; else {
         (StatusCode::NOT_FOUND).into_response()
     }
 }
