@@ -155,7 +155,7 @@ async fn read_todos(
         .collect::<Vec<_>>();
 
     let status = if todos.is_empty() {
-        StatusCode::NO_CONTENT
+        StatusCode::NOT_FOUND
     } else {
         StatusCode::OK
     };
@@ -165,7 +165,7 @@ async fn read_todos(
 
 async fn delete_todo(Path(id): Path<String>, State(db): State<DB>) -> impl IntoResponse {
     if db.write().unwrap().remove(&id).is_some() {
-        StatusCode::OK
+        StatusCode::NO_CONTENT
     } else {
         StatusCode::NOT_FOUND
     }
