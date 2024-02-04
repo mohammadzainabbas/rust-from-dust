@@ -19,6 +19,7 @@ async fn test_todos() -> Result<()> {
     // E - exceptions
     // S - simple scenarios
 
+    // 1. Create TODOs
     hc.do_post("/todo", json!({"text": "Complete this project"}))
         .await?
         .print()
