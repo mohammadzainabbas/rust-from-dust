@@ -1,11 +1,8 @@
-// #![allow(unused)] // for dev
-
 use axum::Router;
-use serde::{Deserialize, Serialize};
-use tracing::{debug, error, info, span, trace, warn, Level, Value};
+
+use tracing::{info, trace, Level};
 use tracing_appender::rolling;
 use tracing_subscriber::fmt::writer::MakeWriterExt;
-use uuid::Uuid;
 
 mod hello;
 mod todos;
