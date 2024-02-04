@@ -46,21 +46,8 @@ async fn main() {
     let basic_router = hello::basic_router().await;
     let todo_routers = todos::todo_router().await;
 
-    let router = Router::new()
-        .merge(basic_router)
-        // .merge(helloRouter)
-        // .merge(hello::basic_router)
-        .merge(todo_routers);
-    // .with_state(db);
+    let router = Router::new().merge(basic_router).merge(todo_routers);
 
-    // let router = Router::new()
-    //     .route("/", get(groot))
-    //     .route("/hello", get(say_hello))
-    //     .route("/hello/:path", get(say_path))
-    //     .merge(todo_routers)
-    //     // .route("/todo", get(read_todos).post(create_todo))
-    //     // .route("/todo/:id", patch(update_todo).delete(delete_todo))
-    //     .with_state(db);
     let listener = tokio::net::TcpListener::bind("0.0.0.0:3000").await.unwrap();
     info!("server listening on {:#?}", listener.local_addr().unwrap());
     axum::serve(listener, router).await.unwrap();
