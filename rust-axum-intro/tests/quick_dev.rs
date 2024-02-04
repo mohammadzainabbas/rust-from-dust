@@ -12,12 +12,9 @@ async fn quick_dev() -> Result<()> {
     // hc.do_get("/hello?name=Mohammad").await?.print().await?;
 
     hc.do_get("/todo").await?.print().await?;
-    hc.do_post(
-        "/todo",
-        axum::Json(json!({"text": "Complete this project"})),
-    )
-    .await?
-    .print()
-    .await?;
+    hc.do_post("/todo", json!({"text": "Complete this project"}))
+        .await?
+        .print()
+        .await?;
     Ok(())
 }
