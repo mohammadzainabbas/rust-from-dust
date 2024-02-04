@@ -70,12 +70,12 @@ cargo install cargo-watch
 
 Open two terminals and run the following commands:
 
-> Terminal 1
+> #1: to watch server changes
 ```bash
 cargo watch -q -c -w src/ -x run
 ```
 
-> Terminal 2
+> #2: to watch client-side behavior via tests
 ```bash
 cargo watch -q -c -w tests/ -x "test -q quick_dev -- --nocapture"
 ```
