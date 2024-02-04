@@ -116,5 +116,5 @@ async fn update_todo(
     Path(id): Path<String>,
     State(db): State<DB>,
     Json(input): Json<UpdateTodo>,
-) -> impl IntoResponse {
+) -> Result<impl IntoResponse, StatusCode> {
 }
