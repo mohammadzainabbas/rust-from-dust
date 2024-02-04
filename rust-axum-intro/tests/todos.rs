@@ -1,7 +1,6 @@
 #[allow(unused)]
 use anyhow::{Error, Result};
 use serde_json::json;
-use core::todo;
 
 // ZOMBIES (checklist when writing tests)
 // Link: https://youtu.be/0_UttFDnV3k?t=3539
