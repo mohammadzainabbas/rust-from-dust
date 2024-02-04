@@ -27,10 +27,8 @@ async fn test_todos() -> Result<()> {
 
     // 2. Read TODOs
     hc.do_get("/todo").await?.print().await?;
-    hc.do_post("/todo", json!({"text": "Complete this project"}))
-        .await?
-        .print()
-        .await?;
+
+    // 3. Update TODOs
 
     Ok(())
 }
