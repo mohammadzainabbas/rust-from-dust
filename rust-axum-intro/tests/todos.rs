@@ -7,7 +7,7 @@ async fn test_todos() -> Result<()> {
     let hc = httpc_test::new_client("http://localhost:3000")?;
 
     // ZOMBIES (checklist when writing tests)
-    //
+    // Link: https://youtu.be/0_UttFDnV3k?t=3539
     //
     // Z - zero
     // O - one
