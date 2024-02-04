@@ -117,7 +117,7 @@ async fn update_todo(
     Path(id): Path<String>,
     State(db): State<DB>,
     Json(input): Json<UpdateTodo>,
-) -> Result<impl IntoResponse, StatusCode> {
+) -> Response {
     let mut todo = db
         .read()
         .unwrap()
