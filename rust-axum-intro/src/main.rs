@@ -5,7 +5,7 @@
 //! ```bash
 //! cargo run
 //! ```
-//! or
+//! or (_to run re-run whenever there's a change in *src* dir_)
 //! ```bash
 //! cargo watch -q -c -w src/ -x run
 //! ```
