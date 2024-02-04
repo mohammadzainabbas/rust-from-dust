@@ -11,7 +11,7 @@ use axum::{
     http::StatusCode,
     response::{Html, IntoResponse, Response},
     routing::get,
-    Json, Router,
+    Error, Json, Router,
 };
 use clap::builder::Str;
 use serde::{Deserialize, Serialize};
@@ -113,5 +113,8 @@ struct UpdateTodo {
 }
 
 async fn update_todo(
-    Path(id)
-)
+    Path(id): Path<String>,
+    State(db): State<DB>,
+    Json(input): Json<UpdateTodo>,
+) -> Result<impl IntoResponse, Error> {
+}
