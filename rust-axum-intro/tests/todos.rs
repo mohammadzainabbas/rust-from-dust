@@ -29,6 +29,7 @@ async fn test_todos() -> Result<()> {
     hc.do_get("/todo").await?.print().await?;
 
     // 3. Update TODOs
+    let id = hc.do_get("/todo").await?;
 
     Ok(())
 }
