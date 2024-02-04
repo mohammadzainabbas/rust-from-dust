@@ -20,6 +20,8 @@ use tracing_appender::rolling;
 use tracing_subscriber::fmt::writer::MakeWriterExt;
 use uuid::Uuid;
 
+mod hello;
+
 async fn setup_tracing() {
     let log_dir = "./logs";
     let debug_file = rolling::daily(log_dir, "debug").with_min_level(Level::WARN);
