@@ -59,7 +59,6 @@ async fn say_hello(Query(param): Query<HelloParams>) -> Response {
 #[tracing::instrument]
 async fn say_path(Path(path): Path<String>) -> impl IntoResponse {
     trace!("say_path()");
-
     Html(format!("<h3> Hello {}! </h3>", path.as_str())).into_response()
 }
 
