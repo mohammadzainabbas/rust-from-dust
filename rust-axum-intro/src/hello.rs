@@ -1,22 +1,11 @@
-use std::{
-    collections::HashMap,
-    net::{IpAddr, Ipv4Addr, SocketAddr},
-    sync::{Arc, RwLock},
-};
-
 use axum::{
-    extract::{Path, Query, State},
-    http::StatusCode,
+    extract::{Path, Query},
     response::{Html, IntoResponse, Response},
-    routing::{get, patch},
-    Error, Json, Router,
+    routing::get,
+    Router,
 };
-use clap::builder::Str;
-use serde::{Deserialize, Serialize};
-use tracing::{debug, error, info, span, trace, warn, Level, Value};
-use tracing_appender::rolling;
-use tracing_subscriber::fmt::writer::MakeWriterExt;
-use uuid::Uuid;
+use serde::Deserialize;
+use tracing::{debug, trace};
 
 pub async fn groot() -> Html<&'static str> {
     trace!("inside groot()");
