@@ -75,9 +75,9 @@ Open two terminals and run the following commands:
 cargo watch -q -c -w src/ -x run
 ```
 
-> #2: to watch client-side behavior via tests
+> #2: to watch client-side behavior via tests (re-run tests on changes in `src/` and `tests/` directories)
 ```bash
-cargo watch -q -c -w tests/ -x "test -q quick_dev -- --nocapture"
+cargo watch -q -c -w src/ -w tests/ -x "test -q quick_dev -- --nocapture"
 ```
 
 > [!IMPORTANT]
