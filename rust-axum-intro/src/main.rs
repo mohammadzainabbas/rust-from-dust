@@ -164,5 +164,8 @@ async fn read_todos(
 }
 
 async fn delete_todo(
-    
-)
+    Path(id): Path<String>,
+    State(db): State<DB>
+) -> impl IntoResponse {
+    if db.write().unwrap().re
+}
