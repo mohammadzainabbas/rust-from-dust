@@ -13,7 +13,7 @@ use serde::Deserialize;
 use tracing_appender::rolling;
 use tracing_subscriber::fmt::writer::MakeWriterExt;
 
-async fn setup_tracing() -> Result<()> {
+async fn setup_tracing() {
     let log_dir = "./logs";
     let debug_file = rolling::daily(log_dir, "debug");
     let warning_file = rolling::daily(log_dir, "warning").with_max_level(tracing::Level::WARN);
@@ -24,13 +24,11 @@ async fn setup_tracing() -> Result<()> {
         .with_writer(log_files)
         .with_ansi(true)
         .init();
-
-    Ok(())
 }
 
 #[tokio::main(worker_threads = 2)]
 async fn main() {
-    setup_tracing().await?;
+    setup_tracing().await;
 
     let router = Router::new()
         .route("/", get(groot))
