@@ -19,17 +19,10 @@ async fn test_hello() -> Result<()> {
     // E - exceptions
     // S - simple scenarios
 
-    // 1. Create TODOs
-    hc.do_post("/hello", json!({"text": "Complete this project"}))
-        .await?
-        .print()
-        .await?;
-
-    // 2. Read TODOs
     hc.do_get("/").await?.print().await?;
     hc.do_get("/hello").await?.print().await?;
-
-    // 3. Update TODOs
+    hc.do_get("/hello/what").await?.print().await?;
+    hc.do_get("/hello?name=Mohammad").await?.print().await?;
 
     Ok(())
 }
