@@ -44,10 +44,10 @@ async fn main() {
 
     let db = DB::default();
 
-    Router::new()
-    .route("/", get(groot))
-    .route("/hello", get(say_hello))
-    .route("/hello/:path", get(say_path))
+    let basic_router = Router::new()
+        .route("/", get(groot))
+        .route("/hello", get(say_hello))
+        .route("/hello/:path", get(say_path));
 
     let todo_routers = Router::new()
         .route("/todo", get(read_todos).post(create_todo))
