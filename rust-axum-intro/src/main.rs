@@ -1,3 +1,6 @@
+//! Welcome to Axum Intro Project
+//!
+
 use rust_axum_intro::{get_routers, setup_tracing};
 use tracing::info;
 
