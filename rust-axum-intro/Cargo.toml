@@ -42,6 +42,7 @@ strum_macros = "0.26.1"
 
 # A library to generate and parse UUIDs.
 uuid = { version = "1.7.0", features = ["v4", "fast-rng"] }
+tracing-subscriber = { version = "0.3.18", features = ["env-filter", "json"] }
 
 [dev-dependencies]
 # Flexible concrete Error type built on std::error::Error
