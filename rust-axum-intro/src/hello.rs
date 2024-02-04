@@ -44,3 +44,10 @@ async fn say_path(Path(path): Path<String>) -> impl IntoResponse {
 
     Html(format!("<h3> Hello {}! </h3>", path.as_str())).into_response()
 }
+
+async fn hello_router() -> Router {
+    let router = Router::new()
+        .route("/", get(groot))
+        .route("/hello", get(say_hello))
+        .route("/hello/:path", get(say_path));
+}
