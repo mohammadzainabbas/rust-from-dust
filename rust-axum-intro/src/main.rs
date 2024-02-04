@@ -6,6 +6,7 @@ use std::{
     sync::{Arc, RwLock},
 };
 
+use anyhow::Ok;
 use axum::{
     extract::{Path, Query, State},
     http::StatusCode,
@@ -130,4 +131,6 @@ async fn update_todo(
     if let Some(completed) = input.completed {
         todo.completed = completed;
     }
+
+    Ok(Json(todo))
 }
