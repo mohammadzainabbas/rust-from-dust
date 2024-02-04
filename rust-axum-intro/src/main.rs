@@ -1,5 +1,10 @@
-//! Welcome to Axum Intro Project
+//! ### Welcome to Axum Intro Project
 //!
+//! Run the following via
+//!
+//! ```bash
+//! cargo run
+//! ```
 
 use rust_axum_intro::{get_routers, setup_tracing};
 use tracing::info;
