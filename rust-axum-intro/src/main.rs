@@ -75,7 +75,7 @@ async fn say_path(Path(path): Path<String>) -> impl IntoResponse {
 
 #[derive(Debug, Serialize, Clone)]
 struct Todo {
-    id: Uuid,
+    id: String,
     text: String,
     completed: bool,
 }
