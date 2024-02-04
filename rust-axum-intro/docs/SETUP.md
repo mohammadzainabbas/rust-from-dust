@@ -77,3 +77,5 @@ cargo watch -q -c -w src/ -x run
 
 > Terminal 2
 ```bash
+cargo watch -q -c -w tests/ -x "test -q quick_dev -- --nocapture"
+```
