@@ -46,14 +46,4 @@ pub struct Pagination {
     pub limit: Option<usize>,
 }
 
-async fn todos_create(State(db): State<Db>, Json(input): Json<CreateTodo>) -> impl IntoResponse {
-    let todo = Todo {
-        id: Uuid::new_v4(),
-        text: input.text,
-        completed: false,
-    };
-
-    db.write().unwrap().insert(todo.id, todo.clone());
-
-    (StatusCode::CREATED, Json(todo))
-}
+async fn todos_create(State(db): State<Db>, Json(input): Json<CreateTodo>) -> impl IntoResponse {}
