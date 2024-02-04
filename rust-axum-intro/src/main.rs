@@ -51,13 +51,13 @@ async fn groot() -> Html<&'static str> {
 async fn say_hello(Query(param): Query<HelloParams>) -> Response {
     trace!("say_hello()");
     let name = param.name.as_deref().unwrap_or("World");
-    if name == "World" {
-        warn!(name);
-    }
+    debug!(target: "say", name);
     Html(format!("<h3> Hello {}! </h3>", name)).into_response()
 }
 
 async fn say_path(Path(path): Path<String>) -> impl IntoResponse {
+    trace!("say_path()");
+
     Html(format!("<h3> Hello {}! </h3>", path.as_str())).into_response()
 }
 
