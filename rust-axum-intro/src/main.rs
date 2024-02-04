@@ -24,6 +24,7 @@ async fn setup_tracing() {
         .json()
         .with_writer(log_files)
         .with_ansi(true)
+        .with_max_level(Level::TRACE)
         .init();
 
     trace!("setup_tracing() done!");
