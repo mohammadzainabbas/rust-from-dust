@@ -32,11 +32,11 @@ pub struct Todo {
 }
 
 #[derive(Debug, Deserialize)]
-struct CreateTodo {
-    text: String,
+pub struct CreateTodo {
+    pub text: String,
 }
 
-async fn create_todo(State(db): State<DB>, Json(input): Json<CreateTodo>) -> impl IntoResponse {
+pub async fn create_todo(State(db): State<DB>, Json(input): Json<CreateTodo>) -> impl IntoResponse {
     let todo = Todo {
         id: Uuid::new_v4().to_string().to_owned(),
         text: input.text,
@@ -51,9 +51,9 @@ async fn create_todo(State(db): State<DB>, Json(input): Json<CreateTodo>) -> imp
 }
 
 #[derive(Debug, Deserialize)]
-struct UpdateTodo {
-    text: Option<String>,
-    completed: Option<bool>,
+pub struct UpdateTodo {
+    pub text: Option<String>,
+    pub completed: Option<bool>,
 }
 
 async fn update_todo(
