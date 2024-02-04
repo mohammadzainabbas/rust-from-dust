@@ -17,7 +17,7 @@ use tracing_subscriber::fmt::writer::MakeWriterExt;
 async fn main() {
     let log_dir = "./logs";
     let debug_file = rolling::daily(log_dir, "debug");
-    let warning_file = rolling::daily(log_dir, "warning").with_max_level(tracing::Level::)
+    let warning_file = rolling::daily(log_dir, "warning").with_max_level(tracing::Level::WARN);
 
     let router = Router::new()
         .route("/", get(groot))
