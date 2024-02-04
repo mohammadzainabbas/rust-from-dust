@@ -11,7 +11,7 @@ use axum::{
 use clap::builder::Str;
 use serde::Deserialize;
 
-use alloc::tracing_subscriber;
+use axum::tracing_subscriber;
 
 #[tokio::main(worker_threads = 2)]
 async fn main() {
@@ -25,8 +25,8 @@ async fn main() {
     axum::serve(listener, router).await.unwrap();
 }
 
-async fn groot() -> &'static str {
-    "Hello, I'm groot!"
+async fn groot() -> Html<&'static str> {
+    Html("Hello, I'm groot!")
 }
 
 async fn say_hello(Query(param): Query<HelloParams>) -> Response {
