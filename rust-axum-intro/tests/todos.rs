@@ -29,9 +29,6 @@ async fn test_todos() -> Result<()> {
     hc.do_get("/todo").await?.print().await?;
 
     // 3. Update TODOs
-    let res = hc.do_get("/todo").await?;
-    let body = res.json_body().unwrap();
-    let first = body.as_array_mut().into_iter().take(1);
 
     Ok(())
 }
