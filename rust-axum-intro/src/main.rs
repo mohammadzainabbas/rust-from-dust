@@ -13,7 +13,7 @@ use serde::Deserialize;
 
 #[tokio::main(worker_threads = 2)]
 async fn main() {
-    tracing_
+    tracing_subscriber::fmt::init();
     let router = Router::new()
         .route("/", get(groot))
         .route("/hello", get(say_hello))
