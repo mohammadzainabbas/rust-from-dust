@@ -1,6 +1,10 @@
 #![allow(unused)] // for dev
 
-use std::net::{IpAddr, Ipv4Addr, SocketAddr};
+use std::{
+    collections::HashMap,
+    net::{IpAddr, Ipv4Addr, SocketAddr},
+    sync::{Arc, RwLock},
+};
 
 use axum::{
     extract::{Path, Query, State},
@@ -72,6 +76,8 @@ async fn say_path(Path(path): Path<String>) -> impl IntoResponse {
 // ------------------------
 // Todo CRUD
 // ------------------------
+
+type DB = Arc<RwLock<HashMap<String, Todo>>>;
 
 #[derive(Debug, Serialize, Clone)]
 struct Todo {
