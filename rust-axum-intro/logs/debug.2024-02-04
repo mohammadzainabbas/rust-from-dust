@@ -33,3 +33,9 @@
 {"timestamp":"2024-02-04T07:14:35.462964Z","level":"TRACE","fields":{"message":"say_hello()"},"target":"rust_axum_intro"}
 {"timestamp":"2024-02-04T07:14:35.462995Z","level":"WARN","fields":{"name":"World"},"target":"rust_axum_intro"}
 {"timestamp":"2024-02-04T07:14:35.463670Z","level":"TRACE","fields":{"message":"say_hello()"},"target":"rust_axum_intro"}
+{"timestamp":"2024-02-04T07:14:50.176658Z","level":"TRACE","fields":{"message":"setup_tracing() done!"},"target":"rust_axum_intro"}
+{"timestamp":"2024-02-04T07:14:50.177166Z","level":"INFO","fields":{"message":"server listening on 0.0.0.0:3000"},"target":"rust_axum_intro"}
+{"timestamp":"2024-02-04T07:14:50.753009Z","level":"TRACE","fields":{"message":"inside groot()"},"target":"rust_axum_intro"}
+{"timestamp":"2024-02-04T07:14:50.753556Z","level":"TRACE","fields":{"message":"say_hello()"},"target":"rust_axum_intro"}
+{"timestamp":"2024-02-04T07:14:50.753574Z","level":"WARN","fields":{"name":"World"},"target":"rust_axum_intro"}
+{"timestamp":"2024-02-04T07:14:50.754029Z","level":"TRACE","fields":{"message":"say_hello()"},"target":"rust_axum_intro"}
