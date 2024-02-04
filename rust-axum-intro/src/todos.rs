@@ -1,4 +1,5 @@
-#[allow(unused)]
+#![allow(unused)]
+
 use axum::{
     error_handling::HandleErrorLayer,
     extract::{Path, Query, State},
