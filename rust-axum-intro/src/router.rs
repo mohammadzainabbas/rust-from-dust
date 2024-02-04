@@ -1,7 +1,8 @@
 use crate::{basic_router, todo_router};
 use axum::Router;
 
-/// *get_routers()* calls
+/// ['get_routers'] creates app's routers
+///
 /// A function that provides all app's routers makes it easy to call it from tests
 /// without having to create an HTTP server.
 pub async fn get_routers() -> Router {
