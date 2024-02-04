@@ -153,4 +153,6 @@ async fn read_todos(
         .take(pagination.limit.unwrap_or(usize::MAX))
         .cloned()
         .collect::<Vec<_>>();
+
+    (StatusCode::OK, Json(todos))
 }
