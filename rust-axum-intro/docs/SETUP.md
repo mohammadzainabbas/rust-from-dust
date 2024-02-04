@@ -72,5 +72,8 @@ Open two terminals and run the following commands:
 
 > Terminal 1
 ```bash
-cargo watch -x 'run --bin rust-axum-intro'
+cargo watch -q -c -w src/ -x run
 ```
+
+> Terminal 2
+```bash
