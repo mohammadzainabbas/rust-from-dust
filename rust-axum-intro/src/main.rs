@@ -163,9 +163,10 @@ async fn read_todos(
     (status, Json(todos))
 }
 
-async fn delete_todo(
-    Path(id): Path<String>,
-    State(db): State<DB>
-) -> impl IntoResponse {
-    if db.write().unwrap().re
+async fn delete_todo(Path(id): Path<String>, State(db): State<DB>) -> impl IntoResponse {
+    if db.write().unwrap().remove(&id).is_some() {
+        StatusCode::OK
+    } else {
+        StatusCode::NOT_FOUND
+    }
 }
