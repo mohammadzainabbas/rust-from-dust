@@ -121,6 +121,12 @@ async fn update_todo(
     let mut db = db.read().unwrap();
 
     let Some(todo) = db.get_mut(&id) {
+        if let Some(text) = input.text {
+            todo.text = text;
+        }
+        if let Some(completed) = input.completed {
+            todo.completed = completed;
+        }
         
     }
 }
