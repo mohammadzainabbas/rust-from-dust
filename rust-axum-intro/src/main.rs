@@ -13,6 +13,7 @@ use serde::Deserialize;
 use tracing::{debug, error, info, span, trace, warn, Level, Value};
 use tracing_appender::rolling;
 use tracing_subscriber::fmt::writer::MakeWriterExt;
+use uuid::Uuid;
 
 async fn setup_tracing() {
     let log_dir = "./logs";
@@ -74,5 +75,7 @@ async fn say_path(Path(path): Path<String>) -> impl IntoResponse {
 
 #[derive(Debug, Clone, Deserialize)]
 struct Todo {
-    id: 
+    id: Uuid,
+    text: String,
+    completed: bool,
 }
