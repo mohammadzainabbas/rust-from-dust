@@ -49,7 +49,7 @@ async fn groot() -> Html<&'static str> {
 
 async fn say_hello(Query(param): Query<HelloParams>) -> Response {
     trace!("inside groot()");
-    debug!(target: "say_hello", param);
+    debug!(target: "say_hello", param.name);
     let name = param.name.as_deref().unwrap_or("World");
     Html(format!("<h3> Hello {}! </h3>", name)).into_response()
 }
@@ -61,11 +61,4 @@ async fn say_path(Path(path): Path<String>) -> impl IntoResponse {
 #[derive(Debug, Deserialize)]
 struct HelloParams {
     pub name: Option<String>,
-}
-
-impl tracing_core::sealed::Sealed for HelloParams {}
-impl Value for HelloParams {
-    fn record(&self, key: &tracing::field::Field, visitor: &mut dyn tracing::field::Visit) {
-        visitor.record_str(key, self.name.as_deref().unwrap_or(""))
-    }
 }
