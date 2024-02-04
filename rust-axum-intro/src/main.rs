@@ -46,6 +46,7 @@ async fn main() {
     let db = DB::default();
 
     let basic_router = hello::basic_router().await;
+    let todo_routers = todos::todo_router().await;
 
     let router = Router::new()
         .merge(basic_router)
