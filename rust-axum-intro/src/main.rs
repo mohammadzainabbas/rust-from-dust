@@ -109,7 +109,7 @@ async fn create_todo(State(db): State<DB>, Json(input): Json<CreateTodo>) -> imp
 #[derive(Debug, Deserialize)]
 struct UpdateTodo {
     text: Option<String>,
-    complete: Option<bool>,
+    completed: Option<bool>,
 }
 
 async fn update_todo(
