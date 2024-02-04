@@ -1,5 +1,5 @@
 #[allow(unused)]
-use anyhow::Error;
+use anyhow::{Error, Result};
 
 #[tokio::test]
 async fn quick_dev() -> Result<()> {
