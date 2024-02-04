@@ -10,10 +10,11 @@ use axum::{
 };
 use clap::builder::Str;
 use serde::Deserialize;
+use tracing_appender::rolling;
 
 #[tokio::main(worker_threads = 2)]
 async fn main() {
-    let debug_file =  
+    let debug_file = rolling::daily("./logs", "debug");
 
     let router = Router::new()
         .route("/", get(groot))
