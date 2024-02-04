@@ -125,9 +125,9 @@ async fn update_todo(
         .ok_or(StatusCode::NOT_FOUND)?;
 
     if let Some(text) = input.text {
-        todo.text
+        todo.text = text
     }
     if let Some(complete) = input.complete {
-        todo.completed
+        todo.completed = complete
     }
 }
