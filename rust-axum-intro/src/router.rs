@@ -6,6 +6,9 @@ use axum::Router;
 /// Note: A function that provides all app's routers makes it easy to call it from tests
 /// without having to create an HTTP server.
 ///
+/// ```
+/// use
+/// ```
 pub async fn get_routers() -> Router {
     let basic_router = basic_router().await;
     let todo_routers = todo_router().await;
