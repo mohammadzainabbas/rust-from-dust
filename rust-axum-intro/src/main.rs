@@ -30,10 +30,9 @@ async fn say_hello(Query(param): Query<HelloParams>) -> Response {
     Html(format!("<h3> Hello {}! </h3>", name)).into_response()
 }
 
-async fn say_path(Path(path): Path<String>) -> impl IntoResponse {
-    let p = path.path
+async fn say_path(path: Path<String>) -> impl IntoResponse {
+    Html(format!("<h3> Hello {}! </h3>", path)).into_response()
 }
-
 
 #[derive(Debug, Deserialize)]
 struct HelloParams {
