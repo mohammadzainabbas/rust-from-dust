@@ -8,6 +8,7 @@ use axum::{
     routing::get,
     Router,
 };
+use clap::builder::Str;
 use serde::Deserialize;
 
 #[tokio::main(worker_threads = 2)]
@@ -29,14 +30,10 @@ async fn say_hello(Query(param): Query<HelloParams>) -> Response {
     Html(format!("<h3> Hello {}! </h3>", name)).into_response()
 }
 
-async fn say_path(Path(path): Path<HelloPath>) -> impl IntoResponse {
+async fn say_path(Path(path): Path<String>) -> impl IntoResponse {
     let p = path.path
 }
 
-#[derive(Debug, Deserialize)]
-struct HelloPath {
-    pub path: Option<String>,
-}
 
 #[derive(Debug, Deserialize)]
 struct HelloParams {
