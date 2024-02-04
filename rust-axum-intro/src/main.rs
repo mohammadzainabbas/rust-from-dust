@@ -98,5 +98,7 @@ async fn create_todos(State(db): State<DB>, Json(input): Json<CreateTodo>) -> im
         completed: false,
     };
 
-    db.write().unwrap().insert(todo.id, todo.clone());
+    db.write()
+        .unwrap()
+        .insert(todo.id.to_string(), todo.clone());
 }
