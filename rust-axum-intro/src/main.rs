@@ -31,7 +31,7 @@ async fn say_hello(Query(param): Query<HelloParams>) -> Response {
     Html(format!("<h3> Hello {}! </h3>", name)).into_response()
 }
 
-async fn say_path(path: Path<String>) -> impl IntoResponse {
+async fn say_path(Path(path): Path<String>) -> impl IntoResponse {
     Html(format!("<h3> Hello {}! </h3>", path.as_str())).into_response()
 }
 
