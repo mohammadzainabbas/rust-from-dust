@@ -45,19 +45,16 @@ async fn main() {
     let db = DB::default();
     let helloRouter = hello::HelloRouter::new();
 
-    let basic_router = Router::new()
-        .route("/", get(hello::groot))
-        .route("/hello", get(hello::say_hello))
-        .route("/hello/:path", get(hello::say_path));
+    let basic_router = hello::basic_router().await;
 
     let todo_routers = Router::new()
         .route("/todo", get(read_todos).post(create_todo))
         .route("/todo/:id", patch(update_todo).delete(delete_todo));
 
     let router = Router::new()
-        // .merge(basic_router)
+        .merge(basic_router)
         // .merge(helloRouter)
-        .merge(hello::basic_router)
+        // .merge(hello::basic_router)
         // .merge(todo_routers)
         .with_state(db);
 
