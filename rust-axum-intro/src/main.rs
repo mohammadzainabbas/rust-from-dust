@@ -92,7 +92,7 @@ struct CreateTodo {
     text: String,
 }
 
-async fn create_todos(State(db): State<DB>, Json(input): Json<CreateTodo>) -> impl IntoResponse {
+async fn create_todo(State(db): State<DB>, Json(input): Json<CreateTodo>) -> impl IntoResponse {
     let todo = Todo {
         id: Uuid::new_v4().to_string().to_owned(),
         text: input.text,
@@ -111,3 +111,5 @@ struct UpdateTodo {
     text: Option<String>,
     complete: Option<bool>,
 }
+
+async fn update_todo
