@@ -108,6 +108,12 @@ async fn delete_todo(Path(id): Path<String>, State(db): State<DB>) -> impl IntoR
     }
 }
 
+/// Fn [`basic_router`] creates four CRUD routes for [`Todo`], returns a [`axum::Router`](https://docs.rs/axum/latest/axum/struct.Router.html) object.
+///
+/// - `/` with [`axum::routing::get`](https://docs.rs/axum/latest/axum/routing/method_routing/fn.get.html) method
+/// - `/hello` with [`axum::routing::get`](https://docs.rs/axum/latest/axum/routing/method_routing/fn.get.html) method
+/// - `/hello/:path` with [`axum::routing::get`](https://docs.rs/axum/latest/axum/routing/method_routing/fn.get.html) method
+///
 pub async fn todo_router() -> Router {
     let db = DB::default();
 
