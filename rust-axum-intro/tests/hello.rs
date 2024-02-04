@@ -1,6 +1,5 @@
 #[allow(unused)]
 use anyhow::{Error, Result};
-use serde_json::json;
 
 #[tokio::test]
 async fn test_hello() -> Result<()> {
