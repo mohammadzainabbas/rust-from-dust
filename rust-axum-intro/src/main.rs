@@ -17,5 +17,5 @@ async fn main() {
 }
 
 async fn hello_world() -> Response {
-    Html("<h3> Hello World </h3>").into_response()
+    Html("<h3> Hello World! </h3>").into_response()
 }
