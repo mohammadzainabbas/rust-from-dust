@@ -16,7 +16,7 @@ use tracing_subscriber::fmt::writer::MakeWriterExt;
 
 async fn setup_tracing() {
     let log_dir = "./logs";
-    let debug_file = rolling::daily(log_dir, "debug");
+    let debug_file = rolling::daily(log_dir, "debug").with_min_level(Level::WARN);
     let warning_file = rolling::daily(log_dir, "warning").with_max_level(Level::WARN);
     let log_files = debug_file.and(warning_file);
 
