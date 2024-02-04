@@ -135,5 +135,5 @@ async fn update_todo(
 
     db.write().unwrap().insert(todo.id, todo.clone());
 
-    Ok(Json(todo))
+    (StatusCode::OK, Json(todo))
 }
