@@ -14,3 +14,5 @@
 {"timestamp":"2024-02-04T09:57:51.623638Z","level":"INFO","fields":{"message":"server listening on 0.0.0.0:3000"},"target":"rust_axum_intro"}
 {"timestamp":"2024-02-04T10:05:56.450755Z","level":"TRACE","fields":{"message":"setup_tracing() done!"},"target":"rust_axum_intro"}
 {"timestamp":"2024-02-04T10:05:56.452843Z","level":"INFO","fields":{"message":"server listening on 0.0.0.0:3000"},"target":"rust_axum_intro"}
+{"timestamp":"2024-02-04T10:34:48.634808Z","level":"TRACE","fields":{"message":"setup_tracing() done!"},"target":"rust_axum_intro"}
+{"timestamp":"2024-02-04T10:34:48.636017Z","level":"INFO","fields":{"message":"server listening on 0.0.0.0:3000"},"target":"rust_axum_intro"}
