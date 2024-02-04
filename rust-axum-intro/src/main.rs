@@ -115,7 +115,7 @@ struct UpdateTodo {
 
 async fn update_todo(
     Path(id): Path<Uuid>,
-    State(db): State<Db>,
+    State(db): State<DB>,
     Json(input): Json<UpdateTodo>,
 ) -> Result<impl IntoResponse, StatusCode> {
     let mut todo = db
