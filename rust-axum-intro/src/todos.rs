@@ -1,19 +1,15 @@
-use std::{
-    collections::HashMap,
-    sync::{Arc, RwLock},
-};
-
 use axum::{
     extract::{Path, Query, State},
     http::StatusCode,
     response::{IntoResponse, Response},
-    routing::{get, patch}, Json, Router,
+    routing::{get, patch},
+    Json, Router,
 };
-
 use serde::{Deserialize, Serialize};
-
-
-
+use std::{
+    collections::HashMap,
+    sync::{Arc, RwLock},
+};
 use uuid::Uuid;
 
 // ------------------------
