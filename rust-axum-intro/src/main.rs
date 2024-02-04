@@ -14,7 +14,7 @@ use serde::Deserialize;
 use tracing_appender::rolling;
 use tracing_subscriber::fmt::writer::MakeWriterExt;
 
-async fn setup_tracing() -> Result<(), anyhow::Error> {
+async fn setup_tracing() -> Result<(), Error> {
     let log_dir = "./logs";
     let debug_file = rolling::daily(log_dir, "debug");
     let warning_file = rolling::daily(log_dir, "warning").with_max_level(tracing::Level::WARN);
