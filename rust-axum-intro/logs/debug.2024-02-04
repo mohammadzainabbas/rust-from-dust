@@ -1,0 +1,8 @@
+{"timestamp":"2024-02-04T07:22:16.108307Z","level":"TRACE","fields":{"message":"setup_tracing() done!"},"target":"rust_axum_intro"}
+{"timestamp":"2024-02-04T07:22:16.108848Z","level":"INFO","fields":{"message":"server listening on 0.0.0.0:3000"},"target":"rust_axum_intro"}
+{"timestamp":"2024-02-04T07:22:16.716023Z","level":"TRACE","fields":{"message":"inside groot()"},"target":"rust_axum_intro"}
+{"timestamp":"2024-02-04T07:22:16.716519Z","level":"TRACE","fields":{"message":"say_hello()"},"target":"rust_axum_intro"}
+{"timestamp":"2024-02-04T07:22:16.716539Z","level":"DEBUG","fields":{"name":"World"},"target":"say"}
+{"timestamp":"2024-02-04T07:22:16.716769Z","level":"TRACE","fields":{"message":"say_path()"},"target":"rust_axum_intro"}
+{"timestamp":"2024-02-04T07:22:16.716993Z","level":"TRACE","fields":{"message":"say_hello()"},"target":"rust_axum_intro"}
+{"timestamp":"2024-02-04T07:22:16.717016Z","level":"DEBUG","fields":{"name":"Mohammad"},"target":"say"}
