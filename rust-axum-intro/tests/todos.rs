@@ -6,12 +6,13 @@ use serde_json::json;
 async fn test_todos() -> Result<()> {
     let hc = httpc_test::new_client("http://localhost:3000")?;
 
-    // ZOMBIE testing
+    // ZOMBIE (checklist when writing tests)
+    //
     // Z - zero
     // O - one
     // M - many
     // B - boundary conditions
-    // I -
+    // I - interface
     // E - exceptions
 
     hc.do_get("/todo").await?.print().await?;
