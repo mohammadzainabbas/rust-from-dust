@@ -10,6 +10,7 @@ use axum::{
 };
 use clap::builder::Str;
 use serde::Deserialize;
+use tracing::{debug, error, info, span, trace, warn, Level};
 use tracing_appender::rolling;
 use tracing_subscriber::fmt::writer::MakeWriterExt;
 
