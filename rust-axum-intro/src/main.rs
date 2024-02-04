@@ -2,6 +2,7 @@
 
 use std::net::{IpAddr, Ipv4Addr, SocketAddr};
 
+use anyhow::Ok;
 use axum::{
     extract::{Path, Query},
     response::{Html, IntoResponse, Response},
@@ -24,6 +25,8 @@ async fn setup_tracing() {
         .with_writer(log_files)
         .with_ansi(true)
         .init();
+
+    Ok(())
 }
 
 #[tokio::main(worker_threads = 2)]
