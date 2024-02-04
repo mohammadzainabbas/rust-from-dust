@@ -132,10 +132,12 @@ async fn update_todo(
                 todo.completed = completed;
             }
 
-            db.write().unwrap().insert(todo.id, todo.clone());
+            db.write()
+                .unwrap()
+                .insert(todo.id.to_string(), todo.clone());
 
-            return (StatusCode::OK, Json(todo)).into_response();
+            (StatusCode::OK, Json(todo)).into_response()
         },
-        None => return StatusCode::NOT_FOUND.into_response(),
+        None => StatusCode::NOT_FOUND.into_response(),
     }
 }
