@@ -133,4 +133,8 @@ async fn update_todo(
     }
 }
 
-async fn 
+#[derive(Debug, Deserialize, Default)]
+pub struct Pagination {
+    pub offset: Option<usize>,
+    pub limit: Option<usize>,
+}
