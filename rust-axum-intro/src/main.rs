@@ -3,7 +3,7 @@
 use std::net::{IpAddr, Ipv4Addr, SocketAddr};
 
 use axum::{
-    response::{Html, Response},
+    response::{Html, IntoResponse, Response},
     routing::get,
     Router,
 };
@@ -17,5 +17,5 @@ async fn main() {
 }
 
 async fn hello_world() -> Response {
-    Html("<h3> Hello World </h3>")
+    Html("<h3> Hello World </h3>").into_response()
 }
