@@ -120,7 +120,7 @@ async fn update_todo(
 ) -> Response {
     let mut todo = db.read().unwrap().get(&id).cloned();
 
-    if todo.is_none() {
+    if &todo.is_none() {
         return StatusCode::NOT_FOUND.into_response();
     }
 
