@@ -112,4 +112,6 @@ struct UpdateTodo {
     complete: Option<bool>,
 }
 
-async fn update_todo
+async fn update_todo(
+    Path(id)
+)
