@@ -32,6 +32,11 @@ async fn say_hello(Query(param): Query<HelloParams>) -> Response {
 async fn say_path() -> impl IntoResponse {}
 
 #[derive(Debug, Deserialize)]
+struct HelloPath {
+    pub path: Option<String>,
+}
+
+#[derive(Debug, Deserialize)]
 struct HelloParams {
     pub name: Option<String>,
 }
