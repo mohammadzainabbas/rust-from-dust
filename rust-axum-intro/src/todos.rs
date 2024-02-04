@@ -26,3 +26,14 @@ struct Todo {
     text: String,
     completed: bool,
 }
+
+#[derive(Debug, Deserialize)]
+struct CreateTodo {
+    text: String,
+}
+
+#[derive(Debug, Deserialize)]
+struct UpdateTodo {
+    text: Option<String>,
+    completed: Option<bool>,
+}
