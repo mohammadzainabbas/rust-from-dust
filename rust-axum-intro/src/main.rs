@@ -20,8 +20,11 @@ async fn main() {
     let warning_file = rolling::daily(log_dir, "warning").with_max_level(tracing::Level::WARN);
     let log_files = debug_file.and(warning_file);
 
-    tracing_subscriber::fmt().json()
-    .with_writer(log_files).with_ansi(true).init()
+    tracing_subscriber::fmt()
+        .json()
+        .with_writer(log_files)
+        .with_ansi(true)
+        .init();
 
     let router = Router::new()
         .route("/", get(groot))
