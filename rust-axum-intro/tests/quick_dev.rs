@@ -3,6 +3,7 @@ use anyhow::{Error, Result};
 
 #[tokio::test]
 async fn quick_dev() -> Result<()> {
-    let hc = httpc_test::new_client(base_url)
+    let addr
+    let hc = httpc_test::new_client()
     Ok(())
 }
