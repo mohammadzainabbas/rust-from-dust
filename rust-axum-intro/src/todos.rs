@@ -19,3 +19,10 @@ use tracing_subscriber::{layer::SubscriberExt, util::SubscriberInitExt};
 use uuid::Uuid;
 
 type Db = Arc<RwLock<HashMap<Uuid, Todo>>>;
+
+#[derive(Debug, Serialize, Clone)]
+struct Todo {
+    id: Uuid,
+    text: String,
+    completed: bool,
+}
