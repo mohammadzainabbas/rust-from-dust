@@ -2,7 +2,6 @@
 
 use std::net::{IpAddr, Ipv4Addr, SocketAddr};
 
-use anyhow::Error;
 use axum::{
     extract::{Path, Query},
     response::{Html, IntoResponse, Response},
