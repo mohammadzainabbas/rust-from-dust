@@ -32,6 +32,8 @@ async fn main() {
     setup_tracing().await;
     trace!("setup_tracing() done!");
 
+    warn!("setting up routing")
+
     let router = Router::new()
         .route("/", get(groot))
         .route("/hello", get(say_hello))
