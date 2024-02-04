@@ -23,3 +23,12 @@
 {"timestamp":"2024-02-04T10:34:55.527131Z","level":"TRACE","fields":{"message":"inside say_hello()"},"target":"rust_axum_intro::hello","span":{"param":"HelloParams { name: Some(\"Mohammad\") }","name":"say_hello"},"spans":[{"param":"HelloParams { name: Some(\"Mohammad\") }","name":"say_hello"}]}
 {"timestamp":"2024-02-04T10:34:55.527166Z","level":"DEBUG","fields":{"name":"Mohammad"},"target":"say","span":{"param":"HelloParams { name: Some(\"Mohammad\") }","name":"say_hello"},"spans":[{"param":"HelloParams { name: Some(\"Mohammad\") }","name":"say_hello"}]}
 {"timestamp":"2024-02-04T10:34:55.903518Z","level":"TRACE","fields":{"message":"inside groot()"},"target":"rust_axum_intro::hello"}
+{"timestamp":"2024-02-04T10:44:47.995321Z","level":"TRACE","fields":{"message":"setup_tracing() done!"},"target":"rust_axum_intro"}
+{"timestamp":"2024-02-04T10:44:47.997395Z","level":"INFO","fields":{"message":"server listening on 0.0.0.0:3000"},"target":"rust_axum_intro"}
+{"timestamp":"2024-02-04T10:44:58.665447Z","level":"TRACE","fields":{"message":"inside groot()"},"target":"rust_axum_intro::hello"}
+{"timestamp":"2024-02-04T10:44:58.666487Z","level":"TRACE","fields":{"message":"inside say_hello()"},"target":"rust_axum_intro::hello","span":{"param":"HelloParams { name: None }","name":"say_hello"},"spans":[{"param":"HelloParams { name: None }","name":"say_hello"}]}
+{"timestamp":"2024-02-04T10:44:58.666595Z","level":"DEBUG","fields":{"name":"World"},"target":"say","span":{"param":"HelloParams { name: None }","name":"say_hello"},"spans":[{"param":"HelloParams { name: None }","name":"say_hello"}]}
+{"timestamp":"2024-02-04T10:44:58.667192Z","level":"TRACE","fields":{"message":"inside say_path()"},"target":"rust_axum_intro::hello","span":{"path":"\"what\"","name":"say_path"},"spans":[{"path":"\"what\"","name":"say_path"}]}
+{"timestamp":"2024-02-04T10:44:58.667628Z","level":"TRACE","fields":{"message":"inside say_hello()"},"target":"rust_axum_intro::hello","span":{"param":"HelloParams { name: Some(\"Mohammad\") }","name":"say_hello"},"spans":[{"param":"HelloParams { name: Some(\"Mohammad\") }","name":"say_hello"}]}
+{"timestamp":"2024-02-04T10:44:58.667689Z","level":"DEBUG","fields":{"name":"Mohammad"},"target":"say","span":{"param":"HelloParams { name: Some(\"Mohammad\") }","name":"say_hello"},"spans":[{"param":"HelloParams { name: Some(\"Mohammad\") }","name":"say_hello"}]}
+{"timestamp":"2024-02-04T10:44:58.970920Z","level":"TRACE","fields":{"message":"inside groot()"},"target":"rust_axum_intro::hello"}
