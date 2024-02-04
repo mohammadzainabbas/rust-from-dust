@@ -1,5 +1,6 @@
 use axum::Router;
 use rust_axum_intro::{basic_router, todo_router};
+use tracing::{info, trace, Level};
 
 #[tokio::main(worker_threads = 2)]
 async fn main() {
