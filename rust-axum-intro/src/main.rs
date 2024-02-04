@@ -48,6 +48,7 @@ async fn groot() -> Html<&'static str> {
     Html("Hello, I'm groot!")
 }
 
+#[tracing::instrument]
 async fn say_hello(Query(param): Query<HelloParams>) -> Response {
     trace!("say_hello()");
     let name = param.name.as_deref().unwrap_or("World");
@@ -55,6 +56,7 @@ async fn say_hello(Query(param): Query<HelloParams>) -> Response {
     Html(format!("<h3> Hello {}! </h3>", name)).into_response()
 }
 
+#[tracing::instrument]
 async fn say_path(Path(path): Path<String>) -> impl IntoResponse {
     trace!("say_path()");
 
