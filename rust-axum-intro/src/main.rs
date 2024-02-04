@@ -105,3 +105,9 @@ async fn create_todos(State(db): State<DB>, Json(input): Json<CreateTodo>) -> im
 
     (StatusCode::CREATED, Json(todo))
 }
+
+#[derive(Debug, Deserialize)]
+struct UpdateTodo {
+    text: Option<String>,
+    complete: Option<bool>,
+}
