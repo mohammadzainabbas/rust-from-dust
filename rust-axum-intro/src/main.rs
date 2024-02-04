@@ -25,3 +25,8 @@ async fn groot() -> &'static str {
 async fn hello_world() -> Response {
     Html("<h3> Hello World! </h3>").into_response()
 }
+
+#[derive(Debug, Deseralise)]
+struct HelloParams {
+    pub name: Option<String>,
+}
