@@ -46,6 +46,8 @@ uuid = { version = "1.7.0", features = ["v4", "fast-rng"] }
 # For tracing and logging
 tracing = "0.1.40"
 tracing-subscriber = { version = "0.3.18", features = ["env-filter", "json"] }
+
+# For validations
 validator = { version = "0.16.1", features = ["derive"] }
 
 [dev-dependencies]
