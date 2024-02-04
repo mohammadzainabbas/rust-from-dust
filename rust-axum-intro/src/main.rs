@@ -38,12 +38,12 @@ async fn main() {
         .route("/hello", get(say_hello))
         .route("/hello/:path", get(say_path));
     let listener = tokio::net::TcpListener::bind("0.0.0.0:3000").await.unwrap();
-    info!("Listening on {:#?}", listener.local_addr().unwrap());
+    info!("server listening on {:#?}", listener.local_addr().unwrap());
     axum::serve(listener, router).await.unwrap();
 }
 
 async fn groot() -> Html<&'static str> {
-    // debug!("")
+    debug!("")
     Html("Hello, I'm groot!")
 }
 
