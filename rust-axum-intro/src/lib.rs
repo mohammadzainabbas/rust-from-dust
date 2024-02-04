@@ -5,4 +5,4 @@ mod hello;
 pub use hello::basic_router;
 
 mod trace;
-pub use trace::
+pub use trace::setup_tracing;
