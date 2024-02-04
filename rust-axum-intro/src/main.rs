@@ -36,7 +36,8 @@ async fn main() {
 
     let router = Router::new()
         .route("/", get(groot))
-        .route("/hello", get(say_hello));
+        .route("/hello", get(say_hello))
+        .route("/hello/:path", get(say_path));
     let listener = tokio::net::TcpListener::bind("0.0.0.0:3000").await.unwrap();
     info!("server listening on {:#?}", listener.local_addr().unwrap());
     axum::serve(listener, router).await.unwrap();
@@ -45,6 +46,11 @@ async fn main() {
 async fn groot() -> Html<&'static str> {
     trace!("inside groot()");
     Html("Hello, I'm groot!")
+}
+
+#[derive(Debug, Deserialize)]
+struct HelloParams {
+    pub name: Option<String>,
 }
 
 #[tracing::instrument]
@@ -60,9 +66,4 @@ async fn say_path(Path(path): Path<String>) -> impl IntoResponse {
     trace!("inside say_path()");
 
     Html(format!("<h3> Hello {}! </h3>", path.as_str())).into_response()
-}
-
-#[derive(Debug, Deserialize)]
-struct HelloParams {
-    pub name: Option<String>,
 }
