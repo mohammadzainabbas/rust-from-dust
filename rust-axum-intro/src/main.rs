@@ -147,5 +147,5 @@ async fn read_todos(
 
     let Query(pagination) = pagination.unwrap_or_default();
 
-    let todos = todos.values().skip(pagination.offset.unwrap_or(0))
+    let todos = todos.values().skip(pagination.offset.unwrap_or(0)).take(pagination.limit.unwrap_or(default))
 }
