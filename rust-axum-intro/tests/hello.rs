@@ -20,13 +20,14 @@ async fn test_hello() -> Result<()> {
     // S - simple scenarios
 
     // 1. Create TODOs
-    hc.do_post("/todo", json!({"text": "Complete this project"}))
+    hc.do_post("/hello", json!({"text": "Complete this project"}))
         .await?
         .print()
         .await?;
 
     // 2. Read TODOs
-    hc.do_get("/todo").await?.print().await?;
+    hc.do_get("/").await?.print().await?;
+    hc.do_get("/hello").await?.print().await?;
 
     // 3. Update TODOs
 
