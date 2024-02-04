@@ -1,6 +1,7 @@
 #[allow(unused)]
 use anyhow::{Error, Result};
 use serde_json::json;
+use rust_axum_intro::todo;
 
 // ZOMBIES (checklist when writing tests)
 // Link: https://youtu.be/0_UttFDnV3k?t=3539
@@ -27,8 +28,10 @@ async fn test_todos() -> Result<()> {
 
     // 2. Read TODOs
     hc.do_get("/todo").await?.print().await?;
-
+    
     // 3. Update TODOs
+    hc.do_get("/todo").await?.json_body_as<>()
+    
 
     Ok(())
 }
