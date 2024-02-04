@@ -3,7 +3,10 @@
 use std::net::{IpAddr, Ipv4Addr, SocketAddr};
 
 use axum::{
-    extract::Query, response::{Html, IntoResponse, Response}, routing::get, Router
+    extract::Query,
+    response::{Html, IntoResponse, Response},
+    routing::get,
+    Router,
 };
 use serde::Deserialize;
 
@@ -22,7 +25,7 @@ async fn groot() -> &'static str {
 }
 
 async fn hello_world(Query(param): Query<HelloParams>) -> Response {
-    let name = param.name?.as_ref()
+    let name = param.name?.as_ref();
     Html("<h3> Hello World! </h3>").into_response()
 }
 
