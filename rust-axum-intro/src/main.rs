@@ -11,12 +11,13 @@ use axum::{
 use clap::builder::Str;
 use serde::Deserialize;
 use tracing_appender::rolling;
+use tracing_subscriber::fmt::writer::MakeWriterExt;
 
 #[tokio::main(worker_threads = 2)]
 async fn main() {
     let log_dir = "./logs";
     let debug_file = rolling::daily(log_dir, "debug");
-    let warning_file = rolling::daily(log_dir, "warning");
+    let warning_file = rolling::daily(log_dir, "warning").with_max_level(tracing::Level::)
 
     let router = Router::new()
         .route("/", get(groot))
