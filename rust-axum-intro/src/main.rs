@@ -124,5 +124,10 @@ async fn update_todo(
         .cloned()
         .ok_or(StatusCode::NOT_FOUND)?;
 
-    if let Some(text) = input.text {}
+    if let Some(text) = input.text {
+        todo.text
+    }
+    if let Some(complete) = input.complete {
+        todo.completed
+    }
 }
