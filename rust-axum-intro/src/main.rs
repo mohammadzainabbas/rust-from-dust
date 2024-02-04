@@ -25,7 +25,7 @@ async fn groot() -> &'static str {
 }
 
 async fn hello_world(Query(param): Query<HelloParams>) -> Response {
-    let name = param.name.as_deref();
+    let name = param.name.as_deref().unwrap_or("World");
     Html("<h3> Hello World! </h3>").into_response()
 }
 
