@@ -1,11 +1,10 @@
-use axum::Router;
+mod hello;
+mod todos;
 
+use axum::Router;
 use tracing::{info, trace, Level};
 use tracing_appender::rolling;
 use tracing_subscriber::fmt::writer::MakeWriterExt;
-
-mod hello;
-mod todos;
 
 async fn setup_tracing() {
     let log_dir = "./logs";
