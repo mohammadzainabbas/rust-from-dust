@@ -22,13 +22,13 @@ use uuid::Uuid;
 // Todo CRUD
 // ------------------------
 
-type DB = Arc<RwLock<HashMap<String, Todo>>>;
+pub type DB = Arc<RwLock<HashMap<String, Todo>>>;
 
 #[derive(Debug, Serialize, Clone)]
-struct Todo {
-    id: String,
-    text: String,
-    completed: bool,
+pub struct Todo {
+    pub id: String,
+    pub text: String,
+    pub completed: bool,
 }
 
 #[derive(Debug, Deserialize)]
