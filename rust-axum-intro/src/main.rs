@@ -67,3 +67,12 @@ async fn say_path(Path(path): Path<String>) -> impl IntoResponse {
 
     Html(format!("<h3> Hello {}! </h3>", path.as_str())).into_response()
 }
+
+// ------------------------
+// Todo CRUD
+// ------------------------
+
+#[derive(Debug, )]
+struct Todo {
+
+}
