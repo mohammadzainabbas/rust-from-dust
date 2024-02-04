@@ -121,7 +121,9 @@ async fn update_todo(
     let mut todo = db.read().unwrap().get(&id).cloned();
 
     match todo {
-        Some(todo) => {
+        Some(i) => {
+            let mut todo = i;
+
             if let Some(text) = input.text {
                 todo.text = text;
             }
