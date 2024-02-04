@@ -21,5 +21,5 @@ async fn hello_world() -> Response {
 }
 
 async fn root() -> &'static str {
-    "Hello root!"
+    "Hello! I'm root!"
 }
