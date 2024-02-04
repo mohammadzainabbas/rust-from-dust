@@ -67,6 +67,6 @@ impl Value for HelloParams {
     fn record(&self, key: &tracing::field::Field, visitor: &mut dyn tracing::field::Visit) {
         let name = self.name.as_deref().unwrap_or("");
 
-        visitor.record_str(field, name)
+        visitor.record_str(key, name)
     }
 }
