@@ -1,4 +1,3 @@
-use axum::{routing::get, Router};
 use rust_axum_intro::{get_routers, setup_tracing};
 use tracing::info;
 

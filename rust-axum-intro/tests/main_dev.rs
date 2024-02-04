@@ -1,7 +1,7 @@
 // #[allow(unused)]
-use anyhow::{Error, Result};
+use anyhow::{Result};
 
-use rust_axum_intro;
+
 
 #[tokio::test]
 async fn test_main() -> Result<()> {

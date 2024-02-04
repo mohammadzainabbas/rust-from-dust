@@ -1,4 +1,4 @@
-use tracing::{info, trace, Level};
+use tracing::{trace, Level};
 use tracing_appender::rolling;
 use tracing_subscriber::fmt::writer::MakeWriterExt;
 
