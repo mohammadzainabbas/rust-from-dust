@@ -116,7 +116,7 @@ async fn update_todo(
     Path(id): Path<String>,
     State(db): State<DB>,
     Json(input): Json<UpdateTodo>,
-) -> Result<impl IntoResponse, StatusCode> {
+) -> impl IntoResponse {
     let mut todo = db.read().unwrap().get(&id).cloned();
 
     if todo.is_none() {
