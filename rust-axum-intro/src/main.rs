@@ -114,7 +114,7 @@ struct UpdateTodo {
 }
 
 async fn update_todo(
-    Path(id): Path<Uuid>,
+    Path(id): Path<String>,
     State(db): State<DB>,
     Json(input): Json<UpdateTodo>,
 ) -> Result<impl IntoResponse, StatusCode> {
