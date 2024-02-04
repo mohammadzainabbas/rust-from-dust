@@ -28,6 +28,7 @@ cargo add async-trait axum tower-cookies lazy-regex strum_macros
 cargo add uuid -F v4,fast-rng # or cargo add uuid -F uuid/v4,fast-rng
 cargo add tracing
 cargo add tracing-subscriber -F env-filter,json
+cargo add validator -F derive
 ```
 
 > [!IMPORTANT]
