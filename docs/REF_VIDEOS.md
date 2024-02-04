@@ -24,7 +24,7 @@
 
 | Video | Title |
 | :----: | :---: |
-| <a href="https://www.youtube.com/watch?v=Wnb_n5YktO8"><img alt="Rust Axum Full Course - Web Development (GitHub repo updated to Axum 0.7)" src="https://img.youtube.com/vi/Wnb_n5YktO8/0.jpg" width="50%" ></a> | **Rust Axum Full Course - Web Development (GitHub repo updated to Axum 0.7)** |
+| <a href="https://www.youtube.com/watch?v=Wnb_n5YktO8"><img alt="Decrusting the axum crate" src="https://img.youtube.com/vi/Wnb_n5YktO8/0.jpg" width="50%" ></a> | **Decrusting the axum crate** |
 | <a href="https://www.youtube.com/watch?v=XZtlD_m59sM"><img alt="Rust Axum Full Course - Web Development (GitHub repo updated to Axum 0.7)" src="https://img.youtube.com/vi/XZtlD_m59sM/0.jpg" width="50%" ></a> | **Rust Axum Full Course - Web Development (GitHub repo updated to Axum 0.7)** |
 | <a href="https://www.youtube.com/watch?v=pwmIQzLuYl0"><img alt="Rust Programming: TypeState Builder Pattern Explained" src="https://img.youtube.com/vi/pwmIQzLuYl0/0.jpg" width="50%" ></a> | **Rust Programming: TypeState Builder Pattern Explained** |
 | <a href="https://www.youtube.com/watch?v=Z_3WOSiYYFY"><img alt="Rust Programming: The Ultimate Builder Pattern Tutorial" src="https://img.youtube.com/vi/Z_3WOSiYYFY/0.jpg" width="50%" ></a> | **Rust Programming: The Ultimate Builder Pattern Tutorial** |
