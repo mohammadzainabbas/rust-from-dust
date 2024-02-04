@@ -145,5 +145,5 @@ async fn read_todos(
 ) -> impl IntoResponse {
     let todos = db.read().unwrap();
 
-    let 
+    let Query(pagination) = pagination.unwrap_or_default();
 }
