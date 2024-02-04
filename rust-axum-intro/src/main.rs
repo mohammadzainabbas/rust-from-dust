@@ -42,7 +42,9 @@ async fn main() {
 
     let db = DB::default();
 
-    let todo_routers = Router::new().route("/to", move || async {});
+    let todo_routers = Router::new()
+        .route("/todo", get(read_todos).post(create_todo))
+        .route("/todo/:id", patch(update_todo).delete(delete_todo));
 
     let router = Router::new()
         .route("/", get(groot))
