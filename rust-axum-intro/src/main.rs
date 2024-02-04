@@ -7,6 +7,7 @@ use axum::{
     routing::get,
     Router,
 };
+use serde::Deserialize;
 
 #[tokio::main(worker_threads = 2)]
 async fn main() {
@@ -26,7 +27,7 @@ async fn hello_world() -> Response {
     Html("<h3> Hello World! </h3>").into_response()
 }
 
-#[derive(Debug, Deseralize)]
+#[derive(Debug, Deserialize)]
 struct HelloParams {
     pub name: Option<String>,
 }
