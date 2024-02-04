@@ -132,7 +132,7 @@ async fn update_todo(
         todo.completed = completed;
     }
 
-    db.write().unwrap().get(k)
+    db.write().unwrap().insert(todo.id, todo.clone());
 
     Ok(Json(todo))
 }
