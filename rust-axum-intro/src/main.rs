@@ -41,6 +41,7 @@ async fn main() {
 }
 
 async fn groot() -> Html<&'static str> {
+    debug!("")
     Html("Hello, I'm groot!")
 }
 
