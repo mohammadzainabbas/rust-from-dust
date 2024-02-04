@@ -79,3 +79,8 @@ struct Todo {
     text: String,
     completed: bool,
 }
+
+#[derive(Debug, Deserialize)]
+struct CreateTodo {
+    text: String,
+}
