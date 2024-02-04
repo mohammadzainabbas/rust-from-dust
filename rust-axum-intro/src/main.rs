@@ -162,3 +162,7 @@ async fn read_todos(
 
     (status, Json(todos))
 }
+
+async fn delete_todo(
+    
+)
