@@ -33,6 +33,7 @@ async fn main() {
     trace!("setup_tracing() done!");
 
     warn!("setting up routing");
+    error!("something went wrong!");
 
     let router = Router::new()
         .route("/", get(groot))

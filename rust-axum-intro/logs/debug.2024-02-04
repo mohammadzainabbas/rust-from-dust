@@ -3,3 +3,9 @@
 {"timestamp":"2024-02-04T06:47:34.598035Z","level":"INFO","fields":{"message":"Listening on 0.0.0.0:3000"},"target":"rust_axum_intro"}
 {"timestamp":"2024-02-04T06:48:25.426324Z","level":"WARN","fields":{"message":"setting up routing"},"target":"rust_axum_intro"}
 {"timestamp":"2024-02-04T06:48:25.427101Z","level":"INFO","fields":{"message":"Listening on 0.0.0.0:3000"},"target":"rust_axum_intro"}
+{"timestamp":"2024-02-04T06:48:51.058829Z","level":"WARN","fields":{"message":"setting up routing"},"target":"rust_axum_intro"}
+{"timestamp":"2024-02-04T06:48:51.058955Z","level":"ERROR","fields":{"message":"something went wrong!"},"target":"rust_axum_intro"}
+{"timestamp":"2024-02-04T06:48:51.059332Z","level":"INFO","fields":{"message":"Listening on 0.0.0.0:3000"},"target":"rust_axum_intro"}
+{"timestamp":"2024-02-04T06:48:52.880736Z","level":"WARN","fields":{"message":"setting up routing"},"target":"rust_axum_intro"}
+{"timestamp":"2024-02-04T06:48:52.880884Z","level":"ERROR","fields":{"message":"something went wrong!"},"target":"rust_axum_intro"}
+{"timestamp":"2024-02-04T06:48:52.881289Z","level":"INFO","fields":{"message":"Listening on 0.0.0.0:3000"},"target":"rust_axum_intro"}
