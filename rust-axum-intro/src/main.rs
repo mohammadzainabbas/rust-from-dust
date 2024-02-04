@@ -26,7 +26,7 @@ async fn hello_world() -> Response {
     Html("<h3> Hello World! </h3>").into_response()
 }
 
-#[derive(Debug, Deseralise)]
+#[derive(Debug, Deseralize)]
 struct HelloParams {
     pub name: Option<String>,
 }
