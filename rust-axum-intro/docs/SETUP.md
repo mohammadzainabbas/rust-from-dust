@@ -75,7 +75,7 @@ Open two terminals and run the following commands:
 cargo watch -q -c -w src/ -x run
 ```
 
-> [!NOTE]
+> [!IMPORTANT]
 > The `-q` flag is used to suppress the output of `cargo watch` command. The `-c` flag is used to clear the terminal before running the command. The `-w` flag is used to watch the changes in the specified directory. The `-x` flag is used to run the command.
 
 > Terminal 2
