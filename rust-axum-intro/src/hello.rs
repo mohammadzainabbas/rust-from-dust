@@ -1,3 +1,25 @@
+#![allow(unused)] // for dev
+
+use std::{
+    collections::HashMap,
+    net::{IpAddr, Ipv4Addr, SocketAddr},
+    sync::{Arc, RwLock},
+};
+
+use axum::{
+    extract::{Path, Query, State},
+    http::StatusCode,
+    response::{Html, IntoResponse, Response},
+    routing::{get, patch},
+    Error, Json, Router,
+};
+use clap::builder::Str;
+use serde::{Deserialize, Serialize};
+use tracing::{debug, error, info, span, trace, warn, Level, Value};
+use tracing_appender::rolling;
+use tracing_subscriber::fmt::writer::MakeWriterExt;
+use uuid::Uuid;
+
 async fn groot() -> Html<&'static str> {
     trace!("inside groot()");
     Html("Hello, I'm groot!")
