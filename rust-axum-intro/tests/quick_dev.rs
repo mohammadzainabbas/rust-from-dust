@@ -11,6 +11,6 @@ async fn quick_dev() -> Result<()> {
     // hc.do_get("/hello?name=Mohammad").await?.print().await?;
 
     hc.do_get("/todo").await?.print().await?;
-    hc.do_post("/todo", Jso)
+    hc.do_post("/todo", Json({text: "Complete this project"})).await?.print().await?;
     Ok(())
 }
