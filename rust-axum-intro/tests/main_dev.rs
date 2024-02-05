@@ -3,7 +3,7 @@
 use anyhow::Result;
 use axum::{
     body::Body,
-    http::{response, Request},
+    http::{response, Request, StatusCode},
 };
 use rust_axum_intro::get_routers;
 use tower::{Service, ServiceExt};
@@ -18,6 +18,8 @@ async fn test_main() -> Result<()> {
         .oneshot(Request::builder().uri("/").body(Body::empty()).unwrap())
         .await
         .unwrap();
+
+    assert_eq!(res.status(), StatusCode::OK);
 
     Ok(())
 }
