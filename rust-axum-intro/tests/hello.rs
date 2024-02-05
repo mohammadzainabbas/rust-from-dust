@@ -86,7 +86,7 @@ async fn test_say_hello() -> Result<()> {
         ("/hello?name=Mohammad Zain Abbas", "Mohammad Zain Abbas"),
     ];
 
-    for uri in uris_res {
+    for (uri, res) in uris_res {
         let request = Request::builder().uri(uri).body(Body::empty()).unwrap();
         let response = ServiceExt::<Request<Body>>::ready(&mut routers)
             .await
