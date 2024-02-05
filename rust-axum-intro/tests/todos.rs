@@ -14,7 +14,7 @@
 use anyhow::Result;
 use axum::{
     body::Body,
-    http::{Request, StatusCode},
+    http::{self, Request, StatusCode},
 };
 use http_body_util::BodyExt; // for `collect`
 use rust_axum_intro::get_routers;
@@ -28,7 +28,7 @@ async fn fetch(req: Request<Body>) -> (StatusCode, String) {
 #[tokio::test]
 async fn test_create_todo() -> Result<(), anyhow::Error> {
     let req = Request::builder()
-        .method(http::)
+        .method(http::Method::GET)
         .uri("/todo")
         .header("content-type", "application/json")
         .body(Body::from(json!({"text": "Test todo"}).to_string()))
