@@ -216,6 +216,8 @@ async fn test_delete_todo() -> Result<(), anyhow::Error> {
 
     if todos.is_empty() {
         assert_eq!(status, StatusCode::NOT_FOUND);
+    } else {
+        assert_eq!(status, StatusCode::OK);
     }
 
     for todo in todos {
