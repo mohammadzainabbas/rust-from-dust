@@ -16,11 +16,10 @@ use axum::{
     body::Body,
     http::{self, Request, StatusCode},
     routing::RouterIntoService,
-    Router,
 };
 use http_body_util::BodyExt; // for `collect`
 use rust_axum_intro::{get_routers, Todo};
-use serde_json::{json, Value};
+use serde_json::json;
 use tower::{Service, ServiceExt};
 use uuid::Uuid; // for `call`, `oneshot`, and `ready`
 
