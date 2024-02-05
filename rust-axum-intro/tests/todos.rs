@@ -39,7 +39,7 @@ async fn test_create_todo() -> Result<(), anyhow::Error> {
         .body(Body::from(json!({"text": "Test todo"}).to_string()))
         .unwrap();
 
-    let res = fetch(req).await?;
+    let (status, body) = fetch(req).await?;
 
     assert_eq!(res.status(), StatusCode::OK);
 
