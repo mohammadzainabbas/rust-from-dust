@@ -161,25 +161,8 @@ async fn test_read_todos() -> Result<(), anyhow::Error> {
 #[tokio::test]
 async fn test_read_todos_empty() -> Result<(), anyhow::Error> {
     let mut routers = get_routers().await.into_service();
-    // 1. Create multiple todos
-    let n = 10;
-    let todos = create_todo_list(n).await;
-    for todo in todos {
-        let req = Request::builder()
-            .method(http::Method::POST)
-            .uri("/todo")
-            .header(http::header::CONTENT_TYPE, mime::APPLICATION_JSON.as_ref())
-            .body(Body::from(json!({"text": todo}).to_string()))?;
 
-        let (status, body) = fetch(&mut routers, req).await?;
-        assert_eq!(status, StatusCode::CREATED);
-
-        let created_todo: Todo = serde_json::from_str(&body)?;
-        assert_eq!(created_todo.text, todo);
-        assert!(!created_todo.completed);
-    }
-
-    // 2. Now, read the todo list
+    // Try to read the todo list (empty)
     let req = Request::builder()
         .method(http::Method::GET)
         .uri("/todo")
@@ -187,11 +170,11 @@ async fn test_read_todos_empty() -> Result<(), anyhow::Error> {
 
     let (status, body) = fetch(&mut routers, req).await?;
 
-    assert_eq!(status, StatusCode::OK);
+    assert_eq!(status, StatusCode::NOT_FOUND);
     let created_todos: Vec<Todo> = serde_json::from_str(&body)?;
 
-    assert!(!created_todos.is_empty());
-    assert_eq!(created_todos.len(), n);
+    assert!(created_todos.is_empty());
+    assert_eq!(created_todos.len(), 0);
 
     Ok(())
 }
