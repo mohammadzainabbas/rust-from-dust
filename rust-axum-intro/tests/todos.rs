@@ -200,9 +200,7 @@ async fn test_delete_todo() -> Result<(), anyhow::Error> {
     let delete_req = Request::builder()
         .method(http::Method::DELETE)
         .uri(format!("/todo/{}", created_todo.id))
-        .body(Body::from(
-            json!({"text": "Updated todo", "completed": true}).to_string(),
-        ))?;
+        .body(Body::empty())?;
 
     let (status, body) = fetch(&mut routers, update_req).await?;
     assert_eq!(status, StatusCode::OK);
