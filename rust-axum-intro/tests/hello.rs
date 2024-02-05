@@ -54,7 +54,7 @@ async fn test_groot() -> Result<()> {
 async fn test_say_hello() -> Result<()> {
     let mut routers = get_routers().await.into_service();
 
-    let uri = format!("/hello");
+    let uri = format!("/hello").to_owned().to_string();
 
     let request = Request::builder()
         .uri("/hello")
