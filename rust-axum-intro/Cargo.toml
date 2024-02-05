@@ -58,5 +58,5 @@ anyhow = "1.0.79"
 # Minimalistic HTTP Client Test Utilities
 httpc-test = "0.1.8"
 
-# To test 
+# To test axum server (for `call`, `oneshot`, and `ready`)
 tower = { version = "0.4.13", features = ["util"] }
