@@ -134,7 +134,9 @@ async fn test_read_todos() -> Result<(), anyhow::Error> {
                 json!({
                     "text": todo
                 })
+                .to_string(),
             ))
+            .unwrap();
 
         let (status, body) = fetch(&mut routers, req).await?;
         assert_eq!(status, StatusCode::CREATED);
