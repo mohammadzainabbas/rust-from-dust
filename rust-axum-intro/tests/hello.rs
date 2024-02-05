@@ -4,11 +4,6 @@ use axum::{
     extract::connect_info::MockConnectInfo,
     http::{self, Request, StatusCode},
 };
-use axum::{
-    body::Body,
-    http::{Request, StatusCode},
-};
-use http_body_util::BodyExt;
 use http_body_util::BodyExt; // for `collect`
 use rust_axum_intro::get_routers;
 use serde_json::{json, Value};
