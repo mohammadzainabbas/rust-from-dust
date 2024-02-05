@@ -27,11 +27,12 @@ async fn fetch(req: Request<Body>) -> (StatusCode, String) {
 
 #[tokio::test]
 async fn test_create_todo() -> Result<(), anyhow::Error> {
-    // `Router` implements `tower::Service<Request<Body>>` so we can
-    // call it like any tower service, no need to run an HTTP server.
-    let res = routers
-        .oneshot(Request::builder().uri("/").body(Body::empty())?)
-        .await?;
+    let req = Request::builder()
+        .method()
+        .uri("/todo")
+        .header("content-type", "application/json")
+        .body(Body::from(json!({"text": "Test todo"}).to_string()))
+        .unwrap();
 
     assert_eq!(res.status(), StatusCode::OK);
 
