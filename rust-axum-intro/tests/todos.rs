@@ -12,6 +12,8 @@
 // S - simple scenarios
 
 #![allow(unused_imports)]
+use std::rc::Rc;
+
 use anyhow::Result;
 use axum::{
     body::Body,
