@@ -62,11 +62,9 @@ async fn test_update_todo() -> Result<(), anyhow::Error> {
 
     let (status, body) = fetch(req).await?;
     assert_eq!(status, StatusCode::CREATED);
-
-    let todo: Todo = serde_json::from_str(&body).unwrap();
-
-    assert_eq!(todo.text, "Test todo");
-    assert!(!todo.completed);
+    let created_todo: Todo = serde_json::from_str(&body).unwrap();
+    assert_eq!(created_todo.text, "Test todo");
+    assert!(!created_todo.completed);
 
     Ok(())
 }
