@@ -85,6 +85,7 @@ async fn test_say_hello() -> Result<()> {
         ("/hello?name=Mohammad", "Mohammad"),
         ("/hello?name=1234", "1234"),
         ("/hello?name=Mohammad1234", "Mohammad1234"),
+        ("/hello?name=Mohammad 1234", "Mohammad 1234"),
     ];
 
     for (uri, res) in uris_res {
