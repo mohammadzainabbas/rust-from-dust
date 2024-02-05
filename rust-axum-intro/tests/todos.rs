@@ -124,7 +124,7 @@ fn create_todo_list(n: usize) -> Vec<String> {
 async fn test_read_todos() -> Result<(), anyhow::Error> {
     let mut routers = get_routers().await.into_service();
     // 1. Create multiple todos
-    let todos = vec!["Todo"]
+    let todos = create_todo_list(10);
     let req = Request::builder()
         .method(http::Method::POST)
         .uri("/todo")
