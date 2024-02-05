@@ -61,7 +61,7 @@ async fn test_create_todo() -> Result<(), anyhow::Error> {
 #[tokio::test]
 async fn test_update_todo() -> Result<(), anyhow::Error> {
     let mut routers = get_routers().await.into_service();
-    // First create a todo
+    // 1. First, create a todo
     let req = Request::builder()
         .method(http::Method::POST)
         .uri("/todo")
@@ -75,7 +75,7 @@ async fn test_update_todo() -> Result<(), anyhow::Error> {
     assert_eq!(created_todo.text, "Initial todo");
     assert!(!created_todo.completed);
 
-    // Now, let's update the created todo
+    // 2. Now, let's update the created todo
     let update_req = Request::builder()
         .method(http::Method::PATCH)
         .uri(format!("/todo/{}", created_todo.id))
@@ -181,5 +181,25 @@ async fn test_read_todos_empty() -> Result<(), anyhow::Error> {
 
 #[tokio::test]
 async fn test_delete_todo() -> Result<(), anyhow::Error> {
-    todo!()
+    // First, create a todo to delete
+    let create_req = Request::builder()
+        .method("POST")
+        .uri("/todo")
+        .header("content-type", "application/json")
+        .body(Body::from(json!({"text": "Todo to delete"}).to_string()))
+        .unwrap();
+
+    let (_, body) = app_request(create_req).await;
+    let created_todo: Todo = serde_json::from_str(&body).unwrap();
+
+    // Now, delete the created todo
+    let delete_req = Request::builder()
+        .method("DELETE")
+        .uri(format!("/todo/{}", created_todo.id))
+        .body(Body::empty())
+        .unwrap();
+
+    let (status, _) = app_request(delete_req).await;
+
+    assert_eq!(status, StatusCode::NO_CONTENT);
 }
