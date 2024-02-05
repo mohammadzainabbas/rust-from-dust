@@ -171,10 +171,10 @@ async fn test_read_todos_empty() -> Result<(), anyhow::Error> {
     let (status, body) = fetch(&mut routers, req).await?;
 
     assert_eq!(status, StatusCode::NOT_FOUND);
-    let created_todos: Vec<Todo> = serde_json::from_str(&body)?;
+    let todos: Vec<Todo> = serde_json::from_str(&body)?;
 
-    assert!(created_todos.is_empty());
-    assert_eq!(created_todos.len(), 0);
+    assert!(todos.is_empty());
+    assert_eq!(todos.len(), 0);
 
     Ok(())
 }
