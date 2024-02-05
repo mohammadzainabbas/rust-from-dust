@@ -21,6 +21,16 @@ use rust_axum_intro::get_routers;
 use serde_json::{json, Value};
 use tower::{Service, ServiceExt}; // for `call`, `oneshot`, and `ready`
 async fn fetch(req: Request<Body>) -> (StatusCode, String) {
+    let request = Request::builder().uri(uri).body(Body::empty())?;
+    let response = ServiceExt::<Request<Body>>::ready(&mut routers)
+        .await?
+        .call(request)
+        .await?;
+
+    assert_eq!(response.status(), StatusCode::OK);
+    let body = response.into_body().collect().await?.to_bytes();
+    assert_eq!(&body[..], format!("<h3> Hello {res}! </h3>").as_bytes());
+
     let app = get_routers().await;
     let response = app.oneshot(req).await.expect("failed to execute request");
     let (parts, body) = response.into_parts();
