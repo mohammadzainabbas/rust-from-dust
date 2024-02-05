@@ -87,6 +87,7 @@ async fn test_update_todo() -> Result<(), anyhow::Error> {
 
 #[tokio::test]
 async fn test_update_todo_no_record() -> Result<(), anyhow::Error> {
+    // Let's try to update a record which doesn't exist
     let random_id = Uuid::new_v4().to_string().to_owned();
     let update_req = Request::builder()
         .method(http::Method::PATCH)
@@ -96,7 +97,7 @@ async fn test_update_todo_no_record() -> Result<(), anyhow::Error> {
             json!({"text": "Updated todo", "completed": true}).to_string(),
         ))?;
 
-    let (status, body) = fetch(update_req).await?;
+    let (status, _body) = fetch(update_req).await?;
     assert_eq!(status, StatusCode::OK);
 
     let updated_todo: Todo = serde_json::from_str(&body)?;
