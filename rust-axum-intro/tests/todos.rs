@@ -40,8 +40,8 @@ async fn test_create_todo() -> Result<(), anyhow::Error> {
         .unwrap();
 
     let (status, body) = fetch(req).await?;
-    assert_eq!(status, StatusCode::OK);
 
+    assert_eq!(status, StatusCode::OK);
     assert_eq!(body, "Hello, I'm groot!");
 
     Ok(())
