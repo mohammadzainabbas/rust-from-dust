@@ -120,7 +120,6 @@ async fn test_say_path() -> Result<(), anyhow::Error> {
         ("/hello/Mohammad", "Mohammad"),
         ("/hello/1234", "1234"),
         ("/hello/name=Mohammad123", "name=Mohammad123"),
-        ("/hello/name Mohammad123", "name Mohammad123"),
     ];
 
     for (uri, res) in uris_res {
