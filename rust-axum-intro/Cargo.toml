@@ -54,10 +54,12 @@ validator = { version = "0.16.1", features = ["derive"] }
 [dev-dependencies]
 # Flexible concrete Error type built on std::error::Error
 anyhow = "1.0.79"
-http-body-util = "0.1.0"
 
 # Minimalistic HTTP Client Test Utilities
 httpc-test = "0.1.8"
 
 # To test axum server (for `call`, `oneshot`, and `ready`)
 tower = { version = "0.4.13", features = ["util"] }
+
+# To test axum server (for `call`, `oneshot`, and `ready`)
+http-body-util = "0.1.0"
