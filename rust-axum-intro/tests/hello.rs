@@ -106,6 +106,17 @@ async fn test_say_hello() -> Result<()> {
 #[tokio::test]
 async fn test_say_path() -> Result<()> {
     let mut routers = get_routers().await.into_service();
+
+    let uri = "/hello/";
+    let request = Request::builder().uri(uri).body(Body::empty()).unwrap();
+    let response = ServiceExt::<Request<Body>>::ready(&mut routers)
+        .await
+        .unwrap()
+        .call(request)
+        .await
+        .unwrap();
+    assert_eq!(response.status(), StatusCode::OK);
+
     let uris_res = vec![
         ("/hello/what", "what"),
         ("/hello/Mohammad", "Mohammad"),
