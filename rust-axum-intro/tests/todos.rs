@@ -130,8 +130,7 @@ async fn test_read_todos() -> Result<(), anyhow::Error> {
             .method(http::Method::POST)
             .uri("/todo")
             .header(http::header::CONTENT_TYPE, mime::APPLICATION_JSON.as_ref())
-            .body(Body::from(json!({"text": todo}).to_string()))
-            .unwrap();
+            .body(Body::from(json!({"text": todo}).to_string()))?;
 
         let (status, body) = fetch(&mut routers, req).await.unwrap();
         assert_eq!(status, StatusCode::CREATED);
@@ -141,7 +140,7 @@ async fn test_read_todos() -> Result<(), anyhow::Error> {
         assert!(!created_todo.completed);
     }
 
-    Ok(()))
+    Ok(())
 }
 
 // #[tokio::test]
