@@ -53,6 +53,7 @@ async fn test_create_todo() -> Result<(), anyhow::Error> {
 
 #[tokio::test]
 async fn test_update_todo() -> Result<(), anyhow::Error> {
+    // First create a todo
     let req = Request::builder()
         .method(http::Method::POST)
         .uri("/todo")
@@ -65,6 +66,16 @@ async fn test_update_todo() -> Result<(), anyhow::Error> {
     let created_todo: Todo = serde_json::from_str(&body).unwrap();
     assert_eq!(created_todo.text, "Initial todo");
     assert!(!created_todo.completed);
+
+    // Now, let's update the created todo
+    let update_req = Request::builder()
+        .method("PATCH")
+        .uri(format!("/todo/{}", created_todo.id))
+        .header("content-type", "application/json")
+        .body(Body::from(
+            json!({"text": "Updated todo", "completed": true}).to_string(),
+        ))
+        .unwrap();
 
     Ok(())
 }
