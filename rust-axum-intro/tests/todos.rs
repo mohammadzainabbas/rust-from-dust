@@ -24,16 +24,10 @@ async fn fetch(request: Request<Body>) -> Result<(StatusCode, String), anyhow::E
     let routers = get_routers().await;
     let response = routers.oneshot(request).await?;
     let body = response.into_body().collect().await?.to_bytes();
-
-    assert_eq!(&body[..], format!("<h3> Hello {res}! </h3>").as_bytes());
-
-    let app = get_routers().await;
-    let response = app.oneshot(req).await.expect("failed to execute request");
-    let (parts, body) = response.into_parts();
-    let body_bytes = hyper::body::to_bytes(body)
-        .await
-        .expect("failed to read body");
-    (parts.status, String::from_utf8_lossy(&body[..]).to_string())
+    (
+        response.status(),
+        String::from_utf8_lossy(&body[..]).to_string(),
+    )
 }
 
 #[tokio::test]
