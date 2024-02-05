@@ -27,12 +27,12 @@ use uuid::Uuid; // for `call`, `oneshot`, and `ready`
 async fn fetch(
     routers: Router,
     request: Request<Body>,
-) -> Result<(StatusCode, String), anyhow::Error> {
+) -> Result<(StatusCode, String, Router), anyhow::Error> {
     let response = routers.oneshot(request).await?;
     let status = response.status();
     let body = response.into_body().collect().await?.to_bytes();
     let body = String::from_utf8_lossy(&body[..]).to_string();
-    Ok((status, body))
+    Ok((status, body, routers))
 }
 
 #[tokio::test]
