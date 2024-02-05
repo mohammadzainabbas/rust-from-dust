@@ -220,9 +220,8 @@ async fn test_delete_todo() -> Result<(), anyhow::Error> {
         assert_eq!(status, StatusCode::OK);
     }
 
-    for todo in todos {
-        assert_ne!(todo.id, created_todo.id);
-    }
+    let todo_exists = todos.iter().any(|todo| todo.id == created_todo.id);
+    assert!(!todo_exists, "Deleted todo should not exist in the list.");
 
     Ok(())
 }
