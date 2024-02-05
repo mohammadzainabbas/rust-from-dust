@@ -84,7 +84,7 @@ async fn test_update_todo() -> Result<(), anyhow::Error> {
             json!({"text": "Updated todo", "completed": true}).to_string(),
         ))?;
 
-    let (status, body) = fetch(routers, update_req).await?;
+    let (status, body) = fetch(&mut routers, update_req).await?;
     assert_eq!(status, StatusCode::OK);
 
     let updated_todo: Todo = serde_json::from_str(&body)?;
@@ -99,7 +99,7 @@ async fn test_update_todo() -> Result<(), anyhow::Error> {
 
 #[tokio::test]
 async fn test_update_todo_no_record() -> Result<(), anyhow::Error> {
-    let routers = get_routers().await.into_service();
+    let mut routers = get_routers().await.into_service();
     // Let's try to update a record which doesn't exist
     let random_id = Uuid::new_v4().to_string().to_owned();
     let update_req = Request::builder()
@@ -110,7 +110,7 @@ async fn test_update_todo_no_record() -> Result<(), anyhow::Error> {
             json!({"text": "Updated todo", "completed": true}).to_string(),
         ))?;
 
-    let (status, _) = fetch(routers, update_req).await?;
+    let (status, _) = fetch(&mut routers, update_req).await?;
     assert_eq!(status, StatusCode::NOT_FOUND);
 
     Ok(())
