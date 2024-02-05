@@ -21,7 +21,7 @@ async fn test_main() -> Result<()> {
 
     assert_eq!(res.status(), StatusCode::OK);
 
-    let body = res.into_body().collect().await
+    let body = res.into_body().collect().await.unwrap().to_bytes();
 
     Ok(())
 }
