@@ -85,7 +85,7 @@ async fn test_update_todo() -> Result<(), anyhow::Error> {
 }
 
 #[tokio::test]
-async fn test_update_todo() -> Result<(), anyhow::Error> {
+async fn test_update_todo_no_record() -> Result<(), anyhow::Error> {
     // First create a todo
     let req = Request::builder()
         .method(http::Method::POST)
