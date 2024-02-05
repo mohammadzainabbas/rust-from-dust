@@ -128,6 +128,9 @@ async fn test_read_todos() -> Result<(), anyhow::Error> {
     // 1. Create multiple todos
     let todos = create_todo_list(10);
     for todo in todos {
+        let json_data = json!({
+            "text": todo,
+        });
         let req = Request::builder()
             .method(http::Method::POST)
             .uri("/todo")
