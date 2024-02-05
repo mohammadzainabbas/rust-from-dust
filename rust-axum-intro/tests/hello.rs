@@ -87,7 +87,7 @@ async fn test_say_hello_default() -> Result<()> {
 }
 
 #[tokio::test]
-async fn test_say_hello_default() -> Result<()> {
+async fn test_say_hello() -> Result<()> {
     let mut routers = get_routers().await.into_service();
     let uri = "/hello";
     let request = Request::builder().uri(uri).body(Body::empty()).unwrap();
