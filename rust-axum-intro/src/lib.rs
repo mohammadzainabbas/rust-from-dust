@@ -1,5 +1,5 @@
 mod todos;
-pub use todos::todo_router;
+pub use todos::{todo_router, Todo};
 
 mod hello;
 pub use hello::basic_router;

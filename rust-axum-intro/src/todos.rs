@@ -19,7 +19,7 @@ use uuid::Uuid;
 type DB = Arc<RwLock<HashMap<String, Todo>>>;
 
 #[derive(Debug, Serialize, Clone)]
-struct Todo {
+pub struct Todo {
     id: String,
     text: String,
     completed: bool,
