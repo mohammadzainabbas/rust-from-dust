@@ -225,3 +225,22 @@ async fn test_delete_todo() -> Result<(), anyhow::Error> {
 
     Ok(())
 }
+
+#[tokio::test]
+async fn test_update_todo_no_record() -> Result<(), anyhow::Error> {
+    let mut routers = get_routers().await.into_service();
+    // Let's try to update a record which doesn't exist
+    let random_id = Uuid::new_v4().to_string().to_owned();
+    let update_req = Request::builder()
+        .method(http::Method::PATCH)
+        .uri(format!("/todo/{}", random_id))
+        .header(http::header::CONTENT_TYPE, mime::APPLICATION_JSON.as_ref())
+        .body(Body::from(
+            json!({"text": "Updated todo", "completed": true}).to_string(),
+        ))?;
+
+    let (status, _) = fetch(&mut routers, update_req).await?;
+    assert_eq!(status, StatusCode::NOT_FOUND);
+
+    Ok(())
+}
