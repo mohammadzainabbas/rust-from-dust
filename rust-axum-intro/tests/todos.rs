@@ -30,7 +30,7 @@ async fn test_create_todo() -> Result<(), anyhow::Error> {
     let req = Request::builder()
         .method(http::Method::POST)
         .uri("/todo")
-        .header(http::header::CONTENT_TYPE, mime::APPLICATION_JSON)
+        .header(http::header::CONTENT_TYPE, mime::APPLICATION_JSON.as_ref())
         .body(Body::from(json!({"text": "Test todo"}).to_string()))
         .unwrap();
 
