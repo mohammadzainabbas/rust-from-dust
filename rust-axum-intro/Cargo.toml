@@ -50,6 +50,8 @@ tracing-subscriber = { version = "0.3.18", features = ["env-filter", "json"] }
 
 # For validations
 validator = { version = "0.16.1", features = ["derive"] }
+
+# For mime types
 mime = "0.3.17"
 
 [dev-dependencies]
