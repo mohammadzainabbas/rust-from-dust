@@ -200,7 +200,6 @@ async fn test_delete_todo() -> Result<(), anyhow::Error> {
     let delete_req = Request::builder()
         .method(http::Method::DELETE)
         .uri(format!("/todo/{}", created_todo.id))
-        .header(http::header::CONTENT_TYPE, mime::APPLICATION_JSON.as_ref())
         .body(Body::from(
             json!({"text": "Updated todo", "completed": true}).to_string(),
         ))?;
