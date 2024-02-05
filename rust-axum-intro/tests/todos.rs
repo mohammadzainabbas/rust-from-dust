@@ -16,6 +16,7 @@ use anyhow::Result;
 use axum::{
     body::Body,
     http::{self, Request, StatusCode},
+    Router,
 };
 use http_body_util::BodyExt; // for `collect`
 use rust_axum_intro::{get_routers, Todo};
