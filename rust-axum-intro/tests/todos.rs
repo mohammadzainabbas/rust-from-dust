@@ -136,14 +136,14 @@ async fn test_read_todos() -> Result<(), anyhow::Error> {
 
         let (status, body) = fetch(&mut routers, req).await?;
         assert_eq!(status, StatusCode::CREATED);
+
+        let created_todo: Todo = serde_json::from_str(&body)?;
+        assert_eq!(created_todo.text, "Initial todo");
+        assert!(!created_todo.completed);
     }
 
     let (status, body) = fetch(&mut routers, req).await?;
     assert_eq!(status, StatusCode::CREATED);
-
-    let created_todo: Todo = serde_json::from_str(&body)?;
-    assert_eq!(created_todo.text, "Initial todo");
-    assert!(!created_todo.completed);
 }
 
 // #[tokio::test]
