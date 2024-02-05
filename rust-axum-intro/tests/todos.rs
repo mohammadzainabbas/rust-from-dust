@@ -97,12 +97,8 @@ async fn test_update_todo_no_record() -> Result<(), anyhow::Error> {
             json!({"text": "Updated todo", "completed": true}).to_string(),
         ))?;
 
-    let (status, _body) = fetch(update_req).await?;
-    assert_eq!(status, StatusCode::OK);
-
-    let updated_todo: Todo = serde_json::from_str(&body)?;
-    assert_eq!(updated_todo.text, "Updated todo");
-    assert!(updated_todo.completed);
+    let (status, _) = fetch(update_req).await?;
+    assert_eq!(status, StatusCode::NOT_FOUND);
 
     Ok(())
 }
