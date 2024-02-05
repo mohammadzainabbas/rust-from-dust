@@ -55,7 +55,12 @@ async fn test_say_hello() -> Result<()> {
     let routers = get_routers().await;
 
     let res = routers
-        .oneshot(Request::builder().uri("/").body(Body::empty()).unwrap())
+        .oneshot(
+            Request::builder()
+                .uri("/hello")
+                .body(Body::empty())
+                .unwrap(),
+        )
         .await
         .unwrap();
     assert_eq!(res.status(), StatusCode::OK);
