@@ -20,6 +20,7 @@ use http_body_util::BodyExt; // for `collect`
 use rust_axum_intro::get_routers;
 use serde_json::{json, Value};
 use tower::{Service, ServiceExt}; // for `call`, `oneshot`, and `ready`
+
 async fn fetch(request: Request<Body>) -> Result<(StatusCode, String), anyhow::Error> {
     let routers = get_routers().await;
     let response = routers.oneshot(request).await?;
