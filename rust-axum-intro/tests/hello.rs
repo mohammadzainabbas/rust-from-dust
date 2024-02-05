@@ -70,5 +70,6 @@ async fn test_say_hello() -> Result<()> {
         .await
         .unwrap();
 
+    assert_eq!(response.status(), StatusCode::OK);
     Ok(())
 }
