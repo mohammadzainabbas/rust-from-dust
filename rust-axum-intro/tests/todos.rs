@@ -202,15 +202,8 @@ async fn test_delete_todo() -> Result<(), anyhow::Error> {
         .uri(format!("/todo/{}", created_todo.id))
         .body(Body::empty())?;
 
-    let (status, body) = fetch(&mut routers, delete_req).await?;
+    let (status, _) = fetch(&mut routers, delete_req).await?;
     assert_eq!(status, StatusCode::NO_CONTENT);
-
-    let updated_todo: Todo = serde_json::from_str(&body)?;
-
-    println!("updated_todo: {:#?}", updated_todo);
-
-    assert_eq!(updated_todo.text, "Updated todo");
-    assert!(updated_todo.completed);
 
     Ok(())
 }
