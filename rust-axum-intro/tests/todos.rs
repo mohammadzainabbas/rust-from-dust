@@ -50,3 +50,23 @@ async fn test_create_todo() -> Result<(), anyhow::Error> {
 
     Ok(())
 }
+
+#[tokio::test]
+async fn test_create_todo() -> Result<(), anyhow::Error> {
+    let req = Request::builder()
+        .method(http::Method::POST)
+        .uri("/todo")
+        .header(http::header::CONTENT_TYPE, mime::APPLICATION_JSON.as_ref())
+        .body(Body::from(json!({"text": "Test todo"}).to_string()))
+        .unwrap();
+
+    let (status, body) = fetch(req).await?;
+    assert_eq!(status, StatusCode::CREATED);
+
+    let todo: Todo = serde_json::from_str(&body).unwrap();
+
+    assert_eq!(todo.text, "Test todo");
+    assert!(!todo.completed);
+
+    Ok(())
+}
