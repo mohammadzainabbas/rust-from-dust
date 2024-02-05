@@ -16,6 +16,7 @@ use anyhow::Result;
 use axum::{
     body::Body,
     http::{self, Request, StatusCode},
+    routing::RouterIntoService,
     Router,
 };
 use http_body_util::BodyExt; // for `collect`
@@ -25,7 +26,7 @@ use tower::{Service, ServiceExt};
 use uuid::Uuid; // for `call`, `oneshot`, and `ready`
 
 async fn fetch(
-    routers: Router,
+    routers: RouterIntoService,
     request: Request<Body>,
 ) -> Result<(StatusCode, String, Router), anyhow::Error> {
     let response = routers.oneshot(request).await?;
