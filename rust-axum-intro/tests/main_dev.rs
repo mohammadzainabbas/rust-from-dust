@@ -12,7 +12,9 @@ use tower::{Service, ServiceExt};
 async fn test_main() -> Result<()> {
     let routers = get_routers().await;
 
+    // `Router` implements `tower::Service<Request<Body>>` so we can
+    // call it like any tower service, no need to run an HTTP server.
     let res = routers.oneshot(Request::builder().uri("/").body(Body::empty()).unwrap());
 
-    Ok(())
+    res.Ok(())
 }
