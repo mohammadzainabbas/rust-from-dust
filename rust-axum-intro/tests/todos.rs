@@ -40,8 +40,10 @@ async fn test_create_todo() -> Result<(), anyhow::Error> {
         .unwrap();
 
     let (status, body) = fetch(req).await?;
-
     assert_eq!(status, StatusCode::CREATED);
+
+    let todo: Todo = serde_json::from_str(&body).unwrap();
+
     assert_eq!(body, "Hello, I'm groot!");
 
     Ok(())
