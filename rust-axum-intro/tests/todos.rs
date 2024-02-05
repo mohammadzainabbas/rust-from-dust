@@ -196,9 +196,9 @@ async fn test_delete_todo() -> Result<(), anyhow::Error> {
     assert_eq!(created_todo.text, "Initial todo");
     assert!(!created_todo.completed);
 
-    // 2. Now, let's update the created todo
-    let update_req = Request::builder()
-        .method(http::Method::PATCH)
+    // 2. Now, let's delete the created todo
+    let delete_req = Request::builder()
+        .method(http::Method::DELETE)
         .uri(format!("/todo/{}", created_todo.id))
         .header(http::header::CONTENT_TYPE, mime::APPLICATION_JSON.as_ref())
         .body(Body::from(
