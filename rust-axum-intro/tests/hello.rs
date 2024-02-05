@@ -53,8 +53,7 @@ async fn test_groot() -> Result<()> {
 #[tokio::test]
 async fn test_say_hello() -> Result<()> {
     let mut routers = get_routers().await.into_service();
-
-    let uri = "/hello".to_string().as_str();
+    let uri = "/hello";
 
     let request = Request::builder().uri(uri).body(Body::empty()).unwrap();
 
