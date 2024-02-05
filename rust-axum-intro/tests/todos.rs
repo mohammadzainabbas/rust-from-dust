@@ -36,13 +36,14 @@ async fn fetch(
 
 #[tokio::test]
 async fn test_create_todo() -> Result<(), anyhow::Error> {
+    let routers = get_routers().await;
     let req = Request::builder()
         .method(http::Method::POST)
         .uri("/todo")
         .header(http::header::CONTENT_TYPE, mime::APPLICATION_JSON.as_ref())
         .body(Body::from(json!({"text": "Test todo"}).to_string()))?;
 
-    let (status, body) = fetch(req).await?;
+    let (status, body) = fetch(routers, req).await?;
     assert_eq!(status, StatusCode::CREATED);
 
     let todo: Todo = serde_json::from_str(&body)?;
