@@ -104,7 +104,7 @@ async fn test_say_hello() -> Result<()> {
 }
 
 #[tokio::test]
-async fn test_say_path() -> Result<()> {
+async fn test_say_path() -> Result<(), anyhow::Error> {
     let mut routers = get_routers().await.into_service();
 
     let uri = "/hello/";
