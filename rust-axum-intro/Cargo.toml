@@ -50,6 +50,7 @@ tracing-subscriber = { version = "0.3.18", features = ["env-filter", "json"] }
 
 # For validations
 validator = { version = "0.16.1", features = ["derive"] }
+mime = "0.3.17"
 
 [dev-dependencies]
 # Flexible concrete Error type built on std::error::Error
