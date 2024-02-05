@@ -29,14 +29,10 @@ async fn fetch(
     mut routers: RouterIntoService<Body>,
     request: Request<Body>,
 ) -> Result<(StatusCode, String), anyhow::Error> {
-    let request = Request::builder().uri(uri).body(Body::empty())?;
     let response = ServiceExt::<Request<Body>>::ready(&mut routers)
-            .await?
-            .call(request)
-            .awa
-
-
-
+        .await?
+        .call(request)
+        .await?;
 
     let response = routers.oneshot(request).await?;
     let status = response.status();
