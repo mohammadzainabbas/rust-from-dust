@@ -117,9 +117,7 @@ async fn test_update_todo_no_record() -> Result<(), anyhow::Error> {
 }
 
 async fn create_todo_list(n: usize) -> Vec<String> {
-    (1..=n)
-        .map(|i| format!("Todo #{}", i).to_string().as_str())
-        .collect()
+    (1..=n).map(|i| format!("Todo #{}", i)).collect()
 }
 
 #[tokio::test]
@@ -132,7 +130,7 @@ async fn test_read_todos() -> Result<(), anyhow::Error> {
             .method(http::Method::POST)
             .uri("/todo")
             .header(http::header::CONTENT_TYPE, mime::APPLICATION_JSON.as_ref())
-            .body(Body::from(json!({"text": todo}).to_string()))?;
+            .body(Body::from(json!({"text": todo.to_owned()}).to_string()))?;
 
         let (status, body) = fetch(&mut routers, req).await?;
         assert_eq!(status, StatusCode::CREATED);
