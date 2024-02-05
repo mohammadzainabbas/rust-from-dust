@@ -26,7 +26,7 @@ use tower::{Service, ServiceExt};
 use uuid::Uuid; // for `call`, `oneshot`, and `ready`
 
 async fn fetch(
-    routers: RouterIntoService,
+    mut routers: RouterIntoService,
     request: Request<Body>,
 ) -> Result<(StatusCode, String, Router), anyhow::Error> {
     let response = routers.oneshot(request).await?;
