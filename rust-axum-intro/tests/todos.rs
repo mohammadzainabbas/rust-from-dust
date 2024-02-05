@@ -69,7 +69,7 @@ async fn test_update_todo() -> Result<(), anyhow::Error> {
 
     // Now, let's update the created todo
     let update_req = Request::builder()
-        .method("PATCH")
+        .method(http::Method::PATCH)
         .uri(format!("/todo/{}", created_todo.id))
         .header("content-type", "application/json")
         .body(Body::from(
