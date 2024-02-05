@@ -120,6 +120,7 @@ async fn test_update_todo_no_record() -> Result<(), anyhow::Error> {
 async fn test_read_todos() -> Result<(), anyhow::Error> {
     let mut routers = get_routers().await.into_service();
     // 1. Create multiple todos
+    let todos = vec!["Todo"]
     let req = Request::builder()
         .method(http::Method::POST)
         .uri("/todo")
