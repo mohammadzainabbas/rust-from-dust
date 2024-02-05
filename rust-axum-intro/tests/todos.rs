@@ -87,7 +87,6 @@ async fn test_update_todo() -> Result<(), anyhow::Error> {
 
 #[tokio::test]
 async fn test_update_todo_no_record() -> Result<(), anyhow::Error> {
-    // Now, let's update the created todo
     let random_id = Uuid::new_v4().to_string().to_owned();
     let update_req = Request::builder()
         .method(http::Method::PATCH)
