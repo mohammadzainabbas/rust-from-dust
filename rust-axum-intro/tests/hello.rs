@@ -72,7 +72,7 @@ async fn test_say_hello_default() -> Result<()> {
     assert_eq!(&body[..], b"<h3> Hello World! </h3>");
 
     let uris = vec!["/hello", "/hello?names=Mohammad", "/hello?"];
-    uris.iter().for_each(|(i, uri)| {});
+    uris.iter().for_each(|uri| {});
 
     let uri = "/hello?names=Mohammad";
     let request = Request::builder().uri(uri).body(Body::empty()).unwrap();
