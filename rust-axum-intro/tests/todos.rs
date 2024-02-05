@@ -12,8 +12,6 @@
 // S - simple scenarios
 
 #![allow(unused_imports)]
-use std::rc::Rc;
-
 use anyhow::Result;
 use axum::{
     body::Body,
@@ -27,7 +25,7 @@ use tower::{Service, ServiceExt};
 use uuid::Uuid; // for `call`, `oneshot`, and `ready`
 
 async fn fetch(
-    routers: Rc<Router>,
+    routers: Router,
     request: Request<Body>,
 ) -> Result<(StatusCode, String), anyhow::Error> {
     let response = routers.oneshot(request).await?;
