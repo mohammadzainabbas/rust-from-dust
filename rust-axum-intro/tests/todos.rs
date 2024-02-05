@@ -20,7 +20,8 @@ use axum::{
 use http_body_util::BodyExt; // for `collect`
 use rust_axum_intro::{get_routers, Todo};
 use serde_json::{json, Value};
-use tower::{Service, ServiceExt}; // for `call`, `oneshot`, and `ready`
+use tower::{Service, ServiceExt};
+use uuid::Uuid; // for `call`, `oneshot`, and `ready`
 
 async fn fetch(request: Request<Body>) -> Result<(StatusCode, String), anyhow::Error> {
     let routers = get_routers().await;
@@ -87,10 +88,10 @@ async fn test_update_todo() -> Result<(), anyhow::Error> {
 #[tokio::test]
 async fn test_update_todo_no_record() -> Result<(), anyhow::Error> {
     // Now, let's update the created todo
-    let random_id = Uuid::new_v4().to_string().to_owned(),
+    let random_id = Uuid::new_v4().to_string().to_owned();
     let update_req = Request::builder()
         .method(http::Method::PATCH)
-        .uri(format!("/todo/{}", created_todo.id))
+        .uri(format!("/todo/{}", random_id))
         .header(http::header::CONTENT_TYPE, mime::APPLICATION_JSON.as_ref())
         .body(Body::from(
             json!({"text": "Updated todo", "completed": true}).to_string(),
