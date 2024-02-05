@@ -11,7 +11,6 @@ use rust_axum_intro::get_routers;
 use serde_json::{json, Value};
 use std::net::SocketAddr;
 use tokio::net::TcpListener;
-use tower::ServiceExt;
 use tower::{Service, ServiceExt}; // for `call`, `oneshot`, and `ready`
 
 // ZOMBIES (checklist when writing tests)
