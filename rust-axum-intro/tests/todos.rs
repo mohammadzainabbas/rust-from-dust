@@ -28,7 +28,7 @@ async fn fetch(req: Request<Body>) -> (StatusCode, String) {
 #[tokio::test]
 async fn test_create_todo() -> Result<(), anyhow::Error> {
     let req = Request::builder()
-        .method(http::Method::GET)
+        .method(http::Method::POST)
         .uri("/todo")
         .header("content-type", "application/json")
         .body(Body::from(json!({"text": "Test todo"}).to_string()))
