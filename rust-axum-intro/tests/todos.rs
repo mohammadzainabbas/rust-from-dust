@@ -232,14 +232,10 @@ async fn test_delete_todo_no_record() -> Result<(), anyhow::Error> {
     // Let's try to update a record which doesn't exist
     let random_id = Uuid::new_v4().to_string().to_owned();
     let delete_req = Request::builder()
-        .method(http::Method::PATCH)
+        .method(http::Method::DELETE)
         .uri(format!("/todo/{}", random_id))
-        .header(http::header::CONTENT_TYPE, mime::APPLICATION_JSON.as_ref())
-        .body(Body::from(
-            json!({"text": "Updated todo", "completed": true}).to_string(),
-        ))?;
-
-    let (status, _) = fetch(&mut routers, update_req).await?;
+        .body(Body::empty())?;
+    let (status, _) = fetch(&mut routers, delete_req).await?;
     assert_eq!(status, StatusCode::NOT_FOUND);
 
     Ok(())
