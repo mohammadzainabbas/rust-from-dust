@@ -33,7 +33,7 @@ async fn test_hello() -> Result<()> {
 }
 
 #[tokio::test]
-async fn test_main() -> Result<()> {
+async fn test_groot() -> Result<()> {
     let routers = get_routers().await;
 
     // `Router` implements `tower::Service<Request<Body>>` so we can
