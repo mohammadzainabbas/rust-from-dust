@@ -26,17 +26,17 @@ use tower::{Service, ServiceExt}; // for `call`, `oneshot`, and `ready`
 // E - exceptions
 // S - simple scenarios
 
-// #[tokio::test]
-// async fn test_hello() -> Result<()> {
-//     let hc = httpc_test::new_client("http://localhost:3000")?;
+#[tokio::test]
+async fn test_hello() -> Result<()> {
+    let hc = httpc_test::new_client("http://localhost:3000")?;
 
-//     hc.do_get("/").await?.print().await?;
-//     hc.do_get("/hello").await?.print().await?;
-//     hc.do_get("/hello/what").await?.print().await?;
-//     hc.do_get("/hello?name=Mohammad").await?.print().await?;
+    hc.do_get("/").await?.print().await?;
+    hc.do_get("/hello").await?.print().await?;
+    hc.do_get("/hello/what").await?.print().await?;
+    hc.do_get("/hello?name=Mohammad").await?.print().await?;
 
-//     Ok(())
-// }
+    Ok(())
+}
 
 #[tokio::test]
 async fn test_groot() -> Result<()> {
