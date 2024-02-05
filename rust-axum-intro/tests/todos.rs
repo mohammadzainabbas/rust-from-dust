@@ -41,7 +41,7 @@ async fn fetch(
 
 #[tokio::test]
 async fn test_create_todo() -> Result<(), anyhow::Error> {
-    let routers = get_routers().await;
+    let mut routers = get_routers().await.into_service();
     let req = Request::builder()
         .method(http::Method::POST)
         .uri("/todo")
