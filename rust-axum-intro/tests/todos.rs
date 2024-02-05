@@ -68,7 +68,7 @@ async fn test_update_todo() -> Result<(), anyhow::Error> {
         .header(http::header::CONTENT_TYPE, mime::APPLICATION_JSON.as_ref())
         .body(Body::from(json!({"text": "Initial todo"}).to_string()))?;
 
-    let (status, body) = fetch(routers, req).await?;
+    let (status, body) = fetch(&mut routers, req).await?;
     assert_eq!(status, StatusCode::CREATED);
 
     let created_todo: Todo = serde_json::from_str(&body)?;
