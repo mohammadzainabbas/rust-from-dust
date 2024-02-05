@@ -71,7 +71,7 @@ async fn test_update_todo() -> Result<(), anyhow::Error> {
     let update_req = Request::builder()
         .method(http::Method::PATCH)
         .uri(format!("/todo/{}", created_todo.id))
-        .header("content-type", "application/json")
+        .header(http::header::CONTENT_TYPE, mime::APPLICATION_JSON.as_ref())
         .body(Body::from(
             json!({"text": "Updated todo", "completed": true}).to_string(),
         ))
