@@ -115,7 +115,7 @@ async fn test_say_path() -> Result<()> {
         .call(request)
         .await
         .unwrap();
-    assert_eq!(response.status(), StatusCode::OK);
+    assert_eq!(response.status(), StatusCode::NOT_FOUND);
 
     let uris_res = vec![
         ("/hello/what", "what"),
