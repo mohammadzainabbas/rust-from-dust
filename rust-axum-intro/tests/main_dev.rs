@@ -26,5 +26,7 @@ async fn test_main() -> Result<()> {
 
     assert_eq!(&body[..], b"Hello, I'm groot");
 
+    dbg!(body);
+
     Ok(())
 }
