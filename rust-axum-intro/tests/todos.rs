@@ -58,8 +58,7 @@ async fn test_update_todo() -> Result<(), anyhow::Error> {
         .method(http::Method::POST)
         .uri("/todo")
         .header(http::header::CONTENT_TYPE, mime::APPLICATION_JSON.as_ref())
-        .body(Body::from(json!({"text": "Initial todo"}).to_string()))
-        .unwrap();
+        .body(Body::from(json!({"text": "Initial todo"}).to_string()))?;
 
     let (status, body) = fetch(req).await?;
     assert_eq!(status, StatusCode::CREATED);
@@ -74,8 +73,7 @@ async fn test_update_todo() -> Result<(), anyhow::Error> {
         .header(http::header::CONTENT_TYPE, mime::APPLICATION_JSON.as_ref())
         .body(Body::from(
             json!({"text": "Updated todo", "completed": true}).to_string(),
-        ))
-        .unwrap();
+        ))?;
 
     Ok(())
 }
