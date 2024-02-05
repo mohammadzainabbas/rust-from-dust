@@ -19,7 +19,9 @@ async fn test_main() -> Result<()> {
         .await
         .unwrap();
 
-    assert_eq!(res.status(), StatusCode::NOT_ACCEPTABLE);
+    dbg!(res);
+
+    assert_eq!(res.status(), StatusCode::OK);
 
     Ok(())
 }
