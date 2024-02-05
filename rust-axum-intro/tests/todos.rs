@@ -26,7 +26,7 @@ use tower::{Service, ServiceExt};
 use uuid::Uuid; // for `call`, `oneshot`, and `ready`
 
 async fn fetch(
-    mut routers: RouterIntoService<Body>,
+    &mut routers: RouterIntoService<Body>,
     request: Request<Body>,
 ) -> Result<(StatusCode, String), anyhow::Error> {
     let response = ServiceExt::<Request<Body>>::ready(&mut routers)
