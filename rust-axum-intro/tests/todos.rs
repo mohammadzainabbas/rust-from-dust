@@ -23,15 +23,8 @@ use tower::{Service, ServiceExt}; // for `call`, `oneshot`, and `ready`
 async fn fetch(request: Request<Body>) -> Result<(StatusCode, String), anyhow::Error> {
     let routers = get_routers().await;
     let response = routers.oneshot(request).await?;
-
-    let request = Request::builder().uri(uri).body(Body::empty())?;
-    let response = ServiceExt::<Request<Body>>::ready(&mut routers)
-        .await?
-        .call(request)
-        .await?;
-
-    assert_eq!(response.status(), StatusCode::OK);
     let body = response.into_body().collect().await?.to_bytes();
+
     assert_eq!(&body[..], format!("<h3> Hello {res}! </h3>").as_bytes());
 
     let app = get_routers().await;
@@ -40,10 +33,7 @@ async fn fetch(request: Request<Body>) -> Result<(StatusCode, String), anyhow::E
     let body_bytes = hyper::body::to_bytes(body)
         .await
         .expect("failed to read body");
-    (
-        parts.status,
-        String::from_utf8_lossy(&body_bytes).to_string(),
-    )
+    (parts.status, String::from_utf8_lossy(&body[..]).to_string())
 }
 
 #[tokio::test]
