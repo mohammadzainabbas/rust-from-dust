@@ -52,7 +52,7 @@ async fn test_groot() -> Result<()> {
 
 #[tokio::test]
 async fn test_say_hello() -> Result<()> {
-    let routers = get_routers().await;
+    let mut routers = get_routers().await.into_service();
 
     let res = routers
         .oneshot(
