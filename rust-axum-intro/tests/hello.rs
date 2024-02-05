@@ -133,7 +133,7 @@ async fn test_say_path() -> Result<(), anyhow::Error> {
             .call(request)
             .await?;
         assert_eq!(response.status(), StatusCode::OK);
-        let body = response.into_body().collect().await.unwrap().to_bytes();
+        let body = response.into_body().collect().await?.to_bytes();
         assert_eq!(&body[..], format!("<h3> Hello {res}! </h3>").as_bytes());
     }
 
