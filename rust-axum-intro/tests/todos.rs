@@ -24,7 +24,7 @@ use serde_json::{json, Value};
 use tower::{Service, ServiceExt};
 use uuid::Uuid; // for `call`, `oneshot`, and `ready`
 
-async fn fetch(
+async fn fetch<'a>(
     routers: Router,
     request: Request<Body>,
 ) -> Result<(StatusCode, String), anyhow::Error> {
