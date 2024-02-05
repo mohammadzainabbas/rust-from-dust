@@ -21,7 +21,7 @@ async fn test_main() -> Result<()> {
 
     assert_eq!(res.status(), StatusCode::OK);
 
-    dbg!(res);
+    let body = dbg!(res);
 
     Ok(())
 }
