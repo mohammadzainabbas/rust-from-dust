@@ -19,9 +19,9 @@ async fn test_main() -> Result<()> {
         .await
         .unwrap();
 
-    dbg!(res);
-
     assert_eq!(res.status(), StatusCode::OK);
+
+    dbg!(res);
 
     Ok(())
 }
