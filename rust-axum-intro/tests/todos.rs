@@ -117,7 +117,7 @@ async fn test_update_todo_no_record() -> Result<(), anyhow::Error> {
 }
 
 fn create_todo_list<'a>(n: usize) -> Vec<&'a str> {
-    (1..n)
+    (1..=n)
         .map(|i| format!("Todo #{}", i).to_string().as_str())
         .collect()
 }
