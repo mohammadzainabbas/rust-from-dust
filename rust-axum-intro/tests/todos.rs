@@ -203,7 +203,7 @@ async fn test_delete_todo() -> Result<(), anyhow::Error> {
         .body(Body::empty())?;
 
     let (status, body) = fetch(&mut routers, delete_req).await?;
-    assert_eq!(status, StatusCode::OK);
+    assert_eq!(status, StatusCode::NO_CONTENT);
 
     let updated_todo: Todo = serde_json::from_str(&body)?;
 
