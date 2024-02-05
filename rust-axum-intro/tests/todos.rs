@@ -212,9 +212,13 @@ async fn test_delete_todo() -> Result<(), anyhow::Error> {
         .body(Body::empty())?;
 
     let (status, body) = fetch(&mut routers, req).await?;
+    let todos: Vec<Todo> = serde_json::from_str(&body)?;
+
+    for todo in todos {
+        assert_ne!(todo.id, created_todo.id);
+    }
 
     assert_eq!(status, StatusCode::NOT_FOUND);
-    let todos: Vec<Todo> = serde_json::from_str(&body)?;
 
     Ok(())
 }
