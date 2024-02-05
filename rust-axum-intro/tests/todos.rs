@@ -205,5 +205,16 @@ async fn test_delete_todo() -> Result<(), anyhow::Error> {
     let (status, _) = fetch(&mut routers, delete_req).await?;
     assert_eq!(status, StatusCode::NO_CONTENT);
 
+    // 3. Now, try to read
+    let req = Request::builder()
+        .method(http::Method::GET)
+        .uri("/todo")
+        .body(Body::empty())?;
+
+    let (status, body) = fetch(&mut routers, req).await?;
+
+    assert_eq!(status, StatusCode::NOT_FOUND);
+    let todos: Vec<Todo> = serde_json::from_str(&body)?;
+
     Ok(())
 }
