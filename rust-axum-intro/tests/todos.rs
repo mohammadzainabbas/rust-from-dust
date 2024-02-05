@@ -24,8 +24,8 @@ use serde_json::{json, Value};
 use tower::{Service, ServiceExt};
 use uuid::Uuid; // for `call`, `oneshot`, and `ready`
 
-async fn fetch<'a>(
-    routers: &'a Router,
+async fn fetch(
+    routers: Rc<Router>,
     request: Request<Body>,
 ) -> Result<(StatusCode, String), anyhow::Error> {
     let response = routers.oneshot(request).await?;
