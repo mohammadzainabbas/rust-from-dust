@@ -50,7 +50,7 @@ async fn test_groot() -> Result<(), anyhow::Error> {
 
     assert_eq!(res.status(), StatusCode::OK);
 
-    let body = res.into_body().collect().await.unwrap().to_bytes();
+    let body = res.into_body().collect().await?.to_bytes();
     assert_eq!(&body[..], b"Hello, I'm groot!");
 
     Ok(())
@@ -62,7 +62,7 @@ async fn test_say_hello_default() -> Result<(), anyhow::Error> {
     let uris = vec!["/hello", "/hello?names=Mohammad", "/hello?"];
 
     for uri in uris {
-        let request = Request::builder().uri(uri).body(Body::empty()).unwrap();
+        let request = Request::builder().uri(uri).body(Body::empty())?;
         let response = ServiceExt::<Request<Body>>::ready(&mut routers)
             .await
             .unwrap()
