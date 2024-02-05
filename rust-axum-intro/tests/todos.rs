@@ -25,10 +25,7 @@ async fn fetch(request: Request<Body>) -> Result<(StatusCode, String), anyhow::E
     let response = routers.oneshot(request).await?;
     let status = response.status();
     let body = response.into_body().collect().await?.to_bytes();
-    Ok((
-        response.status(),
-        String::from_utf8_lossy(&body[..]).to_string(),
-    ))
+    Ok((status, String::from_utf8_lossy(&body[..]).to_string()))
 }
 
 #[tokio::test]
