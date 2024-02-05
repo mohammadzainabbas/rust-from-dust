@@ -49,3 +49,19 @@ async fn test_groot() -> Result<()> {
 
     Ok(())
 }
+
+#[tokio::test]
+async fn test_say_hello() -> Result<()> {
+    let routers = get_routers().await;
+
+    let res = routers
+        .oneshot(Request::builder().uri("/").body(Body::empty()).unwrap())
+        .await
+        .unwrap();
+    assert_eq!(res.status(), StatusCode::OK);
+
+    let body = res.into_body().collect().await.unwrap().to_bytes();
+    assert_eq!(&body[..], b"Hello, I'm groot");
+
+    Ok(())
+}
