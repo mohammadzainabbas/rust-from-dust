@@ -107,9 +107,9 @@ async fn test_say_hello() -> Result<()> {
 async fn test_say_path() -> Result<()> {
     let mut routers = get_routers().await.into_service();
     let uris_res = vec![
-        ("/hello?name=", ""),
-        ("/hello?name=Mohammad", "Mohammad"),
-        ("/hello?name=1234", "1234"),
+        ("/hello/what", "what"),
+        ("/hello/Mohammad", "Mohammad"),
+        ("/hello/1234", "1234"),
         ("/hello?name=Mohammad1234", "Mohammad1234"),
     ];
 
