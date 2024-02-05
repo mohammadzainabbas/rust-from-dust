@@ -80,7 +80,11 @@ async fn test_say_hello_default() -> Result<()> {
 #[tokio::test]
 async fn test_say_hello() -> Result<()> {
     let mut routers = get_routers().await.into_service();
-    let uris = vec![("/hello", "World"), ("/hello?name=Mohammad"), "/hello?"];
+    let uris = vec![
+        ("/hello?name=", "World"),
+        ("/hello?name=Mohammad", "Mohammad"),
+        "/hello?",
+    ];
 
     for uri in uris {
         let request = Request::builder().uri(uri).body(Body::empty()).unwrap();
