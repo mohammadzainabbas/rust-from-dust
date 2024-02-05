@@ -152,6 +152,8 @@ async fn test_read_todos() -> Result<(), anyhow::Error> {
     assert_eq!(status, StatusCode::OK);
     let created_todos: Vec<Todo> = serde_json::from_str(&body)?;
 
+    assert_eq!(created_todos.len(), n);
+
     Ok(())
 }
 
