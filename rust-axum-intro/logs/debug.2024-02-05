@@ -25,3 +25,4 @@
 {"timestamp":"2024-02-05T01:14:20.349946Z","level":"TRACE","fields":{"message":"inside say_hello()"},"target":"rust_axum_intro::hello","span":{"param":"HelloParams { name: None }","name":"say_hello"},"spans":[{"param":"HelloParams { name: None }","name":"say_hello"}]}
 {"timestamp":"2024-02-05T01:14:20.350093Z","level":"DEBUG","fields":{"name":"World"},"target":"say","span":{"param":"HelloParams { name: None }","name":"say_hello"},"spans":[{"param":"HelloParams { name: None }","name":"say_hello"}]}
 {"timestamp":"2024-02-05T01:14:27.316616Z","level":"TRACE","fields":{"message":"inside say_path()"},"target":"rust_axum_intro::hello","span":{"path":"\"a\"","name":"say_path"},"spans":[{"path":"\"a\"","name":"say_path"}]}
+{"timestamp":"2024-02-05T01:16:54.408701Z","level":"TRACE","fields":{"message":"inside say_path()"},"target":"rust_axum_intro::hello","span":{"path":"\"a\"","name":"say_path"},"spans":[{"path":"\"a\"","name":"say_path"}]}
