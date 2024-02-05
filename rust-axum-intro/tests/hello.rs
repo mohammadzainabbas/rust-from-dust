@@ -57,7 +57,7 @@ async fn test_say_hello() -> Result<()> {
 
     let request = Request::builder().uri(uri).body(Body::empty()).unwrap();
 
-    let response = ServiceExt::<Request<Body>>::ready(&mut app)
+    let response = ServiceExt::<Request<Body>>::ready(&mut routers)
         .await
         .unwrap()
         .call(request)
