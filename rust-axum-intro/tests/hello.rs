@@ -57,7 +57,37 @@ async fn test_groot() -> Result<()> {
 }
 
 #[tokio::test]
-async fn test_say_hello() -> Result<()> {
+async fn test_say_hello_default() -> Result<()> {
+    let mut routers = get_routers().await.into_service();
+    let uri = "/hello";
+    let request = Request::builder().uri(uri).body(Body::empty()).unwrap();
+    let response = ServiceExt::<Request<Body>>::ready(&mut routers)
+        .await
+        .unwrap()
+        .call(request)
+        .await
+        .unwrap();
+    assert_eq!(response.status(), StatusCode::OK);
+    let body = response.into_body().collect().await.unwrap().to_bytes();
+    assert_eq!(&body[..], b"<h3> Hello World! </h3>");
+
+    let uri = "/hello?name=Mohammad";
+    let request = Request::builder().uri(uri).body(Body::empty()).unwrap();
+    let response = ServiceExt::<Request<Body>>::ready(&mut routers)
+        .await
+        .unwrap()
+        .call(request)
+        .await
+        .unwrap();
+    assert_eq!(response.status(), StatusCode::OK);
+    let body = response.into_body().collect().await.unwrap().to_bytes();
+    assert_eq!(&body[..], b"<h3> Hello Mohammad! </h3>");
+
+    Ok(())
+}
+
+#[tokio::test]
+async fn test_say_hello_default() -> Result<()> {
     let mut routers = get_routers().await.into_service();
     let uri = "/hello";
     let request = Request::builder().uri(uri).body(Body::empty()).unwrap();
