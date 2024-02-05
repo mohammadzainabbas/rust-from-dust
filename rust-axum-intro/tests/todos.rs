@@ -17,7 +17,7 @@ use axum::{
     http::{self, Request, StatusCode},
 };
 use http_body_util::BodyExt; // for `collect`
-use rust_axum_intro::get_routers;
+use rust_axum_intro::{get_routers, Todo};
 use serde_json::{json, Value};
 use tower::{Service, ServiceExt}; // for `call`, `oneshot`, and `ready`
 
