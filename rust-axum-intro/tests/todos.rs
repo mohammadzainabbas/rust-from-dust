@@ -142,8 +142,10 @@ async fn test_read_todos() -> Result<(), anyhow::Error> {
     }
 
     // 2. Now, read the todo list
-    let req = Request::builder().method(http::Method::GET).uri("/todo")
-    
+    let req = Request::builder()
+        .method(http::Method::GET)
+        .uri("/todo")
+        .body(Body::empty())?;
 
     Ok(())
 }
