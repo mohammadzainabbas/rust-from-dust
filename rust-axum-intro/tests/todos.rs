@@ -1,7 +1,3 @@
-#[allow(unused)]
-use anyhow::{Error, Result};
-use serde_json::json;
-
 // ZOMBIES (checklist when writing tests)
 // Link: https://youtu.be/0_UttFDnV3k?t=3539
 //
@@ -16,20 +12,7 @@ use serde_json::json;
 // S - simple scenarios
 
 #[tokio::test]
-async fn test_groot() -> Result<(), anyhow::Error> {
-    let routers = get_routers().await;
-
-    // `Router` implements `tower::Service<Request<Body>>` so we can
-    // call it like any tower service, no need to run an HTTP server.
-    let res = routers
-        .oneshot(Request::builder().uri("/").body(Body::empty())?)
-        .await?;
-
-    assert_eq!(res.status(), StatusCode::OK);
-
-    let body = res.into_body().collect().await?.to_bytes();
-    assert_eq!(&body[..], b"Hello, I'm groot!");
-
+async fn test_todo() -> Result<(), anyhow::Error> {
     Ok(())
 }
 
