@@ -37,13 +37,12 @@ async fn test_create_todo() -> Result<(), anyhow::Error> {
         .method(http::Method::POST)
         .uri("/todo")
         .header(http::header::CONTENT_TYPE, mime::APPLICATION_JSON.as_ref())
-        .body(Body::from(json!({"text": "Test todo"}).to_string()))
-        .unwrap();
+        .body(Body::from(json!({"text": "Test todo"}).to_string()))?;
 
     let (status, body) = fetch(req).await?;
     assert_eq!(status, StatusCode::CREATED);
 
-    let todo: Todo = serde_json::from_str(&body).unwrap();
+    let todo: Todo = serde_json::from_str(&body)?;
 
     assert_eq!(todo.text, "Test todo");
     assert!(!todo.completed);
