@@ -148,7 +148,7 @@ async fn test_read_todos() -> Result<(), anyhow::Error> {
         .body(Body::empty())?;
 
     let (status, body) = fetch(&mut routers, req).await?;
-    assert_eq!(status, StatusCode::CREATED);
+    assert_eq!(status, StatusCode::OK);
     let created_todo: Todo = serde_json::from_str(&body)?;
 
     Ok(())
