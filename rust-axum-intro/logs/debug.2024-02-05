@@ -32,3 +32,6 @@
 {"timestamp":"2024-02-05T01:23:54.751280Z","level":"TRACE","fields":{"message":"setup_tracing() done!"},"target":"rust_axum_intro::trace"}
 {"timestamp":"2024-02-05T01:23:54.753023Z","level":"INFO","fields":{"message":"server listening on 0.0.0.0:3000"},"target":"rust_axum_intro"}
 {"timestamp":"2024-02-05T01:24:34.463471Z","level":"TRACE","fields":{"message":"inside say_path()"},"target":"rust_axum_intro::hello","span":{"path":"\"what up\"","name":"say_path"},"spans":[{"path":"\"what up\"","name":"say_path"}]}
+{"timestamp":"2024-02-05T01:37:46.383874Z","level":"TRACE","fields":{"message":"setup_tracing() done!"},"target":"rust_axum_intro::trace"}
+{"timestamp":"2024-02-05T01:37:46.386127Z","level":"INFO","fields":{"message":"server listening on 0.0.0.0:3000"},"target":"rust_axum_intro"}
+{"timestamp":"2024-02-05T01:37:56.956284Z","level":"TRACE","fields":{"message":"inside say_path()"},"target":"rust_axum_intro::hello","span":{"path":"\"a\"","name":"say_path"},"spans":[{"path":"\"a\"","name":"say_path"}]}
