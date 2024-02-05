@@ -57,7 +57,7 @@ async fn test_say_hello() -> Result<()> {
     let res = routers
         .oneshot(
             Request::builder()
-                .uri("/hello")
+                .uri("/hello?name=Mohammad")
                 .body(Body::empty())
                 .unwrap(),
         )
