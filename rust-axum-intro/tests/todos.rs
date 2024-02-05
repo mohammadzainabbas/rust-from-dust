@@ -12,7 +12,7 @@
 // S - simple scenarios
 
 #![allow(unused_imports)]
-use anyhow::Result;
+use anyhow::{Ok, Result};
 use axum::{
     body::Body,
     http::{self, Request, StatusCode},
@@ -140,6 +140,8 @@ async fn test_read_todos() -> Result<(), anyhow::Error> {
         assert_eq!(created_todo.text, todo);
         assert!(!created_todo.completed);
     }
+
+    Ok(()))
 }
 
 // #[tokio::test]
