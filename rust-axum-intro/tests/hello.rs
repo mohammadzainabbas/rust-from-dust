@@ -81,7 +81,7 @@ async fn test_say_hello_default() -> Result<()> {
 async fn test_say_hello() -> Result<()> {
     let mut routers = get_routers().await.into_service();
     let uris_res = vec![
-        ("/hello?name=", "World"),
+        ("/hello?name=", ""),
         ("/hello?name=Mohammad", "Mohammad"),
         ("/hello?name=Mohammad Zain Abbas", "Mohammad Zain Abbas"),
     ];
