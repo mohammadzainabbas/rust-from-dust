@@ -16,20 +16,97 @@ use serde_json::json;
 // S - simple scenarios
 
 #[tokio::test]
-async fn test_todos() -> Result<()> {
-    let hc = httpc_test::new_client("http://localhost:3000")?;
+async fn test_groot() -> Result<(), anyhow::Error> {
+    let routers = get_routers().await;
 
-    // 1. Create TODOs
-    hc.do_post("/todo", json!({"text": "Complete this project"}))
-        .await?
-        .print()
+    // `Router` implements `tower::Service<Request<Body>>` so we can
+    // call it like any tower service, no need to run an HTTP server.
+    let res = routers
+        .oneshot(Request::builder().uri("/").body(Body::empty())?)
         .await?;
 
-    // 2. Read TODOs
-    hc.do_get("/todo").await?.print().await?;
+    assert_eq!(res.status(), StatusCode::OK);
 
-    // 3. Update TODOs
-    // hc.do_get("/todo").await?.json_body_as<>()
+    let body = res.into_body().collect().await?.to_bytes();
+    assert_eq!(&body[..], b"Hello, I'm groot!");
+
+    Ok(())
+}
+
+#[tokio::test]
+async fn test_say_hello_default() -> Result<(), anyhow::Error> {
+    let mut routers = get_routers().await.into_service();
+    let uris = vec!["/hello", "/hello?names=Mohammad", "/hello?"];
+
+    for uri in uris {
+        let request = Request::builder().uri(uri).body(Body::empty())?;
+        let response = ServiceExt::<Request<Body>>::ready(&mut routers)
+            .await?
+            .call(request)
+            .await?;
+        assert_eq!(response.status(), StatusCode::OK);
+        let body = response.into_body().collect().await?.to_bytes();
+        assert_eq!(&body[..], b"<h3> Hello World! </h3>");
+    }
+
+    Ok(())
+}
+
+#[tokio::test]
+async fn test_say_hello() -> Result<(), anyhow::Error> {
+    let mut routers = get_routers().await.into_service();
+    let uris_res = vec![
+        ("/hello?name=", ""),
+        ("/hello?name=Mohammad", "Mohammad"),
+        ("/hello?name=1234", "1234"),
+        ("/hello?name=Mohammad1234", "Mohammad1234"),
+    ];
+
+    for (uri, res) in uris_res {
+        let request = Request::builder().uri(uri).body(Body::empty())?;
+        let response = ServiceExt::<Request<Body>>::ready(&mut routers)
+            .await?
+            .call(request)
+            .await?;
+
+        assert_eq!(response.status(), StatusCode::OK);
+        let body = response.into_body().collect().await?.to_bytes();
+        assert_eq!(&body[..], format!("<h3> Hello {res}! </h3>").as_bytes());
+    }
+
+    Ok(())
+}
+
+#[tokio::test]
+async fn test_say_path() -> Result<(), anyhow::Error> {
+    let mut routers = get_routers().await.into_service();
+
+    let uri = "/hello/";
+    let request = Request::builder().uri(uri).body(Body::empty())?;
+    let response = ServiceExt::<Request<Body>>::ready(&mut routers)
+        .await?
+        .call(request)
+        .await?;
+    assert_eq!(response.status(), StatusCode::NOT_FOUND);
+
+    let uris_res = vec![
+        ("/hello/what", "what"),
+        ("/hello/Mohammad", "Mohammad"),
+        ("/hello/1234", "1234"),
+        ("/hello/name=Mohammad123", "name=Mohammad123"),
+    ];
+
+    for (uri, res) in uris_res {
+        let request = Request::builder().uri(uri).body(Body::empty())?;
+        let response = ServiceExt::<Request<Body>>::ready(&mut routers)
+            .await
+            .unwrap()
+            .call(request)
+            .await?;
+        assert_eq!(response.status(), StatusCode::OK);
+        let body = response.into_body().collect().await?.to_bytes();
+        assert_eq!(&body[..], format!("<h3> Hello {res}! </h3>").as_bytes());
+    }
 
     Ok(())
 }
