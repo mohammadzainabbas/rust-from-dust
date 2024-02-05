@@ -117,9 +117,7 @@ async fn test_update_todo_no_record() -> Result<(), anyhow::Error> {
 }
 
 #[tokio::test]
-async fn test_read_todos() -> Result<(), anyhow::Error> {
-    todo!()
-}
+async fn test_read_todos() -> Result<(), anyhow::Error> {}
 
 // #[tokio::test]
 // async fn test_delete_todo() -> Result<(), anyhow::Error> {
