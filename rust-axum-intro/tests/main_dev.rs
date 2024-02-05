@@ -1,14 +1,13 @@
 // #[allow(unused)]
 use anyhow::Result;
+use axum::http::response;
 use rust_axum_intro::get_routers;
 
 #[tokio::test]
 async fn test_main() -> Result<()> {
     let routers = get_routers().await;
 
-    let hc = httpc_test::new_client("http://localhost:3000")?;
-
-    hc.do_get("/").await?.print().await?;
+    let response.
 
     Ok(())
 }
