@@ -80,13 +80,13 @@ async fn test_say_hello_default() -> Result<()> {
 #[tokio::test]
 async fn test_say_hello() -> Result<()> {
     let mut routers = get_routers().await.into_service();
-    let uris = vec![
+    let uris_res = vec![
         ("/hello?name=", "World"),
         ("/hello?name=Mohammad", "Mohammad"),
         ("/hello?name=Mohammad Zain Abbas", "Mohammad Zain Abbas"),
     ];
 
-    for uri in uris {
+    for uri in uris_res {
         let request = Request::builder().uri(uri).body(Body::empty()).unwrap();
         let response = ServiceExt::<Request<Body>>::ready(&mut routers)
             .await
