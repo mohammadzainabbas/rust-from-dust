@@ -116,7 +116,7 @@ async fn test_update_todo_no_record() -> Result<(), anyhow::Error> {
     Ok(())
 }
 
-async fn create_todo_list<'a>(n: usize) -> Vec<&'a str> {
+async fn create_todo_list(n: usize) -> Vec<String> {
     (1..=n)
         .map(|i| format!("Todo #{}", i).to_string().as_str())
         .collect()
