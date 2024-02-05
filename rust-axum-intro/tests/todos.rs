@@ -179,7 +179,7 @@ async fn test_read_todos_empty() -> Result<(), anyhow::Error> {
     Ok(())
 }
 
-// #[tokio::test]
-// async fn test_delete_todo() -> Result<(), anyhow::Error> {
-//     todo!()
-// }
+#[tokio::test]
+async fn test_delete_todo() -> Result<(), anyhow::Error> {
+    todo!()
+}
