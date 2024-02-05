@@ -108,10 +108,9 @@ async fn test_say_path() -> Result<(), anyhow::Error> {
     let mut routers = get_routers().await.into_service();
 
     let uri = "/hello/";
-    let request = Request::builder().uri(uri).body(Body::empty()).unwrap();
+    let request = Request::builder().uri(uri).body(Body::empty())?;
     let response = ServiceExt::<Request<Body>>::ready(&mut routers)
-        .await
-        .unwrap()
+        .await?
         .call(request)
         .await
         .unwrap();
