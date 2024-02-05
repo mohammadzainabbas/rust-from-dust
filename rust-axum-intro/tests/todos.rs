@@ -44,7 +44,8 @@ async fn test_create_todo() -> Result<(), anyhow::Error> {
 
     let todo: Todo = serde_json::from_str(&body).unwrap();
 
-    assert_eq!(body, "Hello, I'm groot!");
+    assert_eq!(todo.text, "Test todo");
+    assert_eq!(todo.completed, false);
 
     Ok(())
 }
