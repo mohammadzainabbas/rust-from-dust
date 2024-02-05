@@ -9,7 +9,7 @@ use tower::{Service, ServiceExt};
 async fn test_main() -> Result<()> {
     let routers = get_routers().await;
 
-    let res = routers.oneshot
+    let res = routers.oneshot(req)
 
     Ok(())
 }
