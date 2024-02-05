@@ -52,7 +52,7 @@ async fn test_create_todo() -> Result<(), anyhow::Error> {
 }
 
 #[tokio::test]
-async fn test_create_todo() -> Result<(), anyhow::Error> {
+async fn test_update_todo() -> Result<(), anyhow::Error> {
     let req = Request::builder()
         .method(http::Method::POST)
         .uri("/todo")
