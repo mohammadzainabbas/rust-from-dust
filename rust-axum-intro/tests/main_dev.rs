@@ -5,6 +5,7 @@ use axum::{
     body::Body,
     http::{response, Request, StatusCode},
 };
+use http_body_util::BodyExt;
 use rust_axum_intro::get_routers;
 use tower::{Service, ServiceExt};
 
