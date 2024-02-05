@@ -117,7 +117,22 @@ async fn test_update_todo_no_record() -> Result<(), anyhow::Error> {
 }
 
 #[tokio::test]
-async fn test_read_todos() -> Result<(), anyhow::Error> {}
+async fn test_read_todos() -> Result<(), anyhow::Error> {
+    let mut routers = get_routers().await.into_service();
+    // First create a todo
+    let req = Request::builder()
+        .method(http::Method::POST)
+        .uri("/todo")
+        .header(http::header::CONTENT_TYPE, mime::APPLICATION_JSON.as_ref())
+        .body(Body::from(json!({"text": "Initial todo"}).to_string()))?;
+
+    let (status, body) = fetch(&mut routers, req).await?;
+    assert_eq!(status, StatusCode::CREATED);
+
+    let created_todo: Todo = serde_json::from_str(&body)?;
+    assert_eq!(created_todo.text, "Initial todo");
+    assert!(!created_todo.completed);
+}
 
 // #[tokio::test]
 // async fn test_delete_todo() -> Result<(), anyhow::Error> {
