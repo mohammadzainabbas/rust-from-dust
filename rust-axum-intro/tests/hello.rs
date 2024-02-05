@@ -102,3 +102,29 @@ async fn test_say_hello() -> Result<()> {
 
     Ok(())
 }
+
+#[tokio::test]
+async fn test_say_path() -> Result<()> {
+    let mut routers = get_routers().await.into_service();
+    let uris_res = vec![
+        ("/hello?name=", ""),
+        ("/hello?name=Mohammad", "Mohammad"),
+        ("/hello?name=1234", "1234"),
+        ("/hello?name=Mohammad1234", "Mohammad1234"),
+    ];
+
+    for (uri, res) in uris_res {
+        let request = Request::builder().uri(uri).body(Body::empty()).unwrap();
+        let response = ServiceExt::<Request<Body>>::ready(&mut routers)
+            .await
+            .unwrap()
+            .call(request)
+            .await
+            .unwrap();
+        assert_eq!(response.status(), StatusCode::OK);
+        let body = response.into_body().collect().await.unwrap().to_bytes();
+        assert_eq!(&body[..], format!("<h3> Hello {res}! </h3>").as_bytes());
+    }
+
+    Ok(())
+}
