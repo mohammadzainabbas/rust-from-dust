@@ -1,5 +1,3 @@
-#![allow(unused_imports)]
-
 use anyhow::Result;
 use axum::{
     body::Body,
