@@ -29,6 +29,7 @@ cargo add uuid -F v4,fast-rng # or cargo add uuid -F uuid/v4,fast-rng
 cargo add tracing tracing-appender
 cargo add tracing-subscriber -F env-filter,json
 cargo add validator -F derive
+cargo add mime
 ```
 
 > [!IMPORTANT]
