@@ -181,25 +181,39 @@ async fn test_read_todos_empty() -> Result<(), anyhow::Error> {
 
 #[tokio::test]
 async fn test_delete_todo() -> Result<(), anyhow::Error> {
-    // First, create a todo to delete
-    let create_req = Request::builder()
-        .method("POST")
+    let mut routers = get_routers().await.into_service();
+    // 1. First, create a todo
+    let req = Request::builder()
+        .method(http::Method::POST)
         .uri("/todo")
-        .header("content-type", "application/json")
-        .body(Body::from(json!({"text": "Todo to delete"}).to_string()))
-        .unwrap();
+        .header(http::header::CONTENT_TYPE, mime::APPLICATION_JSON.as_ref())
+        .body(Body::from(json!({"text": "Initial todo"}).to_string()))?;
 
-    let (_, body) = app_request(create_req).await;
-    let created_todo: Todo = serde_json::from_str(&body).unwrap();
+    let (status, body) = fetch(&mut routers, req).await?;
+    assert_eq!(status, StatusCode::CREATED);
 
-    // Now, delete the created todo
-    let delete_req = Request::builder()
-        .method("DELETE")
+    let created_todo: Todo = serde_json::from_str(&body)?;
+    assert_eq!(created_todo.text, "Initial todo");
+    assert!(!created_todo.completed);
+
+    // 2. Now, let's update the created todo
+    let update_req = Request::builder()
+        .method(http::Method::PATCH)
         .uri(format!("/todo/{}", created_todo.id))
-        .body(Body::empty())
-        .unwrap();
+        .header(http::header::CONTENT_TYPE, mime::APPLICATION_JSON.as_ref())
+        .body(Body::from(
+            json!({"text": "Updated todo", "completed": true}).to_string(),
+        ))?;
 
-    let (status, _) = app_request(delete_req).await;
+    let (status, body) = fetch(&mut routers, update_req).await?;
+    assert_eq!(status, StatusCode::OK);
 
-    assert_eq!(status, StatusCode::NO_CONTENT);
+    let updated_todo: Todo = serde_json::from_str(&body)?;
+
+    println!("updated_todo: {:#?}", updated_todo);
+
+    assert_eq!(updated_todo.text, "Updated todo");
+    assert!(updated_todo.completed);
+
+    Ok(())
 }
