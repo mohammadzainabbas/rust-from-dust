@@ -79,6 +79,9 @@ async fn test_update_todo() -> Result<(), anyhow::Error> {
     assert_eq!(status, StatusCode::OK);
 
     let updated_todo: Todo = serde_json::from_str(&body)?;
+
+    println!("{updated_todo}");
+
     assert_eq!(updated_todo.text, "Updated todo");
     assert!(updated_todo.completed);
 
