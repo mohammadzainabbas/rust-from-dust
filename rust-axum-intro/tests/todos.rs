@@ -140,6 +140,8 @@ async fn test_read_todos() -> Result<(), anyhow::Error> {
         assert!(!created_todo.completed);
     }
 
+    // 2. Now, read the todo list
+
     Ok(())
 }
 
