@@ -39,7 +39,7 @@ use tower::{Service, ServiceExt}; // for `call`, `oneshot`, and `ready`
 // }
 
 #[tokio::test]
-async fn test_groot() -> Result<()> {
+async fn test_groot() -> Result<(), anyhow::Error> {
     let routers = get_routers().await;
 
     // `Router` implements `tower::Service<Request<Body>>` so we can
@@ -57,7 +57,7 @@ async fn test_groot() -> Result<()> {
 }
 
 #[tokio::test]
-async fn test_say_hello_default() -> Result<()> {
+async fn test_say_hello_default() -> Result<(), anyhow::Error> {
     let mut routers = get_routers().await.into_service();
     let uris = vec!["/hello", "/hello?names=Mohammad", "/hello?"];
 
