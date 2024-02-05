@@ -1,4 +1,4 @@
-// #[allow(unused)]
+#[allow(unused)]
 use anyhow::Result;
 use axum::http::response;
 use rust_axum_intro::get_routers;
