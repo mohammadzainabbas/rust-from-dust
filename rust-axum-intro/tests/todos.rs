@@ -20,6 +20,8 @@ use http_body_util::BodyExt; // for `collect`
 use rust_axum_intro::get_routers;
 use tower::{Service, ServiceExt}; // for `call`, `oneshot`, and `ready`
 
+async fn fetch()
+
 #[tokio::test]
 async fn test_create_todo() -> Result<(), anyhow::Error> {
     let routers = get_routers().await;
