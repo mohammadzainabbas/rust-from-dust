@@ -33,8 +33,6 @@ async fn fetch(
         .await?
         .call(request)
         .await?;
-
-    let response = routers.oneshot(request).await?;
     let status = response.status();
     let body = response.into_body().collect().await?.to_bytes();
     let body = String::from_utf8_lossy(&body[..]).to_string();
