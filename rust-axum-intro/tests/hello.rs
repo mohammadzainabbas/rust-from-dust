@@ -71,7 +71,7 @@ async fn test_say_hello() -> Result<()> {
         .unwrap();
     assert_eq!(response.status(), StatusCode::OK);
     let body = response.into_body().collect().await.unwrap().to_bytes();
-    assert_eq!(&body[..], b"Hello, I'm groot");
+    assert_eq!(&body[..], b"<h3> Hello World! </h3>");
 
     Ok(())
 }
