@@ -20,9 +20,9 @@ type DB = Arc<RwLock<HashMap<String, Todo>>>;
 
 #[derive(Debug, Serialize, Deserialize, Clone)]
 pub struct Todo {
-    id: String,
-    text: String,
-    completed: bool,
+    pub id: String,
+    pub text: String,
+    pub completed: bool,
 }
 
 #[derive(Debug, Deserialize)]
