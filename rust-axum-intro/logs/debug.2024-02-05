@@ -29,3 +29,5 @@
 {"timestamp":"2024-02-05T01:18:28.573606Z","level":"TRACE","fields":{"message":"inside say_path()"},"target":"rust_axum_intro::hello","span":{"path":"\"a\"","name":"say_path"},"spans":[{"path":"\"a\"","name":"say_path"}]}
 {"timestamp":"2024-02-05T01:18:35.350889Z","level":"TRACE","fields":{"message":"inside say_path()"},"target":"rust_axum_intro::hello","span":{"path":"\"a as\"","name":"say_path"},"spans":[{"path":"\"a as\"","name":"say_path"}]}
 {"timestamp":"2024-02-05T01:19:47.166130Z","level":"TRACE","fields":{"message":"inside say_path()"},"target":"rust_axum_intro::hello","span":{"path":"\"name=Mohammad1234\"","name":"say_path"},"spans":[{"path":"\"name=Mohammad1234\"","name":"say_path"}]}
+{"timestamp":"2024-02-05T01:23:54.751280Z","level":"TRACE","fields":{"message":"setup_tracing() done!"},"target":"rust_axum_intro::trace"}
+{"timestamp":"2024-02-05T01:23:54.753023Z","level":"INFO","fields":{"message":"server listening on 0.0.0.0:3000"},"target":"rust_axum_intro"}
