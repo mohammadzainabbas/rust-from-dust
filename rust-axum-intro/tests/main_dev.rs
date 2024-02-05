@@ -1,6 +1,6 @@
 // #[allow(unused)]
 use anyhow::Result;
-mod common;
+use rust_axum_intro::get_routers;
 
 #[tokio::test]
 async fn test_main() -> Result<()> {
