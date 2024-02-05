@@ -1,11 +1,11 @@
 use anyhow::Result;
 use axum::{
     body::Body,
-    http::{response, Request, StatusCode},
+    http::{Request, StatusCode},
 };
 use http_body_util::BodyExt;
 use rust_axum_intro::get_routers;
-use tower::{Service, ServiceExt};
+use tower::ServiceExt;
 
 #[tokio::test]
 async fn test_main() -> Result<()> {
