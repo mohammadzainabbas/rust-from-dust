@@ -126,13 +126,12 @@ async fn test_say_path() -> Result<(), anyhow::Error> {
     ];
 
     for (uri, res) in uris_res {
-        let request = Request::builder().uri(uri).body(Body::empty()).unwrap();
+        let request = Request::builder().uri(uri).body(Body::empty())?;
         let response = ServiceExt::<Request<Body>>::ready(&mut routers)
             .await
             .unwrap()
             .call(request)
-            .await
-            .unwrap();
+            .await?;
         assert_eq!(response.status(), StatusCode::OK);
         let body = response.into_body().collect().await.unwrap().to_bytes();
         assert_eq!(&body[..], format!("<h3> Hello {res}! </h3>").as_bytes());
