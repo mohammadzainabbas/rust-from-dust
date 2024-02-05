@@ -38,10 +38,21 @@ tower-cookies = "0.10.0"
 lazy-regex = "3.1.0"
 
 # Helpful macros for working with enums and strings
-strum_macros = "0.25.3"
+strum_macros = "0.26.1"
 
 # A library to generate and parse UUIDs.
 uuid = { version = "1.7.0", features = ["v4", "fast-rng"] }
+
+# For tracing and logging
+tracing = "0.1.40"
+tracing-appender = "0.2.3"
+tracing-subscriber = { version = "0.3.18", features = ["env-filter", "json"] }
+
+# For validations
+validator = { version = "0.16.1", features = ["derive"] }
+
+# For mime types
+mime = "0.3.17"
 
 [dev-dependencies]
 # Flexible concrete Error type built on std::error::Error
@@ -49,3 +60,9 @@ anyhow = "1.0.79"
 
 # Minimalistic HTTP Client Test Utilities
 httpc-test = "0.1.8"
+
+# To test axum server (for `call`, `oneshot`, and `ready`)
+tower = { version = "0.4.13", features = ["util"] }
+
+# To test axum server (for `collect` for axum::Body)
+http-body-util = "0.1.0"

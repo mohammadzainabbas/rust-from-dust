@@ -1,13 +1,25 @@
-#![allow(unused)] // for dev
+//! ### Welcome to Axum Intro Project
+//!
+//! Run the following via
+//!
+//! ```bash
+//! cargo run
+//! ```
+//! or (_to run re-run whenever there's a change in *src* dir_)
+//! ```bash
+//! cargo watch -q -c -w src/ -x run
+//! ```
 
-use std::net::{IpAddr, Ipv4Addr, SocketAddr};
-
-use axum::{response::Html, routing::get, Router};
+use rust_axum_intro::{get_routers, setup_tracing};
+use tracing::info;
 
 #[tokio::main(worker_threads = 2)]
 async fn main() {
-    let router = Router::new().route("/hello", get(|| async { Html("<h3> Hello World </h3>") }));
+    setup_tracing().await;
+
+    let routers = get_routers().await;
+
     let listener = tokio::net::TcpListener::bind("0.0.0.0:3000").await.unwrap();
-    println!("Listening on {:#?}", listener);
-    axum::serve(listener, router).await.unwrap();
+    info!("server listening on {:#?}", listener.local_addr().unwrap());
+    axum::serve(listener, routers).await.unwrap();
 }
