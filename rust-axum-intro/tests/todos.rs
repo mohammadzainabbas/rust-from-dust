@@ -127,11 +127,13 @@ async fn test_read_todos() -> Result<(), anyhow::Error> {
     let mut routers = get_routers().await.into_service();
     // 1. Create multiple todos
     let todos = create_todo_list(10);
-    let req = Request::builder()
-        .method(http::Method::POST)
-        .uri("/todo")
-        .header(http::header::CONTENT_TYPE, mime::APPLICATION_JSON.as_ref())
-        .body(Body::from(json!({"text": "Initial todo"}).to_string()))?;
+    for todo in todos {
+        let req = Request::builder()
+            .method(http::Method::POST)
+            .uri("/todo")
+            .header(http::header::CONTENT_TYPE, mime::APPLICATION_JSON.as_ref())
+            .body(Body::from(json!({"text": "Initial todo"}).to_string()))?;
+    }
 
     let (status, body) = fetch(&mut routers, req).await?;
     assert_eq!(status, StatusCode::CREATED);
