@@ -142,7 +142,8 @@ async fn test_read_todos() -> Result<(), anyhow::Error> {
     }
 
     // 2. Now, read the todo list
-    let req = Request::builder().method(http::Method::GET).uri("/todo").header(http::header::CONTENT_TYPE, mime::APPLICATION_JSON)
+    let req = Request::builder().method(http::Method::GET).uri("/todo")
+    
 
     Ok(())
 }
