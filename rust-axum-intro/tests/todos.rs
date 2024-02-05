@@ -99,7 +99,7 @@ async fn test_update_todo() -> Result<(), anyhow::Error> {
 
 #[tokio::test]
 async fn test_update_todo_no_record() -> Result<(), anyhow::Error> {
-    let mut routers = get_routers().await.into_service();
+    let routers = get_routers().await.into_service();
     // Let's try to update a record which doesn't exist
     let random_id = Uuid::new_v4().to_string().to_owned();
     let update_req = Request::builder()
