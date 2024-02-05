@@ -119,7 +119,7 @@ async fn test_update_todo_no_record() -> Result<(), anyhow::Error> {
 #[tokio::test]
 async fn test_read_todos() -> Result<(), anyhow::Error> {
     let mut routers = get_routers().await.into_service();
-    // First create a todo
+    // 1. Create multiple todos
     let req = Request::builder()
         .method(http::Method::POST)
         .uri("/todo")
