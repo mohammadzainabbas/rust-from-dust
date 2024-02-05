@@ -74,6 +74,20 @@ async fn test_say_hello_default() -> Result<()> {
         assert_eq!(&body[..], b"<h3> Hello World! </h3>");
     }
 
+    futures::future::join_all(uris.into_iter().map(|uri| async move {
+        let request = Request::builder().uri(uri).body(Body::empty()).unwrap();
+        let response = ServiceExt::<Request<Body>>::ready(&mut routers)
+            .await
+            .unwrap()
+            .call(request)
+            .await
+            .unwrap();
+        assert_eq!(response.status(), StatusCode::OK);
+        let body = response.into_body().collect().await.unwrap().to_bytes();
+        assert_eq!(&body[..], b"<h3> Hello World! </h3>");
+    }))
+    .await;
+
     Ok(())
 }
 
