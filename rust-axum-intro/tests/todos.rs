@@ -229,7 +229,7 @@ async fn test_delete_todo() -> Result<(), anyhow::Error> {
 #[tokio::test]
 async fn test_delete_todo_no_record() -> Result<(), anyhow::Error> {
     let mut routers = get_routers().await.into_service();
-    // Let's try to update a record which doesn't exist
+    // Let's try to delete a record which doesn't exist
     let random_id = Uuid::new_v4().to_string().to_owned();
     let delete_req = Request::builder()
         .method(http::Method::DELETE)
