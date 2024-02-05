@@ -7,7 +7,7 @@ use rust_axum_intro::get_routers;
 async fn test_main() -> Result<()> {
     let routers = get_routers().await;
 
-    let response.
+    let res = routers.oneshot
 
     Ok(())
 }
