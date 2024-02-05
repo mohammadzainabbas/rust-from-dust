@@ -73,7 +73,8 @@ async fn test_update_todo() -> Result<(), anyhow::Error> {
         .body(Body::from(
             json!({"text": "Updated todo", "completed": true}).to_string(),
         ))?;
-    let (status, body) = app_request(update_req).await;
+
+    let (status, body) = fetch(update_req).await?;
 
     assert_eq!(status, StatusCode::OK);
     let updated_todo: Todo = serde_json::from_str(&body).unwrap();
