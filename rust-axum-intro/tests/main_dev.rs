@@ -20,7 +20,7 @@ async fn test_main() -> Result<()> {
     assert_eq!(res.status(), StatusCode::OK);
 
     let body = res.into_body().collect().await.unwrap().to_bytes();
-    assert_eq!(&body[..], b"Hello, I'm groot");
+    assert_eq!(&body[..], b"Hello, I'm groot!");
 
     Ok(())
 }
