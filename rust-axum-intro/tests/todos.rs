@@ -116,6 +116,10 @@ async fn test_update_todo_no_record() -> Result<(), anyhow::Error> {
     Ok(())
 }
 
+fn create_todo_list(n: usize) -> Vec<String> {
+    (1..n).map(|i| format!("Todo #{}", i)).collect()
+}
+
 #[tokio::test]
 async fn test_read_todos() -> Result<(), anyhow::Error> {
     let mut routers = get_routers().await.into_service();
