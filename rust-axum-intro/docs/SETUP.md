@@ -39,6 +39,7 @@ cargo add validator -F derive
 ```bash
 cargo add anyhow httpc-test --dev
 cargo add tower -F util --dev
+cargo add http-body-util --dev
 ```
 
 > [!IMPORTANT]

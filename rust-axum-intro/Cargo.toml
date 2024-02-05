@@ -61,5 +61,5 @@ httpc-test = "0.1.8"
 # To test axum server (for `call`, `oneshot`, and `ready`)
 tower = { version = "0.4.13", features = ["util"] }
 
-# To test axum server (for `call`, `oneshot`, and `ready`)
+# To test axum server (for `collect` for axum::Body)
 http-body-util = "0.1.0"
