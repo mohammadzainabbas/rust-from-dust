@@ -218,6 +218,8 @@ async fn test_delete_todo() -> Result<(), anyhow::Error> {
         assert_ne!(todo.id, created_todo.id);
     }
 
+    if todos.is_empty() {}
+
     assert_eq!(status, StatusCode::NOT_FOUND);
 
     Ok(())
