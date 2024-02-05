@@ -60,9 +60,7 @@ async fn test_groot() -> Result<()> {
 async fn test_say_hello() -> Result<()> {
     let mut routers = get_routers().await.into_service();
     let uri = "/hello";
-
     let request = Request::builder().uri(uri).body(Body::empty()).unwrap();
-
     let response = ServiceExt::<Request<Body>>::ready(&mut routers)
         .await
         .unwrap()
