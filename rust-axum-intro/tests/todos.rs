@@ -130,7 +130,7 @@ async fn test_read_todos() -> Result<(), anyhow::Error> {
             .method(http::Method::POST)
             .uri("/todo")
             .header(http::header::CONTENT_TYPE, mime::APPLICATION_JSON.as_ref())
-            .body(Body::from(json!({"text": todo.to_owned()}).to_string()))?;
+            .body(Body::from(json!({"text": todo.clone()}).to_string()))?;
 
         let (status, body) = fetch(&mut routers, req).await?;
         assert_eq!(status, StatusCode::CREATED);
