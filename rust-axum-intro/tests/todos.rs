@@ -187,13 +187,13 @@ async fn test_delete_todo() -> Result<(), anyhow::Error> {
         .method(http::Method::POST)
         .uri("/todo")
         .header(http::header::CONTENT_TYPE, mime::APPLICATION_JSON.as_ref())
-        .body(Body::from(json!({"text": "Initial todo"}).to_string()))?;
+        .body(Body::from(json!({"text": "Temp todo"}).to_string()))?;
 
     let (status, body) = fetch(&mut routers, req).await?;
     assert_eq!(status, StatusCode::CREATED);
 
     let created_todo: Todo = serde_json::from_str(&body)?;
-    assert_eq!(created_todo.text, "Initial todo");
+    assert_eq!(created_todo.text, "Temp todo");
     assert!(!created_todo.completed);
 
     // 2. Now, let's delete the created todo
@@ -202,7 +202,7 @@ async fn test_delete_todo() -> Result<(), anyhow::Error> {
         .uri(format!("/todo/{}", created_todo.id))
         .body(Body::empty())?;
 
-    let (status, body) = fetch(&mut routers, update_req).await?;
+    let (status, body) = fetch(&mut routers, delete_req).await?;
     assert_eq!(status, StatusCode::OK);
 
     let updated_todo: Todo = serde_json::from_str(&body)?;
