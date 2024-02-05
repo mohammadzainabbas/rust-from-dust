@@ -78,7 +78,7 @@ async fn test_say_hello_default() -> Result<()> {
 }
 
 #[tokio::test]
-async fn test_say_hello() -> Result<()> {
+async fn test_say_hello() -> Result<(), anyhow::Error> {
     let mut routers = get_routers().await.into_service();
     let uris_res = vec![
         ("/hello?name=", ""),
