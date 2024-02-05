@@ -147,6 +147,8 @@ async fn test_read_todos() -> Result<(), anyhow::Error> {
         .uri("/todo")
         .body(Body::empty())?;
 
+    let (status, body) = fetch(&mut routers, req).await?;
+
     Ok(())
 }
 
