@@ -83,7 +83,8 @@ async fn test_say_hello() -> Result<()> {
     let uris_res = vec![
         ("/hello?name=", ""),
         ("/hello?name=Mohammad", "Mohammad"),
-        ("/hello?name=Mohammad Zain Abbas", "Mohammad Zain Abbas"),
+        ("/hello?name=1234", "1234"),
+        ("/hello?name=Mohammad1234", "Mohammad1234"),
     ];
 
     for (uri, res) in uris_res {
