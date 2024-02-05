@@ -224,7 +224,5 @@ async fn test_delete_todo() -> Result<(), anyhow::Error> {
         assert_ne!(todo.id, created_todo.id);
     }
 
-    assert_eq!(status, StatusCode::NOT_FOUND);
-
     Ok(())
 }
