@@ -116,7 +116,7 @@ async fn test_update_todo_no_record() -> Result<(), anyhow::Error> {
     Ok(())
 }
 
-fn create_todo_list<'a>(n: usize) -> Vec<&'a str> {
+async fn create_todo_list<'a>(n: usize) -> Vec<&'a str> {
     (1..=n)
         .map(|i| format!("Todo #{}", i).to_string().as_str())
         .collect()
@@ -126,7 +126,7 @@ fn create_todo_list<'a>(n: usize) -> Vec<&'a str> {
 async fn test_read_todos() -> Result<(), anyhow::Error> {
     let mut routers = get_routers().await.into_service();
     // 1. Create multiple todos
-    let todos = create_todo_list(10);
+    let todos = create_todo_list(10).await;
     for todo in todos {
         let req = Request::builder()
             .method(http::Method::POST)
