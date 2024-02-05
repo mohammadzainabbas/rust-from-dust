@@ -22,9 +22,7 @@ use serde_json::{json, Value};
 use tower::{Service, ServiceExt}; // for `call`, `oneshot`, and `ready`
 async fn fetch(req: Request<Body>) -> (StatusCode, String) {
     let routers = get_routers().await;
-    let res = routers
-        .oneshot(Request::builder().uri("/").body(Body::empty())?)
-        .await?;
+    let res = routers.oneshot(req).await?;
 
     let request = Request::builder().uri(uri).body(Body::empty())?;
     let response = ServiceExt::<Request<Body>>::ready(&mut routers)
