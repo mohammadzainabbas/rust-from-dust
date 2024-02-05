@@ -11,7 +11,6 @@
 // E - exceptions
 // S - simple scenarios
 
-#![allow(unused_imports)]
 use anyhow::{Ok, Result};
 use axum::{
     body::Body,
