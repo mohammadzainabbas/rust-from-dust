@@ -72,11 +72,11 @@ async fn test_update_todo() -> Result<(), anyhow::Error> {
 }
 
 #[tokio::test]
-async fn test_() -> Result<(), anyhow::Error> {
+async fn test_read_todos() -> Result<(), anyhow::Error> {
     todo!()
 }
 
 #[tokio::test]
-async fn test_() -> Result<(), anyhow::Error> {
+async fn test_delete_todo() -> Result<(), anyhow::Error> {
     todo!()
 }
