@@ -23,6 +23,7 @@ use tower::{Service, ServiceExt}; // for `call`, `oneshot`, and `ready`
 async fn fetch(request: Request<Body>) -> Result<(StatusCode, String), anyhow::Error> {
     let routers = get_routers().await;
     let response = routers.oneshot(request).await?;
+    let status = response.status();
     let body = response.into_body().collect().await?.to_bytes();
     Ok((
         response.status(),
