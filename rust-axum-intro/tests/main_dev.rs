@@ -24,5 +24,7 @@ async fn test_main() -> Result<()> {
 
     let body = res.into_body().collect().await.unwrap().to_bytes();
 
+    assert_eq!(body, "Hello, I'm groot!")
+
     Ok(())
 }
